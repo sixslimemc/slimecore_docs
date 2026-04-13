@@ -1,6 +1,4 @@
-# SlimeCore User Documentation
+# SlimeCore Admin Guide
 
-These pages serve as user documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
-
-## What is SlimeCore?
-SlimeCore is a datapack that serves as a package manager for other datapacks.
+## Breifing 
+From an administration point of view, SlimeCore is a datapack that loads and *manages* other datapacks. This means that other datapacks *depend* upon it for core functionality and loading. If you want to manage datapacks that are managed by SlimeCore, you must 
