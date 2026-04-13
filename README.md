@@ -4,9 +4,9 @@ These pages serve as user documentation for the [SlimeCore datapack loader](http
 
 ---
 
-**[Admin Quickstart Guide](./admin_guide.md)** - Guide for world owners/admins. \
+**[Admin Guide](./admin_guide.md)** \
 *Start here if you just installed SlimeCore-managed pack(s) into your world.*
 
-**[Developer Quickstart Guide](./developer_guide.md)** - Guide for datapack developers.
+**[Developer Quickstart Guide](./developer_guide.md)**
 
-**[SlimeCore Description](./description.md)** - Description of SlimeCore.
+**[SlimeCore Description](./description.md)**
