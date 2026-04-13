@@ -9,7 +9,7 @@ If you are new to using SlimeCore, [Scdev](https://github.com/sixslimemc/scdev) 
 
 To simply install and play with SlimeCore-loaded datapack(s), it is likely that all you need to do is ensure that the SlimeCore datapack is installed and enabled, and the datapack(s) should just work. If you have SlimeCore installed and your datapack(s) still do not load, it is most likely because they require the installation of other datapacks, **dependencies**.
 
-#### Scdev Status Messages
+#### Status Messages (Scdev)
 
 When using Scdev, players with the tag `scdev.listen` recieve messages containing useful information and errors upon every `/reload`. World admins should have this tag.
 
