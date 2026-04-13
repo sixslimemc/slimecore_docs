@@ -95,7 +95,7 @@ A **load** calls preload entrypoints, then load tags, then entrypoints, accordin
 
 A rebuild can also be manually initiated via the `slimecore:rebuild` function. Inputs can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build, no changes to the world are actually made. This function is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
 
-Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
+A large single-tick delay during a rebuild is normal, as well as a shorter single-tick delay during a load, but otherwise, SlimeCore does not execute any commands outside of these processes and has **zero** performance impact.
 
 ## Usage Guides
 
