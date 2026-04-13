@@ -1,6 +1,6 @@
 # SlimeCore User Documentation
 
-User documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
+User documentation for the [SlimeCore datapack manager](https://github.com/sixslimemc/slimecore).
 
 ---
 

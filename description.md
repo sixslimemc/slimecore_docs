@@ -1,6 +1,3 @@
-# SlimeCore User Documentation
+# SlimeCore Description
 
-These pages serve as user documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
-
-## What is SlimeCore?
-SlimeCore is a datapack that serves as a package manager for other datapacks.
+SlimeCore is a datapack that serves as a manager and loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), it serves a similar purpose, but takes it multiple steps further.
