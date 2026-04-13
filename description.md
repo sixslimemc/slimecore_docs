@@ -23,7 +23,7 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 ## Functional Overview
 
-The following demonstrates a manifest function that a SlimeCore-loaded datapack would add to `#slimecore:manifest`. This is the rough equivalent to a non-SlimeCore-loaded datapack adding to `#minecraft:load`.
+SlimeCore-loaded datapacks define exactly 1 **manifest** function that they append to the function tag `#slimecore:manifest`. This replaces the standard paradigm of appending to `#minecraft:load`/`#minecraft:tick`. The following is a demonstration manifest function:
 
 ```mcfunction
 
