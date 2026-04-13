@@ -5,9 +5,9 @@ SlimeCore is a datapack that serves as a manager and loader of other datapacks. 
 SlimeCore allows datapacks to have and specify:
 - Version
 - Dependencies
-- Tick (entrypoint) order, relative to other datapacks
-- Abstract interfaces, to be implemented by other datapacks
-- Pack & author metadata
+- Tick (entrypoint) order relative to other datapacks
+- Abstract interfaces that must be implemented by other datapacks
+- Pack and author metadata
 
 Datapacks specify this information in a special *manifest* function, and SlimeCore processes all datapacks' manifests, validates relationships, then executes a compatible load/calling order (a *build*). 
 
