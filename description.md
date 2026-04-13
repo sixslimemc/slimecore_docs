@@ -4,8 +4,8 @@ SlimeCore is a datapack that serves as a loader of other datapacks. If you are f
 
 SlimeCore allows datapacks to specify:
 - Version
-- Dependencies, required and optional
-- Tick (entrypoint) order relative to other datapacks
+- Dependencies
+- Entrypoints (e.g. ticking functions), and their order relative to other datapacks
 - Abstract interfaces that must be implemented by other datapacks
 - Pack and author metadata
 - Download URL(s)
