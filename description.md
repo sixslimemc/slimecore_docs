@@ -20,7 +20,7 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
 
-## Conceptual Implementation
+## Implementation Notes
 
 ## Mission Statement
 The goal of SlimeCore to support a robust, decentralized datapack ecosystem. It aims to benefit both datapack users and developers without requiring the usage of third party programs--but also not be a significant impedance to workflows that include them.
