@@ -97,9 +97,9 @@ A rebuild can also be manually initiated via the `slimecore:rebuild` function. I
 
 ## Performance Overhead
 
-SlimeCore may create a noticable single-tick delay during rebuilding, as well as a (much lesser) single-tick delay during loading. These delays will scale roughly linearly with the amount of SlimeCore-loaded datapacks enabled.
+SlimeCore may create a noticable single-tick delay during rebuilding, as well as a lesser single-tick delay during loading. These delays scale roughly linearly with the amount of SlimeCore-loaded datapacks enabled.
 
-Outside of rebuilding and loading, SlimeCore does not run any commands and has negligible/zero performance impact.
+Otherwise, SlimeCore does not run any commands and has negligible/zero performance impact.
 
 ## Usage Guides
 
