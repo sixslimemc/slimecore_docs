@@ -10,7 +10,7 @@ If you just want to get started quickly, You can install [Scdev](https://github.
 
 ## Using Scdev
 
-Firstly, world admins should be given the `scdev.listen` tag to recieve messages containing helpful information and errors.
+World admins should be given the `scdev.listen` tag to recieve messages containing helpful information and errors.
 
 ```mcfunction
 tag @s add scdev.listen
