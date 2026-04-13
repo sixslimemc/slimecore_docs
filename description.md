@@ -20,7 +20,8 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
 ## Mission Statement
-SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
+
+SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
 ## Demonstration
 
@@ -93,3 +94,16 @@ A **load** calls preload entrypoints, then load tags, then entrypoints, accordin
 A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the **only** proper way to enable/disable/uninstall SlimeCore-managed datapacks.
 
 Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
+
+## Guides
+
+The following guides explain how to actually use SlimeCore.
+
+**[Admin Guide](./admin_guide.md)** \
+For owners/admins of worlds that include SlimeCore-managed datapacks.
+
+**[Datapack Developer Guide](./developer_guide.md)** \
+For datapack developers wanting to create a SlimeCore-managed datapack.
+
+**[Interface Guide](./interface_guide.md)** \
+For datapack developers wanting to create a datapack that directly interfaces with SlimeCore.
