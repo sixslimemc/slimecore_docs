@@ -101,7 +101,7 @@ SlimeCore may create a noticable single-tick delay during rebuilding, as well as
 
 Otherwise, SlimeCore does not run any commands and has negligible/zero performance impact.
 
-## Usage Guides
+# Usage Guides
 
 **[Admin Guide](./admin_guide.md)** - Manage SlimeCore-loaded datapacks in your world.
 
