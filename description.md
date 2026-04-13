@@ -93,7 +93,7 @@ A **rebuild** processes all collected manifests, validates datapack relationship
 
 A **load** calls preload entrypoints, then load tags, then entrypoints, according to the datapacks included and order specified by the world's current build.
 
-A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the **only** proper way to enable/disable/uninstall SlimeCore-loaded datapacks.
+A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the proper way to enable/disable/uninstall SlimeCore-loaded datapacks.
 
 Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
 
