@@ -11,7 +11,7 @@ To simply install and play with SlimeCore-loaded datapack(s), it is likely that 
 
 #### Status Messages (Scdev)
 
-When using Scdev, players with the tag `scdev.listen` recieve messages containing useful information and errors upon every `/reload`. World admins should have this tag.
+With Scdev, players with the tag `scdev.listen` recieve messages containing useful information and errors upon every `/reload`. World admins should have this tag.
 
 ```mcfunction
 tag @s add scdev.listen
