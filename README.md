@@ -7,7 +7,7 @@ User documentation for the [SlimeCore datapack manager](https://github.com/sixsl
 **[Admin Guide](./admin_guide.md)** \
 *Start here if you just installed SlimeCore-managed datapack(s) into your world.*
 
-**[Datapack Developer Guide](./developer_guide.md)** \
+**[Datapack Development Guide](./development_guide.md)** \
 *Start here if you want to create a SlimeCore-managed datapack.*
 
 **[SlimeCore Description](./description.md)** \
