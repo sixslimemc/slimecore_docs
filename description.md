@@ -59,8 +59,8 @@ data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
 # Abstract interface declarations:
-# Each abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
-# SlimeCore will fail if there are any unimplemented or overimplemented interfaces.
+# Each declared abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
+# A build will be invalid if there are any unimplemented or overimplemented interfaces.
 # Abstract interfaces are practically uncommon.
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
