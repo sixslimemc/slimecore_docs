@@ -12,7 +12,7 @@ SlimeCore allows datapacks to have and specify:
 
 Datapacks specify this information in a *manifest* function. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then executes a compatible load/calling order if everything is valid.
 
-Instead of adding to `#minecraft:load` and `#minecraft:tick`, SlimeCore enforces that datapacks define their own `load`, `disable`, and `uninstall` function tags, as well as any number of *entrypoints* (primarily used for starting tick loops). These tags are called by SlimeCore when appropriate.
+Slimecore completely replaces the paradigm of using `#minecraft:load` and `#minecraft:tick`. Datapacks must define their own **load**, **disable**, and **uninstall** function tags, as well as any number of **entrypoints** (primarily used for starting tick loops). These tags are called by SlimeCore when appropriate.
 
 A key aspect of SlimeCore is that it is designed to be **atomic**. This means that, if used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it specified as a dependency; it will require you to disable both datapacks at once.
 
