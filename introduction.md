@@ -2,4 +2,5 @@
 
 These pages serve as user documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
 
-- If you do not know what SlimeCore is, read the **[Introduction](./introduction.md)**.
+## What is SlimeCore?
+SlimeCore is a datapack that serves as a package manager for other datapacks.
