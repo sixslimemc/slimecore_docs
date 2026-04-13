@@ -8,7 +8,13 @@ Because of this paradigm, frontends practically define how you interact with Sli
 If you just want to get started quickly, You can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend/utility created by the author of SlimeCore, and reference the next section.
 
 
-## With Scdev
+## Using Scdev
+
+Firstly, world admins should be given the `scdev.listen` tag to recieve messages containing helpful information and errors.
+
+```mcfunction
+tag @s add scdev.listen
+```
 
 
 ## Essential Concepts
