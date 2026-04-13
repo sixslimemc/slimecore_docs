@@ -5,7 +5,7 @@ SlimeCore is a datapack that loads and manages other datapacks, *thats it*. It i
 
 [Scdev](https://github.com/sixslimemc/scdev) is a very minimal frontend/utility created by the author of SlimeCore and this guide will reference it for demonstration. However, any frontend should provide similar functionality with obvious steps--as long as you have one, you should be good to go.
 
-While not *strictly* required, a SlimeCore frontend is essential for easy administration. Frontends are just datapacks and are installed as such.
+While not *strictly* required, a frontend is essential for easy administration. Frontends are just datapacks and are installed as such.
 
 ### (Scdev) Get Status Messages
 
