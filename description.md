@@ -23,4 +23,4 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 ## Implementation Notes
 
 ## Mission Statement
-The goal of SlimeCore to support a robust, decentralized datapack ecosystem. It aims to benefit both datapack users and developers without requiring the usage of third party programs--but also not be a significant obstruct workflows that may include them.
+The goal of SlimeCore to support a robust, decentralized datapack ecosystem. It aims to benefit both datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them.
