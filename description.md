@@ -21,8 +21,6 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 ---
 
-As mentioned above, a datapack managed by SlimeCore must include a **manifest** function, appended to the `#slimecore:manifest` function tag.
-
 A full demonstration manifest function:
 
 ```mcfunction
@@ -82,6 +80,8 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 # All manifests end with calling `slimecore:api/manifest`.
 function slimecore:api/manifest
 ```
+
+This manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-managed) datapack would add to `#minecraft:load`.
 
 Upon every world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
