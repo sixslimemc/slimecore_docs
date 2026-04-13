@@ -1,5 +1,9 @@
 # SlimeCore Description
 
+## Mission Statement
+The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
+
+## Abstract
 SlimeCore is a datapack that serves as a manager and loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), SlimeCore serves a similar purpose, but takes it multiple steps further. 
 
 SlimeCore allows datapacks to specify:
@@ -19,7 +23,6 @@ A key aspect of SlimeCore is that it is designed to be **atomic**. This means th
 SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, a datapack could use `#slimecore:hook/meta_info/rebuild/end` to display a message to admins containing the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest) after a rebuild. \
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
-Another key aspect of SlimeCore is that it has **zero** ticking performance impact, and only affects performance (albiet significantly) during rebuilds.
+## Concepts
 
-## Mission Statement
-The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
+
