@@ -4,14 +4,11 @@ User documentation for the [SlimeCore datapack manager](https://github.com/sixsl
 
 ---
 
-**[Admin Guide](./admin_guide.md)** \
+**[Admin Guide](./admin_guide.md)** - Manage SlimeCore-managed datapacks in your world.
 *Start here if you just installed SlimeCore-managed datapack(s) into your world.*
 
-**[Datapack Development Guide](./development_guide.md)** \
-*Start here if you want to create a SlimeCore-managed datapack.*
+**[Datapack Development Guide](./development_guide.md)** - Create SlimeCore-managed datapacks.
 
-**[SlimeCore Description](./description.md)** \
-*Start here if you want to learn what SlimeCore is and what it does.*
+**[Interface Guide](./interface_guide.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
 
-**[Interface Guide](./interface_guide.md)** \
-*For those that want to create a datapack that directly interacts with SlimeCore.*
+**[SlimeCore Description](./description.md)** - Learn what SlimeCore is and what it does.
