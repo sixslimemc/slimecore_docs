@@ -1,6 +1,6 @@
 # SlimeCore Description
 
-SlimeCore is a datapack that serves as a manager and loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), SlimeCore serves a similar purpose, but takes it multiple steps further. 
+SlimeCore is a datapack that serves as a loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), SlimeCore serves a similar purpose, but takes it multiple steps further.
 
 SlimeCore allows datapacks to specify:
 - Version
@@ -83,7 +83,7 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 function slimecore:api/manifest
 ```
 
-The above demonstrates a manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-managed) datapack would add to `#minecraft:load`.
+The above demonstrates a manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-loaded) datapack would add to `#minecraft:load`.
 
 Upon every world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
@@ -91,14 +91,14 @@ A **rebuild** processes all collected manifests, validates datapack relationship
 
 A **load** calls preload entrypoints, then load tags, then entrypoints, according to the datapacks included and order specified by the world's current build.
 
-A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the **only** proper way to enable/disable/uninstall SlimeCore-managed datapacks.
+A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the **only** proper way to enable/disable/uninstall SlimeCore-loaded datapacks.
 
 Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
 
 ## Usage Guides
 
-**[Admin Guide](./admin_guide.md)** - Manage SlimeCore-managed datapacks in your world.
+**[Admin Guide](./admin_guide.md)** - Manage SlimeCore-loaded datapacks in your world.
 
-**[Datapack Development Guide](./development_guide.md)** - Create SlimeCore-managed datapacks.
+**[Datapack Development Guide](./development_guide.md)** - Create SlimeCore-loaded datapacks.
 
 **[Interface Guide](./interface_guide.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
