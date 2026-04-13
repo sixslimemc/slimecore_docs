@@ -22,7 +22,7 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 ## Mission Statement
 The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
 
----
+## Demonstration
 
 A full demonstration manifest function:
 
