@@ -27,43 +27,46 @@ A demonstration pack manifest:
 
 ```mcfunction
 
-# 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading)
+# 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading).
 data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
 # 'author_id' should represent you, together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
 
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
 
-# direct download URL
+# direct download URL:
 data modify storage slimecore:in manifest.pack.url set value "https://github.com/mygithub/mypack/releases/download/v0.1.0/myauthorid.mypack.1.0.0.zip"
 
-# declare dependencies
-# dependencies must include a direct download URL of any valid version of the dependency
+# Declare dependencies:
+# Dependencies must include a direct download URL of any valid version of the dependency.
 data modify storage slimecore:in manifest.pack.dependencies set value []
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"otherpack_a", author_id:"otherauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://github.com/otherauthor/otherpack_a/releases/download/v1.2.0/otherauthor.otherpack_a.1.2.0.zip", version:{major:1, minor:2, patch:0}}}
-# dependencies can be optional
+# Dependencies can be optional.
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"otherpack_b", author_id:"otherauthor", optional:true, version:{major:3, minor:4}, download:{url:"https://github.com/otherauthor/otherpack_b/releases/download/v3.4.1/otherauthor.otherpack_a.3.4.1.zip", version:{major:3, minor:4, patch:1}}}
 
-# entrypoints are called after all datapacks are loaded
-# each entrypoint represents function tag `#mypack:entrypoint/<id>`
+# Declare entrypoints:
+# Entrypoints are called after all datapacks are loaded.
+# each entrypoint represents function tag `#mypack:entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.entrypoints append value {id:"tick"}
-# this entrypoint will always be called after `#otherpack_a:entrypoint/tick`:
+# This entrypoint will always be called after `#otherpack_a:entrypoint/tick`:
 data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"otherpack_a", id:"tick"}]}
 
-# preload entrypoints are called before *any* datapacks are loaded, including this one
-# they should only be used for technical or meta use cases
-# each entrypoint represents function tag `#mypack:preload_entrypoint/<id>`
+# Declare preload entrypoints:
+# Preload entrypoints are called before *any* datapacks are loaded, including their own.
+# They should really only be used for technical or meta use cases.
+# Each preload entrypoint represents function tag `#mypack:preload_entrypoint/<id>`
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
-# each abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world
-# SlimeCore will fail if there are any unimplemented or overimplemented interfaces
-# this is included for demonstration purposes, abstract interfaces are practically uncommon
+# Declare abstract interfaces:
+# Each abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
+# SlimeCore will fail if there are any unimplemented or overimplemented interfaces.
+# Abstract interfaces are practically uncommon, but this is a demonstration.
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
-# declare that this pack implements "other_interface" from otherpack_a
+# Declare abstract interface implementations:
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"otherpack_a", id:"other_interface"}
 
-# if this pack provides any functionality/features on its own, it is *not* a library
+# If this pack provides any functionality/features on its own, it is *not* a library.
 data modify storage slimecore:in manifest.pack.is_library set value false
 
 # display information (not used directly by SlimeCore, but may be read/displayed by other datapacks)
@@ -74,7 +77,7 @@ data modify storage slimecore:in manifest.pack.display.links.author set value "h
 data modify storage slimecore:in manifest.pack.display.links.info set value "https://github.com/mygithub/mypack"
 data modify storage slimecore:in manifest.pack.display.links.versions set value "https://github.com/mygithub/mypack/releases"
 
-# all manifests end with calling `slimecore:api/manifest`
+# All manifests end with calling `slimecore:api/manifest`.
 function slimecore:api/manifest
 ```
 
