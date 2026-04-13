@@ -32,7 +32,7 @@ data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
 # 'author_id' should represent you, together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
 
-# Version (adheres to semantic versioning):
+# Version:
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
 
 # Direct download URL:
