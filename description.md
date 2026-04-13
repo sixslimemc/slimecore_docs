@@ -55,13 +55,13 @@ data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_
 # Preload entrypoints:
 # Preload entrypoints are called before *any* datapacks are loaded, including their own.
 # They should really only be used for technical or meta use cases.
-# Each preload entrypoint represents function tag `#mypack:preload_entrypoint/<id>`
+# Each preload entrypoint represents function tag `#mypack:preload_entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
 # Abstract interface declarations:
 # Each abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
 # SlimeCore will fail if there are any unimplemented or overimplemented interfaces.
-# Abstract interfaces are practically uncommon, but this is a demonstration.
+# Abstract interfaces are practically uncommon.
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
 # Abstract interface implementations:
@@ -70,7 +70,8 @@ data modify storage slimecore:in manifest.pack.abstract_implementations append v
 # If this pack provides any functionality/features on its own, it is *not* a library.
 data modify storage slimecore:in manifest.pack.is_library set value false
 
-# Display information (not used directly by SlimeCore, but may be read/displayed by other datapacks):
+# Display information:
+# Not directly used by SlimeCore, but may be read/displayed by other datapacks.
 data modify storage slimecore:in manifest.pack.display.name set value "My Demonstration Pack"
 data modify storage slimecore:in manifest.pack.display.summary set value "A pack used for demonstration!"
 data modify storage slimecore:in manifest.pack.display.author_name set value "My Username"
