@@ -21,9 +21,9 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 ## Concepts
 
-As mentioned above, a datapack managed by SlimeCore must include a **manifest** function.
+As mentioned above, a datapack managed by SlimeCore must include a **manifest** function, appended to the `#slimecore:manifest` function tag.
 
-This manifest function is added to the `#slimecore:manifest` function tag and looks something like:
+A full demonstration manifest function:
 
 ```mcfunction
 
