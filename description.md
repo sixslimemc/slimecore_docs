@@ -23,7 +23,7 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 As mentioned above, a datapack managed by SlimeCore must include a **manifest** function.
 
-As a demonstration, here is what a manifest might look like:
+A demonstration pack manifest:
 
 ```mcfunction
 data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
