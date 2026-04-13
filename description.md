@@ -19,7 +19,7 @@ A key aspect of SlimeCore is that it is designed to be **atomic**. This means th
 SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, a datapack could use `#slimecore:hook/meta_info/rebuild/end` to display a message to admins containing the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest) after a rebuild. \
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
-## Concepts
+---
 
 As mentioned above, a datapack managed by SlimeCore must include a **manifest** function, appended to the `#slimecore:manifest` function tag.
 
