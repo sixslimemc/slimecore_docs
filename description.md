@@ -14,7 +14,11 @@ Datapacks specify this information in a *manifest* function. Upon world reload, 
 
 A key aspect of SlimeCore is that it is designed to be **atomic**. This means that, if used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it specified as a dependency; it will require you to disable both datapacks at once.
 
-In addition to loading, SlimeCore also generates in-game storage NBT data containing useful information about the world's currently installed datapacks, including all information specified in datapack manifests--
+SlimeCore also includes a multitude of useful function *hooks* related to loading, allowing other datapacks to subscribe/listen to events and execute behavior when they happen. For example, a datapack can subscribe to `#slimecore:hook/meta_info/rebuild/end` and display the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest).
+
+SlimeCore intentionally does not implement any "front-end" features such as chat messages, dialogs, or user-functions. It instead provides a public API (such as the hooks mentioned above) for other datapacks, such that SlimeCore "front-ends" are decentralized and customizable.
 
 ## Conceptual Implementation
 
+## Mission Statement
+It is the goal of SlimeCore to support a robust, decentralized datapack ecosystem. 
