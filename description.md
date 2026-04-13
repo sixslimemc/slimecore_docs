@@ -23,7 +23,7 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 As mentioned above, a datapack managed by SlimeCore must include a **manifest** function.
 
-A demonstration pack manifest:
+This manifest function is added to the `#slimecore:manifest` function tag and looks something like:
 
 ```mcfunction
 
@@ -61,7 +61,7 @@ data modify storage slimecore:in manifest.pack.preload_entrypoints append value 
 # Abstract interface declarations:
 # Each declared abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
 # A build will be invalid if there are any unimplemented or overimplemented interfaces.
-# Abstract interfaces are practically uncommon.
+# Abstract interfaces are practically uncommon, but included here for demonstration.
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
 # Abstract interface implementations:
@@ -83,5 +83,6 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 function slimecore:api/manifest
 ```
 
+Upon every reload, 
 ## Mission Statement
 The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
