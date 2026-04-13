@@ -1,9 +1,7 @@
 # SlimeCore Admin Guide
 
 ## Installing a Frontend
-SlimeCore is a datapack that loads and manages other datapacks. However, it intentionally does not provide any player-facing features (e.g. chat messages, dialogs, user functions, etc.) on its own.
-
-Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality, primarily so *you*, as the user/admin, can customize your experience. While not *strictly* required, a SlimeCore frontend is essential for easy administration.
+SlimeCore is a datapack that loads and manages other datapacks. However, it intentionally does not provide any player-facing features (e.g. chat messages, dialogs, user functions, etc.) on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality, primarily so *you*, as the user/admin, can customize your experience. While not *strictly* required, a SlimeCore frontend is essential for easy administration.
 
 [Scdev](https://github.com/sixslimemc/scdev) is a very minimal frontend/utility created by the author of SlimeCore and this guide will reference it for demonstration. However, any frontend should provide similar functionality with obvious steps--as long as you have one, you should be good to go. \
 *Sections starting with '(Scdev)' are Scdev specific and should only be regarded if you are using Scdev.*
