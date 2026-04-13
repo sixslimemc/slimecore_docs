@@ -1,9 +1,5 @@
 # SlimeCore Description
 
-## Mission Statement
-The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
-
-## Abstract
 SlimeCore is a datapack that serves as a manager and loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), SlimeCore serves a similar purpose, but takes it multiple steps further. 
 
 SlimeCore allows datapacks to specify:
@@ -25,4 +21,5 @@ SlimeCore intentionally does not implement any "frontend" features such as chat 
 
 ## Concepts
 
-
+## Mission Statement
+The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
