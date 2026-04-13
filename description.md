@@ -31,7 +31,7 @@ The following demonstrates a full manifest function:
 
 # 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading).
 data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
-# 'author_id' should represent you, together 'author_id' and 'pack_id' uniquely identify a datapack.
+# 'author_id' should uniquely identify you. Together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
 
 # Version:
@@ -103,7 +103,9 @@ SlimeCore does not run any commands outside of rebuilding and loading and has ne
 
 SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
-## Get Started
+---
+
+Ready to get started?
 
 **[Admin Guide](./admin_guide.md)** - Manage SlimeCore-loaded datapacks in your world.
 
