@@ -7,7 +7,7 @@ If you are new to using SlimeCore, [Scdev](https://github.com/sixslimemc/scdev) 
 
 ## Loading Datapacks
 
-To simply install and play with SlimeCore-loaded datapack(s), it is likely that all you need to do is ensure that the SlimeCore datapack is installed and enabled, and the datapack(s) should just work. If you have SlimeCore installed and your datapack(s) still do not load, it is most likely because they require the installation of other datapacks, **dependencies**.
+To simply install and play with SlimeCore-loaded datapack(s), it is likely that all you need to do is ensure that the SlimeCore datapack is installed and enabled, and the datapack(s) should just work. If you have SlimeCore installed and your datapack(s) still do not load, your frontend should inform you of what is wrong (usually upon `/reload`).
 
 #### Status Messages (Scdev)
 
