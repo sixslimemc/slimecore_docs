@@ -1,5 +1,11 @@
 # SlimeCore Description
 
+### Mission Statement
+
+SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
+
+---
+
 SlimeCore is a datapack that serves as a loader of other datapacks. If you are familiar with [Lantern Load](https://github.com/LanternMC/load), SlimeCore serves a similar purpose, but takes it multiple steps further.
 
 SlimeCore allows datapacks to specify:
@@ -20,10 +26,6 @@ SlimeCore is designed to be **deterministic**. If used properly, **previous worl
 
 SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, a datapack could use `#slimecore:hook/meta_info/rebuild/end` to display a message to admins containing the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest) after a rebuild. \
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
-
-## Mission Statement
-
-SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
 ## Functional Overview
 
