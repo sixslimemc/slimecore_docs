@@ -97,11 +97,8 @@ Rebuilding and loading is the only work that SlimeCore performs. Significant sin
 
 ## Usage Guides
 
-**[Admin Guide](./admin_guide.md)** \
-*Managing datapacks in your world with SlimeCore*
+**[Admin Guide](./admin_guide.md)** - Manage datapacks in your world.
 
-**[Datapack Developer Guide](./developer_guide.md)** \
-*Creating datapacks that are managed by SlimeCore*
+**[Datapack Developer Guide](./developer_guide.md)** - Create datapacks.
 
-**[Interface Guide](./interface_guide.md)** \
-*Creating datapacks that directly interface with SlimeCore (e.g. frontends)*
+**[Interface Guide](./interface_guide.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
