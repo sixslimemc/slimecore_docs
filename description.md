@@ -19,6 +19,9 @@ A key aspect of SlimeCore is that it is designed to be **atomic**. This means th
 SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, a datapack could use `#slimecore:hook/meta_info/rebuild/end` to display a message to admins containing the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest) after a rebuild. \
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
+## Mission Statement
+The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
+
 ---
 
 A full demonstration manifest function:
@@ -92,6 +95,3 @@ A **load** calls preload entrypoints, then load tags, then entrypoints, accordin
 A rebuild can also be manually initiated via `slimecore:rebuild` function. Input can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build (i.e. the rebuild fails), no changes to the world are actually made. This is the **only** proper way to enable/disable/uninstall SlimeCore-managed datapacks.
 
 Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
-
-## Mission Statement
-The goal of SlimeCore to support a community-driven decentralized datapack ecosystem. It should be accessible to all datapack users and developers without requiring the usage of third party programs--but also not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that minimal maintenance/changes are required through Minecraft updates.
