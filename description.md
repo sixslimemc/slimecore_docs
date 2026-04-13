@@ -16,12 +16,14 @@ SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tic
 
 SlimeCore is designed to be **atomic**. If used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency--which is automatically enforced if both are disabled on the same rebuild (reload).
 
-SlimeCore is designed to be **deterministic**. If used properly, **previous world state/datapacks should never affect the outcome of a rebuild/load**. The same set of enabled datapacks will always load exactly the same way.
+SlimeCore is designed to be **deterministic**. If used properly, **previous world state/datapacks should never affect the outcome of a rebuild/load**. The same set of enabled datapacks will always load in exactly the same way.
 
 SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, a datapack could use `#slimecore:hook/meta_info/rebuild/end` to display a message to admins containing the download URL(s) for any missing dependencies (dependency download URLs are provided by dependent's manifest) after a rebuild. \
 *[Scdev](https://github.com/sixslimemc/scdev) is a very minimal development utility/frontend created by the author of SlimeCore.*
 
 ## Functional Overview
+
+The following demonstrates a manifest function that a datapack would add to `#slimecore:manifest`, similarly to how a (non-SlimeCore-loaded) datapack would add to `#minecraft:load`:
 
 ```mcfunction
 
@@ -80,8 +82,6 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 # All manifests end with calling `slimecore:api/manifest`.
 function slimecore:api/manifest
 ```
-
-The above demonstrates a manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-loaded) datapack would add to `#minecraft:load`.
 
 Upon every world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
