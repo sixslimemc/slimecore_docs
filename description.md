@@ -11,7 +11,5 @@ SlimeCore allows datapacks to declare:
 
 Datapacks specify this information in a special *manifest* function, and SlimeCore processes all datapacks' manifests, validates relationships, then executes a compatible load/calling order (a *build*). 
 
-A primary paradigm of SlimeCore is that it is designed to be **atomic**. This means that, if used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes datapack enabling/disabling/uninstalling, which SlimeCore also manages.
-
-*For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it declared as a dependency. You will be required to disable both datapacks at once.*
+A primary paradigm of SlimeCore is that it is designed to be **atomic**. This means that, if used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it declared as a dependency. You will be required to disable both datapacks at once.*
 
