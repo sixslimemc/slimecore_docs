@@ -24,8 +24,6 @@ The goal of SlimeCore to support a community-driven decentralized datapack ecosy
 
 ## Demonstration
 
-A full demonstration manifest function:
-
 ```mcfunction
 
 # 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading).
@@ -84,7 +82,7 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 function slimecore:api/manifest
 ```
 
-This manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-managed) datapack would add to `#minecraft:load`.
+The above demonstrates a manifest function would be added to `#slimecore:manifest`, similarly to how a (non-SlimeCore-managed) datapack would add to `#minecraft:load`.
 
 Upon every world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
