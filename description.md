@@ -8,7 +8,7 @@ SlimeCore allows datapacks to have and specify:
 - Tick (entrypoint) order relative to other datapacks
 - Abstract interfaces that must be implemented by other datapacks
 - Pack and author metadata
-- Download URLs
+- Download URL(s)
 
 Datapacks specify this information in a *manifest* function. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then executes a compatible load/calling order if everything is valid. 
 
