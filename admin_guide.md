@@ -1,7 +1,7 @@
 # SlimeCore Admin Guide
 
 ## Installing a Frontend
-SlimeCore is a datapack that loads and manages other datapacks, *thats it*. It intentionally does not provide any player-facing features (e.g. chat messages, dialogs, user functions, etc.) on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality, primarily so *you*, as the user/admin, can customize your experience.
+SlimeCore is a datapack that loads and manages other datapacks, *thats it*. It intentionally does not provide any player-facing features (e.g. chat messages, dialogs, user functions, etc.) on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality. This is primarily so *you*, as the user/admin, can customize your experience.
 
 While not *strictly* required, a SlimeCore frontend is essential for easy administration. Frontends are just datapacks and are installed as such.
 
