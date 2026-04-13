@@ -5,7 +5,7 @@
 
 Because of this paradigm, frontends practically define how you interact with SlimeCore and SlimeCore-loaded datapacks; it is primarily their responsibilty to document their own methods. With that being said, most frontends should share a base level of functionality and conform to the concepts covered in [Essential Concepts](#essential-concepts).
 
-If you just want to get started quickly, You can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend/utility created by the author of SlimeCore, and covered in the [Using Scdev](#using-scdev) section.
+If you just want to get started quickly, you can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend/utility created by the author of SlimeCore, and skip to the [Using Scdev](#using-scdev) section.
 
 ## Essential Concepts
 
@@ -16,4 +16,6 @@ World admins should be given the `scdev.listen` tag to recieve messages containi
 ```mcfunction
 tag @s add scdev.listen
 ```
+
+## Reloading
 
