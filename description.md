@@ -95,9 +95,7 @@ A rebuild can also be manually initiated via `slimecore:rebuild` function. Input
 
 Rebuilding and loading is the only work that SlimeCore performs. Significant single-tick delay during a rebuild should be expected, as well as some single-tick delay during a load, but SlimeCore does **zero** work outside of these processes.
 
-## Guides
-
-The following guides explain how to actually use SlimeCore.
+## Usage Guides
 
 **[Admin Guide](./admin_guide.md)** \
 For owners/admins of worlds that include SlimeCore-managed datapacks.
