@@ -36,13 +36,13 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory).
 
-Standard names match one of the following formats:
-- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
-- `<author id>.<pack id>`
-- `<pack id>.<major ver>.<minor ver>.<patch ver>`
-- `<pack id>`
+Some examples of standard datapack names are:
+- `bar.foo.1.2.3`
+- `foo.1.2.3`
+- `bar.foo`
+- `foo`
 
-A standard name does not contain any spaces, capital letters, or special characters other than `_`, `.`, and `-`.
+If a name contain any spaces, capital letters, or special characters other than `_`, `.`, or `-`, it is not standard.
 
 See [this section](#non-standard-datapack-names) for handling non-standard datapack names.
 
