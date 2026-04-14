@@ -34,13 +34,19 @@ Your frontend should provide instructions on how to trigger an explicit rebuild 
 
 If you only want to allow SlimeCore to rebuild explicitly, and not automatically on world reload, you can set the value of `slimecore:config explicit_rebuild_only` (NBT storage) to `true`. If this setting is `true`, newly installed packs will not be effectively enabled until an explicit reload is triggered.
 
-## Errors and Troubleshooting
+## Basic Troubleshooting
 
-### Rebuild Failure
+### Rebuild Errors
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
 
-#### Unfulfilled Dependencies
+#### Unfulfilled Dependency(s)
+
+**Reason:** \
+Installed datapack(s) require the presence of other datapacks (dependencies) that are not present in the build. This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
+
+**Fix:** \
+Install/enable compatible versions of the required dependencies. Your frontend should display download URLs for compatible versions of missing dependencies.
 
 #### Duplicate Pack IDs
 
