@@ -23,7 +23,7 @@ The world's build is stored as NBT storage data in `slimecore:data build`. This 
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
 
 #### IMPORTANT:
-Using `/datapack` to directly manage SlimeCore-loaded datapacks in any way is improper, and may lead to unexpected consequences.
+Using `/datapack` to manage SlimeCore-loaded datapacks in any way is improper, and may lead to unexpected consequences.
 
 Your frontend should provide instructions on how to trigger an explicit rebuild (or some similar functionality).
 
