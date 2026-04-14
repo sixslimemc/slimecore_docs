@@ -1,13 +1,15 @@
 # SlimeCore Admin Guide
 
+A Guide to using SlimeCore as a world owner/admin.
+
 ## Acquiring a Frontend
 SlimeCore is a datapack that loads and manages other datapacks, *that's it*. It intentionally does not provide any player-facing features on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality. This is primarily so *you*, as the user/admin, can customize your experience. While not strictly required, a frontend is essential for easy in-game administration. Frontends are not "special", they are installed like any other datapack.
 
-Because of this paradigm, frontends practically define how you interact with SlimeCore and SlimeCore-loaded datapacks; it is primarily the responsibilty of your respective frontend's author to document its usage. With that being said, most frontends should share a base level of functionality and regard the concepts covered in [Essential Concepts](#essential-concepts).
+Because of this paradigm, frontends practically define how you interact with SlimeCore and SlimeCore-loaded datapacks; it is primarily the responsibilty of your respective frontend's author to document its usage. With that being said, most frontends should share a base level of functionality and regard the concepts covered in [Key Concepts](#essential-concepts).
 
 If you just want to get started quickly, you can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend created by the author of SlimeCore, and skip to the [Using Scdev](#using-scdev) section.
 
-## Essential Concepts
+## Key Concepts
 
 ### Builds
 
@@ -32,7 +34,7 @@ After a successful rebuild and/or world reload, SlimeCore will initiate a **load
 
 It is important to note the difference between rebuilding and loading: Rebuilding is setting the world's build, while loading is using the world's build to load datapacks.
 
-### Stadard Datapack Names
+### Standard Datapack Names
 
 SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory). Most SlimeCore-loaded datapacks that you download should already have standard names.
 
@@ -43,7 +45,7 @@ Some examples of standard names are:
 
 If a name contain any spaces, capital letters, or special characters other than `_`, `.`, or `-`, it is not standard.
 
-SlimeCore-loaded datapacks with non-standard names must be accounted for manually, or else they will not function properly. See [Non-Standard Datapack Names](#non-standard-datapack-names) for guidance on such.
+SlimeCore-loaded datapacks with non-standard names must be accounted for manually, or else they will not function properly. See [Non-Standard Datapack Names](#non-standard-datapack-names).
 
 ### Configuration
 
