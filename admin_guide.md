@@ -42,15 +42,14 @@ If you only want to allow SlimeCore to rebuild explicitly, and not automatically
 
 Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
 
-- Pack ID
-- Author ID
+- Pack ID & Author ID
+- Download & Info URLs
+- Dependencies (and their download URLs)
 - Version
-- Download URL
-- Dependencies
 
 A datapack's manifest is set by a special manifest function, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
 
-If a datapack is in the world's current build, it's manifest data can be retrieved in-game by running:
+If a datapack is in the world's current build, it's manifest data can be retrieved in-game:
 
 ```mcfunction
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
