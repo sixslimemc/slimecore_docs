@@ -1,6 +1,6 @@
 # SlimeCore Admin Guide
 
-A Guide to using SlimeCore as a world owner/admin.
+> For world owners/admins.
 
 ## Acquiring a Frontend
 SlimeCore is a datapack that loads and manages other datapacks, *that's it*. It intentionally does not provide any player-facing features on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality. This is primarily so *you*, as the user/admin, can customize your experience. While not strictly required, a frontend is essential for easy in-game administration. Frontends are not "special", they are installed like any other datapack.
