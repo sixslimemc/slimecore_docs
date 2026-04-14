@@ -34,7 +34,7 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 ### Stadard Datapack Names
 
-SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its .zip file or folder in your world's `/datapacks` directory).
+SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory).
 
 Standard names match one of the following formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
