@@ -40,7 +40,7 @@ If you only want to allow SlimeCore to rebuild explicitly, and not automatically
 
 #### Datapack Manifests
 
-Each SlimeCore-loaded datapack has a **manifest** that defines/provides useful information about itself, including but not limited to:
+Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
 
 - Pack ID
 - Author ID
