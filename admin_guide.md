@@ -11,13 +11,13 @@ If you just want to get started quickly, you can install [Scdev](https://github.
 
 ### Builds
 
-SlimeCore introduces the concept of the world's **build**. The world's build contains information on which datapacks to **load** (usually the world's currently installed datapacks) and in what order.
+SlimeCore introduces the concept of the world's current **build**. The current build contains information on which datapacks to **load** (usually the world's currently installed datapacks) and in what order.
 
-By default, SlimeCore checks for any changed or newly installed datapacks upon world reload (`/reload`), then, if any changes are detected, it will attempt to **rebuild**. When SlimeCore rebuilds, it validates that all installed/enabled packs are compatible with the world, and then overwrites the world's build if successful. If SlimeCore finds that any packs are incompatible with the world (i.e. the rebuild fails), **no changes are made to the world's build**.
+By default, SlimeCore checks for any changed or newly installed datapacks upon world reload (`/reload`), then, if any changes are detected, it will attempt to **rebuild**. When SlimeCore rebuilds, it validates that all installed/enabled packs are compatible with the world, and then overwrites the current build if successful. If SlimeCore finds that any packs are incompatible with the world (i.e. the rebuild fails), **no changes are made to the current build**.
 
 A large single-tick lag spike may occur during rebuild. This is expected behavior.
 
-The world's build is stored as NBT storage data in `slimecore:data build`. This data should be treated as read-only.
+The current build is stored as NBT storage data in `slimecore:data build`. This data should be treated as read-only.
 
 ### Explicit Rebuilds (Enabling, Disabling, and Uninstalling Datapacks)
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
@@ -26,11 +26,13 @@ Your frontend should provide instructions on how to trigger an explicit rebuild 
 
 **Using `/datapack` to manage SlimeCore-loaded datapacks is improper** and may create unexpected behavior.
 
+If you only want to allow SlimeCore to rebuild explicitly, and not automatically on world reload, you can set the value of `slimecore:config explicit_rebuild_only` (NBT storage) to `true`. If this setting is `true`, newly installed packs will not be effectively enabled until an explicit reload is triggered.
+
 ### Loading
 
-After a successful rebuild and/or world reload, SlimeCore will initiate a **load**. In simple terms, this just tells all datapacks that are contained within the world's build that they are enabled (conceptually equivalent to triggering the `#minecraft:load` function tag).
+After a successful rebuild and/or world reload, SlimeCore will initiate a **load**. In simple terms, this just tells all datapacks that are contained within the current build that they are enabled (conceptually equivalent to triggering the `#minecraft:load` function tag).
 
-It is important to note the difference between rebuilding and loading: Rebuilding is setting the world's build, while loading is using the world's build to load datapacks.
+It is important to note the difference between rebuilding and loading: Rebuilding is setting the current build, while loading is using the current build to load datapacks.
 
 ### Standard Datapack Names
 
@@ -45,13 +47,39 @@ If a name contain any spaces, capital letters, or special characters other than 
 
 SlimeCore-loaded datapacks with non-standard names must be accounted for manually, or else they will not function properly. See [Non-Standard Datapack Names](#non-standard-datapack-names).
 
-### Configuration
-
-SlimeCore
-
 ## Troubleshooting
 
 ### Non-Standard Datapack Names
+
+A datapack's name is its folder or .zip file name within the `/datapacks` directory of the world it is installed in. SlimeCore only automatically recognizes datapacks with standard names. For SlimeCore to recognize datapacks with non-standard names, extra steps must be taken.
+
+A standard name matches one of the following formats:
+- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
+- `<pack id>.<major ver>.<minor ver>.<patch ver>`
+- `<author id>.<pack id>`
+- `<pack id>`
+
+If it is unclear if a datapack has a standard name, the data that should be present in a given datapack's standard name can be found by first opening the function tag `<datapack>/data/slimecore/tags/function/manifest.json`, and then opening the function contained in this tag (manifest function). This manifest function should contain the relevant data in an obvious manner.
+
+If your world has a SlimeCore-loaded datapack with a non-standard name, you can either:
+
+#### Rename the Datapack to a Standard Name (Recommended)
+Using the data found in the manifest function, rename the datapack to match one of the standard naming formats. The first format mentioned above is known as a "fully qualified" name and is always recommended over others.
+
+#### Add a Path Override
+Run the following command with the appropriate substitutions:
+
+```mcfunction
+data modify storage slimecore:config <pack id> set value "file/<datapack name>"
+```
+
+This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name; it will not check its standard names.
+
+To remove an override, you can run:
+
+```mcfunction
+data remove storage slimecore:config <pack id>
+```
 
 ## Using Scdev
 
