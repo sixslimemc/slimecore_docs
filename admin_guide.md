@@ -36,7 +36,7 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its .zip file or folder in your world's `/datapacks` directory).
 
-Standard names match to one of the following formats:
+Standard names match one of the following formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
 - `<author id>.<pack id>`
 - `<pack id>.<major ver>.<minor ver>.<patch ver>`
