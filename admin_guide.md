@@ -34,7 +34,7 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 ### Datapack File Names
 
-In order for a datapack to be automatically detected by SlimeCore, its name (the .zip file or directory in your world's `/datapacks` directory) must match a specific naming format. Because of this, you should generally avoid renaming datapacks.
+SlimeCore only automatically detects datapacks with names (file/directory names in your world's `/datapacks` directory) matching a specific format. For this reason, you should generally avoid renaming datapacks.
 
 The following naming formats will be automatically detected:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
