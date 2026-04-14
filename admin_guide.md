@@ -36,6 +36,28 @@ If you only want to allow SlimeCore to rebuild explicitly, and not automatically
 
 ## Basic Troubleshooting
 
+### General
+
+#### Datapack Manifests
+
+Each SlimeCore-loaded datapack has a **manifest** that defines/provides useful information about itself, including but not limited to:
+
+- Pack ID
+- Author ID
+- Version
+- Download URL
+- Dependencies
+
+A datapack's manifest is defined in it's **manifest function**, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
+
+If a datapack is in the world's current build, it's manifest data can be retrieved in-game by running:
+
+```mcfunction
+data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
+# alternatively:
+data get storage slimecore:data build.aux.pack_map.<pack ID>
+```
+
 ### Rebuild Errors
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
@@ -43,7 +65,7 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 #### - Unfulfilled Dependency(s)
 
 **Cause:** \
-One or more datapacks require other datapack(s) (dependency(s)) that are not present.
+Datapack(s) require dependency(s) (other datapack(s)) that are not present.
 
 This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatable version. This error also occurs in the rare case that a datapack has the same pack ID of a required dependency, but not the same author ID (thus, is a different datapack).
 
@@ -53,7 +75,7 @@ Install/enable the required dependency(s) to the build. Your frontend should dis
 #### - Unimplemented Abstract Interface(s)
 
 **Cause:** \
-One or more datapacks define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
+Datapack(s) define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
 
 **Fix:** \
 Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
@@ -70,12 +92,21 @@ Remove datapacks from the build, such that the abstract interface(s) are impleme
 
 #### - Missing Datapack Path(s)
 
+**Cause:** \
+There are datapack(s) with non-standard names without path overrides OR have a path overrides that do not match their names.
+
+SlimeCore expects datapacks to have standard names, matching one of the following formats:
+- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
+- `<pack ID>.<major ver>.<minor ver>.<patch ver>`
+- `<author ID>.<pack ID>`
+- `<pack ID>`
+
 #### - Entrypoint (or Preload Entrypoint) Order Conflicts
 
 #### - Dependency Cycle(s)
 
 **Cause:** \
-One or more sets of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
+Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
 
 This error should only be encountered if you are developing your own datapack(s), and may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
 
@@ -108,10 +139,10 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 A datapack's name is its folder or .zip file name within the `/datapacks` directory of the world it is installed in. SlimeCore only automatically recognizes datapacks with standard names. For SlimeCore to recognize datapacks with non-standard names, extra steps must be taken.
 
 A standard name matches one of the following formats:
-- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
-- `<pack id>.<major ver>.<minor ver>.<patch ver>`
-- `<author id>.<pack id>`
-- `<pack id>`
+- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
+- `<pack ID>.<major ver>.<minor ver>.<patch ver>`
+- `<author ID>.<pack ID>`
+- `<pack ID>`
 
 If you cannot tell if datapack has a standard name or not, the data that should be present in its standard name can be found by opening the function tag `<datapack>/data/slimecore/tags/function/manifest.json`, and then opening the function contained in that tag. This manifest function should contain the relevant data in an obvious manner.
 
@@ -124,7 +155,7 @@ Using the data found in the manifest function, rename the datapack to match one 
 Run the following command with the appropriate substitutions:
 
 ```mcfunction
-data modify storage slimecore:config <pack id> set value "file/<datapack name>"
+data modify storage slimecore:config <pack ID> set value "file/<datapack name>"
 ```
 
 This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name and will not check its standard names.
@@ -132,7 +163,7 @@ This tells SlimeCore explicitly where the datapack is located. If a path overrid
 To remove an override, you can run:
 
 ```mcfunction
-data remove storage slimecore:config <pack id>
+data remove storage slimecore:config <pack ID>
 ```
 
 ## Using Scdev
