@@ -34,7 +34,7 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 ### Stadard Datapack Names
 
-SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory).
+SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory). Most SlimeCore-loaded datapacks that you download should already have standard names.
 
 Some examples of standard names are:
 - `bar.foo.1.2.3`
