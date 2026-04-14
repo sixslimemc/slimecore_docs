@@ -34,20 +34,27 @@ Your frontend should provide instructions on how to trigger an explicit rebuild 
 
 If you only want to allow SlimeCore to rebuild explicitly, and not automatically on world reload, you can set the value of `slimecore:config explicit_rebuild_only` (NBT storage) to `true`. If this setting is `true`, newly installed packs will not be effectively enabled until an explicit reload is triggered.
 
-### Standard Datapack Names
+## Errors and Troubleshooting
 
-SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its folder or .zip file in your world's `/datapacks` directory). Most SlimeCore-loaded datapacks that you download should already have standard names.
+### Rebuild Failure
 
-Some examples of standard names are:
-- `bar.foo.1.2.3`
-- `foo.1.2.3`
-- `bar.foo`
+Below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
 
-If a name contain any spaces, capital letters, or special characters other than `_`, `.`, or `-`, it is not standard.
+#### Invalid Datapack Manifest(s)
 
-SlimeCore-loaded datapacks with non-standard names must be accounted for manually, or else they will not function properly. See [Non-Standard Datapack Names](#non-standard-datapack-names).
+#### Duplicate Pack IDs
 
-## Troubleshooting
+#### Multiple Abstract Implementations
+
+#### Unfulfilled Dependencies
+
+#### Unimplemented Abstract Interface(s)
+
+#### Dependency Cycle(s)
+
+#### Entrypoint (or Preload Entrypoint) Order Conflicts
+
+#### Missing Datapack Path(s)
 
 ### Non-Standard Datapack Names
 
