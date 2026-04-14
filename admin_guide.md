@@ -9,7 +9,7 @@ If you just want to get started quickly, you can install [Scdev](https://github.
 
 ## Essential Concepts
 
-### The Build
+### Builds
 
 SlimeCore introduces the concept of the world's **build**. The world's build contains information on which datapacks to **load** (usually the world's currently installed datapacks) and in what order.
 
@@ -17,7 +17,7 @@ By default, SlimeCore checks for any changed or newly installed datapacks upon w
 
 A large single-tick lag spike may occur during rebuild. This is expected behavior.
 
-### Explicitly Rebuilding (Enabling, Disabling, Uninstalling)
+### Explicit Rebuilds (Enabling, Disabling, and Uninstalling Datapacks)
 **Explicit rebuilding** is the only proper way that SlimeCore-loaded datapacks can be enabled/disabled/uninstalled. In an explicit rebuild, you may specify **staged** changes to the build (enabling/disabling/uninstalling datapacks), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an *invalid* build, **no changes are made**.
 
 Your frontend should provide instructions how to trigger an explicit rebuild (or some similar functionality).
