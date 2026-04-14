@@ -15,12 +15,14 @@ SlimeCore introduces the concept of the world's **build**. The world's build con
 
 By default, SlimeCore checks for any changed or newly installed datapacks upon world reload (`/reload`), then, if any changes are detected, it will attempt to **rebuild**. When SlimeCore rebuilds, it validates that all installed/enabled packs are compatible with the world, and then overwrites the world's build if successful. If SlimeCore finds that any packs are incompatible with the world (i.e. the rebuild fails), **no changes are made to the world's build**.
 
+The world's build is stored as NBT storage data in `slimecore:data build`. This data should only be read and **never** be changed directly.
+
 A large single-tick lag spike may occur during rebuild. This is expected behavior.
 
 ### Explicit Rebuilds (Enabling, Disabling, and Uninstalling Datapacks)
-**Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an *invalid* build, **no changes are made**.
+**Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
 
-Your frontend should provide instructions how to trigger an explicit rebuild (or some similar functionality).
+Your frontend should provide instructions on how to trigger an explicit rebuild (or some similar functionality).
 
 ### Loading
 
@@ -28,7 +30,9 @@ After a successful rebuild and/or world reload, SlimeCore will initiate a **load
 
 It is important to note the difference between rebuilding and loading: Rebuilding is setting the world's build, while loading is using the world's build to load datapacks.
 
-## Configuration
+### Configuration
+
+SlimeCore
 
 ## Troubleshooting
 
