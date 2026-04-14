@@ -48,7 +48,7 @@ Datapack(s) in the build require the presence of other datapacks (dependencies) 
 **Fix:** \
 Install/enable the required dependencies to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
 
-#### Unimplemented Abstract Interface(s)
+#### - Unimplemented Abstract Interface(s)
 
 **Cause:** \
 Datapack(s) in the build define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
@@ -56,7 +56,7 @@ Datapack(s) in the build define abstract interface(s) that are not implemented b
 **Fix:** \
 Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
 
-#### Multiple Abstract Implementations
+#### - Multiple Abstract Implementations
 
 **Cause:** \
 Multiple datapacks in the build implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks). This indicates that these datapacks are conceptually incompatible with eachother.
@@ -64,11 +64,11 @@ Multiple datapacks in the build implement the same abstract interface(s) (i.e. t
 **Fix:** \
 Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
 
-#### Missing Datapack Path(s)
+#### - Missing Datapack Path(s)
 
-#### Entrypoint (or Preload Entrypoint) Order Conflicts
+#### - Entrypoint (or Preload Entrypoint) Order Conflicts
 
-#### Dependency Cycle(s)
+#### - Dependency Cycle(s)
 
 **Cause:** \
 Some set(s) of datapacks in the build create dependency cycle(s) (e.g. A depends on B, B depends on C, C depends on A). This error should only be encountered if you are developing your own datapack(s), and may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
@@ -77,7 +77,7 @@ Some set(s) of datapacks in the build create dependency cycle(s) (e.g. A depends
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
 
 
-#### Invalid Datapack Manifest(s)
+#### - Invalid Datapack Manifest(s)
 
 **Cause:** \
 One or more datapacks in the build have an invalid manifest function. This error should only be encountered if you are developing your own datapack(s) (or are for some reason changing the manifests of downloaded datapacks--don't do that).
@@ -85,7 +85,7 @@ One or more datapacks in the build have an invalid manifest function. This error
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
 
-#### Duplicate Pack IDs
+#### - Duplicate Pack IDs
 
 **Cause:** \
 Two or more datapacks in the build share the same pack ID. This is rare but can occur.
