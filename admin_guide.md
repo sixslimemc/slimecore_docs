@@ -43,14 +43,18 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 #### Unfulfilled Dependency(s)
 
 **Cause:** \
-Installed datapack(s) require the presence of other datapacks (dependencies) that are not present in the build. This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
+Datapack(s) in the build require the presence of other datapacks (dependencies) that are not present in the build. This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
 
 **Fix:** \
 Install/enable compatible versions of the required dependencies. Your frontend should display download URLs for compatible versions of missing dependencies.
 
-#### Duplicate Pack IDs
-
 #### Invalid Datapack Manifest(s)
+
+**Cause:** \
+One or more datapacks in the build have an invalid manifest function. This error should really only be encountered if you are developing your own datapack (or are for some reason changing the manifests of downloaded datapacks--don't do that).
+
+**Fix:** \
+Fix the issues in the manifest function(s) (See the [Datapack Development Guide](./development_guide.md)).
 
 #### Multiple Abstract Implementations
 
@@ -61,6 +65,16 @@ Install/enable compatible versions of the required dependencies. Your frontend s
 #### Entrypoint (or Preload Entrypoint) Order Conflicts
 
 #### Missing Datapack Path(s)
+
+#### Duplicate Pack IDs
+
+**Cause:** \
+Two or more datapacks in the build share the same pack ID. This is rare but can occur.
+
+**Compromise:** \
+Unfortunately, there is no easy non-destructive fix for this issue. Internally, datapacks with the same pack ID are inherently incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check datapack/author URLs.
+
+Otherwise, the only "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
 
 ### Non-Standard Datapack Names
 
