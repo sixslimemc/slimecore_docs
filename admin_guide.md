@@ -42,7 +42,7 @@ Standard names match one of the following formats:
 - `<pack id>.<major ver>.<minor ver>.<patch ver>`
 - `<pack id>`
 
-A standard name does not contain any spaces or capital letters.
+A standard name does not contain any spaces, capital letters, or special characters other than `_`, `.`, and `-`.
 
 See [this section](#non-standard-datapack-names) for handling non-standard datapack names.
 
