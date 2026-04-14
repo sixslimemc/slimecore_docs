@@ -32,7 +32,7 @@ After a successful rebuild and/or world reload, SlimeCore will initiate a **load
 
 It is important to note the difference between rebuilding and loading: Rebuilding is setting the world's build, while loading is using the world's build to load datapacks.
 
-### Datapack File Names
+### Stadard Datapack Names
 
 SlimeCore only automatically detects datapacks with **standard names** (a datapack's name is the name of its .zip file or folder in your world's `/datapacks` directory).
 
