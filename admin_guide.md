@@ -40,13 +40,13 @@ If you only want to allow SlimeCore to rebuild explicitly, and not automatically
 
 Below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
 
-#### Invalid Datapack Manifest(s)
+#### Unfulfilled Dependencies
 
 #### Duplicate Pack IDs
 
-#### Multiple Abstract Implementations
+#### Invalid Datapack Manifest(s)
 
-#### Unfulfilled Dependencies
+#### Multiple Abstract Implementations
 
 #### Unimplemented Abstract Interface(s)
 
