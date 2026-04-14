@@ -34,9 +34,9 @@ It is important to note the difference between rebuilding and loading: Rebuildin
 
 ### Datapack File Names
 
-SlimeCore only automatically detects datapacks with names (file/directory names in your world's `/datapacks` directory) matching a specific format.
+SlimeCore only automatically detects datapacks with **standard names** (name meaning the file/directory name in your world's `/datapacks` directory).
 
-The following naming formats will be automatically detected:
+Standard names conform to one of the following formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
 - `<author id>.<pack id>`
 - `<pack id>.<major ver>.<minor ver>.<patch ver>`
