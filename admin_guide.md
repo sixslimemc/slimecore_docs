@@ -42,7 +42,7 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 
 #### Unfulfilled Dependency(s)
 
-**Reason:** \
+**Cause:** \
 Installed datapack(s) require the presence of other datapacks (dependencies) that are not present in the build. This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
 
 **Fix:** \
