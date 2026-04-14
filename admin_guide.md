@@ -43,7 +43,7 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 #### - Unfulfilled Dependency(s)
 
 **Cause:** \
-Datapack(s) in the build require the presence of other datapacks (dependencies) that are not present in the build.
+One or more datapacks require other datapacks (dependencies) that are not present in the build.
 
 This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
 
@@ -53,7 +53,7 @@ Install/enable the required dependencies to the build. Your frontend should disp
 #### - Unimplemented Abstract Interface(s)
 
 **Cause:** \
-Datapack(s) in the build define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
+One or more datapacks define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
 
 **Fix:** \
 Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
@@ -61,7 +61,7 @@ Find and install/enable datapack(s) that implement the abstract interface(s). Fi
 #### - Multiple Abstract Implementations
 
 **Cause:** \
-Multiple datapacks in the build implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks).
+Multiple datapacks implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks).
 
 This indicates that these datapacks are conceptually incompatible with eachother.
 
@@ -75,7 +75,7 @@ Remove datapacks from the build, such that the abstract interface(s) are impleme
 #### - Dependency Cycle(s)
 
 **Cause:** \
-Some set(s) of datapacks in the build create dependency cycle(s) (e.g. A depends on B, B depends on C, C depends on A).
+One or more sets of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
 
 This error should only be encountered if you are developing your own datapack(s), and may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
 
@@ -86,7 +86,7 @@ Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack D
 #### - Invalid Datapack Manifest(s)
 
 **Cause:** \
-One or more datapacks in the build have an invalid manifest function.
+One or more datapacks have an invalid manifest function.
 
 This error should only be encountered if you are developing your own datapack(s) (or are for some reason changing the manifests of downloaded datapacks--don't do that).
 
@@ -96,7 +96,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](./d
 #### - Duplicate Pack IDs
 
 **Cause:** \
-Two or more datapacks in the build share the same pack ID. This is rare but can occur.
+Multiple datapacks share the same pack ID. This is rare but can occur.
 
 **Compromise:** \
 Unfortunately, there is no easy non-destructive fix for this issue. Datapacks with the same pack ID are internally incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check info/author URLs.
