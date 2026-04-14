@@ -19,7 +19,13 @@ A large single-tick lag spike may occur during rebuild. This is expected behavio
 
 The current build is stored as NBT storage data in `slimecore:data build`. This data should be treated as read-only.
 
-### Explicit Rebuilds (Enabling, Disabling, and Uninstalling Datapacks)
+### Loading
+
+After a successful rebuild and/or world reload, SlimeCore will initiate a **load**. In simple terms, this just tells all datapacks that are contained within the current build that they are enabled (conceptually equivalent to triggering the `#minecraft:load` function tag).
+
+It is important to note the difference between rebuilding and loading: Rebuilding is setting the current build, while loading is using the current build to load datapacks.
+
+### Enabling, Disabling, and Uninstalling Datapacks (Explicit Rebuilding)
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
 
 Your frontend should provide instructions on how to trigger an explicit rebuild (or some similar functionality).
@@ -27,12 +33,6 @@ Your frontend should provide instructions on how to trigger an explicit rebuild 
 **Using `/datapack` to manage SlimeCore-loaded datapacks is improper** and may create unexpected behavior.
 
 If you only want to allow SlimeCore to rebuild explicitly, and not automatically on world reload, you can set the value of `slimecore:config explicit_rebuild_only` (NBT storage) to `true`. If this setting is `true`, newly installed packs will not be effectively enabled until an explicit reload is triggered.
-
-### Loading
-
-After a successful rebuild and/or world reload, SlimeCore will initiate a **load**. In simple terms, this just tells all datapacks that are contained within the current build that they are enabled (conceptually equivalent to triggering the `#minecraft:load` function tag).
-
-It is important to note the difference between rebuilding and loading: Rebuilding is setting the current build, while loading is using the current build to load datapacks.
 
 ### Standard Datapack Names
 
@@ -59,7 +59,7 @@ A standard name matches one of the following formats:
 - `<author id>.<pack id>`
 - `<pack id>`
 
-If it is unclear if a datapack has a standard name, the data that should be present in a given datapack's standard name can be found by first opening the function tag `<datapack>/data/slimecore/tags/function/manifest.json`, and then opening the function contained in this tag (manifest function). This manifest function should contain the relevant data in an obvious manner.
+If you cannot tell if datapack has a standard name or not, the data that should be present in its standard name can be found by opening the function tag `<datapack>/data/slimecore/tags/function/manifest.json`, and then opening the function contained in that tag. This manifest function should contain the relevant data in an obvious manner.
 
 If your world has a SlimeCore-loaded datapack with a non-standard name, you can either:
 
@@ -73,7 +73,7 @@ Run the following command with the appropriate substitutions:
 data modify storage slimecore:config <pack id> set value "file/<datapack name>"
 ```
 
-This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name; it will not check its standard names.
+This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name and will not check its standard names.
 
 To remove an override, you can run:
 
