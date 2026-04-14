@@ -24,7 +24,7 @@ The world's build is stored as NBT storage data in `slimecore:data build`. This 
 
 Your frontend should provide instructions on how to trigger an explicit rebuild (or some similar functionality).
 
-**Using `/datapack` to manage SlimeCore-loaded datapacks is improper** and may lead to unexpected consequences.
+**Using `/datapack` to manage SlimeCore-loaded datapacks is improper** and may create unexpected behavior.
 
 ### Loading
 
@@ -32,12 +32,27 @@ After a successful rebuild and/or world reload, SlimeCore will initiate a **load
 
 It is important to note the difference between rebuilding and loading: Rebuilding is setting the world's build, while loading is using the world's build to load datapacks.
 
+### Datapack File Names
+
+In order for a datapack to be automatically detected by SlimeCore, its name (the .zip file or directory in your world's `/datapacks` directory) must match a specific naming format. Because of this, you should generally avoid renaming datapacks.
+
+The following naming formats will be automatically detected:
+- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>`
+- `<author id>.<pack id>`
+- `<pack id>.<major ver>.<minor ver>.<patch ver>`
+- `<pack id>`
+
+To find a datapack's author id, pack id, version, etc., open `<datapack>/data/slimecore/tags/function/manifest.json`, then open the function that is contained within that function tag. The relevant information should be contained within this function.
+
+See [this section](#non-standard-datapack-names) for handling non-standard datapack names.
+
 ### Configuration
 
 SlimeCore
 
 ## Troubleshooting
 
+### Non-Standard Datapack Names
 
 ## Using Scdev
 
