@@ -5,7 +5,7 @@ SlimeCore is a datapack that loads and manages other datapacks, *that's it*. It 
 
 Because of this paradigm, frontends practically define how you interact with SlimeCore and SlimeCore-loaded datapacks; it is primarily the responsibilty of your respective frontend's author to document its usage. With that being said, most frontends should share a base level of functionality and regard the concepts covered in [Essential Concepts](#essential-concepts).
 
-If you just want to get started quickly, you can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend/utility created by the author of SlimeCore, and skip to the [Using Scdev](#using-scdev) section.
+If you just want to get started quickly, you can install [Scdev](https://github.com/sixslimemc/scdev), a minimal frontend created by the author of SlimeCore, and skip to the [Using Scdev](#using-scdev) section.
 
 ## Essential Concepts
 
