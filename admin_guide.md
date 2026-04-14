@@ -48,7 +48,7 @@ Each SlimeCore-loaded datapack has a **manifest** that provides useful informati
 - Download URL
 - Dependencies
 
-A datapack's manifest is set by it's **manifest function**, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
+A datapack's manifest is set by a special manifest function, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
 
 If a datapack is in the world's current build, it's manifest data can be retrieved in-game by running:
 
