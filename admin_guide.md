@@ -40,7 +40,6 @@ Some examples of standard names are:
 - `bar.foo.1.2.3`
 - `foo.1.2.3`
 - `bar.foo`
-- `foo`
 
 If a name contain any spaces, capital letters, or special characters other than `_`, `.`, or `-`, it is not standard.
 
