@@ -43,7 +43,7 @@ Some examples of standard names are:
 
 If a name contain any spaces, capital letters, or special characters other than `_`, `.`, or `-`, it is not standard.
 
-SlimeCore-loaded datapacks with non-standard names will not function properly unless manually accounted for. See [this section](#non-standard-datapack-names) for handling non-standard datapack names.
+If for any reason you world has SlimeCore-loaded datapacks with non-standard names, they must be manually accounted for. See [this section](#non-standard-datapack-names) for handling non-standard datapack names.
 
 ### Configuration
 
