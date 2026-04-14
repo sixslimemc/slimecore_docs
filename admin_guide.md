@@ -15,7 +15,7 @@ SlimeCore introduces the concept of the world's **build**. The world's build con
 
 By default, SlimeCore checks for any changed or newly installed datapacks upon world reload (`/reload`), then, if any changes are detected, it will attempt to **rebuild**. When SlimeCore rebuilds, it validates that all installed/enabled packs are compatible with the world, and then overwrites the world's build if successful. If SlimeCore finds that any packs are incompatible with the world (i.e. the rebuild fails), **no changes are made to the world's build**.
 
-The world's build is stored as NBT storage data in `slimecore:data build`. This data should only be read and **never** be changed directly.
+The world's build is stored as NBT storage data in `slimecore:data build`. This data should be treated as read-only.
 
 A large single-tick lag spike may occur during rebuild. This is expected behavior.
 
