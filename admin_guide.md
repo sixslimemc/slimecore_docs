@@ -43,12 +43,12 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 #### - Unfulfilled Dependency(s)
 
 **Cause:** \
-One or more datapacks require other datapacks (dependencies) that are not present in the build.
+One or more datapacks require other datapack(s) (dependency(s)) that are not present.
 
-This can either be because the dependencies are not installed/enabled (most common), or that the dependencies are present but have an incompatable version. Rarely, you may have a datapack installed that matches the pack ID of a required dependency, but is not by the same author (thus, is a different datapack); your frontend may notify you when this happens.
+This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatable version. This error also occurs in the rare case that a datapack has the same pack ID of a required dependency, but not the same author ID (thus, is a different datapack).
 
 **Fix:** \
-Install/enable the required dependencies to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
+Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
 
 #### - Unimplemented Abstract Interface(s)
 
