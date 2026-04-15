@@ -212,7 +212,7 @@ tag @s add scdev.listen
 
 ### Rebuild Logs
 
-Scdev will send logs whenever a [rebuild](#builds) occurs.
+Scdev will send logs upon [rebuild](#builds) (when datapacks change).
 
 If a rebuild fails, the log should give you information on why. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
 
@@ -220,7 +220,7 @@ If rebuilding starts but never seems to finish, see [this section](#unfinished-o
 
 ### Load Logs
 
-Scdev will send a log when a [load](#loading) (e.g. `/reload`) occurs.
+Scdev will send logs upon [load](#loading) (e.g. `/reload`).
 
 This log contains a list of all datapacks enabled (i.e. in the [current build](#builds)) and their entrypoints (entrypoints are primarily for datapack development, you may disregard them if unneeded.), in the order that they are loaded/called. 
 
