@@ -68,6 +68,35 @@ Clean rebuilds should only be initiated if you suspect something is wrong, as th
 
 Your frontend should provide instructions on how to initiate a clean rebuild, most likely as part of explicit rebuilding.
 
+#### Unfinished Loading
+
+It is possible that a SlimeCore load reaches the `max_command_sequence_length` gamerule limit (especially with a very large amount of datapacks present). If this is the case, some datapacks may not load properly and odd or unexpected behavior may occur.
+
+This can be fixed by simply increasing the `max_command_sequence_length` gamerule.
+
+```mcfunction
+gamerule max_command_sequence_length <value>
+```
+
+#### Unfinished or Very Long Rebuilding
+
+When first installed, SlimeCore sets the following data:
+```mcfunction
+data modify storage slimecore:config build_time_gamerules.max_command_sequence_length set value 2147483647
+data modify storage slimecore:config build_time_gamerules.max_command_forks set value 2147483647
+```
+
+These values override their respective gamerules during rebuilding and are the maximum possible values; they should generally not be changed from their defaults without good reason. Unless these values are manually set too low, SlimeCore should always finish rebuilding (however long it may take).
+
+If rebuilding seems to be taking very long, check server/game logs during the rebuild process. Info logs similar to these should be sent at regular intervals during rebuilding:
+
+```
+XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loaded # recipes
+XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
+```
+
+If these logs are being sent, then SlimeCore is likely working as intended and you may just have a large amount of datapacks. If they are not being sent, then it may indicate a SlimeCore bug.
+
 ### Rebuild Errors
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
@@ -174,14 +203,27 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 
 This section explains common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
 
-### Listening to Scdev
-Players with the `scdev.listen` tag recieve messages containing necessary information and errors. You must have this tag in order to use Scdev properly.
+### Listening to Scdev Logs
+Players with the `scdev.listen` tag recieve chat messages containing the necessary information and errors referenced in this section.
 
 ```mcfunction
 tag @s add scdev.listen
 ```
 
+### Rebuild Logs
 
+Scdev will send logs whenever a [rebuild](#builds) occurs, and if it fails, it will give you information on why. See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.
 
+If rebuilding starts but never seems to finish, see [this section](#unfinished-or-very-long-rebuilding).
 
+### Load Logs
 
+Scdev will send a log when a [load](#loading) (e.g. `/reload`) occurs that contains a list of all datapacks enabled (i.e. in the [current build](#builds)) and their entrypoints, in the order that they are loaded/called. 
+
+If you think a datapack is enabled but it is not on this list, a rebuild may have failed and you should check previous chat messages for indication of such.
+
+A "Loading finished." message should be sent after each load. If not, it is an indication of an [unfinished load](#unfinished-loading).
+
+### Managing 
+
+TODO: make Scdev better.
