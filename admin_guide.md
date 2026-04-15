@@ -121,7 +121,7 @@ Rename datapack(s) with non-standard names to match standard name format.
 Add or fix the path override for the datapack(s):
 ```mcfunction
 data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
-#                            Should match the entry as shown in `/datapack list` ^^^^^^^^^^^^^^^^^^^^^^
+#                            Should match the entry as shown in `/datapack list` ^ ^ ^ ^ ^ ^ ^ ^ ^ ^ ^
 ```
 
 To remove a path override:
