@@ -111,7 +111,7 @@ SlimeCore expects datapacks to have standard names, matching one of the followin
 - `<author ID>.<pack ID>`
 - `<pack ID>`
 
-*(See [Datapack Manifests](#datapack-manifests) for acquiring the referenced information.)*
+*(See [Datapack Manifests](#datapack-manifests) for getting the referenced information.)*
 
 **Fix:** \
 Rename datapack(s) with non-standard names to match standard name format.
@@ -121,7 +121,7 @@ Rename datapack(s) with non-standard names to match standard name format.
 Add or fix the path override for the datapack(s):
 ```mcfunction
 data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
-#                            Should match the entry as shown in `/datapack list` ^^^^^^^^^^^^^^^^^^^^^^
+#                             Should match the path as shown in `/datapack list` ^^^^^^^^^^^^^^^^^^^^^^
 ```
 
 To remove a path override:
@@ -131,12 +131,20 @@ data modify storage slimecore:config datapack_path_overrides.<pack ID>
 
 #### - Entrypoint (or Preload Entrypoint) Order Conflicts
 
+**Cause:** \
+Some set(s) of datapacks have incompatible/conflicting entrypoint order specifications.
+
+This error should only be encountered if you are developing your own datapack(s); it may indicate that your datapack(s)' dependencies may have entrypoint ordering specifications that you are unaware of. If this error is encountered outside of datapack development, something is very wrong.
+
+**Fix:** \
+Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
+
 #### - Dependency Cycle(s)
 
 **Cause:** \
 Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
 
-This error should only be encountered if you are developing your own datapack(s), and may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
+This error should only be encountered if you are developing your own datapack(s); it may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
 
 **Fix:** \
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
@@ -147,7 +155,7 @@ Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack D
 **Cause:** \
 One or more datapacks have an invalid manifest function.
 
-This error should only be encountered if you are developing your own datapack(s) (or are for some reason changing the manifests of downloaded datapacks--don't do that).
+This error should only be encountered if you are developing your own datapack(s) (or are for some reason changing the manifests of downloaded datapacks--this is not advised).
 
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
@@ -161,38 +169,6 @@ Multiple datapacks share the same pack ID. This is rare but can occur.
 Unfortunately, there is no easy non-destructive fix for this issue. Datapacks with the same pack ID are internally incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check info/author URLs.
 
 Otherwise, the only "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
-
-### Non-Standard Datapack Names
-
-A datapack's name is its folder or .zip file name within the `/datapacks` directory of the world it is installed in. SlimeCore only automatically recognizes datapacks with standard names. For SlimeCore to recognize datapacks with non-standard names, extra steps must be taken.
-
-A standard name matches one of the following formats:
-- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
-- `<pack ID>.<major ver>.<minor ver>.<patch ver>`
-- `<author ID>.<pack ID>`
-- `<pack ID>`
-
-If you cannot tell if datapack has a standard name or not, the data that should be present in its standard name can be found by opening the function tag `<datapack>/data/slimecore/tags/function/manifest.json`, and then opening the function contained in that tag. This manifest function should contain the relevant data in an obvious manner.
-
-If your world has a SlimeCore-loaded datapack with a non-standard name, you can either:
-
-#### Rename the Datapack to a Standard Name (Recommended)
-Using the data found in the manifest function, rename the datapack to match one of the standard naming formats. The first format mentioned above is known as a "fully qualified" name and is always recommended over others.
-
-#### Add a Path Override
-Run the following command with the appropriate substitutions:
-
-```mcfunction
-data modify storage slimecore:config <pack ID> set value "file/<datapack name>"
-```
-
-This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name and will not check its standard names.
-
-To remove an override, you can run:
-
-```mcfunction
-data remove storage slimecore:config <pack ID>
-```
 
 ## Using Scdev
 
