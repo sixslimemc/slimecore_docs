@@ -49,11 +49,13 @@ Each SlimeCore-loaded datapack has a **manifest** that provides useful informati
 
 A datapack's manifest is set by a special manifest function, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
 
-If a datapack is in the world's current build, it's manifest data can be retrieved in-game:
+A list of all datapacks' manifest data in the current build is stored in NBT storage `slimecore:data build.packs`--as well as a mapping with keys being pack IDs at `slimecore:data build.aux.pack_map`.
+
+Retrieving a particular datapack's manifest data in-game (given the datapack is part of the current build):
 
 ```mcfunction
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
-# alternatively:
+# or
 data get storage slimecore:data build.aux.pack_map.<pack ID>
 ```
 
