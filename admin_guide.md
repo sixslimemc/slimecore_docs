@@ -172,7 +172,7 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 
 ## Using Scdev
 
-> This section covers common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
+> This section explains common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
 
 World admins should be given the `scdev.listen` tag to recieve messages containing helpful information and errors.
 
