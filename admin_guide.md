@@ -49,14 +49,24 @@ Each SlimeCore-loaded datapack has a **manifest** that provides useful informati
 
 A datapack's manifest is set by a special manifest function, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
 
-Datapacks in the current build have their manifest data stored in a list at NBT storage `slimecore:data build.packs`--as well as a mapping with keys being pack IDs at `slimecore:data build.aux.pack_map`.
+Datapacks in the current build have their manifest data stored in a list at NBT storage `slimecore:data build.packs`, as well as a mapping with keys being pack IDs at `slimecore:data build.aux.pack_map`.
 
 ```mcfunction
 # Get a particualar datapack's manifest data based on it's pack ID:
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 # or
-data get storage slimecore:data build.aux.pack_map.<pack ID>
+data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
+
+#### Forcing a Clean Rebuild
+
+If it seems like SlimeCore has "lost track" of enabled/disabled datapacks, or you suspect incorrect datapack loading behavior (most likely caused by improper datapack uninstallation or usage of `/datapack`), a **clean rebuild** may fix the issue.
+
+A clean rebuild wipes the current build data before rebuilding. This does mean, however, if a clean rebuild fails, the current build will be left empty and no datapacks will load; this will fix itself once a rebuild succeeds.
+
+Clean rebuilds should only be initiated if you suspect something is wrong, as they essentially make SlimeCore "forget" everything and assume that the world is brand-new.
+
+Your frontend should provide instructions on how to initiate a clean rebuild, most likely as part of explicit rebuilding.
 
 ### Rebuild Errors
 
@@ -93,13 +103,31 @@ Remove datapacks from the build, such that the abstract interface(s) are impleme
 #### - Missing Datapack Path(s)
 
 **Cause:** \
-There are datapack(s) with non-standard names without path overrides OR have a path overrides that do not match their names.
+There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names.
 
 SlimeCore expects datapacks to have standard names, matching one of the following formats:
 - `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
 - `<pack ID>.<major ver>.<minor ver>.<patch ver>`
 - `<author ID>.<pack ID>`
 - `<pack ID>`
+
+*(See [Datapack Manifests](#datapack-manifests) for acquiring the referenced information.)*
+
+**Fix:** \
+Rename datapack(s) with non-standard names to match standard name format.
+
+OR
+
+Add or fix the path override for the datapack(s). A path override can be added by running:
+```mcfunction
+data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
+# "file/<datapack name>" should match the entry as shown in `/datapack list`
+```
+
+To remove a path override run:
+```mcfunction
+data modify storage slimecore:config datapack_path_overrides.<pack ID>
+```
 
 #### - Entrypoint (or Preload Entrypoint) Order Conflicts
 
