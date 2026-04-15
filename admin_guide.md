@@ -53,9 +53,9 @@ Datapacks in the current build have their manifest data stored in a list at NBT 
 
 ```mcfunction
 # Get a particualar datapack's manifest data based on it's pack ID:
-data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
+/data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 # or
-data get storage slimecore:data build.aux.pack_map."<pack ID>"
+/data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
 
 #### Forcing a Clean Rebuild
@@ -120,13 +120,13 @@ Rename datapack(s) with non-standard names to match standard name format.
 
 Add or fix the path override for the datapack(s):
 ```mcfunction
-data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
+/data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
 # "file/<datapack name>" should match the entry as shown in `/datapack list`
 ```
 
 To remove a path override:
 ```mcfunction
-data modify storage slimecore:config datapack_path_overrides.<pack ID>
+/data modify storage slimecore:config datapack_path_overrides.<pack ID>
 ```
 
 #### - Entrypoint (or Preload Entrypoint) Order Conflicts
@@ -183,7 +183,7 @@ Using the data found in the manifest function, rename the datapack to match one 
 Run the following command with the appropriate substitutions:
 
 ```mcfunction
-data modify storage slimecore:config <pack ID> set value "file/<datapack name>"
+/data modify storage slimecore:config <pack ID> set value "file/<datapack name>"
 ```
 
 This tells SlimeCore explicitly where the datapack is located. If a path override exists for a datapack, SlimeCore will **only** recognize it if it has that exact path/name and will not check its standard names.
@@ -191,7 +191,7 @@ This tells SlimeCore explicitly where the datapack is located. If a path overrid
 To remove an override, you can run:
 
 ```mcfunction
-data remove storage slimecore:config <pack ID>
+/data remove storage slimecore:config <pack ID>
 ```
 
 ## Using Scdev
@@ -199,7 +199,7 @@ data remove storage slimecore:config <pack ID>
 World admins should be given the `scdev.listen` tag to recieve messages containing helpful information and errors.
 
 ```mcfunction
-tag @s add scdev.listen
+/tag @s add scdev.listen
 ```
 
 
