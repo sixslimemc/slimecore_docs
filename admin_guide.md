@@ -222,7 +222,7 @@ If rebuilding starts but never seems to finish, see [this section](#unfinished-o
 
 Scdev will send logs upon [load](#loading) (e.g. `/reload`).
 
-The logs contains a list of all datapacks enabled (i.e. in the [current build](#builds)), as well as their entrypoints, in the order that they are loaded/called. (Entrypoints are likely only useful for datapack development.)
+The logs contains a list of all datapacks enabled (i.e. in the [current build](#builds)), as well as their entrypoints, in the order that they are loaded/called. (Entrypoint list is likely only useful for datapack development.)
 
 If a datapack is not on this list but you think it should be (or vice versa), a rebuild may have failed. Check the rebuild logs (above/before the load logs).
 
