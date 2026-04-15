@@ -175,7 +175,9 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 This section explains common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
 
 ### Recieve Messages
-World admins should be given the `scdev.listen` tag. Players with this tag recieve messages containing important information and errors.
+Players with the `scdev.listen` tag recieve messages containing important information and errors.
+
+This tag should be given to all world admins.
 
 ```mcfunction
 tag @s add scdev.listen
