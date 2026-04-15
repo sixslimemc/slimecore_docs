@@ -116,7 +116,7 @@ SlimeCore expects datapacks to have standard names, matching one of the followin
 **Fix:** \
 Rename datapack(s) with non-standard names to match standard name format.
 
-OR
+*OR*
 
 Add or fix the path override for the datapack(s). A path override can be added by running:
 ```mcfunction
