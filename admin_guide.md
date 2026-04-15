@@ -51,9 +51,8 @@ A datapack's manifest is set by a special manifest function, which is identified
 
 A list of all datapacks' manifest data in the current build is stored in NBT storage `slimecore:data build.packs`--as well as a mapping with keys being pack IDs at `slimecore:data build.aux.pack_map`.
 
-Retrieving a particular datapack's manifest data in-game (given the datapack is part of the current build):
-
 ```mcfunction
+# get a particualar datapack's manifest data based on it's pack ID
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 # or
 data get storage slimecore:data build.aux.pack_map.<pack ID>
