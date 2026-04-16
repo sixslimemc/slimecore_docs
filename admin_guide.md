@@ -220,29 +220,29 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 
 This section explains common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
 
-### Logs
+### Scdev Messages
 
-Scdev provides necessary information through logs. Players with the `scdev.listen` tag will recieve logs through chat messages.
+Scdev provides necessary information through chat messages. Players with the `scdev.listen` tag will recieve these messages.
 
 ```mcfunction
 tag @s add scdev.listen
 ```
 
-#### Rebuild Logs
+#### Rebuild Messages
 
-Scdev will send logs upon [rebuild](#builds) (usually when datapacks change).
+Scdev will send messages upon [rebuild](#builds) (usually when datapacks change).
 
-If a rebuild fails, the logs will explain the reason. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
+If a rebuild fails, the messages will explain the reason. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
 
 If rebuilding starts but never seems to finish, see [this section](#unfinished-or-very-long-rebuilding).
 
-#### Load Logs
+#### Load Messages
 
-Scdev will send logs upon [load](#loading) (e.g. `/reload`).
+Scdev will send messages upon [load](#loading) (e.g. `/reload`).
 
-The logs contains a list of all datapacks enabled (i.e. in the [current build](#builds)), as well as their entrypoints, in the order that they are loaded/called. (Entrypoint list is primarily for datapack development is not necessary administration knowledge.)
+The messages contains a list of all datapacks enabled (i.e. in the [current build](#builds)), as well as their entrypoints, in the order that they are loaded/called. (Entrypoint list is primarily for datapack development is not necessary administration knowledge.)
 
-If a datapack is not on this list but you think it should be (or vice versa), a rebuild may have failed. Check the rebuild logs (above/before the load logs).
+If a datapack is not on this list but you think it should be (or vice versa), a rebuild may have failed. Check the rebuild messages (above/before the load messages).
 
 A "Loading finished." message should be sent after each load. If not, it is an indication of an [unfinished load](#unfinished-loading).
 
