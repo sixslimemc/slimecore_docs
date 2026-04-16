@@ -220,14 +220,14 @@ Otherwise, the only "fix" for this issue is to manually edit one of the datapack
 
 This section explains common operations using the [Scdev](https://github.com/sixslimemc/scdev) frontend.
 
-### Listening to Scdev Logs
+### Recieve Logs
 Players with the `scdev.listen` tag recieve chat messages containing the necessary information and errors referenced in this section.
 
 ```mcfunction
 tag @s add scdev.listen
 ```
 
-### Rebuild Logs
+### Logs on Rebuild
 
 Scdev will send logs upon [rebuild](#builds) (usually when datapacks change).
 
@@ -235,7 +235,7 @@ If a rebuild fails, the logs should give you information on why. (See [Rebuild E
 
 If rebuilding starts but never seems to finish, see [this section](#unfinished-or-very-long-rebuilding).
 
-### Load Logs
+### Logs on Load
 
 Scdev will send logs upon [load](#loading) (e.g. `/reload`).
 
