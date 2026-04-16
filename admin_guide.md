@@ -101,8 +101,6 @@ If these logs are being sent, then SlimeCore is likely working as intended and y
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes.
 
-Your frontend should notify you when and why a rebuild fails.
-
 ---
 
 #### Unfulfilled Dependency(s)
