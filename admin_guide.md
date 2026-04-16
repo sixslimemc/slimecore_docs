@@ -97,11 +97,11 @@ XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # a
 
 If these logs are being sent, then SlimeCore is likely working as intended and you may just have a large amount of datapacks. If they are not being sent, then it may indicate a SlimeCore bug.
 
----
-
 ### Rebuild Errors
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes. Your frontend should notify you when and why a rebuild fails.
+
+---
 
 #### - Unfulfilled Dependency(s)
 
@@ -113,6 +113,8 @@ This can either be because the dependency(s) are not installed/enabled (most com
 **Fix:** \
 Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
 
+---
+
 #### - Unimplemented Abstract Interface(s)
 
 **Cause:** \
@@ -120,6 +122,8 @@ Datapack(s) define abstract interface(s) that are not implemented by any other d
 
 **Fix:** \
 Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
+
+---
 
 #### - Multiple Abstract Implementations
 
@@ -130,6 +134,8 @@ This indicates that these datapacks are conceptually incompatible with eachother
 
 **Fix:** \
 Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
+
+---
 
 #### - Missing Datapack Path(s)
 
@@ -160,6 +166,8 @@ To remove a path override:
 data modify storage slimecore:config datapack_path_overrides.<pack ID>
 ```
 
+---
+
 #### - Entrypoint (or Preload Entrypoint) Order Conflicts
 
 **Cause:** \
@@ -169,6 +177,8 @@ This error should only be encountered if you are developing your own datapack(s)
 
 **Fix:** \
 Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
+
+---
 
 #### - Dependency Cycle(s)
 
@@ -180,6 +190,7 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
 
+---
 
 #### - Invalid Datapack Manifest(s)
 
@@ -191,6 +202,8 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
 
+---
+
 #### - Duplicate Pack IDs
 
 **Cause:** \
@@ -200,6 +213,8 @@ Multiple datapacks share the same pack ID. This is rare but can occur.
 Unfortunately, there is no easy non-destructive fix for this issue. Datapacks with the same pack ID are internally incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check info/author URLs.
 
 Otherwise, the only "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
+
+---
 
 ## Using Scdev
 
