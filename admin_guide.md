@@ -230,7 +230,7 @@ tag @s add scdev.listen
 
 #### Rebuild Messages
 
-Scdev will send messages upon [rebuild](#builds) (usually when datapacks change).
+Scdev sends messages upon [rebuild](#builds) (usually when datapacks change).
 
 If a rebuild fails, the messages will explain the reason. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
 
@@ -238,7 +238,7 @@ If rebuilding starts but never seems to finish, see [this section](#unfinished-o
 
 #### Load Messages
 
-Scdev will send messages upon [load](#loading) (e.g. `/reload`).
+Scdev sends messages upon [load](#loading) (e.g. `/reload`).
 
 The messages contains a list of all datapacks enabled (i.e. in the [current build](#builds)), as well as their entrypoints, in the order that they are loaded/called. (Entrypoint list is primarily for datapack development is not necessary administration knowledge.)
 
