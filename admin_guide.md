@@ -103,7 +103,7 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 
 ---
 
-#### - Unfulfilled Dependency(s)
+#### Unfulfilled Dependency(s)
 
 **Cause:** \
 Datapack(s) require dependency(s) (other datapack(s)) that are not present.
@@ -115,7 +115,7 @@ Install/enable the required dependency(s) to the build. Your frontend should dis
 
 ---
 
-#### - Unimplemented Abstract Interface(s)
+#### Unimplemented Abstract Interface(s)
 
 **Cause:** \
 Datapack(s) define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
@@ -125,7 +125,7 @@ Find and install/enable datapack(s) that implement the abstract interface(s). Fi
 
 ---
 
-#### - Multiple Abstract Implementations
+#### Multiple Abstract Implementations
 
 **Cause:** \
 Multiple datapacks implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks).
@@ -137,7 +137,7 @@ Remove datapacks from the build, such that the abstract interface(s) are impleme
 
 ---
 
-#### - Missing Datapack Path(s)
+#### Missing Datapack Path(s)
 
 **Cause:** \
 There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names.
@@ -168,7 +168,7 @@ data modify storage slimecore:config datapack_path_overrides.<pack ID>
 
 ---
 
-#### - Entrypoint (or Preload Entrypoint) Order Conflicts
+#### Entrypoint (or Preload Entrypoint) Order Conflicts
 
 **Cause:** \
 Some set(s) of datapacks have incompatible/conflicting entrypoint order specifications.
@@ -180,7 +180,7 @@ Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack D
 
 ---
 
-#### - Dependency Cycle(s)
+#### Dependency Cycle(s)
 
 **Cause:** \
 Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
@@ -192,7 +192,7 @@ Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack D
 
 ---
 
-#### - Invalid Datapack Manifest(s)
+#### Invalid Datapack Manifest(s)
 
 **Cause:** \
 One or more datapacks have an invalid manifest function.
@@ -204,7 +204,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](./d
 
 ---
 
-#### - Duplicate Pack IDs
+#### Duplicate Pack IDs
 
 **Cause:** \
 Multiple datapacks share the same pack ID. This is rare but can occur.
