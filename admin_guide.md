@@ -222,7 +222,7 @@ This section explains common operations using the [Scdev](https://github.com/six
 
 ### Logs
 
-Scdev provides necessary information via logs (chat messages). Players with the `scdev.listen` tag will recieve logs through chat messages.
+Scdev provides necessary information through logs. Players with the `scdev.listen` tag will recieve logs through chat messages.
 
 ```mcfunction
 tag @s add scdev.listen
