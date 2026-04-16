@@ -231,7 +231,7 @@ tag @s add scdev.listen
 
 Scdev will send logs upon [rebuild](#builds) (usually when datapacks change).
 
-If a rebuild fails, the logs should give you information on why. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
+If a rebuild fails, the logs will explain the reason. (See [Rebuild Errors](#rebuild-errors) for a full list of erros that can occur and their fixes.)
 
 If rebuilding starts but never seems to finish, see [this section](#unfinished-or-very-long-rebuilding).
 
