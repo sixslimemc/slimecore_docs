@@ -224,7 +224,7 @@ This section explains common operations using the [Scdev](https://github.com/six
 
 Logs are the primary way that Scdev provides necessary information and errors.
 
-Scdev sends logs to players with the `scdev.listen` tag as chat messages.
+Add the `scdev.listen` tag to yourself (and/or admins) to recieve logs.
 
 ```mcfunction
 tag @s add scdev.listen
