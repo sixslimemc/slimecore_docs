@@ -1,6 +1,6 @@
 # Troubleshooting
 
-## General
+## Helpful Concepts
 
 ### Datapack Manifests
 
@@ -69,8 +69,6 @@ If these logs are being sent, then SlimeCore is likely working as intended and y
 
 Listed below are all of the possible reasons a rebuild can fail, as well as their fixes.
 
----
-
 ### Unfulfilled Dependency(s)
 
 **Cause:** \
@@ -91,8 +89,6 @@ Datapack(s) define abstract interface(s) that are not implemented by any other d
 **Fix:** \
 Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
 
----
-
 ### Multiple Abstract Implementations
 
 **Cause:** \
@@ -102,8 +98,6 @@ This indicates that these datapacks are conceptually incompatible with eachother
 
 **Fix:** \
 Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
-
----
 
 ### Missing Datapack Path(s)
 
@@ -134,8 +128,6 @@ To remove a path override:
 data modify storage slimecore:config datapack_path_overrides.<pack ID>
 ```
 
----
-
 ### Entrypoint (or Preload Entrypoint) Order Conflicts
 
 **Cause:** \
@@ -145,8 +137,6 @@ This error should only be encountered if you are developing your own datapack(s)
 
 **Fix:** \
 Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
-
----
 
 ### Dependency Cycle(s)
 
@@ -158,8 +148,6 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
 
----
-
 ### Invalid Datapack Manifest(s)
 
 **Cause:** \
@@ -169,8 +157,6 @@ This error should only be encountered if you are developing your own datapack(s)
 
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
-
----
 
 ### Duplicate Pack IDs
 
