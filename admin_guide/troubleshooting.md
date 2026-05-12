@@ -1,8 +1,8 @@
 # Troubleshooting
 
-## General Concepts and Info
+## General Concepts
 
-### Datapack Manifests
+### Manifests
 
 Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
 
