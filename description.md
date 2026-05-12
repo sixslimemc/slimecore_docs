@@ -105,8 +105,8 @@ SlimeCore's primary goal is to support a community-driven, decentralized datapac
 
 ## Get Started
 
-**[Admin Guide](./admin_guide.md)** - Manage SlimeCore-loaded datapacks in your world.
+**[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
 
-**[Datapack Development Guide](./development_guide.md)** - Create SlimeCore-loaded datapacks.
+**[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
 
-**[Interface Guide](./interface_guide.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
+**[Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
