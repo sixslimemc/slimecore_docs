@@ -18,7 +18,7 @@ SlimeCore is designed to be **atomic**. If used properly, **no changes to datapa
 
 SlimeCore is designed to be **deterministic**. If used properly, **previous world state/datapacks should never affect the outcome of a rebuild/load** (with some rare exceptions). The same set of enabled datapacks will always load in exactly the same way.
 
-SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, A datapack could easily implement chat messages to admins that provide download URL(s) for any missing dependencies upon world reload (SlimeCore would provide such URL data and more).
+SlimeCore intentionally does not implement any "frontend" features such as chat messages, dialogs, or user-functions. Instead, it provides a public API for other datapacks to use, such that "frontends" can be created/shared like any other datapack. For instance, A datapack could easily implement chat messages to admins that provide download URL(s) for any missing dependencies upon world reload.
 
 ## Functional Overview
 
