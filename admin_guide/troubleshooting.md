@@ -22,7 +22,7 @@ data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
 
-### Forcing a Clean Rebuild
+### Clean Rebuilding
 
 If it seems like SlimeCore has "lost track" of enabled/disabled datapacks, or you suspect incorrect datapack loading behavior (most likely caused by improper datapack uninstallation or usage of `/datapack`), a **clean rebuild** may fix the issue.
 
