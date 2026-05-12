@@ -1,6 +1,6 @@
 # Troubleshooting
 
-## Helpful Concepts
+## General Concepts and Info
 
 ### Datapack Manifests
 
