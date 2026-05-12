@@ -79,8 +79,6 @@ This can either be because the dependency(s) are not installed/enabled (most com
 **Fix:** \
 Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
 
----
-
 ### Unimplemented Abstract Interface(s)
 
 **Cause:** \
