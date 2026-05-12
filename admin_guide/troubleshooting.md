@@ -72,7 +72,7 @@ Listed below are all of the possible reasons a rebuild can fail, as well as thei
 ### Unfulfilled Dependency(s)
 
 **Cause:** \
-Datapack(s) require dependency(s) (other datapack(s)) that are not present.
+Datapack(s) require dependency(s)--other datapack(s)--that are not present.
 
 This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatable version. This error also occurs in the rare case that a datapack has the same pack ID of a required dependency, but not the same author ID (thus, is a different datapack).
 
