@@ -2,7 +2,7 @@
 
 User documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
 
-For general information on what SlimeCore is and what it does, see [Description](./description.md).
+For general information, see [Description](./description.md).
 
 ### Guides
 
