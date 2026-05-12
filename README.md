@@ -4,7 +4,7 @@ User documentation for the [SlimeCore datapack loader](https://github.com/sixsli
 
 **[Description](./description.md)** - Learn what SlimeCore is and what it does.
 
----
+## Guides
 
 **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world. \
 *Start here if you just installed SlimeCore-loaded datapack(s) into your world.*
