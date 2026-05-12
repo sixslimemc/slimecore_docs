@@ -36,38 +36,43 @@ Your frontend should provide instructions on how to initiate a clean rebuild, mo
 
 
 
-### Unfinished Loading
+### Unfinished Loading/Rebuilding
 
-It is possible that a SlimeCore load reaches the `max_command_sequence_length` gamerule limit (especially with a very large amount of datapacks present). If this is the case, some datapacks may not load properly and odd or unexpected behavior may occur.
-
-This can be fixed by simply increasing the `max_command_sequence_length` gamerule.
+While rare, the chances that the `max_command_sequence_length` gamerule limit is reached during a load is increased when using SlimeCore. If this happens, simply increase the value for the `max_command_sequence_length` gamerule.
 
 ```mcfunction
 gamerule max_command_sequence_length <value>
 ```
 
-### Unfinished or Very Long Rebuilding
+By default, SlimeCore automatically overrides the `max_command_sequence_length` and `max_command_forks` gamerules while a *rebuild* is in progress, setting them to their maximum values. While not advised, these override values can be changed via:
 
-When first installed, SlimeCore sets the following data:
 ```mcfunction
-data modify storage slimecore:config build_time_gamerules.max_command_sequence_length set value 2147483647
-data modify storage slimecore:config build_time_gamerules.max_command_forks set value 2147483647
+data modify storage slimecore:config build_time_gamerules.max_command_sequence_length set value <int>
+data modify storage slimecore:config build_time_gamerules.max_command_forks set value <int>
 ```
 
-These values override their respective gamerules during rebuilding and are the maximum possible values; they should generally not be changed from their defaults without good reason. Unless these values are manually set too low, SlimeCore should always finish rebuilding (however long it may take).
+### Very Long Rebuilding
 
-If rebuilding seems to be taking very long, check server/game logs during the rebuild process. Info logs similar to these should be sent at regular intervals during rebuilding:
+It is normal and expected behavior for rebuilding to cause significant tick delay, especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
 
 ```
 XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loaded # recipes
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-If these logs are being sent, then SlimeCore is likely working as intended and you may just have a large amount of datapacks. If they are not being sent, then it may indicate a SlimeCore bug.
+If these logs are not being sent and rebuilding is still hanging, it may indicate a bug within SlimeCore.
 
 ## Rebuild Errors
 
-Listed below are all of the possible reasons a rebuild can fail, as well as their fixes.
+A rebuild can fail for the following reasons:
+- [Unfulfilled Dependency(s)](#unfulfilled-dependencys)
+- [Unimplemented Abstract Interface(s)](#unimplemented-abstract-interfaces)
+- [Multiple Abstract Implementations](#multiple-abstract-implementations)
+- [Missing Datapack Path(s)](#missing-datapack-paths)
+- [Entrypoint (or Preload Entrypoint) Order Conflicts](#entrypoint-or-preload-entrypoint-order-conflicts)
+- [Dependency Cycle(s)](#dependency-cycles)
+- [Invalid Datapack Manifest(s)](#invalid-datapack-manifests)
+- [Duplicate Pack IDs](#duplicate-pack-ids)
 
 ### Unfulfilled Dependency(s)
 
@@ -108,7 +113,7 @@ SlimeCore expects datapacks to have standard names, matching one of the followin
 - `<author ID>.<pack ID>`
 - `<pack ID>`
 
-*(See [Datapack Manifests](#datapack-manifests) for getting the referenced information.)*
+*(See [Datapack Manifests](#manifests) for getting the referenced information.)*
 
 **Fix:** \
 Rename datapack(s) with non-standard names to match standard name format.
