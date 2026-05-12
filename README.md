@@ -2,6 +2,8 @@
 
 User documentation for the [SlimeCore datapack loader](https://github.com/sixslimemc/slimecore).
 
+**[Description](./description.md)** - Learn what SlimeCore is and what it does.
+
 ---
 
 **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world. \
@@ -11,4 +13,3 @@ User documentation for the [SlimeCore datapack loader](https://github.com/sixsli
 
 **[Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
 
-**[Description](./description.md)** - Learn what SlimeCore is and what it does.
