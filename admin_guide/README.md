@@ -62,11 +62,15 @@ data get storage slimecore:data build.aux.pack_map."<pack ID>"
 
 If it seems like SlimeCore has "lost track" of enabled/disabled datapacks, or you suspect incorrect datapack loading behavior (most likely caused by improper datapack uninstallation or usage of `/datapack`), a **clean rebuild** may fix the issue.
 
-A clean rebuild wipes the current build data before rebuilding. This does mean, however, if a clean rebuild fails, the current build will be left empty and no datapacks will load; this will fix itself once a rebuild succeeds.
+Clean rebuilds wipe the current build data before rebuilding. This does mean, however, if a clean rebuild fails, the current build will be left empty and no datapacks will load; this will fix itself once a rebuild succeeds.
 
-Clean rebuilds should only be initiated if you suspect something is wrong, as they essentially make SlimeCore "forget" everything and assume that the world is brand-new.
+**IMPORTANT:** \
+Clean rebuilds also make SlimeCore "forget" about which datapacks are disabled. Any datapacks that were disabled before a clean rebuild must be re-enabled via `/datapack enable`. \
+*This is one of the only cases where you should use `/datapack` to manage datapacks.*
 
 Your frontend should provide instructions on how to initiate a clean rebuild, most likely as part of explicit rebuilding.
+
+
 
 #### Unfinished Loading
 
