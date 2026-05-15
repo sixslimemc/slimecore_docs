@@ -1,6 +1,6 @@
 # Using Scdev
 
-This section covers interacting with SlimeCore through the [SCDev](https://github.com/sixslimemc/scdev) frontend.
+This section exclusively covers interacting with SlimeCore through the [SCDev](https://github.com/sixslimemc/scdev) frontend.
 
 ## Getting Setup
 
