@@ -16,7 +16,7 @@ In order to effectively interact with SlimeCore in-game, a **frontend** datapack
 Requiring an external frontend implementation has the following benefits:
 
 - **Separation of concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
-- **Customizability:** You, as the user/admin, can choose (or create) a SlimeCore interface that works best for you.
+- **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
 Frontends define their own user-facing interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
 
