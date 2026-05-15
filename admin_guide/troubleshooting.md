@@ -69,6 +69,14 @@ XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # a
 
 If these logs are not being sent and rebuilding is still hanging, it may indicate a bug within SlimeCore.
 
+## Safe Mode
+
+Datapacks that share the same pack ID are *inherently incompatible*. When a reload occurs and there exist multiple datapacks that share the same pack ID, SlimeCore will enter **safe mode** until the issue is resolved. In safe mode, datapacks will not fully reload, and the datapacks with shared pack IDs may have reduced functionality. 
+
+Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder before rebuilding/reloading--SlimeCore intentionally does not initialize new datapacks that trigger safe mode.
+
+An alternative, much more difficult fix is manually editing the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
+
 ## Rebuild Errors
 
 A rebuild can fail for the following reasons:
@@ -171,9 +179,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 ### Duplicate Installed Pack IDs
 
 **Cause:** \
-Multiple installed datapacks share the same pack ID. This is rare but can occur.
+Multiple installed datapacks share the same pack ID. This will trigger [safe mode](#safe-mode).
 
-**Compromise:** \
-Unfortunately, there is no easy non-destructive fix for this issue. Datapacks with the same pack ID are internally incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check info/author URLs.
-
-Otherwise, the only true "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
+**Fix:** \
+*See [Safe Mode](#safe-mode).*
