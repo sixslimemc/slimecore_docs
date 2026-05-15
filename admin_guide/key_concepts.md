@@ -31,9 +31,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Build Data
 
-**Build data** contains information about the *currently enabled* datapacks and how they load, and is *only* updated upon successful rebuild.
-
-Build data is a struct at NBT storage location `slimecore:data` at path `build` with following keys:
+**Build data** is a struct at NBT storage location `slimecore:data` at path `build and contains information about the *currently enabled* datapacks and how they load. It is *only* updated upon successful rebuild and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
@@ -44,9 +42,7 @@ Build data is a struct at NBT storage location `slimecore:data` at path `build` 
 | `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
 ## World Data
-**World data** contains information about SlimeCore's *state*, and is updated *every reload*.
-
-World data is a struct at NBT storage location `slimecore:data` at path `world` with the following keys:
+**World data**  is a struct at NBT storage location `slimecore:data` at path `world` and contains information about SlimeCore's *state*. It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
