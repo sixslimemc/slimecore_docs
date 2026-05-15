@@ -5,6 +5,7 @@
 - [Clean Rebuilding](#clean-rebuilding)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
+- [Safe Mode](#safe-mode)
 - [Rebuild Errors](#rebuild-errors)
 
 ## Getting Manifest Data
@@ -75,7 +76,7 @@ Datapacks that share the same pack ID are *inherently incompatible*. When a relo
 
 Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
 
-An alternative, much more difficult fix is manually editing the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
+An alternative, much more difficult fix would be to manually edit the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
 
 ## Rebuild Errors
 
