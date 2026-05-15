@@ -12,9 +12,9 @@ tag @s add scdev.listener
 
 Verify that you are a listener by running `/reload`--you should recieve a [load summary](#load-summaries).
 
-### Clickable Text
+#### Clickable Text
 
-SCDev messages make heavy usage of clickable/hoverable text. If you want more information about something mentioned in a message, try hovering and/or clicking on it.
+Many SCDev messages contain clickable/hoverable text. If you want more information about something mentioned in a message, try hovering and/or clicking on it.
 
 ## Load Summaries
 
