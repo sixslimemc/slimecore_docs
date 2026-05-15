@@ -33,5 +33,7 @@ This guide is meant to be frontend-agnostic, but does include [this section](./u
 For those that just want to quickly get started, install [SCDev](https://github.com/sixslimemc/scdev) and skip to [Using SCDev](./using_scdev.md).
 
 ---
-
+<div align="right">
+This text will be aligned to the right.
+</div>
 **Next: [Key Concepts](./key_concepts.md)**
