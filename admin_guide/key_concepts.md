@@ -25,9 +25,15 @@ SlimeCore will **rebuild** when any new datapacks are installed/enabled/disabled
 
 Rebuilding can *fail*, indicating that there exist incompatibilies, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend notify you when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
 
-The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are garunteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-and-world-data) is updated.
+The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are garunteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-data) is updated.
 
 ## Managing Datapacks (Explicit Rebuilding)
+
+To disable, (re-)enable, or uninstall datapacks, you *must* do it through **explicit rebuilding**, not the `/datapack` command. Explicit rebuilding allows you to *stage* such changes and will verify that they are valid before applying them. If any changes are invalid (ex: disabling a datapack that is a dependency of an enabled datapack), no changes will be made.
+
+In all practical cases (aside from recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)), **explicit rebuilding should be the only method of disabling/enabling/uninstalling datapacks**. Using `/datapack` directly for these purposes is considered a user-error and may cause unexpected behavior.
+
+Your chosen frontend should provide a documented method on initiating an explicit rebuild.
 
 ## Build Data
 
