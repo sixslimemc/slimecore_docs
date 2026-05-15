@@ -33,7 +33,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 | Key | Type | Description |
 | --- | --- | --- |
 | `packs` | List of pack manifests | All pack manifests in the order that they are loaded. |
-| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with `index` key matching the list index. |
+| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
 
 NBT data containing information about 
 
