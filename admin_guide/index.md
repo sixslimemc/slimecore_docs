@@ -34,4 +34,4 @@ For those that just want to quickly get started, install [SCDev](https://github.
 
 ---
 
-***Next: [Key Concepts](./key_concepts.md)***
+**Next: [Key Concepts](./key_concepts.md)**
