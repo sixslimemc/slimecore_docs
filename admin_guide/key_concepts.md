@@ -1,5 +1,11 @@
 # Key Concepts
 
+- [Manifests](#manifests)
+- [Rebuilding](#rebuilding)
+- [Managing Datapacks (Explicit Rebuilding)](#managing-datapacks-explicit-rebuilding)
+- [Build Data](#build-data)
+- [World Data](#world-data)
+
 ## Manifests
 
 Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself (pack ID, author ID, version, dependencies, etc.), as well as other information SlimeCore needs in order to load it properly. Manifests are what allow SlimeCore to recognize and load datapacks in a structured manner--in a sense, to SlimeCore, a datapack *is* it's manifest.
