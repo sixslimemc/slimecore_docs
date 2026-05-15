@@ -45,7 +45,7 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 ![Screenshot of successful rebuild messages](../_assets/images/rebuild_success.png)
 
-*All successful rebuild messages should be directly followed by a load summary.*
+*All "Rebuild success." messages should be directly followed by a load summary.*
 
 ## Info Functions
 
