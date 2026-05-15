@@ -2,7 +2,7 @@
 
 This guide should cover everything a world admin needs to know about SlimeCore and how to use it.
 
-### SlimeCore Description
+### SlimeCore Overview
 
 *See [Description](../description.md) for a more in-depth description.*
 
