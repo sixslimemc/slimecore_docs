@@ -54,7 +54,7 @@ It is  updated upon *successful rebuild* and has the following keys:
 | `aux.pack_map` | `{<pack ID...>: PackManifest}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
 | `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
-**Build data must be treated as read-only.**
+**Build data should be treated as read-only.**
 
 ## World Data
 **World data**  is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. \
@@ -66,7 +66,7 @@ It is updated *every reload* and has the following keys:
 | `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
-**World data must be treated as read-only.**
+**World data should be treated as read-only.**
 
 ---
 
