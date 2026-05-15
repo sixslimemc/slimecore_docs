@@ -24,3 +24,4 @@ Load summaries list all SlimeCore-loaded datapacks in the order that they are lo
 
 *Example of a load summary:*
 ![Screenshot of load summary](../_assets/images/load_summary.png)
+e
