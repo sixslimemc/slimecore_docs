@@ -20,4 +20,6 @@ Many SCDev messages contain clickable/hoverable text. If you want more informati
 
 Whenever a world reload happens (`/reload`), a **load summary** is sent to listeners.
 
-Load s
+Load summaries list all SlimeCore-loaded datapacks in the order that they are loaded, as well as all entrypoints/preload-entrypoints within those packs in their calling order.
+
+*Example of a load summary:*
