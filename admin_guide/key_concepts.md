@@ -2,6 +2,21 @@
 
 ## Manifests
 
+Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself (pack ID, author ID, version, dependencies, etc.), as well as other information SlimeCore needs in order to load it properly. Manifests are what allow SlimeCore to recognize and load datapacks in a structured manner--in a sense, to SlimeCore, a datapack *is* it's manifest.
+
+To retrieve a datapack's raw manifest data (given you know the pack ID), you can do any of the following commands:
+```mcfunction
+# will work for enabled datapacks that are part of the current build:
+data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
+# OR
+data get storage slimecore:data build.aux.pack_map.<pack ID>
+
+# will work for any properly installed datapack:
+data get storage slimecore:data world.installed[{pack:{pack_id:"<pack ID>"}}]
+# OR
+data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
+```
+
 ## Rebuilding
 
 SlimeCore will **rebuild** when any new datapacks are installed/enabled/disabled upon world reload. A world reload that triggers a rebuild will often take longer (sometimes significantly, depending on the amount of datapacks installed) than world reloads that do not trigger a rebuild.
@@ -13,7 +28,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 ## Build Data
 
 
-## Enabling, Disabling, and Uninstalling Datapacks (Explicit Rebuilding)
+## Managing Datapacks (Explicit Rebuilding)
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
 
 Your frontend should provide instructions on how to trigger an explicit rebuild (or some similar functionality).
