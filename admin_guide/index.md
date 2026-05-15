@@ -34,5 +34,5 @@ For those that just want to quickly get started, install [SCDev](https://github.
 
 ---
 <div align="right">
-**Next: [Key Concepts](./key_concepts.md)**
+Next: <a href="https://example.com">Key Concepts</a>
 </div>
