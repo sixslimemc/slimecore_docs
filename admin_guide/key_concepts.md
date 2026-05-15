@@ -63,3 +63,7 @@ It is updated *every reload* and has the following keys:
 | `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
 | `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
+
+---
+
+**Next:** [Troubleshooting](./troubleshooting.md)
