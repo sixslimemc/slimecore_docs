@@ -1,5 +1,11 @@
 # Troubleshooting
 
+- [Manifests](#manifests)
+- [Clean Rebuilding](#clean-rebuilding)
+- [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
+- [Very Long Rebuilding](#very-long-rebuilding)
+- [Rebuild Errors](#rebuild-errors)
+
 ## Manifests
 
 Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
