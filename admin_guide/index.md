@@ -2,7 +2,11 @@
 
 This guide should cover everything a world admin needs to know about SlimeCore and how to use it.
 
-### SlimeCore Breifly
+- [SlimeCore Briefly](#slimecore-briefly)
+- [Installing a Frontend](#installing-a-frontend)
+- [TLDR](#tldr)
+
+## SlimeCore Briefly
 
 *See [Description](../description.md) for a more in-depth description.*
 
