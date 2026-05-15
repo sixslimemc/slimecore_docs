@@ -36,7 +36,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 | `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
 | `order.entrypoint` | List of `{pack_ref: <pack ID>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
 | `order.preload_entrypoints` | List of `{pack_ref: <pack ID>, id: <preload entrypoint ID> index: int}` | Same as `order.entrypoint`, but for preload entrypoints. |
-
+| `aux.pack_map` | Struct | Auxilary struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
 NBT data containing information about 
 
 ## Managing Datapacks (Explicit Rebuilding)
