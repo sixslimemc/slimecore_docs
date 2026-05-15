@@ -25,7 +25,7 @@ Load summaries include:
 - **Packs:** All SlimeCore-loaded packs in their loading order
 - **Entrypoints:** All enabled entrypoints in their calling order
 
-For most administrative purposes, only the *Packs* section is relevant.
+For most administrative purposes, only the "Packs" section is relevant.
 
 *Example of a load summary:*
 
