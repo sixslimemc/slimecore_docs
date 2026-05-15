@@ -43,7 +43,7 @@ It is  updated upon *successful rebuild* and has the following keys:
 | `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
 ## World Data
-**World data**  is a struct at NBT storage location `slimecore:data` `world` containing world/stateful information (not validated by the rebuild process). \
+**World data**  is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. \
 It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
