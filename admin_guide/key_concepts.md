@@ -31,7 +31,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Build Data
 
-**Build data** is a struct at NBT storage location `slimecore:data` at path `build` containing information about the *currently enabled* datapacks and how they load. \
+**Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. \
 It is  updated upon *successful rebuild* and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ It is  updated upon *successful rebuild* and has the following keys:
 | `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
 ## World Data
-**World data**  is a struct at NBT storage location `slimecore:data` at path `world` containing information about SlimeCore's *state*. \
+**World data**  is a struct at NBT storage location `slimecore:data` `world` containing information about SlimeCore's *state*. \
 It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
