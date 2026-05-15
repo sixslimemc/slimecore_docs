@@ -30,7 +30,7 @@ This guide is meant to be frontend-agnostic, but does include [this section](./u
 
 ## TLDR
 
-For those that just want to quickly get started, install [SCDev](https://github.com/sixslimemc/scdev) and skip to [Using SCDev](./using_scdev.md).
+For those that just want to quickly get started, install the [SCDev](https://github.com/sixslimemc/scdev) datapack and skip to [Using SCDev](./using_scdev.md).
 
 ---
 
