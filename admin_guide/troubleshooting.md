@@ -184,3 +184,7 @@ Multiple installed datapacks share the same pack ID. This will trigger [safe mod
 
 **Fix:** \
 *See [Safe Mode](#safe-mode).*
+
+---
+
+If using [SCDev](https://github.com/sixslimemc/scdev), proceed to [Using SCDev](./using_scdev.md).
