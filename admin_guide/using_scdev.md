@@ -41,6 +41,11 @@ Refer to [this section](./troubleshooting.md#rebuild-errors) for resolving rebui
 
 If "Rebuilding..." is sent but no messages are sent afterward, this may indicate an [unfinished rebuild](./troubleshooting.md#unfinished-loadingrebuilding). However, it is normal for the rebuild process to take [some time](./troubleshooting.md#very-long-rebuilding).
 
+*Example of successful rebuild indication:*
+
+![Screenshot of successful rebuild messages](../_assets/images/rebuild_success.png)
+
+
 ## Info Functions
 
 ### List Functions
