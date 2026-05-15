@@ -29,15 +29,23 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Build and World Data
 
-**Build data** contains information about the *currently enabled* datapacks and how they load, and is updated every reload. Build data is stored at NBT storage location `slimecore:data` at path `build`, and has the following keys:
+**Build data** contains information about the *currently enabled* datapacks and how they load, and is *only* updated upon successful rebuild. Build data is stored at NBT storage location `slimecore:data` at path `build`, and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
-| `packs` | List of pack manifests | All pack manifests in the order that they are loaded. |
-| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
+| `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
+| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All enabled packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
 | `order.entrypoint` | List of `{pack_ref: <pack ID>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
 | `order.preload_entrypoints` | List of `{pack_ref: <pack ID>, id: <preload entrypoint ID> index: int}` | Same as `order.entrypoint`, but for preload entrypoints. |
-| `aux.pack_map` | Struct | Auxilary struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
-NBT data containing information about 
+| `aux.pack_map` | `{<pack ID...>: PackManifest}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
+| `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
+
+**World data** contains information about SlimeCore's *state*, and is updated *every reload*. World data is stored at NBT storage location `slimecore:data` at path `world`, and has the following keys:
+| Key | Type | Description |
+| --- | --- | --- |
+| `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs in arbitrary order, with `disabled` indicating disabled status. |
+| `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
+| `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
+| `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
 
 ## Managing Datapacks (Explicit Rebuilding)
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
@@ -47,3 +55,5 @@ Your frontend should provide instructions on how to trigger an explicit rebuild 
 **Using `/datapack` to manage SlimeCore-loaded datapacks is improper** and may create unexpected behavior.
 
 If you only want to allow SlimeCore to rebuild explicitly, and not automatically on world reload, you can set the value of `slimecore:config explicit_rebuild_only` (NBT storage) to `true`. If this setting is `true`, newly installed packs will not be effectively enabled until an explicit reload is triggered.
+
+## Safe Mode
