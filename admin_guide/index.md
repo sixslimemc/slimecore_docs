@@ -16,7 +16,7 @@ In order to effectively interact with SlimeCore in-game, a **frontend** datapack
 - **Separation of concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, as the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-Frontends essentially define their own user-facing interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
+Frontends define their own user-facing interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
 
 This guide is meant to be frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend written by the author of SlimeCore.
 
