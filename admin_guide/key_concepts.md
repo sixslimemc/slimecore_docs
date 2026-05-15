@@ -43,9 +43,9 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 | Key | Type | Description |
 | --- | --- | --- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs in arbitrary order, with `disabled` indicating disabled status. |
-| `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 | `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
 | `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
+| `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 ## Managing Datapacks (Explicit Rebuilding)
 **Explicitly rebuilding** is the only proper way to enable, disable, and/or uninstall SlimeCore-loaded datapacks. In an explicit rebuild, you may specify **staged** changes to the build (enables, disables, uninstalls), and if those changes would result in a valid build, the changes are applied. If the staged changes would result in an invalid build, **no changes are made**.
