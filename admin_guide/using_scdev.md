@@ -12,7 +12,12 @@ tag @s add scdev.listener
 
 Verify that you are a listener by running `/reload`--you should recieve a [load summary](#load-summaries).
 
-## Overview
+### Clickable Text
 
+SCDev messages make heavy usage of clickable/hoverable text. If you want more information about something mentioned in a message, try hovering and/or clicking on it.
 
 ## Load Summaries
+
+Whenever a world reload happens (`/reload`), a **load summary** is sent to listeners.
+
+Load s
