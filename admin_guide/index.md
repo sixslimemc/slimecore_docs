@@ -11,9 +11,13 @@ SlimeCore is a datapack that *loads and manages other datapacks* in a way that i
 
 ## Installing a Frontend
 
-First and foremost, 
-SlimeCore is a datapack that loads and manages other datapacks, *that's it*. It intentionally does not provide any player-facing features on its own. Instead, it is designed such that *other* datapacks, **frontends**, can provide such functionality. This means that *you*, as the user/admin, can customize your experience. While not strictly required, a frontend is essential for easy in-game administration. Frontends are not "special", they are installed like any other datapack.
+In order to effectively interact with SlimeCore in-game, a **frontend** datapack must be installed, as SlimeCore intentionally does not implement any user-facing features on it's own. Requiring an external frontend implementation has the following benefits:
 
-Because of this paradigm, frontends define how you interact with SlimeCore and SlimeCore-loaded datapacks. it is primarily the responsibilty of your chosen frontend's author to document its usage. With that said, it is likely useful to know the concepts covered in [Key Concepts](#essential-concepts).
+- **Separation of concerns:** SlimeCore can focus solely on doing it's one job well, that is loading datapacks.
+- **Customizability:** You, as the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-If you just want to get started quickly, you can install [Scdev](https://github.com/sixslimemc/scdev), a basic frontend created by the author of SlimeCore, and skip to the [Using Scdev](#using-scdev) section.
+Frontends essentially define their own user-facing interface with SlimeCore, and thus their functionality/methods should be documented independently of SlimeCore itself. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
+
+This guide is meant to be frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend written by the author of SlimeCore.
+
+> While SlimeCore is still in an early-adoption phase, there unfortunately may not be much of a selection of frontends. However, if you find the current selection to be insufficient, it is not difficult to [create your own](../interface_guide/index.md)!
