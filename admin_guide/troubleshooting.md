@@ -74,7 +74,7 @@ If these logs are not being sent and rebuilding is still hanging, it may indicat
 
 Datapacks that share the same pack ID are *inherently incompatible*. When a reload occurs and there exist multiple datapacks that share the same pack ID, SlimeCore will enter **safe mode** until the issue is resolved. In safe mode, datapacks will not fully reload, and the datapacks with shared pack IDs may have reduced functionality. 
 
-Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
+Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder (and will likely need to) before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
 
 An alternative, much more difficult fix would be to manually edit the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
 
