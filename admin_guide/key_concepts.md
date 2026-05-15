@@ -17,6 +17,8 @@ data get storage slimecore:data world.installed[{pack:{pack_id:"<pack ID>"}}]
 data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
 ```
 
+Alternatively, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the function that the datapack's manifest data is directly defined in.
+
 ## Rebuilding
 
 SlimeCore will **rebuild** when any new datapacks are installed/enabled/disabled upon world reload. A world reload that triggers a rebuild will often take longer (sometimes significantly, depending on the amount of datapacks installed) than world reloads that do not trigger a rebuild.
