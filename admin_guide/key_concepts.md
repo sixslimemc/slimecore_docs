@@ -27,9 +27,11 @@ Rebuilding can *fail*, indicating that there exist incompatibilies, errors, and/
 
 The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are garunteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-and-world-data) is updated.
 
-## Build and World Data
+## Build Data
 
-**Build data** contains information about the *currently enabled* datapacks and how they load, and is *only* updated upon successful rebuild. Build data is stored at NBT storage location `slimecore:data` at path `build`, and has the following keys:
+**Build data** contains information about the *currently enabled* datapacks and how they load, and is *only* updated upon successful rebuild.
+
+Build data is stored at NBT storage location `slimecore:data` at path `build`, and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
@@ -39,10 +41,13 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 | `aux.pack_map` | `{<pack ID...>: PackManifest}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
 | `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
-**World data** contains information about SlimeCore's *state*, and is updated *every reload*. World data is stored at NBT storage location `slimecore:data` at path `world`, and has the following keys:
+## World Data
+**World data** contains information about SlimeCore's *state*, and is updated *every reload*.
+
+World data is stored at NBT storage location `slimecore:data` at path `world`, and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
-| `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs in arbitrary order, with `disabled` indicating disabled status. |
+| `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
 | `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
 | `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
