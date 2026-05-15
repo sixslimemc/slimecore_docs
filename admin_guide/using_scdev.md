@@ -4,7 +4,8 @@ This section exclusively pertains to interacting with SlimeCore via the [SCDev](
 
 ## Getting Setup
 
-SCDev interfaces entirely through chat messages, sending them to **listeners**. To make yourself a listener, add the tag `scdev.listener` to yourself.
+SCDev interfaces entirely through chat messages, sending them to **listeners**. \
+To make yourself a listener, add the tag `scdev.listener` to yourself.
 ```mcfunction
 tag @s add scdev.listener
 ```
