@@ -1,6 +1,7 @@
 # SlimeCore Admin Guide
 
-This guide should cover everything a world admin needs to know about SlimeCore and how to use it. It assumes basic knowledge of commands and datapack management/function.
+This guide should cover everything a world admin needs to know about SlimeCore and how to use it. \
+It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Installing a Frontend](#installing-a-frontend)
