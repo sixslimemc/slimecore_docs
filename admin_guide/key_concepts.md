@@ -32,7 +32,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 ## Build Data
 
 **Build data** is a struct at NBT storage location `slimecore:data` at path `build` containing information about the *currently enabled* datapacks and how they load. \
-It is *only* updated upon successful rebuild and has the following keys:
+It is  updated upon *successful rebuild* and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
