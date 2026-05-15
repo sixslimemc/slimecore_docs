@@ -34,6 +34,5 @@ For those that just want to quickly get started, install [SCDev](https://github.
 
 ---
 <div align="right">
-This text will be aligned to the right.
-</div>
 **Next: [Key Concepts](./key_concepts.md)**
+</div>
