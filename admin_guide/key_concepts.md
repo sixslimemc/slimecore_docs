@@ -34,6 +34,8 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 | --- | --- | --- |
 | `packs` | List of pack manifests | All pack manifests in the order that they are loaded. |
 | `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
+| `order.entrypoint` | List of `{pack_ref: <pack ID>, id: <entrypoint ID> index: int}` | All entrypoints in the order that they are called, with each `index` key matching the list index of the respective element. |
+| `order.preload_entrypoints` | List of `{pack_ref: <pack ID>, id: <preload entrypoint ID> index: int}` | All preload entrypoints in the order that they are called, with each `index` key matching the list index of the respective element. |
 
 NBT data containing information about 
 
