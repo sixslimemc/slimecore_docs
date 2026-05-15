@@ -33,4 +33,12 @@ For most administrative purposes, only the "Packs" section is relevant.
 
 If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
 
+To see a list of 
+
 ## Rebuild Messages
+
+## Info Functions
+
+### List Functions
+
+###
