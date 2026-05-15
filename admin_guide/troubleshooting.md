@@ -1,12 +1,13 @@
 # Troubleshooting
 
-- [Manifests](#manifests)
+- [Getting Manifest Data](#getting-manifest-data)
+- [Getting Build Data](#getting-build-data)
 - [Clean Rebuilding](#clean-rebuilding)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
 - [Rebuild Errors](#rebuild-errors)
 
-## Manifests
+## Getting Manifest Data
 
 Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
 
@@ -25,6 +26,10 @@ data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 # or
 data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
+
+## Getting Build Data
+
+Information about the currently loaded datapacks is 
 
 ## Clean Rebuilding
 
@@ -115,7 +120,7 @@ SlimeCore expects datapacks to have standard names, matching one of the followin
 - `<author ID>.<pack ID>`
 - `<pack ID>`
 
-*(See [Datapack Manifests](#manifests) for getting the referenced information.)*
+*(See [Getting Manifest Data](#getting-manifest-data) for getting the referenced information.)*
 
 **Fix:** \
 Rename datapack(s) with non-standard names to match standard name format.
@@ -141,7 +146,7 @@ Some set(s) of datapacks have incompatible/conflicting entrypoint order specific
 This error should only be encountered if you are developing your own datapack(s); it may indicate that your datapack(s)' dependencies may have entrypoint ordering specifications that you are unaware of. If this error is encountered outside of datapack development, something is very wrong.
 
 **Fix:** \
-Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
+Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
 
 ### Dependency Cycle(s)
 
@@ -151,7 +156,7 @@ Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depen
 This error should only be encountered if you are developing your own datapack(s); it may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
 
 **Fix:** \
-Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](./development_guide.md)).
+Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
 
 ### Invalid Datapack Manifest(s)
 
@@ -161,7 +166,7 @@ One or more datapacks have an invalid manifest function.
 This error should only be encountered if you are developing your own datapack(s) (or are for some reason changing the manifests of downloaded datapacks--this is not advised).
 
 **Fix:** \
-Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
+Fix the issues in the manifest function(s) (See [Datapack Development Guide](../dev_guide/index.md)).
 
 ### Duplicate Installed Pack IDs
 
