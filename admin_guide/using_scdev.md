@@ -23,5 +23,5 @@ Upon every world reload, a **load summary** is sent to listeners.
 Load summaries list all SlimeCore-loaded datapacks in the order that they are loaded, as well as all entrypoints/preload-entrypoints within those packs in their calling order.
 
 *Example of a load summary:*
+
 ![Screenshot of load summary](../_assets/images/load_summary.png)
-e
