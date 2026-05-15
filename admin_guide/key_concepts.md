@@ -17,7 +17,7 @@ data get storage slimecore:data world.installed[{pack:{pack_id:"<pack ID>"}}]
 data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
 ```
 
-Alternatively, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the path to the function that the datapack's manifest data is directly defined in.
+*Alternatively, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the path to the function that the datapack's manifest data is directly defined in.*
 
 ## Rebuilding
 
