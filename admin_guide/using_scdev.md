@@ -20,10 +20,10 @@ Many SCDev messages contain clickable/hoverable text. If you want more informati
 
 Upon every world reload, a **load summary** is sent to listeners.
 
-Load summaries list:
-- All enabled preload entrypoints in their calling order
-- All enabled SlimeCore-loaded packs in their loading order
-- All enabled entrypoints in their calling order
+Load summaries include:
+- A list of all enabled preload entrypoints in their calling order
+- A list of all enabled SlimeCore-loaded packs in their loading order
+- A list of all enabled entrypoints in their calling order
 
 *Example of a load summary:*
 
