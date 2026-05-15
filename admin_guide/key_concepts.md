@@ -29,13 +29,11 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Build and World Data
 
-### Build Data
-**Build data** contains information about the *currently enabled* datapacks and how they load, and is updated every reload.
-
-Build data is stored at storage location `slimecore:data` at path `build`, and has the following keys:
+**Build data** contains information about the *currently enabled* datapacks and how they load, and is updated every reload. Build data is stored at NBT storage location `slimecore:data` at path `build`, and has the following keys:
 | Key | Type | Description |
 | --- | --- | --- |
-| `packs` | List of pack manifests | o |
+| `packs` | List of pack manifests | All pack manifests in the order that they are loaded. |
+| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All packs (references) in the order that they are loaded, with `index` key matching the list index. |
 
 NBT data containing information about 
 
