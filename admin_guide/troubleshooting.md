@@ -1,8 +1,6 @@
 # Troubleshooting
 
-## General Concepts
-
-### Manifests
+## Manifests
 
 Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
 
@@ -22,21 +20,19 @@ data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
 
-### Clean Rebuilding
+## Clean Rebuilding
 
 If it seems like SlimeCore has "lost track" of enabled/disabled datapacks, or you suspect incorrect datapack loading behavior (most likely caused by improper datapack uninstallation or usage of `/datapack`), a **clean rebuild** may fix the issue.
 
-Clean rebuilds wipe the current build data before rebuilding. This does mean, however, if a clean rebuild fails, the current build will be left empty and no datapacks will load; this will fix itself once a rebuild succeeds.
+If a clean rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid clean rebuild failures.
 
 **IMPORTANT:** \
-Clean rebuilds also make SlimeCore "forget" about which datapacks are disabled. Any datapacks that were disabled before a clean rebuild must be re-enabled via `/datapack enable`. \
+Clean rebuilds make SlimeCore "forget" about disable datapacks. Any datapacks that are disabled before a clean rebuild must be re-enabled via `/datapack enable` for SlimeCore to "see" them again. \
 *This is one of the only cases where you should use `/datapack` to manage datapacks.*
 
-Your frontend should provide instructions on how to initiate a clean rebuild, most likely as part of explicit rebuilding.
+Your frontend should provide instructions on how to initiate a clean rebuild, likely as part of explicit rebuilding.
 
-
-
-### Unfinished Loading/Rebuilding
+## Unfinished Loading/Rebuilding
 
 While rare, the chances that the `max_command_sequence_length` gamerule limit is reached during a load is increased when using SlimeCore. If this happens, simply increase the value for the `max_command_sequence_length` gamerule.
 
@@ -51,7 +47,7 @@ data modify storage slimecore:config build_time_gamerules.max_command_sequence_l
 data modify storage slimecore:config build_time_gamerules.max_command_forks set value <int>
 ```
 
-### Very Long Rebuilding
+## Very Long Rebuilding
 
 It is normal and expected behavior for rebuilding to cause significant tick delay, especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
 
@@ -161,12 +157,12 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](./development_guide.md)).
 
-### Duplicate Pack IDs
+### Duplicate Installed Pack IDs
 
 **Cause:** \
-Multiple datapacks share the same pack ID. This is rare but can occur.
+Multiple installed datapacks share the same pack ID. This is rare but can occur.
 
 **Compromise:** \
 Unfortunately, there is no easy non-destructive fix for this issue. Datapacks with the same pack ID are internally incompatable with eachother. While it is no "solution", the easiest option is to remove one of the conflicting datapacks from the build or replace it with another datapack with similar functionality. If both datapacks are well-known, there is a chance that one may have a release under a different pack ID; check info/author URLs.
 
-Otherwise, the only "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
+Otherwise, the only true "fix" for this issue is to manually edit one of the datapacks to reflect a different pack ID. This would likely include (but is not limited to) mass file renaming and text replacing to be done properly. This should be a last resort and be performed with great caution.
