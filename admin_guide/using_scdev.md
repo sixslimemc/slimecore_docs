@@ -1,6 +1,6 @@
 # Using Scdev
 
-This section exclusively pertains to interacting with SlimeCore via the [SCDev](https://github.com/sixslimemc/scdev) frontend.
+This section covers interacting with SlimeCore through the [SCDev](https://github.com/sixslimemc/scdev) frontend.
 
 ## Getting Setup
 
@@ -11,5 +11,8 @@ tag @s add scdev.listener
 ```
 
 Verify that you are a listener by running `/reload`--you should recieve a [load summary](#load-summaries).
+
+## Overview
+
 
 ## Load Summaries
