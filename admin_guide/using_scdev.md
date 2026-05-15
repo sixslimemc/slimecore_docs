@@ -33,9 +33,13 @@ For most administrative purposes, only the "Packs" section is relevant.
 
 If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
 
-To see a list of 
-
 ## Rebuild Messages
+
+Upon [rebuilding](./key_concepts.md#rebuilding), a "Rebuilding..." message will be sent, followed by a "Rebuild success." message if rebuilding was successful. If rebuilding failed, a descriptive error message will be sent instead.
+
+Refer to [this section](./troubleshooting.md#rebuild-errors) for resolving rebuild errors.
+
+If "Rebuilding..." is sent but no messages are sent afterward, this may indicate an [unfinished rebuild](./troubleshooting.md#unfinished-loadingrebuilding). However, it is normal for the rebuild process to take [some time](./troubleshooting.md#very-long-rebuilding).
 
 ## Info Functions
 
