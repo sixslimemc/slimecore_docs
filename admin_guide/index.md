@@ -13,7 +13,7 @@ It assumes basic knowledge of commands and datapack management.
 
 SlimeCore is a datapack that *loads and manages other datapacks* in a way that is more robust than by default. It attempts to garuntee that all of your world's enabled datapacks load correctly and to disallow any changes that would cause them not to. For instance, if datapack A requires datapack B (i.e. B is a dependency of A), SlimeCore will not allow datapack A to load until datapack B is installed and enabled. Likewise, it will not allow datapack B to be disabled/uninstalled until datapack A is also disabled/uninstalled.
 
-Datapacks that are *SlimeCore-loaded* will not function unless SlimeCore is installed.
+Datapacks that are *SlimeCore-loaded* will not function without SlimeCore installed.
 
 ## Installing a Frontend
 
