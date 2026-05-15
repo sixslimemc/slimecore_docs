@@ -37,7 +37,7 @@ If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary 
 
 Upon [rebuilding](./key_concepts.md#rebuilding), a "Rebuilding..." message will be sent, followed by a "Rebuild success." message if rebuilding was successful. If rebuilding failed, a descriptive error message will be sent instead.
 
-Refer to [this section](./troubleshooting.md#rebuild-errors) for resolving rebuild errors.
+*Refer to [this section](./troubleshooting.md#rebuild-errors) for resolving rebuild errors.*
 
 If "Rebuilding..." is sent but no messages are sent afterward, this may indicate an [unfinished rebuild](./troubleshooting.md#unfinished-loadingrebuilding). However, it is normal for the rebuild process to take [some time](./troubleshooting.md#very-long-rebuilding).
 
@@ -45,6 +45,7 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 ![Screenshot of successful rebuild messages](../_assets/images/rebuild_success.png)
 
+*All successful rebuild messages should be directly followed by a load summary.*
 
 ## Info Functions
 
