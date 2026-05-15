@@ -37,7 +37,7 @@ If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary 
 
 Upon [rebuilding](./key_concepts.md#rebuilding), a "Rebuilding..." message will be sent, followed by a "Rebuild success." message if rebuilding was successful. If rebuilding failed, a descriptive error message will be sent instead.
 
-If a rebuild is successful, rebuild messages will be immediately followed by a load summary, while if rebuilding fails, they will be followed by a suppressed load summary.
+If a rebuild is successful, rebuild messages will be immediately followed by a [load summary](#load-summaries), while if rebuilding fails, they will be followed by a suppressed load summary.
 
 *Refer to [this section](./troubleshooting.md#rebuild-errors) for resolving rebuild errors.*
 
