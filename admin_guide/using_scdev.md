@@ -81,7 +81,7 @@ function scdev:-/rebuild {args:{}}
 
 ## Info Functions
 
-SCDev provides functions for displaying SlimeCore-related information.
+SCDev provides functions for displaying useful information about SlimeCore-loaded datapacks.
 
 ### List Functions
 
@@ -112,6 +112,9 @@ function scdev:-/info/list/packs {args:{pack_filter:{only:{author_id:"foo"}}}}
 # list the 5th-10th entrypoints (if they exist) from packs with author ID 'foo':
 function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only:{author_id:"foo"}}}}
 ```
+
+*Example of `scdev:-/info/list/packs` output:*
+![Screenshot of list output](../_assets/images/list_packs.png)
 
 ### Individual Pack Info
 
