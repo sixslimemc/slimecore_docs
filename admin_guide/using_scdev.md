@@ -45,6 +45,8 @@ Upon [rebuilding](./key_concepts.md#rebuilding), a "Rebuilding..." message will 
 
 If "Rebuilding..." is sent but no messages are sent afterward, this may indicate an [unfinished rebuild](./troubleshooting.md#unfinished-loadingrebuilding). However, it is normal for the rebuild process to take [some time](./troubleshooting.md#very-long-rebuilding).
 
+Due to the nature of rebuilding, rebuild messages will always be immediately followed by a [load summary](#load-summaries).
+
 *Example of rebuild success:*
 
 ![Screenshot of "Rebuild success." message](../_assets/images/rebuild_success.png)
@@ -53,7 +55,6 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 ![Screenshot of a rebuild error message](../_assets/images/rebuild_error.png)
 
-Note that, due to the nature of rebuilding, rebuild messages will always be immediately followed by a [load summary](#load-summaries).
 
 ## Info Functions
 
