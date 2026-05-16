@@ -46,7 +46,7 @@ Your chosen frontend should provide a documented method on initiating an explici
 **Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. \
 It is  updated upon *successful rebuild* and has the following keys:
 | Key | Type | Description |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
 | `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All enabled packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
 | `order.entrypoint` | List of `{pack_ref: <pack ID>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
@@ -60,7 +60,7 @@ It is  updated upon *successful rebuild* and has the following keys:
 **World data**  is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. \
 It is updated *every reload* and has the following keys:
 | Key | Type | Description |
-| --- | --- | --- |
+| :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
 | `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
 | `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
