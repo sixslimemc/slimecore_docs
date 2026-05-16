@@ -50,7 +50,7 @@ The notion of "uninstalling a datapack" refers to the following process:
     - At this point, the datapack is "hard disabled" and no longer tracked by SlimeCore (cannot be re-enabled via explicit rebuilding).
 3. Remove the datapack from your world files.
 
-Steps 1 and 2 are present not only to make sure that the datapack can be safely uninstalled, but to also let the datapack "clean itself up" and effectively remove it's prescence from your world.
+This is not only to make sure that the datapack can be safely uninstalled, but to also let the datapack "clean itself up" and effectively remove it's prescence from your world.
 
 If you want to re-enable an uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
 
