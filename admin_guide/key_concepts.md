@@ -41,6 +41,18 @@ In all practical cases (aside from recovering from a [clean rebuild](./troublesh
 
 Your chosen frontend should provide a documented method on initiating an explicit rebuild.
 
+## Datapack Uninstallation
+
+The notion of "uninstalling a datapack" means the following when using SlimeCore:
+    1. Explicitly rebuild, where the datapack is staged for uninstall.
+    2. Verify that the explicit rebuild succeeded.
+        - At this point, the datapack is "hard disabled" and no longer tracked by SlimeCore (cannot be re-enabled via explicit rebuilding).
+    3. Remove the datapack from your world files.
+
+Steps 1 and 2 are present not only to make sure that the datapack can be safely uninstalled, but to also let the datapack "clean itself up" and effectively remove it's prescence from your world.
+
+If you want to re-enable an uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
+
 ## Build Data
 
 **Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. \

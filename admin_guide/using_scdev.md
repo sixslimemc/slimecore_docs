@@ -66,7 +66,9 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 | :-- | :-- | :-- | :-- | :-- |
 | `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[]` | `[scdev, foo]` |
 | `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[]` | `[scdev, bar]` |
+| `uninstall` | list of pack IDs | Packs to uninstall that are currently installed. | `[]` | `[scdev, bar]` |
 | `clean` | boolean | Whether to force a [clean rebuild](./troubleshooting.md#clean-rebuilding). | `false` | `true` |
+
 
 *Example usage:*
 ```mcfunction
@@ -76,7 +78,7 @@ function scdev:-/rebuild {args:{disable:[foo, bar]}}
 function scdev:-/rebuild {args:{}}
 ```
 
-*SCDev itself can be safely disabled this way, however, if successful, no rebuild success message or load summary will be sent.*
+*SCDev itself can be safely disabled/uninstalled this way, however, if successful, no rebuild success message or load summary will be sent.*
 
 ## Info Functions
 
