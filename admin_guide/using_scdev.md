@@ -66,9 +66,8 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 | :-- | :-- | :-- | :-- | :-- |
 | `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[]` | `[scdev, foo]` |
 | `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[]` | `[scdev, bar]` |
-| `uninstall` | list of pack IDs | Packs to uninstall that are currently installed. | `[]` | `[scdev, bar]` |
+| `uninstall` | list of pack IDs | Packs to [uninstall](./key_concepts.md#datapack-uninstallation) that are currently installed. | `[]` | `[scdev, bar]` |
 | `clean` | boolean | Whether to force a [clean rebuild](./troubleshooting.md#clean-rebuilding). | `false` | `true` |
-
 
 *Example usage:*
 ```mcfunction
@@ -82,6 +81,25 @@ function scdev:-/rebuild {args:{}}
 
 ## Info Functions
 
+SCDev provides functions for displaying SlimeCore-related information.
+
 ### List Functions
+
+The following functions can be used to send a of list their respective elements in chat:
+- `scdev:-/info/list/packs`
+- `scdev:-/info/list/entrypoints`
+- `scdev:-/info/list/preload_entrypoints`
+- `scdev:-/info/list/abstracts`
+
+Enabled packs, entrypoints, and preload entrypoints will always be sorted by their load/call order.
+
+All of these functions take `args` as macro argument for input, which is a struct with the following optional keys:
+| Key | Type | Description | Default | Example Value |
+| :-- | :-- | :-- | :-- | :-- |
+| `count` | int | Maximum elements to show in the list (and per page). If unspecified, will show all elements. | *(none)* | `10` |
+| `page` | int | Page number to show (e.g. if `count:10` and `page:2`, then list will contain elements 11-20) | `1` | `2` |
+| `disabled` | boolean | If `false`, will only list elements from enabled packs; if `true` will only list elements from disabled packs. | `false` | `true` |
+| `pack_filter.only` | list indexer | If specified, will only include elements from packs that match `manifests[<value>]` where `manifests` is a list of all pack manifests. | *(none)* | `{author_id:"sixslime"}` |
+| `pack_filter.exclude` | list indexer | If specified, will exclude elements from packs that match `manifests[<value>]` where `manifests` is a list of all pack manifests. | *(none)* | `{author_id:"sixslime"}` |
 
 ###
