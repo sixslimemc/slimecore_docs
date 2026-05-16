@@ -129,9 +129,9 @@ The function `scdev:-/info/slimecore` displays information about SlimeCore itsel
 
 *Example usage:*
 ```mcfunction
-# display manifest information for SCDev:
+# display manifest information of SCDev:
 function scdev:-/info/pack {args:{pack_id:"scdev"}}
-# display manifest information for SlimeCore itself:
+# display manifest information of SlimeCore itself:
 function scdev:-/info/slimecore
 ```
 
