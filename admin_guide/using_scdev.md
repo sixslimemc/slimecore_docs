@@ -68,6 +68,14 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 
 *While these keys are optional, `args` must always be passed, even if empty (`{args:{}}`).*
 
+*Example usage:*
+```mcfunction
+# would attempt to disable the packs with pack IDs 'foo' and 'bar'.
+function scdev:-/rebuild {args:{disable:[foo, bar]}}
+
+# would simply rebuild with no staged changes:
+function scdev:-/rebuild {args:{}}
+```
 ## Info Functions
 
 ### List Functions
