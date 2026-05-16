@@ -5,7 +5,7 @@ It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Installing a Frontend](#installing-a-frontend)
-- [The `help` Function](#the-help-function)
+- [`slimecore:-/help`](#slimecore-help)
 - [TLDR](#tldr)
 
 ## SlimeCore Briefly
@@ -31,7 +31,7 @@ This guide is meant to be frontend-agnostic, but does include [this section](./u
 
 > While SlimeCore is still in an early-adoption phase, there unfortunately may not be much of a selection of frontends. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
 
-## The `help` Function
+## `slimecore:-/help`
 
 For your convenience, running `/function slimecore:-/help` will send a clickable link to these docs via chat message.
 
