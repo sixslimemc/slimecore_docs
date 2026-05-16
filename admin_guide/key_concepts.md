@@ -5,6 +5,7 @@
 - [Managing Datapacks (Explicit Rebuilding)](#managing-datapacks-explicit-rebuilding)
 - [Build Data](#build-data)
 - [World Data](#world-data)
+- [Uninstalling SlimeCore](#uninstalling-slimecore)
 
 ## Manifests
 
