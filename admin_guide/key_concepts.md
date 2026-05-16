@@ -81,6 +81,9 @@ It is updated *every reload* and has the following keys:
 
 **World data should be treated as read-only.**
 
+## SlimeCore Commands
+
+
 ---
 
 **Next:** [Troubleshooting](./troubleshooting.md)

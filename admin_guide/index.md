@@ -5,6 +5,7 @@ It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Installing a Frontend](#installing-a-frontend)
+- [The `help` Function](#the-help-function)
 - [TLDR](#tldr)
 
 ## SlimeCore Briefly
@@ -19,16 +20,20 @@ Datapacks that are SlimeCore-loaded will not function without SlimeCore installe
 
 To interact with SlimeCore in-game, you must install a **frontend** datapack that provides a user-facing interface that SlimeCore intentionally does not implement on it's own.
 
-Requiring an external frontend implementation has the following benefits:
+Requiring an external frontend has the following benefits:
 
 - **Separation of concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-Frontends define their own user-facing interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
+Frontends define their own interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
 
 This guide is meant to be frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend written by the author of SlimeCore.
 
-> While SlimeCore is still in an early-adoption phase, there unfortunately may not be much of a selection of frontends. However, if you find the current selection to be insufficient, it is not difficult to [create your own](../interface_guide/index.md).
+> While SlimeCore is still in an early-adoption phase, there unfortunately may not be much of a selection of frontends. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
+
+## The `help` Function
+
+For your convenience, running `/function slimecore:-/help` will send a clickable link to these docs via chat message.
 
 ## TLDR
 
