@@ -92,6 +92,7 @@ The following functions can be used to send a of list their respective elements 
 - `scdev:-/info/list/abstracts`
 
 All of these functions take `args` as macro argument for input, which is a struct with the following optional keys:
+
 | Key | Type | Description | Default | Example Value |
 | :-- | :-- | :-- | :-- | :-- |
 | `count` | int | Maximum elements to show in the list (and per page). If unspecified, will show all elements. | *(none)* | `10` |
@@ -117,8 +118,9 @@ function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only
 The function `scdev:-/info/pack` displays the detailed manifest information for a single pack.
 
 `scdev:-/info/pack` takes `args` as macro argument for input, which is a struct with the following required key:
+
 | Key | Type | Description | Example Value |
-| :-- | :-- | :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `pack_id` | pack ID | Pack ID of the target pack. | `scdev` |
 
 *Example usage:*
