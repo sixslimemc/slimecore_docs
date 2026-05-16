@@ -47,7 +47,7 @@ Your chosen frontend should provide a documented method on initiating an explici
 
 1. Explicitly rebuild, where the datapack is staged for uninstall.
 2. Verify that the explicit rebuild succeeded.
-    - At this point, the datapack is considered "not installed" and no longer tracked by SlimeCore (disabled and cannot be re-enabled via explicit rebuilding).
+    - At this point, the datapack is considered "not installed" and is no longer tracked by SlimeCore (disabled and cannot be re-enabled via explicit rebuilding).
 3. Remove the datapack from your world files.
 
 This is not only to make sure that the datapack can be safely uninstalled, but also to let the datapack "clean itself up" and effectively remove it's prescence from your world.
