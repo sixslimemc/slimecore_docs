@@ -86,10 +86,10 @@ SCDev provides functions for displaying SlimeCore-related information.
 ### List Functions
 
 The following functions can be used to send a of list their respective elements in chat:
-- `scdev:-/info/list/packs`: Lists installed packs (sorted by loading order if enabled).
-- `scdev:-/info/list/entrypoints`: Lists entrypoints (sorted by calling order if enabled).
-- `scdev:-/info/list/preload_entrypoints`: Lists preload entrypoints (sorted by calling order if enabled).
-- `scdev:-/info/list/abstracts`: Lists abstract interfaces.
+- `scdev:-/info/list/packs` (sorted by loading order if enabled)
+- `scdev:-/info/list/entrypoints` (sorted by calling order if enabled)
+- `scdev:-/info/list/preload_entrypoints` (sorted by calling order if enabled)
+- `scdev:-/info/list/abstracts`
 
 All of these functions take `args` as macro argument for input, which is a struct with the following optional keys:
 | Key | Type | Description | Default | Example Value |
