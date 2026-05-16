@@ -72,7 +72,6 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 ```mcfunction
 # would attempt to disable the packs with pack IDs 'foo' and 'bar'.
 function scdev:-/rebuild {args:{disable:[foo, bar]}}
-
 # would simply rebuild with no staged changes:
 function scdev:-/rebuild {args:{}}
 ```
