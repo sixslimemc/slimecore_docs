@@ -115,7 +115,7 @@ function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only
 
 *Example of `/function scdev:-/info/list/packs {args:{}}` output:*
 
-![Screenshot of list output](../_assets/images/list_packs.png)
+![Screenshot of output](../_assets/images/list_packs.png)
 
 ### Individual Pack Info
 
@@ -139,6 +139,8 @@ function scdev:-/info/pack {args:{pack_id:"foo"}}
 function scdev:-/info/slimecore
 ```
 
+*Example of `/function scdev:-/info/pack {args:{pack_id:"scdev"}}` output:*
 
+![Screenshot of output](../_assets/images/pack_info.png)
 
 ###
