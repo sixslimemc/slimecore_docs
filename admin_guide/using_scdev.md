@@ -55,6 +55,13 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 ![Screenshot of a rebuild error message](../_assets/images/rebuild_error.png)
 
+## Explicit Rebuilding
+
+The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_concepts.md#managing-datapacks-explicit-rebuilding).
+
+`scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the following keys:
+| Key | Type | Description | Example Value | Default |
+| `enable` | list of pack IDs | Re-enable these previously disabled packs | `["scdev", "foo"]` | `[]` |
 
 ## Info Functions
 
