@@ -33,7 +33,7 @@ This guide is meant to be frontend-agnostic, but does include [this section](./u
 
 ## `slimecore:-/help`
 
-For your convenience, running `/function slimecore:-/help` will send a clickable link to these docs via chat message.
+You can run `/function slimecore:-/help` to recieve a clickable link to these docs as a chat message.
 
 ## TLDR
 
