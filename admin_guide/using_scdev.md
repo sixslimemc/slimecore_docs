@@ -2,6 +2,12 @@
 
 This section exclusively covers interacting with SlimeCore through the [SCDev](https://github.com/sixslimemc/scdev) frontend.
 
+- [Getting Setup](#getting-setup)
+- [Load Summaries](#load-summaries)
+- [Rebuild Messages](#rebuild-messages)
+- [Explicit Rebuilding](#explicit-rebuilding)
+- [Info Functions](#info-functions)
+
 ## Getting Setup
 
 SCDev interfaces entirely through chat messages, sending them to **listeners**. \
