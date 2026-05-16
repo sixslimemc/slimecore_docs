@@ -61,7 +61,7 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 
 `scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the following keys:
 | Key | Type | Description | Example Value | Default |
-| --- | --- | --- | --- | --- |
+| :-- | :-- | :-- | :-- | :-- |
 | `enable` | list of pack IDs | Re-enable these previously disabled packs | `["scdev", "foo"]` | `[]` |
 
 ## Info Functions
