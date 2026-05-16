@@ -81,8 +81,13 @@ It is updated *every reload* and has the following keys:
 
 **World data should be treated as read-only.**
 
-## SlimeCore Commands
+## Uninstalling SlimeCore
 
+To uninstall SlimeCore itself, run `/function slimecore:-/uninstall_slimecore {args:{}}`.
+
+By default, this will send a you confirmation message before uninstallation starts. You can skip the confirmation message with `/function slimecore:-/uninstall_slimecore {args:{force:true}}`.
+
+Uninstalling SlimeCore will disable all SlimeCore-loaded packs and render them non-functional until SlimeCore is installed again. If SlimeCore is re-installed, those disabled packs must be re-enabled manually with `/datapack enable`.
 
 ---
 

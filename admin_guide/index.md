@@ -12,7 +12,7 @@ It assumes basic knowledge of commands and datapack management.
 
 *See [Description](../description.md) for a more in-depth description.*
 
-SlimeCore is a datapack that provides a loading system for **other datapacks**. It attempts to garuntee that all SlimeCore-loaded datapacks load correctly and to disallow any changes that would cause them not to. For instance, if datapack A requires datapack B, SlimeCore will not load datapack A until datapack B is installed and enabled, and will make sure that datapack B is loaded *before* datapack A.
+SlimeCore is a datapack that provides a loading system for **other datapacks**. It attempts to garuntee that all SlimeCore-loaded datapacks are loaded correctly and to disallow any changes that would cause them not to. For instance, if datapack A requires datapack B, SlimeCore will not load datapack A until datapack B is installed and enabled, and will make sure that datapack B is loaded *before* datapack A.
 
 Datapacks that are SlimeCore-loaded will not function without SlimeCore installed.
 
@@ -22,7 +22,7 @@ To interact with SlimeCore in-game, you must install a **frontend** datapack tha
 
 Requiring an external frontend has the following benefits:
 
-- **Separation of concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
+- **Separation of Concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
 Frontends define their own interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
