@@ -59,7 +59,7 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_concepts.md#managing-datapacks-explicit-rebuilding).
 
-`scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the optional keys:
+`scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the following optional keys:
 | Key | Type | Description | Default | Example Value |
 | :-- | :-- | :-- | :-- | :-- |
 | `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[]` | `[scdev, foo]` |
