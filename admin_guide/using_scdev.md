@@ -27,11 +27,11 @@ Load summaries include:
 
 For most administrative purposes, only the "Packs" section is relevant.
 
+If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
+
 *Example of load summary:*
 
 ![Screenshot of load summary](../_assets/images/load_summary.png)
-
-If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
 
 *Example of supressed load summary:*
 
