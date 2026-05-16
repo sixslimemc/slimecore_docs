@@ -60,10 +60,10 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_concepts.md#managing-datapacks-explicit-rebuilding).
 
 `scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the optional keys:
-| Key | Type | Description | Example Value | Default |
+| Key | Type | Description | Default | Example Value |
 | :-- | :-- | :-- | :-- | :-- |
-| `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[scdev, foo]` | `[]` |
-| `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[scdev, bar]` | `[]` |
+| `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[]` | `[scdev, foo]` |
+| `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[]` | `[scdev, bar]` |
 | `clean` | boolean | Whether to initiate a [clean rebuild](./troubleshooting.md#clean-rebuilding). | `true` | `false` |
 
 *While these keys are optional, `args` must always be passed, even if empty (`{args:{}}`).*
