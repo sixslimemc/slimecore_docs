@@ -17,7 +17,7 @@ Datapacks that are SlimeCore-loaded will not function without SlimeCore installe
 
 ## Installing a Frontend
 
-In order to effectively interact with SlimeCore in-game, a **frontend** datapack must be installed, as SlimeCore intentionally does not implement any user-facing features on it's own.
+To interact with SlimeCore in-game, you must install a **frontend** datapack, as SlimeCore intentionally does not implement any user-facing features on it's own.
 
 Requiring an external frontend implementation has the following benefits:
 
