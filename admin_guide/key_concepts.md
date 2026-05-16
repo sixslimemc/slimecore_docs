@@ -43,7 +43,7 @@ Your chosen frontend should provide a documented method on initiating an explici
 
 ## Datapack Uninstallation
 
-The notion of "uninstalling a datapack" refers to the following process:
+"Uninstalling a datapack" refers to the following process:
 
 1. Explicitly rebuild, where the datapack is staged for uninstall.
 2. Verify that the explicit rebuild succeeded.
