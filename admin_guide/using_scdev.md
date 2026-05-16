@@ -86,9 +86,9 @@ SCDev provides functions for displaying SlimeCore-related information.
 ### List Functions
 
 The following functions can be used to send a of list their respective elements in chat:
-- `scdev:-/info/list/packs` (sorted by loading order if enabled)
-- `scdev:-/info/list/entrypoints` (sorted by calling order if enabled)
-- `scdev:-/info/list/preload_entrypoints` (sorted by calling order if enabled)
+- `scdev:-/info/list/packs`
+- `scdev:-/info/list/entrypoints`
+- `scdev:-/info/list/preload_entrypoints`
 - `scdev:-/info/list/abstracts`
 
 All of these functions take `args` as macro argument for input, which is a struct with the following optional keys:
@@ -99,5 +99,36 @@ All of these functions take `args` as macro argument for input, which is a struc
 | `disabled` | boolean | If `false`, will only list elements from enabled packs; if `true` will only list elements from disabled packs. | `false` | `true` |
 | `pack_filter.only` | list indexer | If specified, will only include elements from packs that match `manifests[<value>]` where `manifests` is a list of all pack manifests. | *(none)* | `{author_id:"sixslime"}` |
 | `pack_filter.exclude` | list indexer | If specified, will exclude elements from packs that match `manifests[<value>]` where `manifests` is a list of all pack manifests. | *(none)* | `{author_id:"sixslime"}` |
+
+*Example usage:*
+```mcfunction
+# list all enabled packs:
+function scdev:-/info/list/packs {args:{}}
+# list up to 10 disabled packs:
+function scdev:-/info/list/packs {args:{disabled:true, count:10}}
+# list all packs with author ID 'foo':
+function scdev:-/info/list/packs {args:{pack_filter:{only:{author_id:"foo"}}}}
+# list the 5th-10th entrypoints (if they exist) from packs with author ID 'foo':
+function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only:{author_id:"foo"}}}}
+```
+
+### Individual Pack Info
+
+The function `scdev:-/info/pack` displays the detailed manifest information for a single pack.
+
+`scdev:-/info/pack` takes `args` as macro argument for input, which is a struct with the following required key:
+| Key | Type | Description | Example Value |
+| :-- | :-- | :-- | :-- | :-- |
+| `pack_id` | pack ID | Pack ID of the target pack. | `scdev` |
+
+*Example usage:*
+```mcfunction
+# gets manifest information for SCDev:
+function scdev:-/info/pack {args:{pack_id:"scdev"}}
+```
+
+#### SlimeCore Info
+
+The function `scdev:-/info/slimecore` displays information about SlimeCore itself and does not take any input arguments.
 
 ###
