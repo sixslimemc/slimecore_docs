@@ -27,11 +27,16 @@ Load summaries include:
 
 For most administrative purposes, only the "Packs" section is relevant.
 
-*Example of a load summary:*
+*Example of load summary:*
 
 ![Screenshot of load summary](../_assets/images/load_summary.png)
 
 If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
+
+*Example of supressed load summary:*
+
+![Screenshot of supressed load summary](../_assets/images/load_supressed.png)
+
 
 ## Rebuild Messages
 
@@ -40,11 +45,11 @@ Upon [rebuilding](./key_concepts.md#rebuilding), a "Rebuilding..." message will 
 
 If "Rebuilding..." is sent but no messages are sent afterward, this may indicate an [unfinished rebuild](./troubleshooting.md#unfinished-loadingrebuilding). However, it is normal for the rebuild process to take [some time](./troubleshooting.md#very-long-rebuilding).
 
-*Example of rebuild success message:*
+*Example of rebuild success:*
 
 ![Screenshot of "Rebuild success." message](../_assets/images/rebuild_success.png)
 
-*Example of rebuild error message:*
+*Example of rebuild error:*
 
 ![Screenshot of a rebuild error message](../_assets/images/rebuild_error.png)
 
