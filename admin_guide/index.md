@@ -11,7 +11,7 @@ It assumes basic knowledge of commands and datapack management.
 
 *See [Description](../description.md) for a more in-depth description.*
 
-SlimeCore is a datapack that provides a loading system for **other datapacks**. It attempts to garuntee that all SlimeCore-loaded datapacks load correctly and to disallow any changes that would cause them not to. For instance, if datapack A requires datapack B, SlimeCore will not load datapack A until datapack B is installed and enabled; further, it will not allow datapack B to be disabled until datapack A is.
+SlimeCore is a datapack that provides a loading system for **other datapacks**. It attempts to garuntee that all SlimeCore-loaded datapacks load correctly and to disallow any changes that would cause them not to. For instance, if datapack A requires datapack B, SlimeCore will not load datapack A until datapack B is installed and enabled; further, it will enforce that datapack A is disabled/uninstalled before datapack B is.
 
 Datapacks that are SlimeCore-loaded will not function without SlimeCore installed.
 
