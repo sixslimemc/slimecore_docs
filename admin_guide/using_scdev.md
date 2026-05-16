@@ -123,6 +123,8 @@ The function `scdev:-/info/pack` displays the detailed manifest information for 
 | :-- | :-- | :-- | :-- |
 | `pack_id` | pack ID | Pack ID of the target pack. | `scdev` |
 
+#### SlimeCore Info
+
 The function `scdev:-/info/slimecore` displays information about SlimeCore itself and does not take any input arguments.
 
 *Example usage:*
