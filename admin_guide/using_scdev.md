@@ -113,7 +113,8 @@ function scdev:-/info/list/packs {args:{pack_filter:{only:{author_id:"foo"}}}}
 function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only:{author_id:"foo"}}}}
 ```
 
-*Example of `scdev:-/info/list/packs` output:*
+*Example of `/function scdev:-/info/list/packs {args:{}}` output:*
+
 ![Screenshot of list output](../_assets/images/list_packs.png)
 
 ### Individual Pack Info
