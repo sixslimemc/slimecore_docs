@@ -59,7 +59,7 @@ If "Rebuilding..." is sent but no messages are sent afterward, this may indicate
 
 The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_concepts.md#managing-datapacks-explicit-rebuilding).
 
-**Explicit rebuilding is the only proper way to enable/disable/uninstall SlimeCore-loaded datapacks. Using `/datapack` for such operations is a user error.**
+**Explicit rebuilding is the only proper way to enable/disable/uninstall SlimeCore-loaded datapacks. Using `/datapack` for such operations is improper and may cause unexpected behavior.**
 
 `scdev:-/rebuild` takes `args` as a macro argument for input, which is a struct with the following optional keys:
 | Key | Type | Description | Default | Example Value |
