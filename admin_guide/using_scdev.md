@@ -66,6 +66,8 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 | `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[scdev, bar]` | `[]` |
 | `clean` | boolean | Whether to initiate a [clean rebuild](./troubleshooting.md#clean-rebuilding). | `true` | `false` |
 
+*While these keys are optional, `args` must always be passed, even if empty (i.e. `{args:{}}`).*
+
 ## Info Functions
 
 ### List Functions
