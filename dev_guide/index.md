@@ -1,6 +1,6 @@
 # Dev Guide
 
-This guide covers everything a datapack developer needs to know about creating a SlimeCore-loaded datapack. \
+This guide covers everything a datapack developer needs to know about creating SlimeCore-loaded datapacks. \
 It assumes intermediate knowledge of commands and datapack structure/development.
 
 ## SlimeCore Briefly
