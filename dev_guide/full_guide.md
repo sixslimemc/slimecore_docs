@@ -25,3 +25,4 @@ SlimeCore-loaded datapacks require the following function tags:
         └── uninstall.json
 ```
 
+It is important that your datapack does **NOT** include the `#minecraft:load` or `#minecraft:tick` tags.
