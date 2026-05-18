@@ -3,6 +3,9 @@
 This guide covers everything a datapack developer needs to know about creating and working with SlimeCore-loaded datapacks. \
 It assumes intermediate knowledge of commands and datapack structure/development.
 
+- [SlimeCore Briefly](#slimecore-briefly)
+- [Installing a Frontend](#installing-a-frontend)
+
 ## SlimeCore Briefly
 
 From [Description](../description.md):
@@ -33,4 +36,4 @@ If you do choose to use SCDev, make sure to add the tag `scdev.listener` to your
 
 [Quick Convert](./quick_convert.md) - If you just want to convert your datapack quickly and dirtily.
 
-[Breakdown](./breakdown.md) - Otherwise.
+[Full Guide](./full_guide.md) - Otherwise.
