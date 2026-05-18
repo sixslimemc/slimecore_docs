@@ -1,4 +1,4 @@
-# SlimeCore Admin Guide
+# Admin Guide
 
 This guide covers everything a world admin needs to know about SlimeCore and how to use it. \
 It assumes basic knowledge of commands and datapack management.
