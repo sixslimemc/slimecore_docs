@@ -10,7 +10,7 @@ Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack 
 
 All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
 
-### File Structure
+### Function Tags
 
 SlimeCore-loaded datapacks require the following function tags:
 ```
