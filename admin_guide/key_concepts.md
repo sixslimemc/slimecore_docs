@@ -9,7 +9,7 @@
 
 ## Manifests
 
-Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it.
+Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it. Manifests are what allow SlimeCore to recognize and load datapacks in a structured manner.
 
 Key components of a pack manifest:
 - **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world. No two installed datapacks can share the same pack ID.
@@ -17,8 +17,6 @@ Key components of a pack manifest:
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
 - **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if there is exacly one other datapack that *implements* it.
-
-Manifests are what allow SlimeCore to recognize and load datapacks in a structured manner.
 
 To retrieve a datapack's raw manifest data (given you know the pack ID), you can do any of the following commands:
 ```mcfunction
