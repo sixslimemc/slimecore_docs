@@ -29,13 +29,27 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
 
+## Loading
+
+With SlimeCore, `#minecraft:load` is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
+
+Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints (see next section) are for.
+
+If your datapack has any [dependencies](#dependencies), the dependencies will **always** be loaded before your datapack.
+
+## Entrypoints
+
+## Disable and Uninstall
+
+## Dependencies
+
 ## The Manifest
 
 A datapack's **manifest** contains information about how it should be recognized and loaded--it is essentially the *identity* of the datapack. You define your datapack's manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function is referred to as the *manifest function* and must call the function `slimecore:api/manifest` with proper inputs (defining the manifest).
 
-Here is a manifest function template:
+A minimal manifest function template:
 
 ```mcfunction
 data modify storage slimecore:in manifest.pack.pack_id set value "PACK_ID"
@@ -63,3 +77,15 @@ data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
 
 function slimecore:api/manifest
 ```
+
+Each component is explained in the sections below:
+
+### `dependencies`
+
+- 
+
+## Dependencies (Conceptual)
+
+## Entrypoints (Conceptual)
+
+## Abstract Interfaces (Conceptual)
