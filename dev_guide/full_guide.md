@@ -29,21 +29,36 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
 
+## Dependencies
+
+
 ## Loading
 
 With SlimeCore, `#minecraft:load` is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
 
 Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
 
-If your datapack has any [dependencies](#dependencies), SlimeCore ensures that the dependencies will **always** be loaded before your datapack.
+From [Dependencies](#dependencies):
+> TODO: "dependencies will always be loaded before your datapack"
 
 ## Entrypoints
 
-Entrypoints
+Entrypoints are function tags that run **after all** datapacks are loaded upon world reload. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
+
+A key advantage of entrypoints is that they can be explicitly ordered relative to dependencies' entrypoints. For instance, if one of your datapack's dependencies defines an entrypoint, you can explicitly specify that any of your datapack's entrypoints must run before OR after it.
+
+A common use of entrypoints is to replace `#minecraft:tick` by defining a single entrypoint that starts a `/schedule` tick loop.
+
+*Example of `/schedule` tick loop:*
+```mcfunction
+schedule <this function> 1t
+say this function will run every tick.
+```
+
+Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in your datapack's [manifest](#the-manifest).
 
 ## Disable and Uninstall
 
-## Dependencies
 
 ## The Manifest
 
