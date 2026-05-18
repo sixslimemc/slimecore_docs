@@ -43,7 +43,7 @@ From [Dependencies](#dependencies):
 
 ## Entrypoints
 
-Entrypoints are function tags that run **after all** datapacks are loaded upon world reload. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
+Entrypoints are function tags that are called on world reload **after all** datapacks are loaded. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
 Entrypoints can and should be used to replace `#minecraft:tick`--most straightforwardly done by defining a single entrypoint that contains a function that runs `schedule <self> 1t`.
 
