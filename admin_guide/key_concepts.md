@@ -47,7 +47,7 @@ Under normal circumstances, disabling, (re-)enabling, or uninstalling datapacks 
 
 ***Outside of recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding), re-installing an uninstalled datapack, or advanced troubleshooting, using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.***
 
-Your chosen frontend should provide a documented method on initiating an explicit rebuild.
+Your chosen frontend should provide a documented method on initiating an explicit rebuild. Additionally, if it is unclear which datapacks are SlimeCore-loaded, your frontend should provide a documented method of querying/listing SlimeCore-loaded datapacks.
 
 ## Datapack Uninstallation
 
