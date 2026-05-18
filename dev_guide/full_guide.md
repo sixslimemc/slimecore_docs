@@ -50,8 +50,6 @@ A key advantage of entrypoints is that they can be explicitly ordered relative t
 A common use of entrypoints is to replace `#minecraft:tick` by defining a single entrypoint that starts a `/schedule` tick loop. \
 *A function that runs `/schedule <self> 1t` will run itself every tick.*
 
-```
-
 Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in your datapack's [manifest](#the-manifest).
 
 ## Disable and Uninstall
