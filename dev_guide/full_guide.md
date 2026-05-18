@@ -27,4 +27,4 @@ SlimeCore-loaded datapacks require the following function tags:
 
 Your datapack **MUST NOT** include `#minecraft:load` or `#minecraft:tick`.
 
-If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag). 
+*If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
