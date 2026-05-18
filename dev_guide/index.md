@@ -29,7 +29,7 @@ While not *strictly* required for development, it is recommended that you instal
 
 #### SCDev
 
-[SCDev](https://github.com/sixslimemc/scdev) is a basic chat-based frontend made by the author of SlimeCore that is designed to be useful for datapack developers.
+[SCDev](https://github.com/sixslimemc/scdev) is a basic chat-based frontend made by the author of SlimeCore that is designed to be useful and accessible to datapack developers.
 
 *If you do choose to use SCDev, make sure to add the `scdev.listener` tag to yourself to recieve the chat messages it sends.*
 
