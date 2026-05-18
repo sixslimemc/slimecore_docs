@@ -27,11 +27,11 @@ From [Description](../description.md):
 
 While not *strictly* required for development, it is recommended that you install a **frontend** datapack. A frontend allows you to interact with and recieve useful information from SlimeCore in-game. *See [this section](../admin_guide/index.md#installing-a-frontend) for more info on frontends.*
 
-### SCDev
+#### SCDev
 
 [SCDev](https://github.com/sixslimemc/scdev) is a basic chat-based frontend made by the author of SlimeCore that is designed to be useful for datapack developers.
 
-If you do choose to use SCDev, make sure to add the tag `scdev.listener` to yourself to recieve the chat messages it sends.
+*If you do choose to use SCDev, make sure to add the tag `scdev.listener` to yourself to recieve the chat messages it sends.*
 
 ## Quick Convert
 
