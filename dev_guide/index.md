@@ -5,6 +5,7 @@ It assumes intermediate knowledge of commands and datapack structure/development
 
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Installing a Frontend](#installing-a-frontend)
+- [Quick Convert](#quick-convert)
 
 ## SlimeCore Briefly
 
