@@ -28,3 +28,38 @@ Create the following function tags:
 Your datapack **MUST NOT** include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
+
+## The Manifest
+
+A datapack's **manifest** is essentially it's identity and tells SlimeCore how it should recognize and load it. You define your datapack's manifest, SlimeCore does the rest.
+
+In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function must call the function `slimecore:api/manifest` with proper inputs (defining the manifest), and is referred to as the *manifest function*.
+
+Here is a manifest function template:
+
+```mcfunction
+data modify storage slimecore:in manifest.pack.pack_id set value "PACK_ID"
+data modify storage slimecore:in manifest.pack.author_id set value "AUTHOR_ID"
+data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
+data modify storage slimecore:in manifest.pack.is_library set value false
+
+data modify storage slimecore:in manifest.pack.dependencies set value []
+
+data modify storage slimecore:in manifest.pack.entrypoints set value []
+data modify storage slimecore:in manifest.pack.preload_entrypoints set value []
+
+data modify storage slimecore:in manifest.pack.abstract_declarations set value []
+data modify storage slimecore:in manifest.pack.abstract_implementations set value []
+
+data modify storage slimecore:in manifest.pack.display.name set value "DISPLAY_NAME"
+data modify storage slimecore:in manifest.pack.display.summary set value "DISPLAY_SUMMARY"
+data modify storage slimecore:in manifest.pack.display.author_name set value "DISPLAY_AUTHOR_NAME"
+
+# data modify storage slimecore:in manifest.pack.display.links.author set value "AUTHOR_URL"
+# data modify storage slimecore:in manifest.pack.display.links.info set value "INFO_URL"
+# data modify storage slimecore:in manifest.pack.display.links.versions set value "RELEASES_URL"
+
+data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
+
+function slimecore:api/manifest
+```
