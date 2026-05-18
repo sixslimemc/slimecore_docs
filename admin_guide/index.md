@@ -25,7 +25,7 @@ Requiring an external frontend has the following benefits:
 - **Separation of Concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-Importantly, frontends are not "special" in any way--they are installed and managed like any other datapack and are their usage is to be independently documented.
+Importantly, frontends are not "special" in any way--they are installed, managed, and indpendently documented like any other datapack.
 
 This guide is meant to be frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend written by the author of SlimeCore.
 
