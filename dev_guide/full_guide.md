@@ -12,7 +12,7 @@ All other namespaces included in your datapack are considered *secondary namespa
 
 ### Function Tags
 
-SlimeCore-loaded datapacks require the following function tags:
+Create the following function tags:
 ```
 <datapack>
 └── data
