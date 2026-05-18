@@ -33,11 +33,13 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 With SlimeCore, `#minecraft:load` is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
 
-Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints (see next section) are for.
+Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
 
-If your datapack has any [dependencies](#dependencies), the dependencies will **always** be loaded before your datapack.
+If your datapack has any [dependencies](#dependencies), SlimeCore ensures that the dependencies will **always** be loaded before your datapack.
 
 ## Entrypoints
+
+Entrypoints
 
 ## Disable and Uninstall
 
