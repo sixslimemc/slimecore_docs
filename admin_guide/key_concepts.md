@@ -13,7 +13,7 @@ Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying
 
 Key components of a pack manifest:
 - **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world; you should generally be able to recognize a datapack by it's pack ID. No two installed datapacks can share the same pack ID.
-- **Author ID:** A lowercase alphanumeric name that represents the author of a datapack. Two datapacks with the same pack ID but different author IDs are different datapacks (but are still incompatable with eachother).
+- **Author ID:** A lowercase alphanumeric name that represents the author of a datapack. Two datapacks with the same pack ID but different author IDs represent different datapacks, *but are still incompatible with eachother*.
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
 - **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if there is exacly one other datapack that *implements* it.
