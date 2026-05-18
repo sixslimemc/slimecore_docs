@@ -12,27 +12,16 @@ All other namespaces included in your datapack are considered *secondary namespa
 
 ### File Structure
 
-A SlimeCore-loaded datapack has the following structure:
+SlimeCore-loaded datapacks require the following function tags:
 ```
 <datapack>
-├── data
-│   ├── slimecore/tags/function
-│   │   └── manifest.json
-│   ├── <pack ID>
-│   │   ├── tags
-│   │   │   ├── function
-│   │   │   │   ├── entrypoint
-│   │   │   │   │   └── <entrypoint ID...>.json
-│   │   │   │   ├── preload_entrypoint
-│   │   │   │   │   └── <preload entrypoint ID...>.json
-│   │   │   │   ├── disable.json
-│   │   │   │   ├── load.json
-│   │   │   │   ├── safe_mode.json
-│   │   │   │   ├── uninstall.json
-│   │   │   │   └── ...
-│   │   │   └── ...
-│   │   └── ...
-│   └── <other secondary namespaces...>
-└── pack.mcmeta
+└── data
+    ├── slimecore/tags/function
+    │   └── manifest.json
+    └── <pack ID>/tags/function
+        ├── disable.json
+        ├── load.json
+        ├── safe_mode.json
+        └── uninstall.json
 ```
 
