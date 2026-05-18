@@ -18,14 +18,14 @@ Datapacks that are SlimeCore-loaded will not function without SlimeCore installe
 
 ## Installing a Frontend
 
-To interact with SlimeCore in-game, you must install a **frontend** datapack. A frontend provides the user-facing interface and features that SlimeCore itself intentionally does not provide on it's own.
+To interact with SlimeCore in-game, you must install a **frontend** datapack. A frontend provides the user-facing interface and features that SlimeCore itself intentionally does not implement on it's own.
 
 Requiring an external frontend has the following benefits:
 
 - **Separation of Concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-Frontends define their own interface with SlimeCore, and thus their functionality/methods should be documented independently. Importantly, frontends are not "special" in any way, they are installed and managed like any other datapack.
+Importantly, frontends are not "special" in any way--they are installed and managed like any other datapack and are their usage is to be independently documented.
 
 This guide is meant to be frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend written by the author of SlimeCore.
 
