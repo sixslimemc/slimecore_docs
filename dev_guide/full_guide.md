@@ -25,13 +25,13 @@ Create the following function tags:
         └── uninstall.json
 ```
 
-Your datapack **MUST NOT** include `#minecraft:load` or `#minecraft:tick`.
+Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
 
 ## The Manifest
 
-A datapack's **manifest** is essentially it's identity and tells SlimeCore how it should recognize and load it. You define your datapack's manifest, SlimeCore does the rest.
+A datapack's **manifest** tells SlimeCore how it should recognize and load it. You define your datapack's manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function must call the function `slimecore:api/manifest` with proper inputs (defining the manifest), and is referred to as the *manifest function*.
 
