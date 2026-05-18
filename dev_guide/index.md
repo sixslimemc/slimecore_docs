@@ -12,9 +12,9 @@ It assumes intermediate knowledge of commands and datapack structure/development
 > SlimeCore allows datapacks to specify:
 > - Version
 > - Dependencies
-- Entrypoints (e.g. ticking functions) and their order relative to other datapacks'
-- Abstract interfaces that must be implemented by other datapacks
-- Pack and author metadata
-- Download URL(s)
-
-Datapacks specify this information via a *manifest* function. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then if validation succeeds, executes a compatible load/calling order.
+> - Entrypoints (e.g. ticking functions) and their order relative to other datapacks'
+> - Abstract interfaces that must be implemented by other datapacks
+> - Pack and author metadata
+> - Download URL(s)
+>
+> Datapacks specify this information via a *manifest* function. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then if validation succeeds, executes a compatible load/calling order.
