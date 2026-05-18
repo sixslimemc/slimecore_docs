@@ -1,6 +1,6 @@
 # SlimeCore Admin Guide
 
-This guide should cover everything a world admin needs to know about SlimeCore and how to use it. \
+This guide covers everything a world admin needs to know about SlimeCore and how to use it. \
 It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
@@ -18,7 +18,7 @@ Datapacks that are SlimeCore-loaded will not function without SlimeCore installe
 
 ## Installing a Frontend
 
-To interact with SlimeCore in-game, you must install a **frontend** datapack that provides a user-facing interface that SlimeCore intentionally does not implement on it's own.
+To interact with SlimeCore in-game, install a **frontend** datapack. A frontend will provide the user-facing interface to SlimeCore that SlimeCore itself intentionally doesn't include on it's own.
 
 Requiring an external frontend has the following benefits:
 
