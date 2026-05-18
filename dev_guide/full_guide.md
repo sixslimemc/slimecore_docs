@@ -31,7 +31,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 ## The Manifest
 
-A datapack's **manifest** contains information about how it should be recognized and loaded. \
+A datapack's **manifest** contains information about how it should be recognized and loaded--it is essentially the *identity* of the datapack. \
 You define your datapack's manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function must call the function `slimecore:api/manifest` with proper inputs (defining the manifest), and is referred to as the *manifest function*.
