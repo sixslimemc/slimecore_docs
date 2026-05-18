@@ -4,11 +4,11 @@ This guide is from the perspective of creating a new datapack, but should be abl
 
 ## Setup
 
-### Primary Namespace / Pack ID
+### Pack ID
 
-Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's *primary namespace*. This namespace must be the only namespace that your datapack defines ***new*** files in. The name of this namespace is your datapack's **pack ID**. 
+Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack ID**. This namespace must be the only namespace that your datapack defines ***new*** files in.
 
-All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, primary namespaces of your datapack's dependencies). Your datapack should not define any *new* files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
+All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack should not define any *new* files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
 
 ### File Structure
 
