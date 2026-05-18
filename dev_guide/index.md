@@ -32,8 +32,10 @@ While not *strictly* required for development, it is recommended that you instal
 
 If you do choose to use SCDev, make sure to add the tag `scdev.listener` to yourself to recieve the chat messages it sends.
 
+## Quick Convert
+
+If you just want to convert your datapack quickly, read [this page](./quick_convert.md).
+
 ---
 
-[Quick Convert](./quick_convert.md) - If you just want to convert your datapack quickly and dirtily.
-
-[Full Guide](./full_guide.md) - Otherwise.
+**Next:** [Full Guide](./full_guide.md)
