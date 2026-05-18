@@ -45,7 +45,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 Under normal circumstances, disabling, (re-)enabling, or uninstalling datapacks *must* be done via **explicit rebuilding**--**NOT the `/datapack` command**. Explicit rebuilding allows you to *stage* such changes and will verify that they are valid before applying them. If any changes are invalid (ex: disabling a datapack that is a dependency of an enabled datapack), no changes will be made.
 
-***In all practical cases (aside from recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)), Using `/datapack` to manage datapacks is a user-error and may cause unexpected behavior.***
+***Outside of recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding), re-installing an uninstalled datapack, or advanced troubleshooting, using `/datapack` to manage datapacks is a user-error and may cause unexpected behavior.***
 
 Your chosen frontend should provide a documented method on initiating an explicit rebuild.
 
@@ -58,7 +58,7 @@ Your chosen frontend should provide a documented method on initiating an explici
     - At this point, the datapack is considered "not installed" and is no longer tracked by SlimeCore (disabled and cannot be re-enabled via explicit rebuilding).
 3. Remove the datapack from your world files.
 
-This is not only to make sure that the datapack can be safely uninstalled, but also to let the datapack "clean itself up" and effectively remove it's prescence from your world.
+This is not only to make sure that the datapack can be safely uninstalled, but also to let the datapack "clean itself up", effectively removing it's prescence from your world.
 
 If you want to re-enable an uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
 
