@@ -244,15 +244,17 @@ Pack IDs **MUST**:
 Generally, pack IDs **SHOULD**:
 - be 3-32 characters long
 - not start with `_` or `-`
-- use `-` as a module separator (e.g. `foo-bar` and `foo-baz` are modules of group `foo`)
+- use `-` as a module separator \
+(e.g. `foo-bar` and `foo-baz` are modules of group `foo`)
 - *if for a [library](#is_library) datapack:*
     - use `_` conservatively
     - be easy-to-type and unique \
-    (ex: `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
+    (e.g. `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
 - *if for a non-[library](#is_library)/content datapack:*
     - be at least 6 characters long
     - use `_` to represent spaces
-    - be reasonably descriptive (ex: `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long)
+    - be reasonably descriptive \
+     (ex: `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long)
 
 ### Author IDs
 
@@ -273,4 +275,5 @@ Generally these IDs **SHOULD**:
 - be at least 3 characters long
 - use `_` to represent spaces
 - be reasonably descriptive
-- not be shared between elements of different types (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
+- not be shared between elements of different types \
+(e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
