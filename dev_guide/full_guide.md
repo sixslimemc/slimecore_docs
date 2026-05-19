@@ -18,6 +18,8 @@ Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack 
 
 All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
 
+For full pack ID naming requirements, see [this section](#pack-ids).
+
 ### Function Tags
 
 Create the following function tags:
@@ -186,13 +188,86 @@ Must exactly match your datapack's [pack ID](#pack-id).
 
 **Type:** `string`
 
+An arbitrary identifier that represents you as a datapack author. \
+See [this section](#author-ids) for requirements.
 
 ### `version`
+
+**Type:** `struct`
+
+The numerical [SemVer](https://semver.org) version of your datapack.
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `major` | int | Major version. |
+| `minor` | int | Minor version. |
+| `patch` | int | Patch version. |
+
 ### `is_library`
+
+**Type:** `boolean`
+
+Whether or not your datapack is a library.
+
+A library is a datapack that is meant to be used exclusively by other datapacks and does not make a meaningful impact on the user's world on it's own. 
+
 ### `dependencies`
+
+**Type:** `list<struct>`
+
+Specifies your datapack's [dependencies](#dependencies).
+
+Each element must have the following keys:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | `string`
 ### `entrypoints`
 ### `preload_entrypoints`
 ### `abstract_declarations`
 ### `abstract_implementations`
 ### `display`
 ### `url`
+
+## ID Naming
+
+### Pack IDs
+
+Pack IDs **MUST**:
+- be a valid datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces)
+- be 1-64 characters long
+- only contain lowercase letters, numbers, `_`, and `-`
+- not be `minecraft` or `slimecore`
+
+Generally, pack IDs **SHOULD**:
+- be 3-32 characters long
+- not start with `_` or `-`
+- use `-` as a module separator (e.g. if multiple datapacks are modules of a bundle/group named `foo`, their IDs might be `foo-bar`, `foo-baz`, etc.)
+- *if for a [library](#is_library) datapack:*
+    - use `_` conservatively
+    - be easy-to-type and unique (ex: `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
+- *if for a non-[library](#is_library)/content datapack:*
+    - be at least 6 characters long
+    - use `_` to represent spaces
+    - be reasonably descriptive (ex: `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long)
+
+### Author IDs
+
+Author IDs **MUST**:
+- be 1-64 characters long
+- only contain lowercase letters, numbers, and `_`
+
+Generally author IDs **SHOULD**
+- match your (lowercased) name on your primary authoring platform (github, modrinth, etc.) or in-game name
+
+### Manifest IDs
+
+Entrypoint/preload-entrypoint IDs and abstract interface IDs **MUST**:
+- be 1-32 characters long
+- only contain lowercase letters, numbers, and `_`
+
+Generally these IDs **SHOULD**:
+- be at least 3 characters long
+- use `_` to represent spaces
+- be reasonably descriptive
+- not be shared between elements of different types (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
