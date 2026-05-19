@@ -71,7 +71,7 @@ When this tag is called, your datapack attempt to cleanly stop operation with th
 
 The `#<pack ID>:uninstall` tag defines it's uninstallation process.
 
-When this tag is called, your datapack should attempt to cleanly remove all traces of itself from the world with the assumption that it will never be enabled again.
+When this tag is called, your datapack should attempt to cleanly remove all traces of itself from the world with the assumption that it will never be enabled again, ideally with no trace that it was ever installed.
 
 It is a baseline expectation that "pure data" elements of your datapack such as scoreboards, NBT storage, entity tags, etc. are removed entirely.
 
