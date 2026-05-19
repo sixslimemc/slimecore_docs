@@ -83,7 +83,7 @@ Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>
 
 Abstract interfaces represent "contracts" that are presented by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the presenting datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
 
-Practically, an abstract interface should be declared when a datapack defines an API over some behavior, but does not actually implement that behavior--*delegating* the implementation to an external datapack (that the world/user chooses). It is the responsibility of the author to document/explain proper implementation of the behavior.
+Practically, an abstract interface should be declared when a datapack defines an API over some behavior, but does not actually implement that behavior--*delegating* the implementation to an external datapack (that the user chooses). It is the responsibility of the author to document/explain proper implementation of the behavior.
 
 Likewise, an datapack should specify that it implements an abstract interface if it does properly implement the behavior documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
 
@@ -119,7 +119,8 @@ Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever 
 
 ## The Manifest
 
-A datapack's **manifest** contains information about how it should be recognized and loaded--it is essentially the *identity* of the datapack. You define your datapack's manifest, SlimeCore does the rest.
+A datapack's **manifest** is it's *identity* to SlimeCore. It contains all the information SlimeCore needs to know about it in order to recognize and load it properly. \
+You define your datapack's manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function is referred to as the *manifest function* and must call the function `slimecore:api/manifest` with proper inputs (defining the manifest).
 
