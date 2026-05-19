@@ -63,7 +63,7 @@ Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>
 
 The `#<pack ID>:disable` tag is called just before your datapack is disabled, but not uninstalled.
 
-Your datapack should make it's best attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
+When this tag is called, your datapack attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
 
 *There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
 
@@ -71,7 +71,7 @@ Your datapack should make it's best attempt to cleanly stop operation with the c
 
 The `#<pack ID>:uninstall` tag defines it's uninstallation process.
 
-Your datapack should make it's best attempt to cleanly remove all traces of itself from the world.
+When this tag is called, your datapack should attempt to cleanly remove all traces of itself from the world.
 
 Handling this is to your descretion, but it is a baseline expectation that "pure data" elements of your datapack such as scoreboards, NBT storage, entity tags, etc. are removed entirely.
 
