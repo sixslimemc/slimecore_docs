@@ -221,7 +221,9 @@ Each element must have the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `pack_id` | `string`
+| `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. |
+| `author_id` | `string` | [Author ID](#author_id) of the dependency. |
+| `
 ### `entrypoints`
 ### `preload_entrypoints`
 ### `abstract_declarations`
@@ -242,10 +244,11 @@ Pack IDs **MUST**:
 Generally, pack IDs **SHOULD**:
 - be 3-32 characters long
 - not start with `_` or `-`
-- use `-` as a module separator (e.g. if multiple datapacks are modules of a bundle/group named `foo`, their IDs might be `foo-bar`, `foo-baz`, etc.)
+- use `-` as a module separator (e.g. `foo-bar` and `foo-baz` are modules of group `foo`)
 - *if for a [library](#is_library) datapack:*
     - use `_` conservatively
-    - be easy-to-type and unique (ex: `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
+    - be easy-to-type and unique \
+    (ex: `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
 - *if for a non-[library](#is_library)/content datapack:*
     - be at least 6 characters long
     - use `_` to represent spaces
