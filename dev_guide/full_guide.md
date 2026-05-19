@@ -57,9 +57,25 @@ Entrypoints can and should be used to replace `#minecraft:tick` by one or more e
 
 A key advantage of entrypoints is that they can be explicitly ordered relative to dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
-Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in your datapack's [manifest](#the-manifest).
+Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in a datapack's [manifest](#the-manifest).
 
-## Disable and Uninstall
+## Disable Tag
+
+The `#<pack ID>:disable` tag is called just before your datapack is disabled, but not uninstalled.
+
+Your datapack should make it's best attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
+
+*There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
+
+## Uninstall Tag
+
+The `#<pack ID>:uninstall` tag defines it's uninstallation process.
+
+Your datapack should make it's best attempt to cleanly remove all traces of itself from the world with the assumption that it will never be re-enabled again.
+
+Handling this is to your descretion, but all "pure data" elements of your datapack such as scoreboards, NBT storage, entity tags, etc. should generally be removed entirely.
+
+It is important to note that, if a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack ID>:uninstall`, but `#<pack ID>:load` will not be called.
 
 ## Safe Mode
 
