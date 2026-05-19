@@ -134,6 +134,19 @@ Datapacks define their manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function is referred to as the *manifest function* and must call the function `slimecore:api/manifest` with proper inputs (defining the manifest).
 
+Manifests have the following components:
+- [`pack_id`](#pack_id)
+- [`author_id`](#author_id)
+- [`version`](#version)
+- [`is_library`](#is_library)
+- [`dependencies`](#dependencies-1)
+- [`entrypoints`](#entrypoints-1)
+- [`preload_entrypoints`](#preload_entrypoints)
+- [`abstract_declarations`](#abstract_declarations)
+- [`abstract_implementations`](#abstract_implementations)
+- [`display`](#display)
+- [`url`](#url)
+
 *Minimal manifest function template:*
 
 ```mcfunction
@@ -162,19 +175,6 @@ data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
 
 function slimecore:api/manifest
 ```
-
-Manifests have the following components:
-- [`pack_id`](#pack_id)
-- [`author_id`](#author_id)
-- [`version`](#version)
-- [`is_library`](#is_library)
-- [`dependencies`](#dependencies-1)
-- [`entrypoints`](#entrypoints-1)
-- [`preload_entrypoints`](#preload_entrypoints)
-- [`abstract_declarations`](#abstract_declarations)
-- [`abstract_implementations`](#abstract_implementations)
-- [`display`](#display)
-- [`url`](#url)
 
 ### `pack_id`
 ### `author_id`
