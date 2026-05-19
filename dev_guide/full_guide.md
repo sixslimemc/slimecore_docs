@@ -65,17 +65,27 @@ With SlimeCore, the `#minecraft:load` function tag is conceptually replaced by `
 Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
 
 From [Dependencies](#dependencies):
-> TODO: "dependencies will always be loaded before your datapack"
+> SlimeCore will ensure that all dependencies will be loaded **before** your datapack.
 
 ## Entrypoints
 
-Entrypoints are function tags that are called on world reload **after all** datapacks are loaded. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
+Entrypoints are function tags that are called on world reload **after all** datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
 Entrypoints can and should be used to replace `#minecraft:tick` by one or more entrypoints that contain functions that schedule themselves (`schedule <self> 1t`). If your datapack does multiple conceptually independent "chunks" of work in its tick loop, it's good practice to split them up into their own entrypoints. This gives datapacks that may depend on yours more to work with (explained below).
 
 A key advantage of entrypoints is that they can be explicitly ordered relative to dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
 Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in a datapack's [manifest](#the-manifest).
+
+### Preload Entrypoints
+
+*Preload entrypoints are only applicable to a small minority of datapacks.*
+
+Preload entrypoints are similar to entrypoints but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/technical/pre-initialization work and shold NOT be used to start `/schedule` loops.
+
+Similarly to entrypoints, preload entrypoints can be explicitly ordered relative to dependencies' preload entrypoints.
+
+Preload entrypoints match the function tag format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>`, and are declared in a datapack's [manifest](#the-manifest).
 
 ## Abstract Interfaces
 
@@ -120,11 +130,11 @@ Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever 
 ## The Manifest
 
 A datapack's **manifest** contains all the information about how it should be recognized and loaded--the *identity* of the datapack. \
-You define your datapack's manifest, SlimeCore does the rest.
+Datapacks define their manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function is referred to as the *manifest function* and must call the function `slimecore:api/manifest` with proper inputs (defining the manifest).
 
-A minimal manifest function template:
+*Minimal manifest function template:*
 
 ```mcfunction
 data modify storage slimecore:in manifest.pack.pack_id set value "PACK_ID"
@@ -153,6 +163,27 @@ data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
 function slimecore:api/manifest
 ```
 
-Each component is explained in the sections below:
+Manifests have the following components:
+- [`pack_id`](#pack_id)
+- [`author_id`](#author_id)
+- [`version`](#version)
+- [`is_library`](#is_library)
+- [`dependencies`](#dependencies-1)
+- [`entrypoints`](#entrypoints-1)
+- [`preload_entrypoints`](#preload_entrypoints)
+- [`abstract_declarations`](#abstract_declarations)
+- [`abstract_implementations`](#abstract_implementations)
+- [`display`](#display)
+- [`url`](#url)
 
+### `pack_id`
+### `author_id`
+### `version`
+### `is_library`
 ### `dependencies`
+### `entrypoints`
+### `preload_entrypoints`
+### `abstract_declarations`
+### `abstract_implementations`
+### `display`
+### `url`
