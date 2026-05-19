@@ -119,7 +119,7 @@ Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever 
 
 ## The Manifest
 
-A datapack's **manifest** contains all the information about how it should be recognized and loaded; it is essentially the *identity* of the datapack. You define your datapack's manifest, SlimeCore does the rest.
+A datapack's **manifest** contains all the information about how it should be recognized and loaded--the *identity* of the datapack. You define your datapack's manifest, SlimeCore does the rest.
 
 In your datapack, you must append a single function to the function tag `#slimecore:manifest`. This function is referred to as the *manifest function* and must call the function `slimecore:api/manifest` with proper inputs (defining the manifest).
 
