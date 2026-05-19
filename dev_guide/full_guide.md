@@ -2,6 +2,14 @@
 
 This guide is from the perspective of creating a new datapack, but should be able to be easily adapted to converting a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
 
+- [Setup](#setup)
+- [Dependencies](#dependencies)
+- [Loading](#loading)
+- [Entrypoints](#entrypoints)
+- [Disable and Uninstall](#disable-and-uninstall)
+- [Safe Mode](#safe-mode)
+- [The Manifest](#the-manifest)
+
 ## Setup
 
 ### Pack ID
@@ -45,13 +53,15 @@ From [Dependencies](#dependencies):
 
 Entrypoints are function tags that are called on world reload **after all** datapacks are loaded. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
-Entrypoints can and should be used to replace `#minecraft:tick`--most straightforwardly done by defining a single entrypoint that contains a function that runs `schedule <self> 1t`.
+Entrypoints can and should be used to replace `#minecraft:tick`--most simply done by defining a single entrypoint that contains a function that schedules itself (`schedule <self> 1t`). That said, if your datapack does multiple conceptually independent things in it's tick function, it is good practice to split them up into multiple entrypoints, such that other datapacks that depend on yours have more to work with (explained below).
 
-A key advantage of entrypoints is that they can be explicitly ordered relative to dependencies' entrypoints. For instance, if one of your datapack's dependencies defines an entrypoint, you can explicitly specify that any of your datapack's entrypoints must run before OR after it.
+A key advantage of entrypoints is that they can be explicitly ordered relative to dependencies' entrypoints. I.e. If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
 Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in your datapack's [manifest](#the-manifest).
 
 ## Disable and Uninstall
+
+## Safe Mode
 
 
 ## The Manifest
