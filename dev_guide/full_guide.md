@@ -69,7 +69,7 @@ When this tag is called, your datapack attempt to cleanly stop operation with th
 
 ## Uninstall Tag
 
-The `#<pack ID>:uninstall` tag defines it's uninstallation process.
+The `#<pack ID>:uninstall` tag defines your datapack's uninstallation process.
 
 When this tag is called, your datapack should attempt to cleanly remove itself from the world with the assumption that it will never be enabled again, ideally leaving no trace that it was ever installed.
 
