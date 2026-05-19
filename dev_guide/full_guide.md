@@ -51,8 +51,10 @@ All SlimeCore-loaded datapacks have a [SemVer](https://semver.org) adhering vers
 
 An installed dependency fulfills the version requirement if all of these conditions are met:
 - `<major>` == `<req_major>`
-- if `<major>` == 0: `<minor>` == `<req_minor>`
-- if `<major>` > 0: `<minor>` >= `<req_minor>`a
+- if `<major>` == 0:
+    -`<minor>` == `<req_minor>`
+- if `<major>` > 0:
+    - `<minor>` >= `<req_minor>`a
 
 If an installed dependency datapack does not fulfill the version requirement, the dependency is not considered fulfilled and the dependent datapack will not load.
 
