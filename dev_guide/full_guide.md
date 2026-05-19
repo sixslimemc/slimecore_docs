@@ -71,7 +71,7 @@ Your datapack should make it's best attempt to cleanly stop operation with the c
 
 The `#<pack ID>:uninstall` tag defines it's uninstallation process.
 
-Your datapack should make it's best attempt to cleanly remove all traces of itself from the world with the assumption that it will never be re-enabled again.
+Your datapack should make it's best attempt to cleanly remove all traces of itself from the world.
 
 Handling this is to your descretion, but it is a baseline expectation that "pure data" elements of your datapack such as scoreboards, NBT storage, entity tags, etc. are removed entirely.
 
