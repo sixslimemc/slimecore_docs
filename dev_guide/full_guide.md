@@ -177,7 +177,16 @@ function slimecore:api/manifest
 ```
 
 ### `pack_id`
+
+**Type:** `string`
+
+Must exactly match your datapack's [pack ID](#pack-id).
+
 ### `author_id`
+
+**Type:** `string`
+
+
 ### `version`
 ### `is_library`
 ### `dependencies`
