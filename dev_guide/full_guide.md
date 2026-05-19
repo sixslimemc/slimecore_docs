@@ -79,7 +79,7 @@ Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>
 
 ## Abstract Interfaces
 
-*Abstract interfaces are only applicable to a small subset of datapacks.*
+*Abstract interfaces are only applicable to a small minority of datapacks.*
 
 Abstract interfaces represent "contracts" that are presented by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the presenting datapack, abstract interfaces are just used to *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
 
