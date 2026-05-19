@@ -77,6 +77,18 @@ A key advantage of entrypoints is that they can be explicitly ordered relative t
 
 Entrypoints match the function tag format `#<pack ID>/entrypoint/<entrypoint ID>`, and are declared in a datapack's [manifest](#the-manifest).
 
+## Abstract Interfaces
+
+In some particular datapacks, it may make sense to make use of **abstract interfaces**.
+
+Abstract interfaces represent "contracts" that are presented by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the presenting datapack, abstract interfaces are just used to *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
+
+Practically, an abstract interface should be declared when a datapack defines an API over some behavior, but does not actually implement that behavior--*delegating* the implementation to an external datapack (that the world/user chooses). It is the responsibility of the author to document/explain proper implementation of the behavior.
+
+Likewise, an datapack should specify that it implements an abstract interface if it does properly implement the behavior documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
+
+Abstract interface declarations/implementations are declared in a datapack's [manifest](#the-manifest).
+
 ## Disable Tag
 
 The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
