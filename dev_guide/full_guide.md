@@ -288,7 +288,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 `name`, `author_name`, and `summary` should not contain any escape sequences such as `/n` or `/t`.
 
-`links` is optional and contains the following optional keys:
+`links` is optional and can contain the following optional keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) |
