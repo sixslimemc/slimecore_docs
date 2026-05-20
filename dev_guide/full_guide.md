@@ -286,7 +286,7 @@ Specifies your datapack's display information and URLs. This information is not 
 | `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. |
 | `links` | `struct` | *(See below)* |
 
-These values should not contain any escape sequences such as `/n` or `/t`.
+`name`, `author_name`, and `summary` should not contain any escape sequences such as `/n` or `/t`.
 
 `links` is optional, and contains the following optional keys:
 | Key | Type | Description |
