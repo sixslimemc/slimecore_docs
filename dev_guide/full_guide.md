@@ -3,13 +3,13 @@
 This guide is from the perspective of creating a new datapack, but should be able to be easily adapted to converting a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
 
 - [Setup](#setup)
-- [Loading](#loading)
-- [Dependencies](#dependencies)
-- [Entrypoints](#entrypoints)
-- [Abstract Interfaces](#abstract-interfaces)
+- [Load Tag](#load-tag)
 - [Disable Tag](#disable-tag)
 - [Uninstall Tag](#uninstall-tag)
 - [Safe Mode Tag](#safe-mode)
+- [Dependencies](#dependencies)
+- [Entrypoints](#entrypoints)
+- [Abstract Interfaces](#abstract-interfaces)
 - [The Manifest](#the-manifest)
 - [ID Naming](#id-naming)
 
@@ -42,7 +42,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
 
-## Loading
+## Load Tag
 
 With SlimeCore, the `#minecraft:load` function tag is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
 
@@ -50,6 +50,34 @@ Importantly, `#<pack ID>:load` should *only* do work related to initialization (
 
 From [Dependencies](#dependencies):
 > SlimeCore will ensure that all dependencies will be loaded **before** your datapack.
+
+## Disable Tag
+
+The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
+
+When this tag is called, your datapack attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
+
+*There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
+
+## Uninstall Tag
+
+The `#<pack ID>:uninstall` function tag defines your datapack's uninstallation process.
+
+When this tag is called, your datapack should attempt to cleanly remove itself from the world with the assumption that it will never be enabled again, ideally leaving no trace that it was ever installed.
+
+It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
+
+If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack ID>:uninstall`, but `#<pack ID>:load` will not be called beforehand.
+
+## Safe Mode Tag
+
+The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if there is another installed datapack with the same pack ID as your datapack.
+
+When this tag is called, your datapack should attempt to temporarily enter a state of reduced functionality where references/calls to resources under it's pack ID are minimized until `#<pack ID>:load` is called. I.e. You should minimize the chance of referencing/calling resources that have been unintentionally overwritten by the other datapack that has the same pack ID.
+
+When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to it's fully functional state. While safe mode should be accounted for, it is important that your datapack continues to function as expected after safe mode ends.
+
+Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack, and the world already has a datapack with it's pack ID.
 
 ## Dependencies
 
@@ -105,34 +133,6 @@ Practically, an abstract interface should be declared when a datapack defines an
 Likewise, an datapack should specify that it implements an abstract interface if it does properly implement the behavior documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
 
 Abstract interface declarations/implementations are declared in a datapack's [manifest](#the-manifest).
-
-## Disable Tag
-
-The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
-
-When this tag is called, your datapack attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
-
-*There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
-
-## Uninstall Tag
-
-The `#<pack ID>:uninstall` function tag defines your datapack's uninstallation process.
-
-When this tag is called, your datapack should attempt to cleanly remove itself from the world with the assumption that it will never be enabled again, ideally leaving no trace that it was ever installed.
-
-It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
-
-If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack ID>:uninstall`, but `#<pack ID>:load` will not be called beforehand.
-
-## Safe Mode Tag
-
-The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if there is another installed datapack with the same pack ID as your datapack.
-
-When this tag is called, your datapack should attempt to temporarily enter a state of reduced functionality where references/calls to resources under it's pack ID are minimized until `#<pack ID>:load` is called. I.e. You should minimize the chance of referencing/calling resources that have been unintentionally overwritten by the other datapack that has the same pack ID.
-
-When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to it's fully functional state. While safe mode should be accounted for, it is important that your datapack continues to function as expected after safe mode ends.
-
-Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack, and the world already has a datapack with it's pack ID.
 
 ## The Manifest
 
