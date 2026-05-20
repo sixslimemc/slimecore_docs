@@ -46,7 +46,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 The `#<pack ID>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
 
-When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
+When this tag is called, your datapack should initialize itself (declare scoreboards, initialize data, etc.), but should not start any `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
 
 ## Disable Tag
 
