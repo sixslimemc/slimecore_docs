@@ -1,6 +1,6 @@
 # Full Dev Guide
 
-This guide is from the perspective of creating a new datapack, but should be able to be easily adapted to converting a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
+This guide is from the perspective of creating a new datapack, but should provide enough information to convert a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
 
 - [Setup](#setup)
 - [Load Tag](#load-tag)
@@ -46,16 +46,13 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 With SlimeCore, the `#minecraft:load` function tag is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
 
-Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
-
-From [Dependencies](#dependencies):
-> SlimeCore will ensure that all dependencies will be loaded **before** your datapack.
+Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
 
 ## Disable Tag
 
 The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
 
-When this tag is called, your datapack attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
+When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
 
 *There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
 
