@@ -1,6 +1,6 @@
 # Full Dev Guide
 
-If converting an existing datapack, it is advised to make a backup beforehand.
+If converting an existing datapack, it is advised to make a backup before starting.
 
 - [Setup](#setup)
 - [Load Tag](#load-tag)
