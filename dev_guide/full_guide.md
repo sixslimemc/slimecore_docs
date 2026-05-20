@@ -3,12 +3,15 @@
 This guide is from the perspective of creating a new datapack, but should be able to be easily adapted to converting a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
 
 - [Setup](#setup)
-- [Dependencies](#dependencies)
 - [Loading](#loading)
+- [Dependencies](#dependencies)
 - [Entrypoints](#entrypoints)
-- [Disable and Uninstall](#disable-and-uninstall)
-- [Safe Mode](#safe-mode)
+- [Abstract Interfaces](#abstract-interfaces)
+- [Disable Tag](#disable-tag)
+- [Uninstall Tag](#uninstall-tag)
+- [Safe Mode Tag](#safe-mode)
 - [The Manifest](#the-manifest)
+- [ID Naming](#id-naming)
 
 ## Setup
 
@@ -39,6 +42,15 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
 
+## Loading
+
+With SlimeCore, the `#minecraft:load` function tag is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
+
+Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
+
+From [Dependencies](#dependencies):
+> SlimeCore will ensure that all dependencies will be loaded **before** your datapack.
+
 ## Dependencies
 
 With SlimeCore, your datapack can declare that it requires, or optionally supports, other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack.
@@ -61,15 +73,6 @@ An installed dependency fulfills the version requirement if all of these conditi
     - `<minor>` >= `<req_minor>`
 
 If an installed dependency datapack does not fulfill the version requirement, the dependency is not considered fulfilled and the dependent datapack will not load.
-
-## Loading
-
-With SlimeCore, the `#minecraft:load` function tag is conceptually replaced by `#<pack ID>:load`--`#<pack ID:load>` will be called upon every world reload and should be used to initialize your datapack.
-
-Importantly, `#<pack ID>:load` should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what entrypoints are for (see next section).
-
-From [Dependencies](#dependencies):
-> SlimeCore will ensure that all dependencies will be loaded **before** your datapack.
 
 ## Entrypoints
 
