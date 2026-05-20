@@ -281,7 +281,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `name` | `string` | The display name/title of your datapack. |
+| `name` | `string` | The display name of your datapack. |
 | `author_name` | `string` | Your display name as a datapack author. |
 | `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. |
 | `links` | `struct` | *(See below)* |
