@@ -45,6 +45,8 @@ With SlimeCore, your datapack can declare that it requires, or optionally suppor
 
 SlimeCore will ensure that all dependencies will be loaded **before** your datapack, and that all required dependencies are installed before your datapack loads at all.
 
+If your datapack references **any** part of another SlimeCore-loaded datapack, it should be declared as a dependency.
+
 Dependencies are declared in a datapack's [manifest](#the-manifest).
 
 ### Versioning
@@ -215,7 +217,7 @@ A library is a datapack that is meant to be used exclusively by other datapacks 
 
 **Type:** `list<struct>`
 
-Specifies your datapack's [dependencies](#dependencies).
+Declares your datapack's [dependencies](#dependencies)--each element represents one dependency.
 
 Each element must have the following keys:
 
@@ -223,12 +225,77 @@ Each element must have the following keys:
 | :-- | :-- | :-- |
 | `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. |
 | `author_id` | `string` | [Author ID](#author_id) of the dependency. |
-| `
+| `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. |
+| `optional` | `boolean` | If `true`, your datapack should be designed to work both with and without the dependency; SlimeCore will not require it to be installed. |
+| `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. |
+| `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. |
+
+Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
+
 ### `entrypoints`
+
+**Type:** `list<struct>`
+
+Declares your datapack's [entrypoints](#entrypoints)--each element represents one entrypoint.
+
+In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
+
+| Key | Type | Description | Default Value |
+| :-- | :-- | :-- |
+| `id` | `string` | The ID of the entrypoint. See [this section](#manifest-ids) for naming requirements. | *(required)* |
+| `after` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *after*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
+| `before` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *before*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
+
 ### `preload_entrypoints`
+
+**Type:** `list<struct>`
+
+Functions identically to [`entrypoints`](#entrypoints-1), but handles [preload entrypoints](#preload-entrypoints).
+
 ### `abstract_declarations`
+
+**Type:** `list<struct>`
+
+Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
+
+| Key | Type | Description | Default Value |
+| :-- | :-- | :-- |
+| `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
+
 ### `abstract_implementations`
+
+**Type:** `list<struct>`
+
+Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
+
+| Key | Type | Description | Default Value |
+| :-- | :-- | :-- |
+| `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
+| `id` | `string` | The ID of the implemented abstract interface.  |
+
 ### `display`
+
+**Type:** `struct`
+
+Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used by frontends and such to present your datapack nicely.
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `name` | `string` | The display name/title of your datapack. |
+| `author_name` | `string` | Your display name as a datapack author. |
+| `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. |
+| `links` | `struct` | *(See below)* |
+
+These values should not contain any escape sequences such as `/n` or `/t`.
+
+`links` is optional, and contains the following optional keys:
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) |
+| `releases` | `URL string` | website URL where users can find more released versions of this datapack (e.g. GitHub releases tab, Modrinth versions tab)
+| `author` | `URL string` | website URL that represents you as a datapack author (e.g. GitHub, Modrinth, personal site) |
+
+
 ### `url`
 
 ## ID Naming
@@ -245,16 +312,16 @@ Generally, pack IDs **SHOULD**:
 - be 3-32 characters long
 - not start with `_` or `-`
 - use `-` as a module separator \
-(e.g. `foo-bar` and `foo-baz` are modules of group `foo`)
+(e.g. `foo-bar` and `foo-baz` are modules of group `foo`.)
 - *if for a [library](#is_library) datapack:*
     - use `_` conservatively
     - be easy-to-type and unique \
-    (e.g. `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique)
+    (e.g. `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique.)
 - *if for a non-[library](#is_library)/content datapack:*
     - be at least 6 characters long
     - use `_` to represent spaces
     - be reasonably descriptive \
-     (ex: `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long)
+     (e.g. `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long.)
 
 ### Author IDs
 
@@ -262,8 +329,9 @@ Author IDs **MUST**:
 - be 1-64 characters long
 - only contain lowercase letters, numbers, and `_`
 
-Generally author IDs **SHOULD**
-- match your (lowercased) name on your primary authoring platform (github, modrinth, etc.) or in-game name
+Generally, author IDs **SHOULD**
+- match your (lowercased) name on your primary authoring platform (GitHub, Modrinth, etc.) or in-game name
+- stay consistent between your authored datapacks
 
 ### Manifest IDs
 
@@ -271,7 +339,7 @@ Entrypoint/preload-entrypoint IDs and abstract interface IDs **MUST**:
 - be 1-32 characters long
 - only contain lowercase letters, numbers, and `_`
 
-Generally these IDs **SHOULD**:
+Generally, these IDs **SHOULD**:
 - be at least 3 characters long
 - use `_` to represent spaces
 - be reasonably descriptive
