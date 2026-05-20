@@ -1,6 +1,6 @@
 # Full Dev Guide
 
-This guide is from the perspective of creating a new datapack, but should provide enough information to convert a non-SlimeCore-loaded datapack into a SlimeCore-loaded datapack. If you are converting a datapack, it is highly advised to make a backup beforeso.
+If you are using this guide to convert a datapack, please make a backup before making any changes.
 
 - [Setup](#setup)
 - [Load Tag](#load-tag)
