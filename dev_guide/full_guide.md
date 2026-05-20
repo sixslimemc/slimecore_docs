@@ -52,9 +52,9 @@ Importantly, `#<pack ID>:load` should *only* do work related to initialization (
 
 The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
 
-When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it be re-enabled again in the future, ideally "continuing" where it left off.
+When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
 
-*There is no special `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
+*There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
 
 ## Uninstall Tag
 
