@@ -37,14 +37,14 @@ data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
 
 # Direct download URL:
-data modify storage slimecore:in manifest.pack.url set value "https://github.com/mygithub/mypack/releases/download/v0.1.0/myauthorid.mypack.1.0.0.zip"
+data modify storage slimecore:in manifest.pack.url set value "https://example.com/myauthorid.mypack.1.0.0"
 
 # Dependencies:
 # Dependencies must include a direct download URL of any valid version of the dependency.
 data modify storage slimecore:in manifest.pack.dependencies set value []
-data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"foopack", author_id:"fooauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://github.com/fooauthor/foopack/releases/download/v1.2.3/fooauthor.foopack.1.2.3.zip", version:{major:1, minor:2, patch:3}}}
+data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"foopack", author_id:"fooauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://example.com/fooauthor.foopack.1.2.3", version:{major:1, minor:2, patch:3}}}
 # Dependencies can be optional.
-data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"barpack", author_id:"barauthor", optional:true, version:{major:4, minor:5}, download:{url:"https://github.com/barauthor/barpack/releases/download/v3.4.1/barauthor.barpack.4.5.6.zip", version:{major:4, minor:5, patch:6}}}
+data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"barpack", author_id:"barauthor", optional:true, version:{major:4, minor:5}, download:{url:"https://example.com/barauthor.barpack.4.5.6", version:{major:4, minor:5, patch:6}}}
 
 # Entrypoints:
 # Entrypoints are called after all datapacks are loaded.
