@@ -47,8 +47,6 @@ Under most circumstances, disabling, (re-)enabling, or uninstalling datapacks **
 
 Your frontend should provide a documented method on initiating an explicit rebuild.
 
-#### IMPORTANT
-
 Unless:
 - Recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)
 - Re-installing a previously uninstalled datapack
