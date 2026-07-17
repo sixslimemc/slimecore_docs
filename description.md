@@ -91,7 +91,7 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:1
 function slimecore:api/manifest
 ```
 
-Upon every world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
+Upon `/reload`, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
 A **rebuild** processes all collected manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the worlds **current build** to reflect them.
 
