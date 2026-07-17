@@ -61,14 +61,14 @@ data modify storage slimecore:config build_time_gamerules.max_command_forks set 
 
 ## Very Long Rebuilding
 
-It is normal and expected behavior for rebuilding to cause significant tick delay, especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
+It is normal and expected behavior for rebuilding to cause significant a delay, especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
 
 ```
 XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loaded # recipes
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-If these logs are not being sent and rebuilding is still hanging, it may indicate a bug within SlimeCore.
+If these logs are not being sent and rebuilding is still hanging, or the number of these logs far exceed double the number of datapacks installed, it may indicate a bug within SlimeCore.
 
 ## Safe Mode
 
@@ -152,7 +152,7 @@ data modify storage slimecore:config datapack_path_overrides.<pack ID>
 **Cause:** \
 Some set(s) of datapacks have incompatible/conflicting entrypoint order specifications.
 
-This error should only be encountered if you are developing your own datapack(s); it may indicate that your datapack(s)' dependencies may have entrypoint ordering specifications that you are unaware of. If this error is encountered outside of datapack development, something is very wrong.
+This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is very wrong.
 
 **Fix:** \
 Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
@@ -162,7 +162,7 @@ Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack D
 **Cause:** \
 Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
 
-This error should only be encountered if you are developing your own datapack(s); it may indicate an architectural codesmell. If this error is encountered outside of datapack development, something is very wrong.
+This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is very wrong.
 
 **Fix:** \
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
