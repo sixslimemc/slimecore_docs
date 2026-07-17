@@ -89,7 +89,7 @@ It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
-| `safe_mode` | `{...}` *(nullable)* | Only present when safe mode is enabled. *(See [Safe Mode](./troubleshooting.md#safe-mode).)* |
+| `safe_mode` | `{...}` *(See [Safe Mode](./troubleshooting.md#safe-mode))* | Only present when safe mode is enabled. |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 **World data should be treated as read-only.**
