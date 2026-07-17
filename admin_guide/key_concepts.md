@@ -96,7 +96,7 @@ It is updated *every reload* and has the following keys:
 
 ## Datapack Paths
 
-SlimeCore-loaded datapacks are expected to have datapack paths (name of datapack in world's `datapacks/` folder) that follow one of the following formats:
+SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of datapack in world's `datapacks/` folder) follow one the following formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
 - `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`; *intended for packs under active development*)
