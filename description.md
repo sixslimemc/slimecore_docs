@@ -71,7 +71,7 @@ data modify storage slimecore:in manifest.pack.abstract_declarations append valu
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
 # Library flag:
-# If this pack provides any functionality/features on its own, it is *not* a library.
+# Setting this to true indicates that your pack is meant to be a dependency and does not provide any meaningful functionality on it's own.
 data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Display information:
