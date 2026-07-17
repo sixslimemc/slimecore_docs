@@ -17,7 +17,7 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 ## Install a Frontend
 
-In all practical cases, you should install a **frontend** datapack. SlimeCore does not include any UI on its own; a frontend provides such UI. This guide is intended to be frontend-agnostic.
+In all practical cases, you should install a **frontend** datapack. SlimeCore does not include any UI on its own; a frontend is expected to provide such. This guide is intended to be frontend-agnostic.
 
 Frontends are developed and documented independently of SlimeCore like any other datapack; your chosen frontend should provide its own documentation on its specific usage.
 
