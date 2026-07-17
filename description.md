@@ -101,7 +101,7 @@ A rebuild can also be manually initiated via the `slimecore:rebuild` function. I
 
 ### Datapack Paths
 
-In order to work, SlimeCore expects datapack paths (the name of files/folders under `<world>/datapacks`) to follow a specific format (`<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` is the standard format for released datapacks). If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to it's path via ad hoc in-game configuration.
+In order to work, SlimeCore expects datapack paths (the name of files/folders under `<world>/datapacks`) to follow a specific format--the most qualified being `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip`, but some other variations are allowed. If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to it's path via ad hoc in-game configuration.
 
 ### Performance
 
