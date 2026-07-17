@@ -91,17 +91,17 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:1
 function slimecore:api/manifest
 ```
 
-Upon `/reload`, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore initiates a **rebuild** (by default). Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
+Upon world reload, SlimeCore calls `#slimecore:manifest`, "collecting" all manifests. If any changes to the list of manifests is detected, SlimeCore (by default) initiates a **rebuild**. Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
-A **rebuild** processes all collected manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the worlds **current build** to reflect them.
+A **rebuild** processes all manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the world's **current build** to reflect them.
 
-A **load** calls preload entrypoints, then load tags, then entrypoints, according to the datapacks included and order specified by the world's current build.
+A **load** calls preload entrypoints, then load tags, then entrypoints, according to the order specified by the world's current build.
 
 A rebuild can also be manually initiated via the `slimecore:rebuild` function. Inputs can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build, no changes to the world are actually made. This function is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
 
 ### Performance
 
-SlimeCore may create a noticable single-tick delay during rebuilding, as well as a much lesser single-tick delay during loading. These delays scale linearly with the amount of enabled datapacks.
+SlimeCore may create a significant single-tick delay during rebuilding, as well as a much lesser single-tick delay during loading. These delays scale linearly with the amount of SlimeCore-loaded datapacks.
 
 SlimeCore does not run any commands outside of rebuilding and loading and has negligible/zero performance impact outside of those processes.
 
@@ -111,8 +111,6 @@ SlimeCore's primary goal is to support a community-driven, decentralized datapac
 
 ## Get Started
 
-**[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
-
-**[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
-
-**[Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
+- **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
+- **[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
+- **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
