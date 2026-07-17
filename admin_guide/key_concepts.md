@@ -99,9 +99,9 @@ It is updated *every reload* and has the following keys:
 SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of datapack in world's `datapacks/` folder) follow one the following formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
-- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`) *intended for active development*
-- `<author id>.<pack id>` (e.g. `bar.foo`) *intended for active development*`
-- `<pack id>` (e.g. `foo`) *intended for active development*
+- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`)
+- `<author id>.<pack id>` (e.g. `bar.foo`)
+- `<pack id>` (e.g. `foo`)
 
 ## Uninstalling SlimeCore
 
