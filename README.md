@@ -2,7 +2,7 @@
 
 User documentation for [SlimeCore](https://github.com/sixslimemc/slimecore).
 
-- **[Description](./description.md):** - Learn what SlimeCore is and what it does.
+- **[Description](./description.md)** - Learn what SlimeCore is and what it does.
 
 
 **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world. \
