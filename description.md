@@ -14,7 +14,7 @@ Datapacks specify this information via a *manifest function*. Upon world reload,
 
 SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick`. Datapacks instead *define their own* **load**, **disable**, and **uninstall** function tags, as well as any number of **entrypoints** to be called after all datapacks are loaded. SlimeCore then calls these tags when appropriate.
 
-SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way across reloads in the same world, as well as across worlds.
+SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way.
 
 SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will ever be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency.
 
