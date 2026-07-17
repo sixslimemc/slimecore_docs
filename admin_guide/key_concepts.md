@@ -17,7 +17,7 @@ Key components of a pack manifest:
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
 - **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack that *implements* it.
-- **Display Info:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
+- **Display Information:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
 
 To retrieve a datapack's raw manifest data--given that you know the pack ID--you can do any of the following commands:
 ```mcfunction
@@ -89,8 +89,7 @@ It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
-| `safe_mode.enabled` | `boolean` | Whether or not [safe mode](#safe-mode) is currently enabled. |
-| `safe_mode.calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe-mode tag called on load if safe mode is enabled. |
+| `safe_mode` | `{...}` *(nullable)* | Only present when safe mode is enabled. *(See [Safe Mode](./troubleshooting.md#safe-mode))* |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 **World data should be treated as read-only.**
