@@ -99,6 +99,10 @@ A **load** calls preload entrypoints, then load tags, then entrypoints, accordin
 
 A rebuild can also be manually initiated via the `slimecore:rebuild` function. Inputs can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build, no changes to the world are actually made. This function is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
 
+### Datapack Paths
+
+In order to work, SlimeCore expects datapack paths (the name of files/folders under `<world>/datapacks`) to follow a specific format (`<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` is the standard format for released datapacks). If for whatever reason the datapack path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to it's path via ad-hoc in-game configuration.
+
 ### Performance
 
 SlimeCore may create a significant single-tick delay during rebuilding, as well as a much lesser single-tick delay during loading. These delays scale linearly with the amount of SlimeCore-loaded datapacks.
