@@ -96,14 +96,31 @@ It is updated *every reload* and has the following keys:
 
 ## Datapack Paths
 
-SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of file/folder in world's `datapacks/` folder) be in one the following formats:
+SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of file/folder in world's `datapacks/` folder) be in one the following standard formats:
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
 
-These formats are also supported, but are intended for datapacks under active development:
+These formats are also supported, but are intended for datapacks in active development:
 - `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`)
 - `<author id>.<pack id>` (e.g. `bar.foo`)
 - `<pack id>` (e.g. `foo`)
+
+When you download a datapack, it's name will likely already match one of these formats. If it does not, you should rename it to do so before installing it into your world. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information.
+
+If a SlimeCore-loaded datapack does not have a standard path (and it is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
+
+### Path Overriding
+
+If a datapack path does not match a standard format and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to it's path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
+
+```mcfunction
+# add an override:
+# <path> should be identical to how you would specify the datapack with `/datapack`, i.e. "file/<datapack name>"
+data modify storage slimecore:config datapack_path_overrides.<pack id> set value <path>
+
+# remove an override:
+data remove storage slimecore:config datapack_path_overrides.<pack id>
+```
 
 ## Uninstalling SlimeCore
 
