@@ -94,6 +94,15 @@ It is updated *every reload* and has the following keys:
 
 **World data should be treated as read-only.**
 
+## Datapack Paths
+
+SlimeCore-loaded datapacks are expected to have datapack paths (name of datapack in world's `datapacks/` folder) that follow one of the following formats:
+- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
+- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`; *intended for packs under active development*)
+- `<author id>.<pack id>` (e.g. `bar.foo; *intended for packs under active development*`)
+- `<pack id>` (e.g. `foo`; *intended for packs under active development*)
+
 ## Uninstalling SlimeCore
 
 To uninstall SlimeCore itself, run `/function slimecore:-/uninstall_slimecore {args:{}}`.
