@@ -9,16 +9,16 @@
 
 ## Manifests
 
-Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it. Manifests are what allow SlimeCore to recognize and load datapacks in a structured manner.
+Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it.
 
 Key components of a pack manifest:
-- **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world; you should generally be able to recognize a datapack by it's pack ID. No two installed datapacks can share the same pack ID.
-- **Author ID:** A lowercase alphanumeric name that represents the author of a datapack. Two datapacks with the same pack ID but different author IDs represent different datapacks.
+- **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world. You should generally be able to recognize a datapack by it's pack ID.
+- **Author ID:** A lowercase alphanumeric name that represents the author of a datapack.
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
-- **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if there is exacly one other datapack that *implements* it.
+- **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack that *implements* it.
 
-To retrieve a datapack's raw manifest data (given you know the pack ID), you can do any of the following commands:
+To retrieve a datapack's raw manifest data--given that you know the pack ID--you can do any of the following commands:
 ```mcfunction
 # will work for enabled datapacks that are part of the current build:
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
@@ -37,13 +37,13 @@ data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
 
 SlimeCore will **rebuild** when any new datapacks are installed/enabled/disabled upon world reload. A world reload that triggers a rebuild will often take longer (sometimes significantly, depending on the amount of datapacks installed) than world reloads that do not trigger a rebuild.
 
-Rebuilding can *fail*, indicating that there exist incompatibilies, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend notify you when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
+Rebuilding can *fail*, indicating that there exist incompatibilies, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend notify you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
 
 The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are garunteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-data) is updated.
 
 ## Managing Datapacks (Explicit Rebuilding)
 
-Under normal circumstances, disabling, (re-)enabling, or uninstalling datapacks *must* be done via **explicit rebuilding**--**NOT the `/datapack` command**. Explicit rebuilding allows you to *stage* such changes and will verify that they are valid before applying them. If any changes are invalid (ex: disabling a datapack that is a dependency of an enabled datapack), no changes will be made.
+Under most circumstances, disabling, (re-)enabling, or uninstalling datapacks **MUST** be done via **explicit rebuilding** (**NOT** the `/datapack` command). Explicit rebuilding allows you to *stage* such changes and will verify that they are valid before applying them. If any changes are invalid (ex: disabling a datapack that is a dependency of an enabled datapack), no changes will be made.
 
 ***Outside of recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding), re-installing an uninstalled datapack, or advanced troubleshooting, using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.***
 
