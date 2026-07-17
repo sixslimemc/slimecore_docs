@@ -18,7 +18,7 @@ SlimeCore is designed to be **atomic**. If used properly, no changes to datapack
 
 SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way.
 
-SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has zero performance overhead outside of the `/reload` tick. It intentionally does not implement any additional or "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily. *This has the added benefit of customizability.*
+SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the `/reload` tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily. *This has the added benefit of customizability.*
 
 ## Functional Overview
 
@@ -79,6 +79,10 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "My
 data modify storage slimecore:in manifest.pack.display.links.author set value "https://github.com/mygithub"
 data modify storage slimecore:in manifest.pack.display.links.info set value "https://github.com/mygithub/mypack"
 data modify storage slimecore:in manifest.pack.display.links.versions set value "https://github.com/mygithub/mypack/releases"
+
+# Loader version:
+# Specifies the compatible version range of SlimeCore that can load this pack.
+data modify storage slimecore:in manifest.pack.loader_version set value {major:1, minor:0}
 
 # All manifests end with calling `slimecore:api/manifest`.
 function slimecore:api/manifest
