@@ -6,15 +6,15 @@ SlimeCore allows datapacks to specify:
 - Version
 - Dependencies
 - Entrypoints (e.g. ticking functions) and their order
-- Abstract interfaces (contracts to be defined by one datapack and fulfilled by another)
+- Abstract interfaces (e.g. contracts defined by one datapack and fulfilled by another)
 - Pack and author metadata
 - Download URL(s)
 
-Datapacks specify this information via a *manifest* function. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then if validation succeeds, executes a compatible load/calling order.
+Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then, if validation succeeds, executes a compatible load/calling order.
 
-SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick`. Datapacks instead define *their own* **load**, **disable**, and **uninstall** function tags, as well as any number of **entrypoints** to be called after all datapacks are loaded. SlimeCore then calls these tags when appropriate.
+SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick`. Datapacks instead *define their own* **load**, **disable**, and **uninstall** function tags, as well as any number of **entrypoints** to be called after all datapacks are loaded. SlimeCore then calls these tags when appropriate.
 
-SlimeCore is designed to be **atomic**. If used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow you to disable a datapack if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency--*which would be automatically enforced if both are disabled on the same reload*.
+SlimeCore is designed to be **atomic**. If used properly, **no changes to datapack loading will ever be made unless they are verified to work.** This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency--*which would be automatically enforced if both are disabled on the same reload*.
 
 SlimeCore is designed to be **deterministic**. If used properly, **previous world state/datapacks should never affect the outcome of a rebuild/load** (with some rare exceptions). The same set of enabled datapacks will always load in exactly the same way.
 
