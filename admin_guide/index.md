@@ -6,37 +6,45 @@ It assumes basic knowledge of commands and datapack management.
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Installing a Frontend](#installing-a-frontend)
 - [`slimecore:-/help`](#slimecore-help)
-- [TLDR](#tldr)
+- [Quick Start](#tldr)
 
 ## SlimeCore Briefly
 
 
-SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Most prominently, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading. Don't fret though, SlimeCore should make installing/managing dependencies easy.
+SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Importantly, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading. Don't fret though, SlimeCore should make installing/managing dependencies easy.
 
 *See [Description](../description.md) for a more in-depth description.*
 
-## Installing a Frontend
+## Install a Frontend
 
-To interact with SlimeCore in-game, you must install a **frontend** datapack. A frontend provides the user-facing interface and features that SlimeCore itself intentionally does not implement on it's own.
+In all practical cases, you should install a **frontend** datapack. SlimeCore is meant to be minimal and does not include any UI on its own; a frontend provides such UI. This guide is intended to be frontend-agnostic.
 
 Requiring an external frontend has the following benefits:
 
 - **Separation of Concerns:** SlimeCore itself can focus on doing a single job well, loading datapacks.
 - **Customizability:** You, the user/admin, can choose (or create) a SlimeCore interface that works best for you.
 
-Importantly, frontends are not "special" in any way--they are installed and managed like any other datapack, and their usage should be documented independently of SlimeCore.
-
-This guide is frontend-agnostic, but does include [this section](./using_scdev.md) that covers usage of [SCDev](https://github.com/sixslimemc/scdev), a basic and accessible chat-based frontend made by the author of SlimeCore.
+While frontends provide an interface to SlimeCore, they are, like any other datapack, developed and documented independently of SlimeCore itself; your chosen frontend should provide its own documentation on its specific usage.
 
 > While SlimeCore is still in an early-adoption phase, there unfortunately may not be much of a selection of frontends. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
+
+### Troubleshooting
+
+If your frontend doesn't seem to work/load, other datapacks may be silently causing rebuild errors and not allowing your frontend to load. Try temporarily removing all datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
+
+### SCDev
+
+[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
+
+The section [Using SCDev](./using_scdev.md) covers interaction with SlimeCore specifically with SCDev.
 
 ## `slimecore:-/help`
 
 You can run `/function slimecore:-/help` to recieve a clickable link to these docs as a chat message.
 
-## TLDR
+## Quick Start
 
-For those that just want to quickly get started, install the [SCDev](https://github.com/sixslimemc/scdev) datapack and skip to [Using SCDev](./using_scdev.md).
+Install the [SCDev](https://github.com/sixslimemc/scdev) datapack and skip to [Using SCDev](./using_scdev.md).
 
 ---
 
