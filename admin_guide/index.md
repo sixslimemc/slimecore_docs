@@ -23,9 +23,7 @@ Frontends are developed and documented independently of SlimeCore like any other
 
 ### SCDev
 
-[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
-
-The section [Using SCDev](./using_scdev.md) covers interaction with SlimeCore specifically with SCDev.
+[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users. The section [Using SCDev](./using_scdev.md) covers interaction with SlimeCore specifically with SCDev.
 
 ### Frontend Not Loading
 
