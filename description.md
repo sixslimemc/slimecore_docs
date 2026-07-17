@@ -28,9 +28,11 @@ The following demonstrates a full manifest function:
 
 ```mcfunction
 
+# Identity:
 # 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading).
+# 'author_id' should uniquely identify you.
+# Together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
-# 'author_id' should uniquely identify you. Together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
 
 # Version:
