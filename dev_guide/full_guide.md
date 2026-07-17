@@ -46,9 +46,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 The `#<pack ID>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
 
-When this tag is called, your datapack should initialize itself.
-
-Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
+When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
 
 ## Disable Tag
 
@@ -297,8 +295,23 @@ Specifies your datapack's display information and URLs. This information is not 
 | `releases` | `URL string` | website URL where users can find more released versions of this datapack (e.g. GitHub releases tab, Modrinth versions tab)
 | `author` | `URL string` | website URL that represents you as a datapack author (e.g. GitHub, Modrinth, personal site) |
 
-
 ### `url`
+
+**Type:** `URL string`
+
+A direct download/source URL to the exact version of this datapack as a .zip file. The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
+
+Opening this URL in a browser should immediately download the .zip file; there should be no required user input, timers, or redirects.
+
+For example, if user `foo` released their datapack `bar` version `1.0.0` on GitHub, their `url` would likely be `https://github.com/foo/bar/releases/download/v1.0.0/foo.bar.1.0.0.zip`.
+
+It is likely that providing a valid value for `url` requires some amount of foresight, as you must know the direct download URL to your datapack before you actually release it for download.
+
+> TODO: provide steps on how to retrieve GitHub and Modrinth direct download links.
+
+## Standard Datapack Naming
+
+
 
 ## ID Naming
 
