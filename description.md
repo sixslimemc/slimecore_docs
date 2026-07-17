@@ -18,7 +18,7 @@ SlimeCore is designed to be **atomic**. If used properly, no changes to datapack
 
 SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way.
 
-SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world-reload tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily. *This has the added benefit of customizability.*
+SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world-reload tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily--This has the added benefit of customizability.
 
 ## Functional Overview
 
