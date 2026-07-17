@@ -71,7 +71,7 @@ data modify storage slimecore:in manifest.pack.abstract_declarations append valu
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
 # Library flag:
-# Setting this to true indicates that your pack is meant to be a dependency and does not provide any meaningful functionality on it's own.
+# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
 data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Display information:
@@ -79,9 +79,9 @@ data modify storage slimecore:in manifest.pack.is_library set value false
 data modify storage slimecore:in manifest.pack.display.name set value "My Demonstration Pack"
 data modify storage slimecore:in manifest.pack.display.summary set value "A pack used for demonstration!"
 data modify storage slimecore:in manifest.pack.display.author_name set value "My Username"
-data modify storage slimecore:in manifest.pack.display.links.author set value "https://github.com/mygithub"
-data modify storage slimecore:in manifest.pack.display.links.info set value "https://github.com/mygithub/mypack"
-data modify storage slimecore:in manifest.pack.display.links.versions set value "https://github.com/mygithub/mypack/releases"
+data modify storage slimecore:in manifest.pack.display.links.author set value "https://example.com/authorwebsite"
+data modify storage slimecore:in manifest.pack.display.links.info set value "https://example.com/mypack/wiki"
+data modify storage slimecore:in manifest.pack.display.links.versions set value "https://example.com/mypack/releases"
 
 # Loader version:
 # Specifies the compatible version range of SlimeCore that can load this pack.
