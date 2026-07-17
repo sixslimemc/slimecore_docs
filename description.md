@@ -1,12 +1,12 @@
-# SlimeCore Description
+# Description
 
 SlimeCore is a datapack that serves as a loader of other datapacks. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but goes multiple steps further.
 
 SlimeCore allows datapacks to specify:
 - Version
 - Dependencies
-- Entrypoints (e.g. ticking functions) and their order relative to other datapacks'
-- Abstract interfaces that must be implemented by other datapacks
+- Entrypoints (e.g. ticking functions) and their order
+- Abstract interfaces (contracts to be defined by one datapack and fulfilled by another)
 - Pack and author metadata
 - Download URL(s)
 
