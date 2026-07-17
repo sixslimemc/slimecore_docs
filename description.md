@@ -49,11 +49,11 @@ data modify storage slimecore:in manifest.pack.dependencies append value {pack_i
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"barpack", author_id:"barauthor", optional:true, version:{major:4, minor:5}, download:{url:"https://example.com/barauthor.barpack.4.5.6", version:{major:4, minor:5, patch:6}}}
 
 # Entrypoints:
-# Entrypoints are called after all datapacks are loaded.
-# each entrypoint represents function tag `#mypack:entrypoint/<id>`.
-data modify storage slimecore:in manifest.pack.entrypoints append value {id:"tick"}
-# This entrypoint will always be called after `#otherpack_a:entrypoint/tick`:
-data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"otherpack_a", id:"tick"}]}
+# Entrypoints are called after all datapacks are loaded and can be used to start tick/schedule loops.
+# Each entrypoint represents function tag `#mypack:entrypoint/<id>`.
+data modify storage slimecore:in manifest.pack.entrypoints append value {id:"main"}
+# This entrypoint will always be called after `#foopack:entrypoint/main`:
+data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"foopack", id:"main"}]}
 
 # Preload entrypoints:
 # Preload entrypoints are called before *any* datapacks are loaded, including their own.
