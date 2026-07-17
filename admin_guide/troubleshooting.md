@@ -152,7 +152,7 @@ data modify storage slimecore:config datapack_path_overrides.<pack ID>
 **Cause:** \
 Some set(s) of datapacks have incompatible/conflicting entrypoint order specifications.
 
-This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is very wrong with one or more installed datapacks.
+This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
 **Fix:** \
 Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
@@ -162,7 +162,7 @@ Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack D
 **Cause:** \
 Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
 
-This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is very wrong with one or more installed datapacks.
+This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
 **Fix:** \
 Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
