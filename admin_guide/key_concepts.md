@@ -17,6 +17,7 @@ Key components of a pack manifest:
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
 - **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack that *implements* it.
+- **Display Info:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
 
 To retrieve a datapack's raw manifest data--given that you know the pack ID--you can do any of the following commands:
 ```mcfunction
@@ -47,7 +48,7 @@ Under most circumstances, disabling, (re-)enabling, or uninstalling datapacks **
 
 Unless you are:
 - Recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)
-- Re-installing a previously uninstalled datapack
+- Re-enabling a previously uninstalled datapack
 - Performing advanced troubleshooting
 
 Using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.
@@ -65,7 +66,7 @@ Your frontend should provide a documented method on initiating an explicit rebui
 
 This is not only to make sure that the datapack can be safely uninstalled, but also to let the datapack "clean itself up", effectively removing it's prescence from your world.
 
-If you want to re-enable an uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
+To re-enable an uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
 
 ## Build Data
 
