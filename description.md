@@ -50,7 +50,7 @@ data modify storage slimecore:in manifest.pack.dependencies append value {pack_i
 
 # Entrypoints:
 # Entrypoints are called after all datapacks are loaded and can be used to start tick/schedule loops.
-# Each entrypoint represents function tag `#mypack:entrypoint/<id>`.
+# Each entrypoint represents the function tag `#mypack:entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.entrypoints append value {id:"main"}
 # This entrypoint will always be called after `#foopack:entrypoint/main`:
 data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"foopack", id:"main"}]}
@@ -68,8 +68,9 @@ data modify storage slimecore:in manifest.pack.preload_entrypoints append value 
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
 # Abstract interface implementations:
-data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"otherpack_a", id:"other_interface"}
+data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
+# Library flag:
 # If this pack provides any functionality/features on its own, it is *not* a library.
 data modify storage slimecore:in manifest.pack.is_library set value false
 
