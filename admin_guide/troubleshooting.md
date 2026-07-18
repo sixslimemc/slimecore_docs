@@ -79,10 +79,10 @@ A rebuild can fail for the following reasons:
 - [Unfulfilled Dependency(s)](#unfulfilled-dependencys)
 - [Unimplemented Abstract Interface(s)](#unimplemented-abstract-interfaces)
 - [Multiple Abstract Implementations](#multiple-abstract-implementations)
-- [Missing Datapack Path(s)](#missing-datapack-paths)
 - [Entrypoint (or Preload Entrypoint) Order Conflicts](#entrypoint-or-preload-entrypoint-order-conflicts)
 - [Dependency Cycle(s)](#dependency-cycles)
 - [Invalid Datapack Manifest(s)](#invalid-datapack-manifests)
+- [Missing Datapack Path(s)](#missing-datapack-paths)
 - [Duplicate Pack IDs](#duplicate-pack-ids)
 
 ### Unfulfilled Dependency(s)
@@ -113,27 +113,6 @@ This indicates that these datapacks are conceptually incompatible with eachother
 **Fix:** \
 Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
 
-### Missing Datapack Path(s)
-
-**Cause:** \
-There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names. This will trigger [safe mode](#safe-mode).
-
-**Fix:** \
-*See [Datapack Paths](./key_concepts.md#datapack-paths).*
-
-*OR*
-
-Add or fix the path override for the datapack(s):
-```mcfunction
-data modify storage slimecore:config datapack_path_overrides.<pack ID> set value "file/<datapack name>"
-#                             Should match the path as shown in `/datapack list` ^^^^^^^^^^^^^^^^^^^^^^
-```
-
-To remove a path override:
-```mcfunction
-data modify storage slimecore:config datapack_path_overrides.<pack ID>
-```
-
 ### Entrypoint (or Preload Entrypoint) Order Conflicts
 
 **Cause:** \
@@ -163,6 +142,14 @@ This error should only be encountered if you are developing your own datapack(s)
 
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](../dev_guide/index.md)).
+
+### Missing Datapack Path(s)
+
+**Cause:** \
+There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names. This will trigger [safe mode](#safe-mode).
+
+**Fix:** \
+*See [Datapack Paths](./key_concepts.md#datapack-paths).*
 
 ### Duplicate Installed Pack IDs
 
