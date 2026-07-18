@@ -56,7 +56,7 @@ data modify storage slimecore:config build_time_gamerules.max_command_forks set 
 
 ## Very Long Rebuilding
 
-It is normal behavior for rebuilding to cause a significant delay (multiple times longer than a vanilla `/reload`), especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
+It is normal behavior for rebuilding to cause a significant delay (much longer than a default Minecraft `/reload`), especially when a large amount of datapacks are installed. If SlimeCore is working properly, log messages with the following format should be sent to the game/server console every ~0-2s during rebuilding:
 
 ```
 XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loaded # recipes
