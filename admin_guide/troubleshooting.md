@@ -148,7 +148,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 This will trigger [safe mode](#safe-mode).
 
 **Cause:** \
-There are datapack(s) with non-standard paths without path overrides, or datapack(s) with path overrides that do not match their actual paths.
+There are datapack(s) with non-standard paths (without path overrides), or datapack(s) with path overrides that do not match their actual paths.
 
 **Fix:** \
 *See [Datapack Paths](./key_concepts.md#datapack-paths).*
@@ -161,8 +161,8 @@ This will trigger [safe mode](#safe-mode).
 Multiple installed datapacks share the same pack ID.
 
 **Fix:** \
-datapacks with identical pack IDs are, *inherently incompatible*. Unfortunately, the primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), it can likely be safely removed from your world's `datapacks/` folder directly without further process.
+Unfortunately, datapacks with identical pack IDs are inherently incompatible with eachother. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly without further process.
 
 ---
 
-If using [SCDev](https://github.com/sixslimemc/scdev), proceed to [Using SCDev](./using_scdev.md).
+**Next:** [Using SCDev](./using_scdev.md). (Only applicable if using [SCDev](https://github.com/sixslimemc/scdev))
