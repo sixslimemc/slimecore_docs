@@ -1,6 +1,6 @@
 # Using Scdev
 
-This section exclusively covers interacting with SlimeCore through the [SCDev](https://github.com/sixslimemc/scdev) frontend.
+This section exclusively covers interacting with SlimeCore through [SCDev](https://github.com/sixslimemc/scdev).
 
 - [Getting Setup](#getting-setup)
 - [Load Summaries](#load-summaries)
@@ -8,7 +8,30 @@ This section exclusively covers interacting with SlimeCore through the [SCDev](h
 - [Explicit Rebuilding](#explicit-rebuilding)
 - [Info Functions](#info-functions)
 
-## Getting Setup
+## Overview
+
+SCDev is a chat-based frontend for SlimeCore, meaning it uses chat messages and direct commands for interaction. It is designed to provide "nothing more and nothing less" than what you need to effectively manage SlimeCore.
+
+**Note:** Many chat messages that SCDev sends contain clickable/hoverable elements.
+
+## Install and Setup
+
+Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releases).
+
+SCDev is installed like any other datapack and does not require any dependencies.
+
+Once SCDev is installed in your world, add the tag `scdev.listener` to yourself (and to other world admins if desired).
+
+```mcfunction
+tag add @s scdev.listener
+```
+
+To confirm successful setup, run `/reload`; you should recieve a [load summary](#load-summaries) in chat. If you do not, see [this section](./index.md#frontend-not-loading).
+
+
+
+
+## Setup
 
 SCDev interfaces entirely through chat messages, sending them to **listeners**. \
 To make yourself a listener, add the tag `scdev.listener` to yourself.
