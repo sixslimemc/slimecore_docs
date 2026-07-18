@@ -178,11 +178,21 @@ If the [Missing Datapack Path(s)](#missing-datapack-paths) rebuild error occurs,
 
 *Internally, for datapapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
 
+If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
+
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe mode tag called when safe mode was enabled. |
+| `misloaded_datapacks_missing_path` | List of `{pack: <pack manifest>, path_override: <datapack_path>?}` | Pack manifests with missing datapack paths; `path_override` is only present if the pack has a [path override](./key_concepts.md#path-overriding). |
 
-####
+#### Duplicate Installed Pack IDs
+
+If the [Duplicate Installed Pack IDs](#duplicate-installed-pack-ids) rebuild error occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erronious behavior.
+
+If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `duplicate_installed_pack_ids` | List of `{pack_id: <pack ID>, packs: <pack manifest>[]}` | Pack IDs that are shared between multiple packs (specified by `packs`). |
 
 ---
 
