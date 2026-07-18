@@ -10,7 +10,7 @@ This section exclusively covers interacting with SlimeCore through [SCDev](https
 
 ## Overview
 
-SCDev is a chat-based frontend for SlimeCore--it uses chat messages and commands for interaction. It is intended to provide essential functions for managing SlimeCore along with a few helpful utilities.
+SCDev is a frontend for SlimeCore that uses chat messages and commands for interaction. It is intended to provide essential functions for managing SlimeCore along with a few helpful utilities.
 
 Note that many chat messages that SCDev sends contain clickable/hoverable elements.
 
