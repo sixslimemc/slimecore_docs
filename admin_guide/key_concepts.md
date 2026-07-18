@@ -105,7 +105,7 @@ These formats are also supported, but are intended for datapacks in active devel
 - `<author id>.<pack id>` (e.g. `bar.foo`)
 - `<pack id>` (e.g. `foo`)
 
-When you download a datapack, it's name will likely already match one of these formats. If not, you should rename it to do so before installing it into your world. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information.
+When you download a datapack, it's name likely will already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information.
 
 If a SlimeCore-loaded datapack does not have a standard path (and it is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
 
