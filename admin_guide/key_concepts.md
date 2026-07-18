@@ -107,7 +107,7 @@ These formats are also supported, but are intended for datapacks in active devel
 
 When you download a datapack, it's name likely will already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information (`author id`, `pack id`, etc.).
 
-If a SlimeCore-loaded datapack does not have a standard path (and it is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
+If any installed SlimeCore-loaded datapack does not have a standard path (and is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
 
 ### Path Overriding
 
