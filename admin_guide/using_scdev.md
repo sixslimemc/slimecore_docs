@@ -8,13 +8,13 @@ This section exclusively covers interacting with SlimeCore through [SCDev](https
 - [Explicit Rebuilding](#explicit-rebuilding)
 - [Info Functions](#info-functions)
 
-## Description
+## Get Started
 
 SCDev is a frontend for SlimeCore that uses chat messages and commands for interaction. It is intended to provide essential functions for managing SlimeCore along with a few helpful utilities.
 
 Note that many chat messages that SCDev sends contain clickable/hoverable elements.
 
-## Install and Setup
+### Install and Setup
 
 Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releases).
 
@@ -27,23 +27,6 @@ tag add @s scdev.listener
 ```
 
 To confirm successful setup, run `/reload`; you should recieve a [load summary](#load-summaries) in chat. If you do not, see [this section](./index.md#frontend-not-loading).
-
-
-
-
-## Setup
-
-SCDev interfaces entirely through chat messages, sending them to **listeners**. \
-To make yourself a listener, add the tag `scdev.listener` to yourself.
-```mcfunction
-tag @s add scdev.listener
-```
-
-Verify that you are a listener by running `/reload`--you should recieve a [load summary](#load-summaries).
-
-### Clickable Text
-
-Many SCDev messages contain clickable/hoverable text. If you want more information about something mentioned in a message, try hovering and/or clicking on it.
 
 ## Load Summaries
 
