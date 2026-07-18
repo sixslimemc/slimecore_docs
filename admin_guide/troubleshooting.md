@@ -63,7 +63,7 @@ XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loade
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-*Internally, SlimeCore causes minecraft to "soft reload" many times due to repeated execution of `/datapack`. Each soft reload takes about the time of a default Minecraft `/reload`.*
+*Internally, SlimeCore enables/disables datapacks many times, triggering a "soft reload" each time. Each soft reload takes about the time of a default Minecraft `/reload`.*
 
 If rebuilding is hanging but these logs are not being sent, it may indicate an infinite execution loop in one or more enable datapacks.
 
