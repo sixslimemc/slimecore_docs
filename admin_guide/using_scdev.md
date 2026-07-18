@@ -18,13 +18,13 @@ Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releas
 
 SCDev is installed like any other datapack and does not require any dependencies.
 
-Once SCDev is installed in your world, add the tag `scdev.listener` to yourself (and to other world admins if desired).
+Once SCDev is installed, add the tag `scdev.listener` to yourself (and to other world admins if desired).
 
 ```mcfunction
 tag add @s scdev.listener
 ```
 
-To confirm successful setup, run `/reload`; you should recieve a [load summary](#load-summaries) in chat. If you do not, see [this section](./index.md#frontend-not-loading).
+To confirm successful setup, run `/reload`--you should recieve a [load summary](#load-summaries) in chat. If you do not, see [this section](./index.md#frontend-not-loading).
 
 ## Load Summaries
 
