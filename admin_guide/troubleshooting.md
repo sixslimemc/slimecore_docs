@@ -63,7 +63,7 @@ XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loade
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-If these logs are not being sent and rebuilding is still hanging, or the amount of these logs far exceeds double the amount of datapacks installed, it may indicate a bug within SlimeCore.
+If rebuilding is hanging but these logs are not being sent, or the amount of these logs far exceeds double the amount of datapacks installed, it may indicate a bug within SlimeCore. This could also indicate an infinite loop within an enabled datapack's load or entrypoint functions.
 
 ## Rebuild Errors
 
