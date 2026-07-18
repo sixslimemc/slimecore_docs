@@ -165,4 +165,4 @@ Unfortunately, datapacks with identical pack IDs are inherently incompatible wit
 
 ---
 
-**Next:** [Using SCDev](./using_scdev.md). (Only applicable if using [SCDev](https://github.com/sixslimemc/scdev))
+**Next:** [Using SCDev](./using_scdev.md) (only applicable if using [SCDev](https://github.com/sixslimemc/scdev))
