@@ -26,7 +26,7 @@ tag add @s scdev.listener
 
 To confirm successful setup, run `/reload`--you should recieve a [load summary](#load-summaries) in chat. 
 
-If you have the `scdev.listener` tag but still do not recieve a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
+If you have the `scdev.listener` tag but do not recieve a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
 
 ## Load Summaries
 
