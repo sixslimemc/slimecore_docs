@@ -10,9 +10,7 @@ This section exclusively covers interacting with SlimeCore through [SCDev](https
 
 ## Install and Setup
 
-Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releases).
-
-SCDev is installed like any other datapack and does not require any dependencies.
+Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releases). It is installed like any other datapack and does not require any dependencies.
 
 Once SCDev is installed, add the tag `scdev.listener` to yourself (and to other world admins if desired).
 
