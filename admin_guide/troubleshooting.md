@@ -63,7 +63,7 @@ XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loade
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-*Internally, SlimeCore uses `/datapack enable` and `/datapack disable` for datapack path resolution and datapack load ordering. Each time a datapack is enabled/disabled, a "soft reload" happens, which causes roughly the same delay of a default Minecraft `/reload`.*
+*Internally, SlimeCore uses `/datapack enable` and `/datapack disable` many times during rebuilding for datapack path resolution and datapack load ordering. Each time a datapack is enabled/disabled internally, Minecraft "soft reloads", causing roughly the same delay of a default Minecraft `/reload`. These "soft reloads" account for nearly all of the delay caused by rebuilding.*
 
 If rebuilding is hanging but these logs are not being sent, it may indicate an infinite execution loop in one or more enable datapacks.
 
