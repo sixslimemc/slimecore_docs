@@ -8,7 +8,7 @@ This section exclusively covers interacting with SlimeCore through [SCDev](https
 - [Explicit Rebuilding](#explicit-rebuilding)
 - [Info Functions](#info-functions)
 
-## Overview
+## Description
 
 SCDev is a frontend for SlimeCore that uses chat messages and commands for interaction. It is intended to provide essential functions for managing SlimeCore along with a few helpful utilities.
 
