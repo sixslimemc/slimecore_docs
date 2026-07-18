@@ -170,7 +170,7 @@ While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will 
 | `calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe mode tag called when safe mode was enabled. |
 | `reason` | *(See below)* | Information about the reason safe mode was enabled. |
 
-### Reasons
+### Safe Mode Reasons
 
 #### Missing Datapack Path(s)
 
