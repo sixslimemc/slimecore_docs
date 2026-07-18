@@ -1,7 +1,6 @@
 # Troubleshooting
 
 - [Getting Manifest Data](#getting-manifest-data)
-- [Getting Build Data](#getting-build-data)
 - [Clean Rebuilding](#clean-rebuilding)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
@@ -27,10 +26,6 @@ data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
 # or
 data get storage slimecore:data build.aux.pack_map."<pack ID>"
 ```
-
-## Getting Build Data
-
-Information about the currently loaded datapacks is 
 
 ## Clean Rebuilding
 
@@ -121,18 +116,10 @@ Remove datapacks from the build, such that the abstract interface(s) are impleme
 ### Missing Datapack Path(s)
 
 **Cause:** \
-There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names.
-
-SlimeCore expects datapacks to have standard names, matching one of the following formats:
-- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>`
-- `<pack ID>.<major ver>.<minor ver>.<patch ver>`
-- `<author ID>.<pack ID>`
-- `<pack ID>`
-
-*(See [Getting Manifest Data](#getting-manifest-data) for getting the referenced information.)*
+There are datapack(s) with non-standard names without path overrides OR datapack(s) with path overrides that do not match their names. This will trigger [safe mode](#safe-mode).
 
 **Fix:** \
-Rename datapack(s) with non-standard names to match standard name format.
+*See [Datapack Paths](./key_concepts.md#datapack-paths).*
 
 *OR*
 
@@ -183,7 +170,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 Multiple installed datapacks share the same pack ID. This will trigger [safe mode](#safe-mode).
 
 **Fix:** \
-*See [Safe Mode](#safe-mode).*
+datapacks with identical pack IDs are, *inherently incompatible*. Unfortunately, the primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), it can likely be safely removed from your world's `datapacks/` folder directly without further process.
 
 ---
 
