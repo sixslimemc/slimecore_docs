@@ -4,8 +4,8 @@
 - [Clean Rebuilding](#clean-rebuilding)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
-- [Safe Mode](#safe-mode)
 - [Rebuild Errors](#rebuild-errors)
+- [Safe Mode](#safe-mode)
 
 ## Getting Manifest Data
 
@@ -64,14 +64,6 @@ XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # a
 ```
 
 If these logs are not being sent and rebuilding is still hanging, or the number of these logs far exceed double the number of datapacks installed, it may indicate a bug within SlimeCore.
-
-## Safe Mode
-
-Datapacks that share the same pack ID are *inherently incompatible*. When a reload occurs and there exist multiple datapacks that share the same pack ID, SlimeCore will enter **safe mode** until the issue is resolved. In safe mode, datapacks will not fully reload, and the datapacks with shared pack IDs may have reduced functionality. 
-
-Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder--and will likely be required to--before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
-
-An alternative, much more difficult fix would be to manually edit the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
 
 ## Rebuild Errors
 
@@ -162,6 +154,14 @@ Multiple installed datapacks share the same pack ID.
 
 **Fix:** \
 Unfortunately, datapacks with identical pack IDs are inherently incompatible with eachother. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly without further process.
+
+## Safe Mode
+
+Datapacks that share the same pack ID are *inherently incompatible*. When a reload occurs and there exist multiple datapacks that share the same pack ID, SlimeCore will enter **safe mode** until the issue is resolved. In safe mode, datapacks will not fully reload, and the datapacks with shared pack IDs may have reduced functionality. 
+
+Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder--and will likely be required to--before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
+
+An alternative, much more difficult fix would be to manually edit the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
 
 ---
 
