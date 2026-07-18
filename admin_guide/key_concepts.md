@@ -111,7 +111,7 @@ If any installed SlimeCore-loaded datapack does not have a standard path (and is
 
 ### Path Overriding
 
-If a datapack path does not match a standard format and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to it's path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
+If a datapack does not have a standard path and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to it's path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
 
 ```mcfunction
 # add an override:
