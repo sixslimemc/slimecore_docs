@@ -97,15 +97,15 @@ It is updated *every reload* and has the following keys:
 ## Datapack Paths
 
 SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of file/folder in world's `datapacks/` folder) be in one the following standard formats:
-- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
-- `<author id>.<pack id>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
+- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author ID>.<pack ID>.<major ver>.<minor ver>.<patch ver>` (e.g. `bar.foo.1.2.3`)
 
 These formats are also supported, but are intended for datapacks in active development:
-- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`)
-- `<author id>.<pack id>` (e.g. `bar.foo`)
-- `<pack id>` (e.g. `foo`)
+- `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
+- `<author ID>.<pack ID>` (e.g. `bar.foo`)
+- `<pack ID>` (e.g. `foo`)
 
-When you download a datapack, it's name likely will already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information (`author id`, `pack id`, etc.).
+When you download a datapack, it's name likely will already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information (`author ID`, `pack ID`, etc.).
 
 If any installed SlimeCore-loaded datapack does not have a standard path (and is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
 
@@ -116,10 +116,10 @@ If a datapack does not have a standard path and for whatever reason you cannot o
 ```mcfunction
 # add an override:
 # <path> should be identical to how you would specify the datapack with `/datapack`, i.e. "file/<datapack name>"
-data modify storage slimecore:config datapack_path_overrides.<pack id> set value <path>
+data modify storage slimecore:config datapack_path_overrides.<pack ID> set value <path>
 
 # remove an override:
-data remove storage slimecore:config datapack_path_overrides.<pack id>
+data remove storage slimecore:config datapack_path_overrides.<pack ID>
 ```
 
 ## Uninstalling SlimeCore

@@ -63,7 +63,7 @@ XX:XX:XX.XXX net.minecraft.world.item.crafting.RecipeManager Server thread Loade
 XX:XX:XX.XXX net.minecraft.advancements.AdvancementTree Server thread Loaded # advancements
 ```
 
-*Internally, SlimeCore uses `/datapack enable` and `/datapack disable` many times during rebuilding for datapack path resolution and datapack load ordering. Each time a datapack is enabled/disabled internally, Minecraft "soft reloads", causing roughly the same delay that you would expect from a default Minecraft `/reload`. These "soft reloads" account for nearly all of the delay caused by rebuilding.*
+*Internally, SlimeCore uses `/datapack enable` and `/datapack disable` many times during rebuilding for datapack path resolution and datapack load ordering. Each time a datapack is enabled/disabled internally, Minecraft "soft reloads", causing roughly the same delay as a default Minecraft `/reload`. These "soft reloads" account for nearly all of the delay caused by rebuilding.*
 
 If rebuilding is hanging but these logs are not being sent, it may indicate an infinite execution loop in one or more enable datapacks.
 
@@ -155,15 +155,34 @@ This will trigger [safe mode](#safe-mode).
 Multiple installed datapacks share the same pack ID.
 
 **Fix:** \
-Unfortunately, datapacks with identical pack IDs are inherently incompatible with eachother. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly without further process.
+Unfortunately, datapacks that share pack IDs are incompatible with eachother. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly and then reload/rebuild without further process.
 
 ## Safe Mode
 
-Datapacks that share the same pack ID are *inherently incompatible*. When a reload occurs and there exist multiple datapacks that share the same pack ID, SlimeCore will enter **safe mode** until the issue is resolved. In safe mode, datapacks will not fully reload, and the datapacks with shared pack IDs may have reduced functionality. 
+Upon rebuild, if SlimeCore detects that the current datapack/world state could be invalid and cannot be automatically recovered, **Safe mode** is enabled. In safe mode, no datapacks are normally loaded (e.g. load/entrypoint tags not called, though schedule/tick loops may continue through last load), and potentially affected datapacks, as well as their dependents, have their [safe mode tag](../dev_guide/full_guide.md#safe-mode-tag) called. This will likely result in reduced datapack functionality for the duration of safe mode.
 
-Unfortunately, the best option for resolving such an issue is to uninstall/remove datapacks such that none share pack IDs. If safe mode is triggered right after you put a new datapack into your world folder, you can safely remove it from the world folder--and will likely be required to--before rebuilding/reloading; safe mode prevents the initialization of new datapacks.
+Safe mode will be disabled upon rebuild when SlimeCore no longer detects an invalid datapack/world state.
 
-An alternative, much more difficult fix would be to manually edit the new datapack to reflect a different pack ID. This process is out of this guide's scope, but would include more than just changing it's manifest definition, as datapack implementation relies on pack ID for namespacing.
+While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will contain the following keys:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe mode tag called when safe mode was enabled. |
+| `reason` | *(See below)* | Information about the reason safe mode was enabled. |
+
+### Reasons
+
+#### Missing Datapack Path(s)
+
+If the [Missing Datapack Path(s)](#missing-datapack-paths) rebuild error occurs, there is a possibility that some datapacks are in the wrong loading order.
+
+*Internally, for datapapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `calls` | List of `{pack_ref: <pack ID>}` | Packs that had their safe mode tag called when safe mode was enabled. |
+
+####
 
 ---
 
