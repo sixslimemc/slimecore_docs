@@ -11,7 +11,7 @@
 
 ## Getting Manifest Data
 
-To retrieve a datapack's raw [manifest](./key_concepts.md#manifests) data--given that you know the pack ID--you can do any of the following commands:
+The following commands can get a datapack's [manifest](./key_concepts.md#manifests) data, given you know its pack ID:
 ```mcfunction
 # will work for enabled datapacks that are part of the current build:
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
