@@ -4,9 +4,8 @@ This guide covers everything a world admin needs to know about SlimeCore and how
 It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
-- [Quick Start](#quick-start)
-- [Install a Frontend](#installing-a-frontend)
 - [`slimecore:-/help`](#slimecore-help)
+- [Quick Start](#quick-start)
 
 ## SlimeCore Briefly
 
@@ -14,9 +13,13 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 *See [Description](../description.md) for a more in-depth description.*
 
+## `slimecore:-/help`
+
+You can run `/function slimecore:-/help` to recieve a clickable link to these docs as a chat message.
+
 ## Quick Start
 
-To quickly start playing with SlimeCore-loaded datapacks:
+If you just want to quickly start playing with your SlimeCore-loaded datapacks:
 1. Remove all SlimeCore-loaded datapacks from your world (temporarily).
 2. Download and add the [SlimeCore](https://github.com/sixslimemc/slimecore/releases) and [SCDev](https://github.com/sixslimemc/scdev/releases) datapacks to your world.
 3. Add the tag `scdev.listener` to yourself in-game.
@@ -26,9 +29,7 @@ To quickly start playing with SlimeCore-loaded datapacks:
 7. Read/skim [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
 
-## `slimecore:-/help`
-
-You can run `/function slimecore:-/help` to recieve a clickable link to these docs as a chat message.
+Otherwise, just continue reading.
 
 ---
 
