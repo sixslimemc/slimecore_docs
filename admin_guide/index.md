@@ -3,10 +3,22 @@
 This guide covers everything a world admin needs to know about SlimeCore and how to use it. \
 It assumes basic knowledge of commands and datapack management.
 
+- [Quick Start](#quick-start)
 - [SlimeCore Briefly](#slimecore-briefly)
 - [Install a Frontend](#installing-a-frontend)
 - [`slimecore:-/help`](#slimecore-help)
-- [TLDR](#tldr)
+
+## Quick Start
+
+To quickly start playing with your datapacks:
+1. Read [Key Concepts](./key_concepts.md).
+2. Temporarily remove all SlimeCore-loaded datapacks from your world.
+3. Install the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack.
+4. Add the tag `scdev.listener` to yourself in-game.
+5. Run `/reload` in-game.
+6. Re-add the SlimeCore-loaded datapacks to your world.
+7. Run `/reload` in-game.
+8. Use [Troubleshooting](./troubleshooting.md) and the [SCDev docs](https://github.com/sixslimemc/scdev) as further reference.
 
 ## SlimeCore Briefly
 
@@ -31,17 +43,6 @@ If your frontend doesn't seem to work/load, other datapacks may be silently caus
 ## `slimecore:-/help`
 
 You can run `/function slimecore:-/help` to recieve a clickable link to these docs as a chat message.
-
-## TLDR
-
-1. Read [Key Concepts](./key_concepts.md).
-2. Temporarily remove all SlimeCore-loaded datapacks from your world.
-3. Install the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack.
-4. Add the tag `scdev.listener` to yourself in-game.
-5. Run `/reload` in-game.
-6. Re-add the SlimeCore-loaded datapacks to your world.
-7. Run `/reload` in-game.
-8. Use [Troubleshooting](./troubleshooting.md) as a reference.
 
 ---
 
