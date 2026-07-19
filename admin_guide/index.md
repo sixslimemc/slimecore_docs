@@ -15,7 +15,7 @@ This guide will assume you have SlimeCore
 
 ## Quick Start
 
-If you just want to quickly start playing with your SlimeCore-loaded datapacks:
+To quickly start playing with your SlimeCore-loaded datapacks:
 1. Remove all SlimeCore-loaded datapacks from your world (temporarily).
 2. Download and add the [SlimeCore](https://github.com/sixslimemc/slimecore/releases) and [SCDev](https://github.com/sixslimemc/scdev/releases) datapacks to your world.
 3. Add the tag `scdev.listener` to yourself in-game.
@@ -24,8 +24,6 @@ If you just want to quickly start playing with your SlimeCore-loaded datapacks:
 6. Run `/reload` in-game again.
 7. Read/skim [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
-
-Otherwise, continue reading normally.
 
 ---
 
