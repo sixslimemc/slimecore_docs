@@ -1,10 +1,6 @@
-# SlimeCore
+# Description
 
-User documentation for [SlimeCore](https://github.com/sixslimemc/slimecore).
-
-## Description
-
-SlimeCore is a datapack that serves as a loader of other datapacks. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but goes multiple steps further.
+[SlimeCore](https://github.com/sixslimemc/slimecore) is a datapack that serves as a loader of other datapacks. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but goes multiple steps further.
 
 SlimeCore allows datapacks to specify:
 - Version
@@ -25,6 +21,8 @@ SlimeCore is designed to be **deterministic**. If used properly, the same set of
 SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world-reload tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily; this has the added benefit of customizability.
 
 ## Functional Overview
+
+### Datapack Manifests
 
 SlimeCore-loaded datapacks define exactly one **manifest** function that they append to the function tag `#slimecore:manifest`. This replaces the standard paradigm of appending to `#minecraft:load`/`#minecraft:tick`.
 
