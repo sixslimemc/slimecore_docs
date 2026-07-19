@@ -22,7 +22,7 @@ To confirm successful setup, run `/reload`--you should recieve a [load summary](
 
 If you have the `scdev.listener` tag but do not recieve a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
 
-SCDev will only send chat messages to players with the `scdev.listener` tag (unless the message is the output of an explicitly executed command). Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privilages.
+SCDev will only send chat messages (that are not command output) to players with the `scdev.listener` tag. Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privilages.
 
 ## Load Summaries
 
