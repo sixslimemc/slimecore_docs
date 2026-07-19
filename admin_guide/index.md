@@ -3,8 +3,8 @@
 This guide covers everything a world admin needs to know about SlimeCore and how to use it. \
 It assumes basic knowledge of commands and datapack management.
 
-- [Quick Start](#quick-start)
 - [SlimeCore Briefly](#slimecore-briefly)
+- [Quick Start](#quick-start)
 - [Install a Frontend](#installing-a-frontend)
 - [`slimecore:-/help`](#slimecore-help)
 
