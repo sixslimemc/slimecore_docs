@@ -22,7 +22,7 @@ To confirm successful setup, run `/reload`--you should recieve a [load summary](
 
 If you have the `scdev.listener` tag but do not recieve a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
 
-SCDev will only send chat messages to players with the `scdev.listener` tag (listeners). Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privilages.
+SCDev will only send chat messages to players with the `scdev.listener` tag (unless the message is the output of an explicitly executed command). Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privilages.
 
 ## Load Summaries
 
@@ -74,7 +74,7 @@ The function `scdev:-/rebuild` directly initiates an [explicit rebuild](./key_co
 | :-- | :-- | :-- | :-- | :-- |
 | `disable` | list of pack IDs | Packs to disable that are currently enabled. | `[]` | `[scdev, foo]` |
 | `enable` | list of pack IDs | Packs to enable that are currently disabled. | `[]` | `[scdev, bar]` |
-| `uninstall` | list of pack IDs | Packs to [uninstall](./key_concepts.md#datapack-uninstallation) that are currently installed. | `[]` | `[scdev, bar]` |
+| `uninstall` | list of pack IDs | Packs to [uninstall](./key_concepts.md#datapack-uninstallation) that are currently installed. | `[]` | `[scdev, baz]` |
 | `clean` | boolean | Whether to force a [clean rebuild](./troubleshooting.md#clean-rebuilding). | `false` | `true` |
 
 *Example usage:*
