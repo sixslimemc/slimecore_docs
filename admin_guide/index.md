@@ -13,7 +13,7 @@ It assumes basic knowledge of commands and datapack management.
 To quickly start playing with your datapacks:
 1. Read [Key Concepts](./key_concepts.md).
 2. Temporarily remove all SlimeCore-loaded datapacks from your world.
-3. Install the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack.
+3. Download and add the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack to your world.
 4. Add the tag `scdev.listener` to yourself in-game.
 5. Run `/reload` in-game.
 6. Re-add the SlimeCore-loaded datapacks to your world.
