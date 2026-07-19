@@ -26,6 +26,8 @@ The primary goal of SlimeCore is to support a community-driven, decentralized da
 
 ## Functional Overview
 
+### Datapack Manifests
+
 SlimeCore-loaded datapacks define exactly one **manifest** function that they append to the function tag `#slimecore:manifest`. This replaces the standard paradigm of appending to `#minecraft:load`/`#minecraft:tick`.
 
 The following demonstrates a full manifest function:
