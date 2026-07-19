@@ -35,13 +35,13 @@ You can run `/function slimecore:-/help` to recieve a clickable link to these do
 ## TLDR
 
 1. Read [Key Concepts](./key_concepts.md).
-* Temporarily remove all SlimeCore-loaded datapacks from your world.
-* Install the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack.
-* Add the tag `scdev.listener` to yourself in-game.
-- Run `/reload` in-game.
-- Re-add the SlimeCore-loaded datapacks to your world.
-- Run `/reload` in-game.
-- Use [Troubleshooting](./troubleshooting.md) as a reference.
+2. Temporarily remove all SlimeCore-loaded datapacks from your world.
+3. Install the [SCDev](https://github.com/sixslimemc/scdev/releases) datapack.
+4. Add the tag `scdev.listener` to yourself in-game.
+5. Run `/reload` in-game.
+6. Re-add the SlimeCore-loaded datapacks to your world.
+7. Run `/reload` in-game.
+8. Use [Troubleshooting](./troubleshooting.md) as a reference.
 
 ---
 
