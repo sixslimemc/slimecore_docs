@@ -8,6 +8,12 @@ It assumes basic knowledge of commands and datapack management.
 - [Install a Frontend](#installing-a-frontend)
 - [`slimecore:-/help`](#slimecore-help)
 
+## SlimeCore Briefly
+
+SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Importantly, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading. Don't fret though, SlimeCore should make installing/managing dependencies easy.
+
+*See [Description](../description.md) for a more in-depth description.*
+
 ## Quick Start
 
 To quickly start playing with SlimeCore-loaded datapacks:
@@ -19,12 +25,6 @@ To quickly start playing with SlimeCore-loaded datapacks:
 6. Run `/reload` in-game.
 7. Read [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
-
-## SlimeCore Briefly
-
-SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Importantly, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading. Don't fret though, SlimeCore should make installing/managing dependencies easy.
-
-*See [Description](../description.md) for a more in-depth description.*
 
 ## Install a Frontend
 
