@@ -16,7 +16,7 @@ SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tic
 
 SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will ever be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency.
 
-SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way.
+SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way across reloads and worlds.
 
 SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world-reload tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks can implement these frontend features easily.
 
