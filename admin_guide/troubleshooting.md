@@ -11,23 +11,22 @@
 
 ## Getting Manifest Data
 
-Each SlimeCore-loaded datapack has a **manifest** that provides useful information about itself, including but not limited to:
-
-- Pack ID & Author ID
-- Download & Info URLs
-- Dependencies (and their download URLs)
-- Version
-
-A datapack's manifest is set by a special manifest function, which is identified in `<datapack>/data/slimecore/tags/function/manifest.json`--the function included in this function tag file is the datapack's manifest function.
-
-Datapacks in the current build have their manifest data stored in a list at NBT storage `slimecore:data build.packs`, as well as a mapping with keys being pack IDs at `slimecore:data build.aux.pack_map`.
-
+To retrieve a datapack's raw [manifest](./key_concepts.md#manifests) data--given that you know the pack ID--you can do any of the following commands:
 ```mcfunction
-# Get a particualar datapack's manifest data based on it's pack ID:
+# will work for enabled datapacks that are part of the current build:
 data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
-# or
-data get storage slimecore:data build.aux.pack_map."<pack ID>"
+# OR
+data get storage slimecore:data build.aux.pack_map.<pack ID>
+
+# will work for any properly installed datapack:
+data get storage slimecore:data world.installed[{pack:{pack_id:"<pack ID>"}}]
+# OR
+data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
 ```
+
+If you do not know a datapack's pack ID, your frontend should provide a reasonable method of listing installed datapacks and their information.
+
+If all else fails, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the path to the function that the datapack's manifest data is directly defined in.
 
 ## Clean Rebuilding
 

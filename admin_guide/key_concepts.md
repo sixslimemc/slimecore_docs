@@ -33,20 +33,7 @@ Key components of a pack manifest:
 - **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack that *implements* it.
 - **Display Information:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
 
-To retrieve a datapack's raw manifest data--given that you know the pack ID--you can do any of the following commands:
-```mcfunction
-# will work for enabled datapacks that are part of the current build:
-data get storage slimecore:data build.packs[{pack_id:"<pack ID>"}]
-# OR
-data get storage slimecore:data build.aux.pack_map.<pack ID>
-
-# will work for any properly installed datapack:
-data get storage slimecore:data world.installed[{pack:{pack_id:"<pack ID>"}}]
-# OR
-data get storage slimecore:data world.aux.installed_map.<pack ID>.pack
-```
-
-*Alternatively, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the path to the function that the datapack's manifest data is directly defined in.*
+*For information on obtaining manifest data of datapacks, see [this section](./troubleshooting.md#getting-manifest-data).*
 
 ## Rebuilding
 
