@@ -20,6 +20,10 @@ SlimeCore is designed to be **deterministic**. If used properly, the same set of
 
 SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world-reload tick. It intentionally does not implement any "frontend" features (chat messages, dialogs, user-facing functions etc.). Instead, it provides a public API such that other datapacks can implement these frontend features easily; this has the added benefit of customizability.
 
+### Mission Statement
+
+SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
+
 ## Functional Overview
 
 SlimeCore-loaded datapacks define exactly one **manifest** function that they append to the function tag `#slimecore:manifest`. This replaces the standard paradigm of appending to `#minecraft:load`/`#minecraft:tick`.
@@ -108,10 +112,6 @@ In order to work, SlimeCore expects datapack paths (the name of files/folders in
 SlimeCore may create a significant single-tick delay during rebuilding, as well as a much lesser single-tick delay during loading. These delays scale linearly with the amount of SlimeCore-loaded datapacks.
 
 SlimeCore does not run any commands outside of rebuilding and loading and has negligible/zero performance impact outside of those processes.
-
-## Mission Statement
-
-SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
 ## Get Started
 
