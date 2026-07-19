@@ -11,13 +11,13 @@
 
 ## Frontend Datapacks
 
-In all practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore itself does not include on it's own. Frontend are developed and documented independently, like any other datapack.
+In most practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore itself does not include on it's own. Frontend are developed and documented independently, like any other datapack.
+
+> While SlimeCore is still in an early-adoption phase, there may not be a selection of frontend datapacks. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
 
 ### SCDev
 
 [SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
-
-> While SlimeCore is still in an early-adoption phase, there may not be a selection of frontends outside of SCDev. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
 
 ## Manifests
 
