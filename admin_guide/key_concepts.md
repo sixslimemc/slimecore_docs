@@ -15,7 +15,7 @@ In all practical cases, you should install a **frontend** datapack (of your choi
 
 ### SCDev
 
-[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
+[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend made by the author of SlimeCore; it has no dependencies and is designed to be accessible for all users.
 
 > While SlimeCore is still in an early-adoption phase, there may not be a selection of frontend datapacks. If you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
 
