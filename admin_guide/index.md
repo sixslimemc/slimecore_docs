@@ -25,7 +25,7 @@ If you just want to quickly start playing with your SlimeCore-loaded datapacks:
 7. Read/skim [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
 
-Otherwise, continue reading.
+Otherwise, continue reading normally.
 
 ---
 
