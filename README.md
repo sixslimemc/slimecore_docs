@@ -1,4 +1,6 @@
-# Description
+# SlimeCore User Docs
+
+## Description
 
 [SlimeCore](https://github.com/sixslimemc/slimecore) is a datapack that serves as a loader of other datapacks. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but goes multiple steps further.
 
