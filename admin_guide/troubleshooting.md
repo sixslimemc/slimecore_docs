@@ -30,7 +30,7 @@ If all else fails, the function tag file `<datapack>/data/slimecore/tags/functio
 
 ## Clean Rebuilding
 
-If it seems like SlimeCore has "lost track" of enabled/disabled datapacks, or you suspect incorrect datapack loading behavior (most likely caused by improper datapack uninstallation or usage of `/datapack`), a **clean rebuild** may fix the issue.
+If it seems like SlimeCore has "lost track" of datapacks, or you suspect incorrect datapack loading behavior, a **clean rebuild** may fix the issue.
 
 If a clean rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid clean rebuild failures.
 
