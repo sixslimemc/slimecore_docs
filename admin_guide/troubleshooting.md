@@ -1,11 +1,17 @@
 # Troubleshooting
 
+- [Frontend Not Loading](#frontend-not-loading)
 - [Getting Manifest Data](#getting-manifest-data)
 - [Clean Rebuilding](#clean-rebuilding)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
 - [Rebuild Errors](#rebuild-errors)
 - [Safe Mode](#safe-mode)
+- []
+
+## Frontend Not Loading
+
+If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Getting Manifest Data
 
@@ -195,5 +201,3 @@ If this is the reason safe mode is triggered, storage NBT `slimecore:data` `worl
 | `duplicate_installed_pack_ids` | List of `{pack_id: <pack ID>, packs: <pack manifest>[]}` | Pack IDs that are shared between multiple packs (specified by `packs`). |
 
 ---
-
-**Next:** [Using SCDev](./using_scdev.md) (only applicable if using [SCDev](https://github.com/sixslimemc/scdev))

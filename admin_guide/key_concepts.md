@@ -7,20 +7,17 @@
 - [Build Data](#build-data)
 - [World Data](#world-data)
 - [Uninstalling SlimeCore](#uninstalling-slimecore)
+- [In-Game Help](#in-game-help)
 
 ## Frontend Datapacks
 
-In all practical cases, you should install a **frontend** datapack (of your choice). A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore itself does not include on it's own. Frontend are developed and documented independently like any other datapack.
+In all practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore itself does not include on it's own. Frontend are developed and documented independently, like any other datapack.
 
 ### SCDev
 
 [SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
 
 > While SlimeCore is still in an early-adoption phase, there may not be a selection of frontends outside of SCDev. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
-
-### Frontend Not Loading
-
-If your frontend doesn't seem to work/load, other datapacks may be silently causing rebuild errors and not allowing your frontend to load. Try temporarily removing all datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Manifests
 
@@ -144,6 +141,10 @@ To uninstall SlimeCore itself, run `/function slimecore:-/uninstall_slimecore {a
 By default, this will send a you confirmation message before uninstallation starts. You can skip the confirmation message with `/function slimecore:-/uninstall_slimecore {args:{force:true}}`.
 
 Uninstalling SlimeCore will disable all SlimeCore-loaded packs and render them non-functional until SlimeCore is installed again. If SlimeCore is re-installed, those disabled packs must be re-enabled manually with `/datapack enable`.
+
+## In-Game Help
+
+You can run `/function slimecore:-/help` to receive a clickable link to the SlimeCore docs as a chat message.
 
 ---
 
