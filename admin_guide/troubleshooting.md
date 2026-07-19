@@ -32,10 +32,10 @@ If all else fails, the function tag file `<datapack>/data/slimecore/tags/functio
 
 If it seems like SlimeCore has "lost track" of datapacks, or you suspect incorrect datapack loading behavior, a **clean rebuild** may fix the issue.
 
-If a clean rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid clean rebuild failures.
+A clean rebuild clears SlimeCore's memory of datapack/world state. As a side effect of this, if a clean rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid clean rebuild failures.
 
 **IMPORTANT:** \
-Clean rebuilds make SlimeCore "forget" about disable datapacks. Any datapacks that are disabled before a clean rebuild must be re-enabled via `/datapack enable` for SlimeCore to "see" them again. \
+Any datapacks that are disabled when a clean rebuild must be re-enabled via `/datapack enable` for SlimeCore to "see" them again. \
 *This is one of the only cases where you should use `/datapack` to manage datapacks.*
 
 Your frontend should provide instructions on how to initiate a clean rebuild, likely as part of explicit rebuilding.
