@@ -22,23 +22,9 @@ To quickly start playing with SlimeCore-loaded datapacks:
 3. Add the tag `scdev.listener` to yourself in-game.
 4. Run `/reload` in-game.
 5. Re-add the SlimeCore-loaded datapacks to your world.
-6. Run `/reload` in-game.
-7. Read [Key Concepts](./key_concepts.md) for important information on managing datapacks.
+6. Run `/reload` in-game again.
+7. Read/skim [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
-
-## Install a Frontend
-
-In all practical cases, you should install a **frontend** datapack (of your choice); SlimeCore does not include any UI on its own and a frontend is expected to provide such. Frontends are developed and documented independently of SlimeCore like any other datapack.
-
-### SCDev
-
-[SCDev](https://github.com/sixslimemc/scdev) is a chat-based frontend with no dependencies made by the author of SlimeCore; it is designed to be accessible for all users.
-
-> While SlimeCore is still in an early-adoption phase, there may not be a selection of frontends outside of SCDev. However, if you find the current selection to be insufficient, it is not too difficult to [create your own](../interface_guide/index.md).
-
-### Frontend Not Loading
-
-If your frontend doesn't seem to work/load, other datapacks may be silently causing rebuild errors and not allowing your frontend to load. Try temporarily removing all datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## `slimecore:-/help`
 
