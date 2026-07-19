@@ -3,15 +3,11 @@
 - [Frontend Not Loading](#frontend-not-loading)
 - [Getting Manifest Data](#getting-manifest-data)
 - [Clean Rebuilding](#clean-rebuilding)
+- [Frontend Not Loadaing](#frontend-not-loading)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
 - [Rebuild Errors](#rebuild-errors)
 - [Safe Mode](#safe-mode)
-- []
-
-## Frontend Not Loading
-
-If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Getting Manifest Data
 
@@ -44,6 +40,10 @@ Clean rebuilds make SlimeCore "forget" about disable datapacks. Any datapacks th
 *This is one of the only cases where you should use `/datapack` to manage datapacks.*
 
 Your frontend should provide instructions on how to initiate a clean rebuild, likely as part of explicit rebuilding.
+
+## Frontend Not Loading
+
+If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Unfinished Loading/Rebuilding
 
