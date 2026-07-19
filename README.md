@@ -1,4 +1,10 @@
-# SlimeCore User Docs
+# Guides
+
+- **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
+- **[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
+- **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
+
+# Description
 
 [SlimeCore](https://github.com/sixslimemc/slimecore) is a datapack that serves as a loader of other datapacks. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but goes multiple steps further.
 
@@ -115,8 +121,3 @@ SlimeCore does not run any commands outside of rebuilding and loading and has ne
 
 SlimeCore's primary goal is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
-## Get Started
-
-- **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
-- **[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
-- **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
