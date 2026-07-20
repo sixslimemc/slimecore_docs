@@ -1,6 +1,6 @@
 # Description
 
-SlimeCore is a datapack that serves as a datapack loading framework, providing a more robust and controllable loading paradigm than the default. It serves a similar purpose to [Lantern Load](https://github.com/LanternMC/load), but takes it multiple steps further.
+SlimeCore is a datapack that serves as a datapack loading framework. It provides a more robust and controllable loading paradigm than the default--similar to [Lantern Load](https://github.com/LanternMC/load), but taken multiple steps further.
 
 SlimeCore allows datapacks to specify:
 - Version
