@@ -6,7 +6,7 @@ SlimeCore allows datapacks to specify:
 - Version
 - Dependencies
 - Entrypoints (e.g. ticking functions) and their order
-- Abstract interfaces (e.g. contracts defined by one datapack and fulfilled by another)
+- Abstract interfaces (i.e. contracts defined by one datapack and fulfilled by another)
 - Pack and author metadata
 - Download URL(s)
 
