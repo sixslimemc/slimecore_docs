@@ -8,7 +8,7 @@ It assumes basic knowledge of commands and datapack management.
 
 ## SlimeCore Briefly
 
-SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Importantly, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading. Don't fret though, SlimeCore should make installing/managing dependencies easy.
+SlimeCore is a datapack that is a loading system for **other datapacks**. It essentially facilitates datapacks "playing nice" with eachother, much more than Minecraft's default datapack loading system. Importantly, it allows datapacks to require other datapacks (dependencies) be installed/enabled before loading, but SlimeCore intentionally makes installing/managing dependencies easy.
 
 This guide will assume you have SlimeCore 
 *See [Description](../description.md) for a more in-depth description.*
