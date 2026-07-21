@@ -10,7 +10,7 @@ SlimeCore allows datapacks to specify:
 - Pack and author metadata
 - Download URL(s)
 
-Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore executes this manifest function and validates and evaluates it's data, taking into account all other datapack manifests.
+Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore executes all manifest functions, validates and evaluates relationships between each datapack's manifest data, and then executes a load based on the evaluation.
 
 Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *their own* function tags for:
 - **Load:** Called on reload. Dependencies' load tags are always called before their dependents'.
