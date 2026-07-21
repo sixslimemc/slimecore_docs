@@ -125,7 +125,7 @@ In order to work, SlimeCore expects datapack paths (the name of files/folders in
 
 ### Performance
 
-SlimeCore may create a significant single-tick delay during rebuilding, as well as a much lesser single-tick delay during loading. These delays scale linearly with the amount of SlimeCore-loaded datapacks.
+SlimeCore may create a significant single-tick delay during rebuilding, scaling linearly with the amount of SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading.
 
 SlimeCore does not run any commands outside of rebuilding and loading and has negligible/zero performance impact outside of those processes.
 
