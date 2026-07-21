@@ -25,7 +25,7 @@ SlimeCore is designed to be **atomic**. If used properly, no changes to datapack
 
 SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way across reloads and worlds.
 
-SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world reload tick. It intentionally does not implement any direct UI features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks can implement these UI features easily.
+SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world reload tick. It intentionally does not implement any direct UI features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks, frontends, can implement these UI features easily.
 
 ### Mission Statement
 
@@ -118,7 +118,7 @@ Upon world reload, SlimeCore executes the following process:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
-To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take affect if they would result in a valid build, otherwise doing nothing. This is the proper way of managing SlimeCore-loaded datapacks.
+To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take affect if they would result in a valid build, otherwise doing nothing. `slimecore:rebuild` is the proper way of managing SlimeCore-loaded datapacks. *Note that `slimecore:rebuild` is not intended to be called in-game directly, but accessed indirectly through a SlimeCore frontend datapack.*
 
 ### Datapack Paths
 
