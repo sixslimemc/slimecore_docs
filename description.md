@@ -14,7 +14,7 @@ Datapacks specify this information via a *manifest function*. Upon world reload,
 
 Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *their own* function tags for:
 - **Load:** Called on reload. Dependencies' load tags are always called before their dependents'.
-- **Entrypoint(s):** Called on reload after all load tags. Any number of entrypoints can be defined per-datapack and can be explicitly ordered relative to others (regardless of loading order). Primarily used to start `/schedule` loops.
+- **Entrypoint(s):** Called on reload after all load tags. Any number of entrypoints can be defined per-datapack and can be explicitly ordered relative to others (regardless of load order). Primarily used to start `/schedule` loops.
 - **Disable:** Called just before the datapack is about to be disabled.
 - **Uninstall:** Called just before the datapack is uninstalled.
 - **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
