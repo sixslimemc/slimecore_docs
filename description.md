@@ -29,7 +29,7 @@ SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implemen
 
 ### Mission Statement
 
-The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
+The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers. It should not require the use of third party programs, but also should not significantly obstruct workflows that may include them. SlimeCore is designed to be simple and robust, such that functionality stays consistent and minimal maintenance/changes are required through Minecraft updates.
 
 ## Functional Overview
 
@@ -104,6 +104,19 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:1
 function slimecore:api/manifest
 ```
 
+Upon world reload, SlimeCore does the following:
+1. Collects all manifests via `#slimecore:manifest` (from both enabled and disabled datapacks).
+2. If any changes to the list of manifests have been made, initiate a **rebuild**:
+    1. Evaluate manifests and attempt to create a valid **build** that stores information on how to load datapacks.
+    2. If *and only if* the build is valid:
+        1. Set the world's **current build** to match it.
+        2. Call any appropriate `disable` and `uninstall` function tags.
+        3. Enable/disable appropriate datapacks, and put datapacks in the loading order of the build.
+3. Initiate a **load**, based off of the world's current build:
+    1. Call preload entrypoints in their order.
+    2. Call load tags in their order.
+    3. Call entrypoints in their order.
+    
 Upon world reload, SlimeCore calls `#slimecore:manifest`, collecting all manifests. If any changes to the list of manifests is detected, SlimeCore (by default) initiates a **rebuild**. Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
 A **rebuild** processes all manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the world's **current build** to reflect them.
