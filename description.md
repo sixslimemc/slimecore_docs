@@ -12,7 +12,14 @@ SlimeCore allows datapacks to specify:
 
 Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then, if validation succeeds, executes a compatible load/calling order.
 
-SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick`. Instead, datapacks *define their own* **load** function tag, as well as any number of **entrypoint** function tags that are called after all load tags are called. Further, SlimeCore requires datapacks to define **disable** and **uninstall** function tags that are called when a datapack is disabled and uninstalled, respectively.
+Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *their own* function tags for:
+- **Load:** Called on reload. Dependencies' load tags are always called before their dependents'.
+- **Entrypoint(s):** Called on reload after all load tags. Datapacks can define any number of entrypoints and explicitly order them relative to their dependencies' entrypoints.
+- **Disable:** Called just before the datapack is about to be disabled.
+- **Uninstall:** Called just before the datapack is uninstalled.
+- **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
+
+SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick` with the concept of **load tags** and **entrypoints**. fu Instead, datapacks *define their own* **load** function tag, as well as any number of **entrypoint** function tags. Further, SlimeCore requires datapacks to define **disable** and **uninstall** function tags that are called when a datapack is disabled and uninstalled, respectively.
 
 SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will ever be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency.
 
