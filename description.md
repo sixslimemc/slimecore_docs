@@ -111,7 +111,7 @@ Upon world reload, SlimeCore executes the following process:
     2. If the entire build is **valid**:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
-        3. Enable/disable appropriate datapacks and put datapacks in the loading order of the build.
+        3. Enable/disable appropriate datapacks and put datapacks in their build loading order.
 3. Initiate a **load**, based off of the world's current build:
     1. Call preload entrypoints in their order.
     2. Call load tags in their order.
