@@ -10,11 +10,11 @@ SlimeCore allows datapacks to specify:
 - Pack and author metadata
 - Download URL(s)
 
-Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore processes all datapacks' manifests, validates relationships, then, if validation succeeds, executes a compatible load/calling order.
+Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore executes this manifest function and validates and evaluates it's data, taking into account all other datapack manifests.
 
 Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *their own* function tags for:
 - **Load:** Called on reload. Dependencies' load tags are always called before their dependents'.
-- **Entrypoint(s):** Called on reload after all load tags. Datapacks can define any number of entrypoints and explicitly order them relative to their dependencies' entrypoints.
+- **Entrypoint(s):** Called on reload after all load tags. Datapacks can define any number of entrypoints and explicitly order them relative to their dependencies' entrypoints. Primarily used to start `/schedule` loops.
 - **Disable:** Called just before the datapack is about to be disabled.
 - **Uninstall:** Called just before the datapack is uninstalled.
 - **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
