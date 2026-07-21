@@ -117,7 +117,7 @@ Upon world reload, SlimeCore executes the following process:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
-To disable, re-enable, or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input proposed "staged" changes. This is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
+To disable, re-enable, or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the inputted "staged" changes. This is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
 
 ### Datapack Paths
 
