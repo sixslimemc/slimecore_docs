@@ -19,7 +19,7 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 - **Uninstall:** Called just before the datapack is uninstalled.
 - **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
 
-SlimeCore completely replaces the usage of `#minecraft:load` and `#minecraft:tick` with the concept of **load tags** and **entrypoints**. fu Instead, datapacks *define their own* **load** function tag, as well as any number of **entrypoint** function tags. Further, SlimeCore requires datapacks to define **disable** and **uninstall** function tags that are called when a datapack is disabled and uninstalled, respectively.
+Additionally, datapacks can also define a **safe mode** tag, which is automatically called in the rare cases that may cause the datapack to function or load incorrectly (such as if the user installs a datapack with an identical namespace).
 
 SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will ever be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will require that the dependent is disabled before the dependency.
 
