@@ -105,7 +105,7 @@ function slimecore:api/manifest
 ```
 
 Upon world reload, SlimeCore executes the following process:
-1. Collect all manifests via `#slimecore:manifest` (from both enabled and disabled datapacks).
+1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Attempt to create a valid **build**, storing information on how to load enabled datapacks.
     2. If *and only if* the build is valid:
