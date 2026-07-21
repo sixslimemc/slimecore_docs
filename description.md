@@ -108,7 +108,6 @@ Upon world reload, SlimeCore executes the following process:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and create a **build** that stores information on how to load enabled datapacks.
-        - *Safe mode can triggered here; if it is, call involved datapacks' safe mode tags and stop here.*
     2. If the entire build is **valid**:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
@@ -118,13 +117,7 @@ Upon world reload, SlimeCore executes the following process:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
-Upon world reload, SlimeCore calls `#slimecore:manifest`, collecting all manifests. If any changes to the list of manifests is detected, SlimeCore (by default) initiates a **rebuild**. Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
-
-A **rebuild** processes all manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the world's **current build** to reflect them.
-
-A **load** calls preload entrypoints, then load tags, then entrypoints, according to the order specified by the world's current build.
-
-A rebuild can also be explicitly initiated via the `slimecore:rebuild` function. Inputs can be provided to this function to "stage" datapacks for disabling, enabling, or uninstallation. If the staged changes would result in an invalid build, no changes to the world/build are actually made. This function is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
+To disable, re-enable, or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input proposed "staged" changes. This is the only proper way to enable, disable, and uninstall SlimeCore-loaded datapacks.
 
 ### Datapack Paths
 
