@@ -21,7 +21,7 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 
 In the rare cases where SlimeCore cannot ensure a datapack loaded correctly, Datapacks can define a **safe mode** tag, which is called automatically in such cases.
 
-SlimeCore is designed to be **atomic**. If used properly (and with some rare exceptions), no changes to datapack loading will be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will ensure that the dependent is disabled before the dependency.
+SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will ensure that the dependent is disabled before the dependency.
 
 SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way across reloads and worlds.
 
