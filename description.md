@@ -113,9 +113,9 @@ Upon world reload, SlimeCore executes the following process:
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
         3. Put datapacks in their build loading order, disabling all datapacks not in the build.
 3. Initiate a **load**, based off of the world's current build:
-    1. Call preload entrypoints in their order.
-    2. Call load tags in their order.
-    3. Call entrypoints in their order.
+    1. Call **preload entrypoints**.
+    2. Call **load tags**.
+    3. Call **entrypoints**.
 
 Upon world reload, SlimeCore calls `#slimecore:manifest`, collecting all manifests. If any changes to the list of manifests is detected, SlimeCore (by default) initiates a **rebuild**. Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
