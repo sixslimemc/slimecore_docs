@@ -112,6 +112,9 @@ Upon world reload, SlimeCore executes the following process:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
         3. Put datapacks in their build loading order, disabling all datapacks not in the build.
+- If **safe mode** was triggered during rebuild:
+    1. Call involved datapacks' **safe mode tags**.
+    2. ***Do not continue to load step.***
 3. Initiate a **load**, based off of the world's current build:
     1. Call **preload entrypoints**.
     2. Call **load tags**.
