@@ -108,7 +108,7 @@ Upon world reload, SlimeCore executes the following process:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and create a **build** that stores information on how to load enabled datapacks.
-    2. If and only if the build is **valid**:
+    2. If the entire build is **valid**:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
         3. Enable/disable appropriate datapacks, and put datapacks in the loading order of the build.
