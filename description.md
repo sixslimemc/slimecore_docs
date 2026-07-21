@@ -117,6 +117,8 @@ Upon world reload, SlimeCore executes the following process:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
+*Safe mode may be triggered during rebuilding, in which case the rebuild fails, involved datapacks' safe mode tags are called, and no **load** is initiated.*
+
 To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take affect if they would result in a valid build, otherwise doing nothing. This is the proper way of managing SlimeCore-loaded datapacks.
 
 ### Datapack Paths
@@ -125,7 +127,7 @@ In order to work, SlimeCore expects datapack paths (the name of files/folders in
 
 ### Performance
 
-SlimeCore may create a significant delay during the rebuilding tick, scaling linearly with the amount of SlimeCore-loaded datapacks, as well as a much lesser delay during the loading tick.
+SlimeCore may create a significant single-tick delay during rebuilding, scaling linearly with the amount of SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading.
 
 SlimeCore does not run any commands outside of rebuilding and loading and has negligible/zero performance impact outside of those processes.
 
