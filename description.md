@@ -104,9 +104,9 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:1
 function slimecore:api/manifest
 ```
 
-Upon world reload, SlimeCore does the following:
-1. Collects all manifests via `#slimecore:manifest` (from both enabled and disabled datapacks).
-2. If any changes to the list of manifests have been made, initiate a **rebuild**:
+Upon world reload, SlimeCore executes the following process:
+1. Collect all manifests via `#slimecore:manifest` (from both enabled and disabled datapacks).
+2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and attempt to create a valid **build** that stores information on how to load datapacks.
     2. If *and only if* the build is valid:
         1. Set the world's **current build** to match it.
@@ -116,7 +116,7 @@ Upon world reload, SlimeCore does the following:
     1. Call preload entrypoints in their order.
     2. Call load tags in their order.
     3. Call entrypoints in their order.
-    
+
 Upon world reload, SlimeCore calls `#slimecore:manifest`, collecting all manifests. If any changes to the list of manifests is detected, SlimeCore (by default) initiates a **rebuild**. Then, regardless of if a rebuild was initiated or successful, SlimeCore initiates a **load**.
 
 A **rebuild** processes all manifests, validates datapack relationships, finds a valid load and entrypoint ordering, and if successful, sets the world's **current build** to reflect them.
