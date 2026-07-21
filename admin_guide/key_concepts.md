@@ -98,8 +98,8 @@ It is updated *every reload* and has the following keys:
 ## Datapack Paths
 
 SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of file/folder in world's `datapacks/` folder) be in one the following standard formats:
-- `<author ID>.<pack ID>.<major>.<minor>.<patch>.zip` (e.g. `bar.foo.1.2.3.zip`)
-- `<author ID>.<pack ID>.<major>.<minor>.<patch>` (e.g. `bar.foo.1.2.3`)
+- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
 These formats are also supported, but are intended for datapacks in active development:
 - `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
