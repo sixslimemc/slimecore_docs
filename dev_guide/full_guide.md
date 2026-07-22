@@ -224,16 +224,16 @@ Declares your datapack's [dependencies](#dependencies)--each element represents 
 
 Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
 
-Each element must have only the following keys:
+Each element must have the following keys:
 
-| Key | Type | Description | Default |
-| :-- | :-- | :-- | :-- |
-| `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. | *(required)* |
-| `author_id` | `string` | [Author ID](#author_id) of the dependency. | *(required)* |
-| `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. | *(required)* |
-| `optional` | `boolean` | If `true`, your datapack should be designed to work both with and without the dependency; SlimeCore will not require it to be installed. | *(required)* |
-| `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. | *(required)* |
-| `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. | *(required)* |
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. |
+| `author_id` | `string` | [Author ID](#author_id) of the dependency. |
+| `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. |
+| `optional` | `boolean` | If `true`, your datapack should be designed to work both with and without the dependency; SlimeCore will not require it to be installed. |
+| `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. |
+| `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. |
 
 ### `entrypoints`
 
@@ -243,9 +243,9 @@ Declares your datapack's [entrypoints](#entrypoints)--each element represents on
 
 In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
 
-Each element must have only the following keys:
+Each element must have the following keys:
 
-| Key | Type | Description | Default |
+| Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the entrypoint. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 | `after` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *after*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
@@ -265,9 +265,9 @@ Declares your datapack's [preload entrypoints](#preload-entrypoints).
 
 Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
 
-Each element has the following keys:
+Each element must have the following keys:
 
-| Key | Type | Description | Default |
+| Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 
@@ -277,9 +277,9 @@ Each element has the following keys:
 
 Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
 
-Each element has the following keys:
+Each element must have the following keys:
 
-| Key | Type | Description | Default |
+| Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
 | `id` | `string` | The ID of the implemented abstract interface.  |
