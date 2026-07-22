@@ -34,5 +34,10 @@ If your datapack would start any `/schedule` loops (or any non-initailization wo
 
 > Skip this section if your existing datapack does not use the [Lantern Load](https://github.com/LanternMC/load) paradigm.
 
-- Move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/preload`.
-- 
+If it exists, move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/preload`.
+
+Move the contents of your datapack's `#load:load` function tag to `#<pack ID>:load`.
+
+If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack ID>:entrypoint/post_load`
+
+Move any ticking/non-initialization behavior initiated by `#<pack ID>:load` to `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should exclusively do initialization work and should not start any `/schedule` loops; it will be called before `#<pack ID>:entrypoint/main`.
