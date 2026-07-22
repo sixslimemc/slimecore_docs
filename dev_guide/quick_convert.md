@@ -2,7 +2,7 @@
 
 Make a backup of your datapack before making any changes.
 
-## 1. Identify Your Pack ID
+## 1. Make Your Pack ID
 
 Your datapack must only have 1 namespace where it defines **new** resources in. The name of this namespace is referred to as your **pack ID**.
 
