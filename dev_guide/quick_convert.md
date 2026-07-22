@@ -18,9 +18,9 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 ## 2. Migrate Function Tags
 
-Move the contents of your datapack's `#minecraft:load` to `#<pack ID>:load`.
+Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
 
-Move the contents of your datapack's `#minecraft:tick` to `#<pack ID>:entrypoint/main`.
+Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
 
-
+Your datapack must no longer include `#minecraft:load` or `#minecraft:tick`.
 
