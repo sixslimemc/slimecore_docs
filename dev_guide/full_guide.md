@@ -330,7 +330,7 @@ The version(s) of SlimeCore that can load this datapack, as a [version requireme
 
 ## Standard Datapack Naming
 
-SlimeCore expects datapack names/paths to follow a specific format; see [this section](../admin_guide/key_concepts.md#datapack-paths) for more information.
+SlimeCore expects datapack names/paths to match a specific format; see [this section](../admin_guide/key_concepts.md#datapack-paths) for more information.
 
 When releasing your datapack for download to the public, it's name should match one of the fully qualified standard formats:
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
