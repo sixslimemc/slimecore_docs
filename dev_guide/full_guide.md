@@ -290,7 +290,7 @@ Each element must have the following keys:
 
 Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used by frontends and such to present your datapack nicely.
 
-| Key | Type | Description | Default |
+| Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `name` | `string` | The display name of your datapack. | *(required)* |
 | `author_name` | `string` | Your display name as a datapack author. | *(required)* |
@@ -301,7 +301,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 `links` is optional and can contain the following optional keys:
 
-| Key | Type | Description | Default |
+| Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) | *(none)* |
 | `releases` | `URL string` | website URL where users can find more released versions of this datapack (e.g. GitHub releases tab, Modrinth versions tab) | *(none)* |
