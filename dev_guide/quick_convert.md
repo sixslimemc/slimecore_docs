@@ -18,9 +18,21 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 ## 2. Migrate Function Tags
 
+*If your existing datapack uses the [Lantern Load](https://github.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.*
+
 Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
 
-Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`. For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
+Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
+
+For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
 
 *Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
 
+If your datapack would start any `/schedule` loops (or any non-initailization work) within the scope of `#<pack ID>:load`, this behavior should be moved to execute in the scope of `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should be used exclusively for initialization work; it will be called before `#<pack ID>/entrypoint/main`.
+
+### Migrate From Lantern Load
+
+*Skip this section if your existing datapack does not use the [Lantern Load](https://github.com/LanternMC/load) paradigm.*
+
+- Move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/preload`.
+- 
