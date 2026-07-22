@@ -101,7 +101,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 
 ## Entrypoints
 
-Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>`. They are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
+Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
 Entrypoints can and should be used to replace `#minecraft:tick` using self-scheduling functions (`schedule <self> 1t`). If your datapack does multiple conceptually independent "chunks" of work in its tick loop, it's good practice to split them up into their own entrypoints. This gives datapacks that may depend on yours more to work with (explained below).
 
@@ -113,7 +113,7 @@ Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 *Preload entrypoints are only applicable to a small minority of datapacks.*
 
-Preload entrypoints are function tags matching the format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>`. They are similar to entrypoints but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/pre-initialization work and should generally not be used to start `/schedule` loops.
+Preload entrypoints are function tags matching the format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>` and are similar to entrypoints, but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/pre-initialization work and should generally not be used to start `/schedule` loops.
 
 Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
 
