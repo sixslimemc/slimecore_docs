@@ -251,13 +251,13 @@ In addition to respecting explicit `before`/`after` ordering, entrypoints will a
 
 ### `preload_entrypoints`
 
-**Type:** `list<{...}>`
+**Type:** `list<struct>`
 
-Functions identically to [`entrypoints`](#entrypoints-1), but handles [preload entrypoints](#preload-entrypoints).
+Declared identically to [`entrypoints`](#entrypoints-1), but is for [preload entrypoints](#preload-entrypoints).
 
 ### `abstract_declarations`
 
-**Type:** `list<{...}>`
+**Type:** `list<struct>`
 
 Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
 
@@ -267,7 +267,7 @@ Declares your datapack's [abstract interfaces](#abstract-interfaces)--each eleme
 
 ### `abstract_implementations`
 
-**Type:** `list<{...}>`
+**Type:** `list<struct>`
 
 Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
 
@@ -278,7 +278,7 @@ Specifies the [abstract interfaces](#abstract-interfaces) that your datapack imp
 
 ### `display`
 
-**Type:** `{...}`
+**Type:** `struct`
 
 Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used by frontends and such to present your datapack nicely.
 
