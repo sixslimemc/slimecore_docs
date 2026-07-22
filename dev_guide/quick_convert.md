@@ -1,5 +1,7 @@
 # Quick Convert
 
+A walkthrough of quickly converting your existing datapack to a SlimeCore-loaded one. Note that these instructions are not necessarily strict rules, and it advised to read the [Full Guide](./full_guide.md) if you seek a full understanding.
+
 Make a backup of your datapack before making any changes.
 
 ## 1. Make a Pack ID
@@ -41,3 +43,5 @@ Move the contents of your datapack's `#load:load` function tag to `#<pack ID>:lo
 If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack ID>:entrypoint/post_load`
 
 Move any ticking/non-initialization behavior initiated by `#<pack ID>:load` to `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should exclusively do initialization work and should not start any `/schedule` loops; it will be called before `#<pack ID>:entrypoint/main`.
+
+*If you are using Lantern Load to check/manage dependencies, it may be worth reading the [Full Guide](./full_guide.md) for 
