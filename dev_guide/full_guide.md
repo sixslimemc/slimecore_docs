@@ -117,17 +117,17 @@ Preload entrypoints are function tags matching the format `#<pack ID>/preload_en
 
 Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
 
-Preload entrypoints match the function tag format , and are declared in a datapack's [manifest](#the-manifest).
+Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ## Abstract Interfaces
 
 *Abstract interfaces are only applicable to a small minority of datapacks.*
 
-Abstract interfaces represent "contracts" that are presented by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the presenting datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
+Abstract interfaces represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
 
 Practically, an abstract interface should be declared when a datapack defines an API over some behavior, but does not actually implement that behavior--*delegating* the implementation to an external datapack (that the user chooses). It is the responsibility of the author to document/explain proper implementation of the behavior.
 
-Likewise, an datapack should specify that it implements an abstract interface if it does properly implement the behavior documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
+Likewise, a datapack should specify that it implements a given abstract interface if it properly implements the behavior/contract documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
 
 Abstract interface declarations/implementations are declared in a datapack's [manifest](#the-manifest).
 
@@ -150,6 +150,7 @@ Manifests have the following components:
 - [`abstract_implementations`](#abstract_implementations)
 - [`display`](#display)
 - [`url`](#url)
+- [`loader_version`](#loader_version)
 
 *Minimal manifest function template:*
 
@@ -176,6 +177,8 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "DI
 # data modify storage slimecore:in manifest.pack.display.links.versions set value "RELEASES_URL"
 
 data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
+
+data modify storage slimecore:in manifest.loader_version set value {major:0, minor:3}
 
 function slimecore:api/manifest
 ```
@@ -308,6 +311,10 @@ For example, if user `foo` released their datapack `bar` version `1.0.0` on GitH
 It is likely that providing a valid value for `url` requires some amount of foresight, as you must know the direct download URL to your datapack before you actually release it for download.
 
 > TODO: provide steps on how to retrieve GitHub and Modrinth direct download links.
+
+### `loader_version`
+
+TODO 
 
 ## Standard Datapack Naming
 
