@@ -316,9 +316,9 @@ For example, if user `bar` released their datapack `foo` version `1.2.3` on GitH
 
 **Type:** `{major: int, minor: int}`
 
-The [Version Requirement](#versioning) of SlimeCore required to load this pack.
+The version(s) of SlimeCore that can load this datapack, as a [version requirement](#versioning).
 
-!The currently installed SlimeCore version can be retrieved in-game via `data get storage slimecore:data slimecore.version`.*
+*The currently installed SlimeCore version can be retrieved in-game via `data get storage slimecore:data slimecore.version`.*
 
 ## Standard Datapack Naming
 
