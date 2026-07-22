@@ -226,7 +226,7 @@ Specifying a pack as a dependency allows it to be referenced via `pack_ref` in o
 
 Each element must have only the following keys:
 
-| Key | Type | Description | Default Value |
+| Key | Type | Description | Default |
 | :-- | :-- | :-- | :-- |
 | `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. | *(required)* |
 | `author_id` | `string` | [Author ID](#author_id) of the dependency. | *(required)* |
@@ -245,7 +245,7 @@ In addition to respecting explicit `before`/`after` ordering, entrypoints will a
 
 Each element must have only the following keys:
 
-| Key | Type | Description | Default Value |
+| Key | Type | Description | Default |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the entrypoint. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 | `after` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *after*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
@@ -267,7 +267,7 @@ Declares your datapack's [abstract interfaces](#abstract-interfaces)--each eleme
 
 Each element has the following keys:
 
-| Key | Type | Description | Default Value |
+| Key | Type | Description | Default |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 
@@ -279,7 +279,7 @@ Specifies the [abstract interfaces](#abstract-interfaces) that your datapack imp
 
 Each element has the following keys:
 
-| Key | Type | Description | Default Value |
+| Key | Type | Description | Default |
 | :-- | :-- | :-- | :-- |
 | `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
 | `id` | `string` | The ID of the implemented abstract interface.  |
