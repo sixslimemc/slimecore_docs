@@ -22,5 +22,5 @@ Move the contents of your datapack's `#minecraft:load` function tag to `#<pack I
 
 Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
 
-Your datapack must no longer include `#minecraft:load` or `#minecraft:tick`.
+Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.
 
