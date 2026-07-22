@@ -193,7 +193,7 @@ Must exactly match your datapack's [pack ID](#pack-id).
 
 **Type:** `string`
 
-An arbitrary identifier that represents you as a datapack author. *(See [ID Naming](#author-ids).)*
+An arbitrary identifier that represents you as a datapack author. *See [ID Naming](#author-ids).*
 
 ### `version`
 
@@ -246,7 +246,7 @@ Each element must have the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
-| `id` | `string` | The ID of the entrypoint. *(See [ID Naming](#manifest-ids).)* | *(required)* |
+| `id` | `string` | The ID of the entrypoint. *See [ID Naming](#manifest-ids).* | *(required)* |
 | `after` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *after*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
 | `before` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *before*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
 
@@ -268,7 +268,7 @@ Each element must have the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `id` | `string` | The ID of the abstract interface. *(See [ID Naming](#manifest-ids).)* |
+| `id` | `string` | The ID of the abstract interface. *See [ID Naming](#manifest-ids).* |
 
 ### `abstract_implementations`
 
