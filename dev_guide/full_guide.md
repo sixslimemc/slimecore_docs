@@ -213,7 +213,7 @@ The numerical [SemVer](https://semver.org) version of your datapack.
 
 Whether or not your datapack is a library.
 
-A library is a datapack that is meant to be used exclusively by other datapacks and does not make a meaningful impact on the user's world on it's own. 
+A library is a datapack that is intended to be used exclusively as a dependency of other datapacks and does not provide any meaningful behavior on its own.
 
 ### `dependencies`
 
