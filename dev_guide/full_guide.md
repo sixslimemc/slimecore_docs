@@ -11,6 +11,7 @@ If converting an existing datapack, make a backup before making any changes.
 - [Entrypoints](#entrypoints)
 - [Abstract Interfaces](#abstract-interfaces)
 - [The Manifest](#the-manifest)
+- [Standard Datapack Naming](#standard-datapack-naming)
 - [ID Naming](#id-naming)
 
 ## Setup
@@ -336,7 +337,7 @@ When releasing your datapack for download to the public, it's name should match 
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
-Other standard name formats are supported for developer convenience and should not be part of public releases:
+Other standard name formats are supported for development convenience and should not be part of public releases:
 - `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
 - `<author ID>.<pack ID>` (e.g. `bar.foo`)
 - `<pack ID>` (e.g. `foo`)
