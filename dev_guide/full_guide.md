@@ -253,7 +253,7 @@ In addition to respecting explicit `before`/`after` ordering, entrypoints will a
 
 **Type:** `list<struct>`
 
-Format and function identical to [`entrypoints`](#entrypoints-1), but is for [preload entrypoints](#preload-entrypoints).
+Declares your datapack's [preload entrypoints](#preload-entrypoints). Format identical to [`entrypoints`](#entrypoints-1).
 
 ### `abstract_declarations`
 
