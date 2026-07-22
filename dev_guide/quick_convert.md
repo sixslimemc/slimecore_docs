@@ -18,7 +18,7 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 ## 2. Migrate Function Tags
 
-*If your existing datapack uses the [Lantern Load](https://github.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.*
+> If your existing datapack uses the [Lantern Load](https://github.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.
 
 Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
 
@@ -32,7 +32,7 @@ If your datapack would start any `/schedule` loops (or any non-initailization wo
 
 ### Migrate From Lantern Load
 
-*Skip this section if your existing datapack does not use the [Lantern Load](https://github.com/LanternMC/load) paradigm.*
+> Skip this section if your existing datapack does not use the [Lantern Load](https://github.com/LanternMC/load) paradigm.
 
 - Move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/preload`.
 - 
