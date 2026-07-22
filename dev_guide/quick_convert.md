@@ -20,8 +20,7 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
 
-Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
+Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`. For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
 
 *Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
 
-For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`). *Entrypoints are not called every tick, only once on reload.*
