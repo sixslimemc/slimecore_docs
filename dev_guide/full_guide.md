@@ -40,7 +40,7 @@ Create the following function tags:
 
 Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
-*If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/main` (create a new tag).*
+*If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/main` (create a new tag, entrypoints covered in a later section).*
 
 ## Load Tag
 
