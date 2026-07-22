@@ -213,7 +213,7 @@ The numerical [SemVer](https://semver.org) version of your datapack.
 
 Whether or not your datapack is a library.
 
-A library is a datapack that is intended to be used exclusively as a dependency of other datapacks and does not provide any meaningful behavior on its own.
+A library is a datapack that is intended to be used *exclusively* as a dependency of other datapacks and does not provide any meaningful behavior on its own.
 
 ### `dependencies`
 
@@ -310,7 +310,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 **Type:** `URL string`
 
-A direct download/source URL to the exact version of this datapack as a .zip file. The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
+A direct download/source URL to the exact version of this datapack as a .zip file. The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming). Note that the downloaded .zip file should *be* the datapack, it should NOT *contain* the datapack (`pack.mcmeta` should be immediately visible when opening the .zip).
 
 Opening this URL in a browser should immediately download the .zip file; there should be no required user input, timers, or redirects.
 
@@ -330,7 +330,16 @@ The version(s) of SlimeCore that can load this datapack, as a [version requireme
 
 ## Standard Datapack Naming
 
+See [this section](../admin_guide/key_concepts.md#datapack-paths) for information on expected datapack paths/names.
 
+When releasing your datapack for download to the public, it's name should match one of the fully qualified standard formats:
+- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
+
+The other standard name formats are primarily intended for local use under active development:
+- `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
+- `<author ID>.<pack ID>` (e.g. `bar.foo`)
+- `<pack ID>` (e.g. `foo`)
 
 ## ID Naming
 
