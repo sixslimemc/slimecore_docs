@@ -267,9 +267,9 @@ Declares your datapack's [abstract interfaces](#abstract-interfaces)--each eleme
 
 Each element must have the following keys:
 
-| Key | Type | Description | Default Value |
-| :-- | :-- | :-- | :-- |
-| `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. |
 
 ### `abstract_implementations`
 
@@ -279,8 +279,8 @@ Specifies the [abstract interfaces](#abstract-interfaces) that your datapack imp
 
 Each element must have the following keys:
 
-| Key | Type | Description | Default Value |
-| :-- | :-- | :-- | :-- |
+| Key | Type | Description |
+| :-- | :-- | :-- |
 | `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
 | `id` | `string` | The ID of the implemented abstract interface.  |
 
