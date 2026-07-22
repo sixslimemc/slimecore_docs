@@ -22,5 +22,6 @@ Move the contents of your datapack's `#minecraft:load` function tag to `#<pack I
 
 Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
 
-Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.
+*Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
 
+For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`). *Entrypoints are not called every tick, only once on reload.*
