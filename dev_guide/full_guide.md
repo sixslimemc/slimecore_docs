@@ -19,7 +19,7 @@ If converting an existing datapack, make a backup before making any changes.
 
 Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack ID**. This namespace **MUST** be the only namespace that your datapack defines ***new*** files in.
 
-All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
+All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may intentionally *overwrite/modify* files in them (e.g. appending to a tag).
 
 For full pack ID naming requirements, see [this section](#pack-ids).
 
@@ -40,7 +40,7 @@ Create the following function tags:
 
 Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
-*If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/tick` (create a new tag).*
+*If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/main` (create a new tag).*
 
 ## Load Tag
 
@@ -68,13 +68,13 @@ If a datapack is uninstalled while disabled, it will be temporarily re-enabled t
 
 ## Safe Mode Tag
 
-The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if there is another installed datapack with the same pack ID as your datapack.
+The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if SlimeCore detects that your datapack (or any of it's dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
 
-When this tag is called, your datapack should attempt to temporarily enter a state of reduced functionality where references/calls to resources under it's pack ID are minimized until `#<pack ID>:load` is called. I.e. You should minimize the chance of referencing/calling resources that have been unintentionally overwritten by the other datapack that has the same pack ID.
+When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is over. This may includes stopping `/schedule` loops, safeguarding advancement reward functions, etc. Informally, you should assume that, while safe mode is enabled, every file in your datapack (and its dependencies) has a chance to cause undefined behavior when referenced.
 
-When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to it's fully functional state. While safe mode should be accounted for, it is important that your datapack continues to function as expected after safe mode ends.
+When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to it's fully functional state. While safe mode should be accounted for, it is more important that your datapack continues to function as expected after safe mode ends.
 
-Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack, and the world already has a datapack with it's pack ID.
+Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
 ## Dependencies
 
