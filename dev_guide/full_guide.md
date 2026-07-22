@@ -290,22 +290,22 @@ Each element must have the following keys:
 
 Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used by frontends and such to present your datapack nicely.
 
-| Key | Type | Description |
-| :-- | :-- | :-- |
-| `name` | `string` | The display name of your datapack. |
-| `author_name` | `string` | Your display name as a datapack author. |
-| `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. |
-| `links` | `struct` | *(See below)* |
+| Key | Type | Description | Default |
+| :-- | :-- | :-- | :-- |
+| `name` | `string` | The display name of your datapack. | *(required)* |
+| `author_name` | `string` | Your display name as a datapack author. | *(required)* |
+| `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. | *(required)* |
+| `links` | `struct` | *(See below)* | *(none)* |
 
 `name`, `author_name`, and `summary` should not contain any escape sequences such as `/n` or `/t`.
 
 `links` is optional and can contain the following optional keys:
 
-| Key | Type | Description |
-| :-- | :-- | :-- |
-| `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) |
-| `releases` | `URL string` | website URL where users can find more released versions of this datapack (e.g. GitHub releases tab, Modrinth versions tab)
-| `author` | `URL string` | website URL that represents you as a datapack author (e.g. GitHub, Modrinth, personal site) |
+| Key | Type | Description | Default |
+| :-- | :-- | :-- | :-- |
+| `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) | *(none)* |
+| `releases` | `URL string` | website URL where users can find more released versions of this datapack (e.g. GitHub releases tab, Modrinth versions tab) | *(none)* |
+| `author` | `URL string` | website URL that represents you as a datapack author (e.g. GitHub, Modrinth, personal site) | *(none)* |
 
 ### `url`
 
