@@ -253,7 +253,7 @@ In addition to respecting explicit `before`/`after` ordering, entrypoints will a
 
 **Type:** `list<struct>`
 
-Declared identically to [`entrypoints`](#entrypoints-1), but is for [preload entrypoints](#preload-entrypoints).
+Format and function identical to [`entrypoints`](#entrypoints-1), but is for [preload entrypoints](#preload-entrypoints).
 
 ### `abstract_declarations`
 
