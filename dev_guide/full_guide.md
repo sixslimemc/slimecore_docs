@@ -372,4 +372,4 @@ Generally, these IDs **SHOULD**:
 - not be shared between elements of different types. \
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
 
-If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it **SHOULD** be called `main`.
+If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, its ID **SHOULD** be `main`.
