@@ -1,5 +1,5 @@
-![Static Badge](https://img.shields.io/badge/Datapack%20Loaded%20By-SlimeCore-forestgreen?style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fsixslimemc%2Fslimecore)
-<a href="https://myframework.dev"><img src="https://img.shields.io/badge/Built%20with-MyFramework-6366F1?logo=myframework&logoColor=white" alt="Built with MyFramework"></a>
+
+<a href="https://github.com/sixslimemc/slimecore"><img src="https://img.shields.io/badge/Datapack%20Loaded%20By-SlimeCore-forestgreen?style=flat" alt="Datapack Loaded By SlimeCore"></a>
 # SlimeCore User Docs
 
 User documentation for [SlimeCore](https://github.com/sixslimemc/slimecore).
