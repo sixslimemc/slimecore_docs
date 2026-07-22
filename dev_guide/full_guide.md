@@ -17,7 +17,7 @@ If converting an existing datapack, make a backup before making any changes.
 
 ### Pack ID
 
-Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack ID**. This namespace must be the only namespace that your datapack defines ***new*** files in.
+Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack ID**. This namespace **MUST** be the only namespace that your datapack defines ***new*** files in.
 
 All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may *overwrite/modify* files in them (e.g. appending to a tag).
 
