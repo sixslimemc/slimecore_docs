@@ -222,6 +222,8 @@ A library is a datapack that is meant to be used exclusively by other datapacks 
 
 Declares your datapack's [dependencies](#dependencies)--each element represents one dependency.
 
+Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
+
 Each element must have the following keys:
 
 | Key | Type | Description |
@@ -233,8 +235,6 @@ Each element must have the following keys:
 | `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. |
 | `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. |
 
-Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
-
 ### `entrypoints`
 
 **Type:** `list<struct>`
@@ -242,6 +242,8 @@ Specifying a pack as a dependency allows it to be referenced via `pack_ref` in o
 Declares your datapack's [entrypoints](#entrypoints)--each element represents one entrypoint.
 
 In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
+
+Each element must have the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
@@ -263,6 +265,8 @@ Declares your datapack's [preload entrypoints](#preload-entrypoints).
 
 Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
 
+Each element must have the following keys:
+
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
@@ -272,6 +276,8 @@ Declares your datapack's [abstract interfaces](#abstract-interfaces)--each eleme
 **Type:** `list<struct>`
 
 Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
+
+Each element must have the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
