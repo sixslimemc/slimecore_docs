@@ -243,7 +243,7 @@ Declares your datapack's [entrypoints](#entrypoints)--each element represents on
 
 In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
 
-Each element must have the following keys:
+Each element has the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
@@ -265,7 +265,7 @@ Declares your datapack's [preload entrypoints](#preload-entrypoints).
 
 Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
 
-Each element must have the following keys:
+Each element has the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
@@ -277,7 +277,7 @@ Each element must have the following keys:
 
 Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
 
-Each element must have the following keys:
+Each element has the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
@@ -300,6 +300,7 @@ Specifies your datapack's display information and URLs. This information is not 
 `name`, `author_name`, and `summary` should not contain any escape sequences such as `/n` or `/t`.
 
 `links` is optional and can contain the following optional keys:
+
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `info` | `URL string` | website URL where users can find more information or a wiki/docs for this datapack (e.g. main GitHub repo, Modrinth page) |
