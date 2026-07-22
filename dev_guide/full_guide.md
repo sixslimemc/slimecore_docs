@@ -310,7 +310,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 **Type:** `URL string`
 
-A direct download/source URL to the exact version of this datapack as a .zip file. The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming). The downloaded .zip file should *be* the datapack, it should not *contain* the datapack (`pack.mcmeta` should be immediately visible when opening the .zip).
+A direct download/source URL to the exact version of this datapack as a .zip file. The downloaded .zip file should *be* the datapack, it should not *contain* the datapack (`pack.mcmeta` should be immediately visible when opening the .zip). The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
 
 Opening this URL in a browser should immediately download the .zip file; there should be no required user input, timers, or redirects.
 
