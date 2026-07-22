@@ -224,16 +224,16 @@ Declares your datapack's [dependencies](#dependencies)--each element represents 
 
 Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
 
-Each element must have the following keys:
+Each element must have only the following keys:
 
-| Key | Type | Description |
-| :-- | :-- | :-- |
-| `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. |
-| `author_id` | `string` | [Author ID](#author_id) of the dependency. |
-| `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. |
-| `optional` | `boolean` | If `true`, your datapack should be designed to work both with and without the dependency; SlimeCore will not require it to be installed. |
-| `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. |
-| `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. |
+| Key | Type | Description | Default Value |
+| :-- | :-- | :-- | :-- |
+| `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. | *(required)* |
+| `author_id` | `string` | [Author ID](#author_id) of the dependency. | *(required)* |
+| `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. | *(required)* |
+| `optional` | `boolean` | If `true`, your datapack should be designed to work both with and without the dependency; SlimeCore will not require it to be installed. | *(required)* |
+| `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. | *(required)* |
+| `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. | *(required)* |
 
 ### `entrypoints`
 
@@ -243,7 +243,7 @@ Declares your datapack's [entrypoints](#entrypoints)--each element represents on
 
 In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
 
-Each element has the following keys:
+Each element must have only the following keys:
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
