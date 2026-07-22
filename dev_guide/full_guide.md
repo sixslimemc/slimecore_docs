@@ -306,15 +306,19 @@ A direct download/source URL to the exact version of this datapack as a .zip fil
 
 Opening this URL in a browser should immediately download the .zip file; there should be no required user input, timers, or redirects.
 
-For example, if user `foo` released their datapack `bar` version `1.0.0` on GitHub, their `url` would likely be `https://github.com/foo/bar/releases/download/v1.0.0/foo.bar.1.0.0.zip`.
+For example, if user `bar` released their datapack `foo` version `1.2.3` on GitHub, their `url` would likely be `https://github.com/bar/foo/releases/download/v1.2.3/bar.foo.1.2.3.zip`.
 
-It is likely that providing a valid value for `url` requires some amount of foresight, as you must know the direct download URL to your datapack before you actually release it for download.
+*It is acknowledged that providing a valid value for `url` requires some amount of foresight, as you must know the direct download URL to your datapack before you release it for download.*
 
 > TODO: provide steps on how to retrieve GitHub and Modrinth direct download links.
 
 ### `loader_version`
 
-TODO 
+**Type:** `{major: int, minor: int}`
+
+The [Version Requirement](#versioning) of SlimeCore required to load this pack.
+
+!The currently installed SlimeCore version can be retrieved in-game via `data get storage slimecore:data slimecore.version`.*
 
 ## Standard Datapack Naming
 
