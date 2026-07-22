@@ -330,44 +330,44 @@ The version(s) of SlimeCore that can load this datapack, as a [version requireme
 
 Pack IDs **MUST**:
 - be a valid datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces)
-- be 1-64 characters long
-- only contain lowercase letters, numbers, `_`, and `-`
-- not be `minecraft` or `slimecore`
+- be 1-64 characters long.
+- only contain lowercase letters, numbers, `_`, and `-`.
+- not be `minecraft` or `slimecore`.
 
 Generally, pack IDs **SHOULD**:
-- be 3-32 characters long
-- not start with `_` or `-`
-- use `-` as a module separator \
+- be 3-32 characters long.
+- not start with `_` or `-`.
+- use `-` as a module separator. \
 (e.g. `foo-bar` and `foo-baz` are modules of group `foo`.)
 - *if for a [library](#is_library) datapack:*
-    - use `_` conservatively
-    - be easy-to-type and unique \
+    - use `_` conservatively.
+    - be easy-to-type and unique. \
     (e.g. `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique.)
 - *if for a non-[library](#is_library)/content datapack:*
-    - be at least 6 characters long
-    - use `_` to represent spaces
-    - be reasonably descriptive \
+    - be at least 6 characters long.
+    - use `_` to represent spaces.
+    - be reasonably descriptive. \
      (e.g. `hpicks` is not descriptive and may clash with other pack IDs, `herobrines_pickaxes` is descriptive and not too long.)
 
 ### Author IDs
 
 Author IDs **MUST**:
-- be 1-64 characters long
-- only contain lowercase letters, numbers, and `_`
+- be 1-64 characters long.
+- only contain lowercase letters, numbers, and `_`.
 
 Generally, author IDs **SHOULD**
-- match your (lowercased) name on your primary authoring platform (GitHub, Modrinth, etc.) or in-game name
-- stay consistent between your authored datapacks
+- match your (lowercased) name on your primary authoring platform (GitHub, Modrinth, etc.) or in-game name.
+- stay consistent between your authored datapacks.
 
 ### Manifest IDs
 
 Entrypoint/preload-entrypoint IDs and abstract interface IDs **MUST**:
-- be 1-32 characters long
-- only contain lowercase letters, numbers, and `_`
+- be 1-32 characters long.
+- only contain lowercase letters, numbers, and `_`.
 
 Generally, these IDs **SHOULD**:
-- be at least 3 characters long
-- use `_` to represent spaces
-- be reasonably descriptive
-- not be shared between elements of different types \
+- be at least 3 characters long.
+- use `_` to represent spaces.
+- be reasonably descriptive.
+- not be shared between elements of different types. \
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
