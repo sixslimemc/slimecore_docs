@@ -336,7 +336,7 @@ When releasing your datapack for download to the public, it's name should match 
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
-The other standard name formats are primarily intended for local use under active development:
+The other standard name formats are intended for active datapack development and local use:
 - `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
 - `<author ID>.<pack ID>` (e.g. `bar.foo`)
 - `<pack ID>` (e.g. `foo`)
