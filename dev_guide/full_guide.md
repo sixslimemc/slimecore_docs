@@ -244,7 +244,7 @@ Declares your datapack's [entrypoints](#entrypoints)--each element represents on
 In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
 
 | Key | Type | Description | Default Value |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the entrypoint. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 | `after` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *after*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
 | `before` | `list<{pack_ref: string, id: string}>` | List of dependencies' entrypoints that the entrypoint must be called *before*. `pack_ref` is the dependency's pack ID, `id` is the ID of the referenced entrypoint. | `[]` |
@@ -262,7 +262,7 @@ Functions identically to [`entrypoints`](#entrypoints-1), but handles [preload e
 Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
 
 | Key | Type | Description | Default Value |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `id` | `string` | The ID of the abstract interface. See [this section](#manifest-ids) for naming requirements. | *(required)* |
 
 ### `abstract_implementations`
@@ -272,7 +272,7 @@ Declares your datapack's [abstract interfaces](#abstract-interfaces)--each eleme
 Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
 
 | Key | Type | Description | Default Value |
-| :-- | :-- | :-- |
+| :-- | :-- | :-- | :-- |
 | `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
 | `id` | `string` | The ID of the implemented abstract interface.  |
 
