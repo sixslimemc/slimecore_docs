@@ -1,0 +1,3 @@
+[![Loaded With SlimeCore](https://img.shields.io/badge/Loaded%20With%20SlimeCore-0.3-51834c?style=flat&labelColor=639d5a)](https://github.com/sixslimemc/slimecore)
+
+<a href="https://github.com/sixslimemc/slimecore"><img src="https://img.shields.io/badge/Loaded%20With%20SlimeCore-0.3-51834c?style=flat&labelColor=639d5a" alt="Datapack Loaded By SlimeCore"></a>
