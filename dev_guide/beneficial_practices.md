@@ -48,6 +48,12 @@ That said, splitting you datapack into modules implies that it makes sense for a
 
 For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
 
+## Hooks/Events
+
+## Configuration
+
+## Library Discipline
+
 ## Defining Interfaces
 
 From [Abstract Interfaces](./full_guide.md#abstract-interfaces):
@@ -71,9 +77,3 @@ Tying it all together now: because DeathDef defines an abstract interface, Slime
 Design wise, player-death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any* amount of external datapacks to provide implementation or response to an internal event, [hooks](#hooksevents) are better suited. 
 
 In most cases, when you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations, referencing them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).
-
-## Library Discipline
-
-## Hooks/Events
-
-## Configuration
