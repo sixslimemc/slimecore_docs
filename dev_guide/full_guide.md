@@ -13,6 +13,7 @@ If converting an existing datapack, make a backup before making any changes.
 - [The Manifest](#the-manifest)
 - [Standard Datapack Naming](#standard-datapack-naming)
 - [ID Naming](#id-naming)
+- [Beneficial Practices](#beneficial-practices)
 
 ## Setup
 
@@ -104,7 +105,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 
 Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
-Entrypoints can and should be used to replace `#minecraft:tick` using self-scheduling functions (`schedule function <self> 1t`). If your datapack does multiple conceptually independent "chunks" of work in its tick loop, it's good practice to split them up into their own entrypoints. This gives datapacks that may depend on yours more to work with (explained below).
+Entrypoints should be used to replace `#minecraft:tick` using self-scheduling functions. If your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint. This gives datapacks that may depend on yours more to work with (explained below).
 
 A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
@@ -424,4 +425,11 @@ For in-game artifacts, one approach is to prefix identifiers with `_` if they ar
 
 Regardless of any scheme used, the distinction between public and private resources should be **documented**.
 
-### Entrypoint Separation
+### Entrypoint Splitting
+
+### Modularization
+
+### Defining Interfaces
+
+### Library Discipline
+
