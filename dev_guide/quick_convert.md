@@ -134,6 +134,6 @@ A browser URL to a page with your datapacks versions/releases (github releases, 
 
 Can be left with placeholder value during development but should be properly set if/when released to the public. See [this section](./full_guide.md#url) for properly setting.
 
-#### Other Manifest Inputs
+#### All Other Values
 
 All other values should be fine left as-is. For more information on them, see the [manifest section](./full_guide.md#the-manifest) of the full guide.
