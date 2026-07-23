@@ -103,7 +103,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 
 ## Entrypoints
 
-Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
+Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
 
 Entrypoints can replace `#minecraft:tick` via self-scheduling functions. If your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint (to a reasonable degree); this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
