@@ -105,7 +105,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 
 Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints.
 
-Entrypoints should be used to replace `#minecraft:tick` using self-scheduling functions. If your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint. This gives datapacks that may depend on yours more to work with (explained below).
+Entrypoints should be used to replace `#minecraft:tick` using self-scheduling functions. If your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint (to a reasonable degree); this gives datapacks that may depend on yours more fine-grained control over interaction with yours (explained below).
 
 A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
@@ -392,44 +392,3 @@ Generally, these IDs **SHOULD**:
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
 
 If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, its ID **SHOULD** be `main`.
-
-## Beneficial Practices
-
-From the [Mission Statement](../description.md#mission-statement):
-
-> The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers.
-
-SlimeCore's loading system attemps to provide a platform/framework to achieve this goal, however, the content of datapacks themselves and their functional compatibility and usability are just as--if not more--impactful. These are elements that only you, the datapack developer(s), can control.
-
-Below are a handful of tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
-
-### Namespacing
-
-Because SlimeCore essentially garuntees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.), similar to how files/resources are inherently namespaced by your pack ID. This greatly reduces the chance of naming conflicts across datapacks.
-
-Examples of effective namespacing within a datapack:
-- Only using NBT storage locations that start with `<pack ID>:`.
-- Only creating scoreboard objectives that start with `<pack ID>.`
-- Only using entity tags that start with `<pack ID>.`.
-- Only adding data to the `minecraft:custom_data` component at paths that start with `<pack ID>.` (`{<pack ID>:{...}}`).
-
-In general, if you can choose the name of a technical identifier, it should be namespaced.
-
-### Public and Private Resources
-
-Datapacks should make it clear in their documentation--and in their structure, if possible--which resources are meant to be accessible by other datapacks and which ones are not.
-
-For resources that are files, a simple and effective approach is to have a consistently-named directory in each registry that exclusively contains all private resources of that registry (e.g. `<registry>/private/...` or `<registry>/_/...`).
-
-For in-game artifacts, one approach is to prefix identifiers with `_` if they are meant to be private, in a similar fashion to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
-
-Regardless of any scheme used, the distinction between public and private resources should be **documented**.
-
-### Entrypoint Splitting
-
-### Modularization
-
-### Defining Interfaces
-
-### Library Discipline
-
