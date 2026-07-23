@@ -132,7 +132,9 @@ A browser URL to a page with your datapacks versions/releases (github releases, 
 
 #### `url`
 
-Can be left with placeholder value during development but should be properly set if/when released to the public. See [this section](./full_guide.md#url) for properly setting.
+Can be left with placeholder value during development.
+
+Should be properly set if/when released to the public. See [this section](./full_guide.md#url) for properly setting.
 
 #### All Other Values
 
