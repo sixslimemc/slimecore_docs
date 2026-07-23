@@ -1,6 +1,6 @@
 # Quick Convert
 
-A walkthrough of quickly converting your existing datapack to a SlimeCore-loaded one. These instructions should work for *most* datapacks, but not necessarily represent strict rules, and not all nuances are covered. If in doubt, reference the [Full Guide](./full_guide.md).
+A walkthrough of quickly converting your existing datapack to a SlimeCore-loaded one. These instructions should work for *most* datapacks, but do not necessarily represent strict rules and not all nuances are covered. If in doubt, reference the [Full Guide](./full_guide.md).
 
 Make a backup of your datapack before making any changes.
 
