@@ -411,4 +411,5 @@ Examples of effective namespacing within a datapack with pack ID `foo` would be:
 - Only creating scoreboard objectives that start with `foo.`
 - Only using entity tags that start with `foo.`.
 - Only adding data to the `minecraft:custom_data` component at paths that start with `foo.` (`{foo:{...}}`).
-- *(And many more.)*
+
+In general, if you can give something a (non-display) identifier/name, it should be namespaced.
