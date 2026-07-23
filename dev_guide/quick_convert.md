@@ -44,4 +44,4 @@ Move any ticking/non-initialization behavior initiated by `#<pack ID>:load` to `
 
 If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack ID>:entrypoint/post_load`
 
-*If your datapack has dependencies and you are using Lantern load to check/manage them, it may be worth reading the [Full Guide](./full_guide.md) to effectively leverage the SlimeCore loading system.*
+*If your datapack has dependencies (particularly those that you are the author of) and you are using Lantern load to check/manage them, it may be worth reading the [Full Guide](./full_guide.md) to effectively leverage the SlimeCore loading system.*
