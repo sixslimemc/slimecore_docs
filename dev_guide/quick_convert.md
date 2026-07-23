@@ -108,7 +108,7 @@ Uncomment the preload entrypoints that your datapack has (`#<pack ID>:preload_en
 
 #### `display.name`
 
-A proper display name for your datapack. Can be any string.
+The display name for your datapack. Can be any string.
 
 #### `display.summary`
 
@@ -116,7 +116,7 @@ A 1-2 sentence summary/description of your datapack. It is standard to make it m
 
 #### `display.author_name`
 
-A proper display name for you as a datapack author. Can be any string.
+The display name for you as a datapack author. Can be any string.
 
 #### `display.links.author`
 
