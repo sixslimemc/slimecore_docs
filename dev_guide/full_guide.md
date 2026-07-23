@@ -422,4 +422,4 @@ For resources that are files, a simple and effective approach is to have a consi
 
 For in-game artifacts, one approach is to prefix identifiers with `_` if they are meant to be private, in a similar fashion to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
 
-Regardless of if any structure/identifier scheme used, the distinction between public and private resources should be **documented**.
+Regardless of any scheme used, the distinction between public and private resources should be **documented**.
