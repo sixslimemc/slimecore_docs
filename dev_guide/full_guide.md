@@ -105,7 +105,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 
 Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
 
-Entrypoints can and should replace `#minecraft:tick` via `/schedule` loop(s) (functions that schedule themselves). If your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint (to a reasonable degree); this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
+Entrypoint(s) that contain `/schedule` loop(s) (functions that schedule themselves) conceptually replace `#minecraft:tick`. Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent groups of work in its tick loop, consider defining multiple entrypoints and giving each chunk of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
 A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
@@ -392,3 +392,7 @@ Generally, these IDs **SHOULD**:
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
 
 If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, its ID **SHOULD** be `main`.
+
+---
+
+**Next:** [Good Practices](./good_practices.md)

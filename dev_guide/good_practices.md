@@ -6,7 +6,7 @@ From the [Mission Statement](../description.md#mission-statement):
 
 SlimeCore's loading system attemps to provide a platform/framework to achieve this goal, however, the content of datapacks themselves and their functional compatibility and usability are just as--if not more--impactful. These are elements that only you, the datapack developer(s), can control.
 
-This page contains a handful of tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
+This page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
 
 ## Namespacing
 
