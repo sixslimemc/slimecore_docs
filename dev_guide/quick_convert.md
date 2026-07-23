@@ -98,6 +98,10 @@ Must exactly match your datapack's pack ID.
 
 Choose a 3-64 string containing only lowercase letters, numbers, and `_` that uniquely represents you as a datapack author. Generally, this should closely match your name on your primary authoring platform (github, modrinth, etc.) or your in-game username.
 
+#### `version`
+
+Your datapack's version ([SemVer](https://semver.org) adhering). Can be left as-is in most cases (`1.0.0`).
+
 #### `entrypoints`
 
 Uncomment the entrypoints that your datapack has (`#<pack ID>:entrypoint/<id>` function tags).
