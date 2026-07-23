@@ -398,7 +398,7 @@ From the [Mission Statement](../description.md#mission-statement):
 
 > The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers.
 
-SlimeCore's loading system contributes substantially to this goal, however, it makes no garuntee about the *functional* compatibility or usability of datapacks. That is where *you*, the developer come in.
+SlimeCore's loading system attemps to provide a platform/framework to achieve this goal, however, it cannot garuntee any *functional* compatibility or usability from datapacks. Such things can only be decided and implemented by *you*, the datapack developer. 
 
 ### Namespacing
 
