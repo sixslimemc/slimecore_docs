@@ -4,7 +4,7 @@ From the [Mission Statement](../description.md#mission-statement):
 
 > The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers.
 
-SlimeCore's loading system provides the framework to achieve this goal, but the content of datapacks--their functional compatibility and usability--matters just as much, if not more. Even so, SlimeCore intentionally does not try and control the content or implementation of datapacks, as it is something that *you*, the datapack developer(s), should be in control over.
+SlimeCore's loading system provides the framework to achieve this goal, but the content of datapacks--their functional compatibility and usability--matters just as much, if not more. Even so, SlimeCore intentionally does not try and control the content of datapacks, as it is something that *you*, the datapack developer(s), should be in control over.
 
 That being said, this page contains a handful of development tips, guidelines, and practices that may aide in increasing a datapack's compatibility and/or usability, but are not strictly defined or required by SlimeCore.
 
