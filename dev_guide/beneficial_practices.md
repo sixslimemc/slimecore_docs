@@ -64,7 +64,7 @@ While it is likely that abstract interfaces are not applicable in most datapacks
 
 Below is a simplified and focused dissection of the [DeathDef](https://github.com/sixslimemc/deathdef) datapack, which should provide a good example of an effective abstract interface.
 
-### Example by DeathDef
+### DeathDef Example
 
 [DeathDef](https://github.com/sixslimemc/deathdef) is a datapack that provides an API for custom player-death behavior. It does this by disabling default death behavior (dropping items/xp), detecting when a player dies, then passing the death information as input (location, items, xp, etc.) to an *unimplemented function*, `death`. It defines one abstract interface; it is documented by DeathDef that, a datapack should implement the interface (in their manifest) *if and only if* they provide an implementation for `death`--this is the "contract" of the interface.
 
