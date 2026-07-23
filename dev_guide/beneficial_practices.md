@@ -70,7 +70,7 @@ Below is a simplified and focused dissection of the [DeathDef](https://github.co
 
 DeathDef does not care what happens when `death` is called; DeathDef just calls with the right inputs when the player dies. Conversely, the datapack that implements `death` only cares about making player-death behavior given the inputs; it does not need to worry about the details of death detection.
 
-Concretely, DeathDef stores death information in NBT storage location `deathdef:abstract/in` just before calling the function tag `#deathdef:abstract/death`. The datapack that implements `death` adds its own internal function to the `#deathdef:abstract/death` tag and uses the data stored in `deathdef:abstract/in` to provide a proper implementation.
+Concretely, DeathDef stores death information in NBT storage location `deathdef:abstract/in` just before calling the function tag `#deathdef:abstract/death`. The datapack that implements `death` adds its own internal function to `#deathdef:abstract/death` and uses the data stored in `deathdef:abstract/in` to provide a proper implementation.
 
 Tying it all together now: because DeathDef defines an abstract interface, SlimeCore requires that exactly one datapack is installed/enabled that implements it, and given that the documented contract of the interface is adhered to (implementing `death`), there will never be any cases where player-death is not implemented, nor any cases where player-death is implemented multiple times.
 
