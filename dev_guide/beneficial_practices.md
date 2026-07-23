@@ -30,6 +30,10 @@ For in-game artifacts, one approach is to prefix identifiers with `_` if they ar
 
 Regardless of any scheme used, the distinction between public and private resources should be **documented**.
 
+## Configuration
+
+## Hooks/Events
+
 ## Entrypoint Separation
 
 From [Entrypoints](./full_guide.md#entrypoints):
@@ -47,10 +51,6 @@ If your datapack includes multiple conceptually independent features (or sets of
 That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
 
 For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
-
-## Hooks/Events
-
-## Configuration
 
 ## Library Discipline
 
