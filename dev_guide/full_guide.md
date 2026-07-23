@@ -402,8 +402,6 @@ SlimeCore's loading system attemps to provide a platform/framework to achieve th
 
 Below are a handful of tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
 
-It is understood that implementing such on an already existing datapack may be cumbersome, and it is sensible to not do so if that is the case. However, if starting development on a new datapack, it is strongly recommended to consider the following.
-
 ### Namespacing
 
 Because SlimeCore essentially garuntees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.), similar to how files/resources are inherently namespaced by your pack ID. This greatly reduces the chance of naming conflicts across datapacks.
