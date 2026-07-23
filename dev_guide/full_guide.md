@@ -414,7 +414,7 @@ Examples of effective namespacing within a datapack with pack ID `foo` would be:
 
 In general, if you can choose the name of a technical identifier, it should be namespaced.
 
-### Private/Internal Resources
+### Public and Private Resources
 
 Datapacks should make it clear in their documentation--and in their structure, if possible--which resources are meant to be accessible by other datapacks and which ones are not.
 
