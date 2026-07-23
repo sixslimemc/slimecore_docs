@@ -395,4 +395,4 @@ If your pack only has a single [entrypoint](#entrypoints) that acts as a general
 
 ---
 
-**Next:** [Good Practices](./good_practices.md)
+**Next:** [Beneficial Practices](./beneficial_practices.md)
