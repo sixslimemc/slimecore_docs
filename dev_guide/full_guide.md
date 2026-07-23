@@ -392,7 +392,15 @@ Generally, these IDs **SHOULD**:
 
 If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, its ID **SHOULD** be `main`.
 
-## Namespacing Artifacts
+## Beneficial Practices
+
+From the [Mission Statement](../description.md#mission-statement):
+
+> The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers.
+
+SlimeCore's loading system contributes substantially to this goal, however, it makes no garuntee about the *functional* compatibility or usability of datapacks. That is where *you*, the developer come in.
+
+### Namespacing
 
 Because SlimeCore essentially garuntees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined/used by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.) in order to effectively nullify the chance of naming conflicts across datapacks.
 
@@ -402,4 +410,3 @@ Some examples of effective namespacing within a datapack with pack ID `foo` woul
 - Only using entity tags that start with `foo.`.
 - Only adding data to the `minecraft:custom_data` component at paths that start with `foo.` (`{foo:{...}}`).
 
-Namespacing is not strictly defined or required for SlimeCore-loaded datapacks, but it is a highly recommended practise.
