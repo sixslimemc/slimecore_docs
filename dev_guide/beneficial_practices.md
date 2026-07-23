@@ -30,7 +30,13 @@ For in-game artifacts, one approach is to prefix identifiers with `_` if they ar
 
 Regardless of any scheme used, the distinction between public and private resources should be **documented**.
 
-## Entrypoint Splitting
+## Entrypoint Separation
+
+As stated in [Entrypoints](./full_guide.md#entrypoints):
+
+> Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint.
+
+To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob(s) (every tick), but also runs a tick loop on all instances of the custom mob(s) for its behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from eachother. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoint/behavior inbetween them--for whatever reason they may have.
 
 ## Modularization
 
