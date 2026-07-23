@@ -40,6 +40,14 @@ To provide a practical example, imagine a datapack that converts all zombies and
 
 ## Modularization
 
+Without SlimeCore, it is a common/sensible practice to try and make datapacks "all-in-one", reducing the responsibility that comes with dependencies for both the developer and the user. However, as you may have already figured, this is exactly the responsibility that SlimeCore attempts to alleviate, aiming to provide opportunity for developers include cross-datapack interaction without fear.
+
+If your datapack includes multiple conceptually independent features (or sets of features), consider splitting it into **modules** that users can install and enable independently. Further, if said modules share some resources or implementation between them, consider making the shared elements into a **library** (or set of libraries) that your modules use as a dependency.
+
+That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others. If doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
+
+For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
+
 ## Defining Interfaces
 
 ## Library Discipline
