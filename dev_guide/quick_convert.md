@@ -90,50 +90,50 @@ function slimecore:api/manifest
 
 Change the values according to the following:
 
-### `pack_id`
+#### `pack_id`
 
 Must exactly match your datapack's pack ID.
 
-### `author_id`
+#### `author_id`
 
 Choose a 3-64 string containing only lowercase letters, numbers, and `_` that uniquely represents you as a datapack author. Generally, this should closely match your name on your primary authoring platform (github, modrinth, etc.) or your in-game username.
 
-### `entrypoints`
+#### `entrypoints`
 
 Uncomment the entrypoints that your datapack has (`#<pack ID>:entrypoint/<id>` function tags).
 
-### `preload_entrypoints`
+#### `preload_entrypoints`
 
 Uncomment the preload entrypoints that your datapack has (`#<pack ID>:preload_entrypoint/<id>` function tags). *You should not have any unless you read [Migrate From Lantern Load](#migrate-from-lantern-load).*
 
-### `display.name`
+#### `display.name`
 
 A proper display name for your datapack. Can be any string.
 
-### `display.summary`
+#### `display.summary`
 
 A 1-2 sentence summary/description of your datapack. It is standard to make it match `pack.description` from your datapack's `pack.mcmeta` file.
 
-### `display.author_name`
+#### `display.author_name`
 
 A proper display name for you as a datapack author. Can be any string.
 
-### `display.links.author`
+#### `display.links.author`
 
 A browser URL to your website as a datapack author (personal website, github, modrinth, etc.). May be omitted, but is recommended.
 
-### `display.links.info`
+#### `display.links.info`
 
 A browser URL to a central information page about your datapack (wiki, github repo, modrinth page, etc.). May be omitted, but is recommended.
 
-### `display.links.versions`
+#### `display.links.versions`
 
 A browser URL to a page with your datapacks versions/releases (github releases, modrinth versions, etc.). May be omitted, but is recommended.
 
-### `url`
+#### `url`
 
 Can be left with placeholder value during development but should be properly set if/when released to the public. See [this section](./full_guide.md#url) for properly setting.
 
-### Other Manifest Inputs
+#### Other Manifest Inputs
 
 All other values should be fine left as-is. For more information on them, see the [manifest section](./full_guide.md#the-manifest) of the full guide.
