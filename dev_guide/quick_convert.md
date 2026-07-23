@@ -104,7 +104,7 @@ Uncomment the entrypoints that your datapack has (`#<pack ID>:entrypoint/<id>` f
 
 #### `preload_entrypoints`
 
-Uncomment the preload entrypoints that your datapack has (`#<pack ID>:preload_entrypoint/<id>` function tags). *You should not have any unless you read [Migrate From Lantern Load](#migrate-from-lantern-load).*
+Uncomment the preload entrypoints that your datapack has (`#<pack ID>:preload_entrypoint/<id>` function tags). *You should only have these if you read [Migrate From Lantern Load](#migrate-from-lantern-load).*
 
 #### `display.name`
 
