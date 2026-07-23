@@ -418,8 +418,8 @@ In general, if you can choose the name of a technical identifier, it should be n
 
 Datapacks should make it clear in their documentation (and/or structure) which resources are meant to be accessible by other datapacks and which ones are not.
 
-For resources that are files, a simple and effective approach is to have a consistent directory exclusively for private resources in each registry (e.g. `<registry>/private/...` or `<registry>/_/...`).
+For resources that are files, a simple and effective scheme is to have a consistent directory exclusively for private resources in each registry (e.g. `<registry>/private/...` or `<registry>/_/...`).
 
-For in-game artifacts, one approach is to add the `_` prefix to identifiers, similar to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
+For in-game artifacts, one scheme is to add the `_` prefix to identifiers, similar to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
 
-Regardless of if any file-path/identifier scheme used, the distinction between public and private resources should be **documented**.
+Regardless of if any structure/identifier scheme used, the distinction between public and private resources should be **documented**.
