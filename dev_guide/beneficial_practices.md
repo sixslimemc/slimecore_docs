@@ -32,7 +32,7 @@ Regardless of any scheme used, the distinction between public and private resour
 
 ## Entrypoint Separation
 
-As stated in [Entrypoints](./full_guide.md#entrypoints):
+From [Entrypoints](./full_guide.md#entrypoints):
 
 > Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint.
 
@@ -46,10 +46,34 @@ If your datapack includes multiple conceptually independent features (or sets of
 
 That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
 
-For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
+For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
 
 ## Defining Interfaces
+
+From [Abstract Interfaces](./full_guide.md#abstract-interfaces):
+
+> Abstract interfaces represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
+
+While it is likely that abstract interfaces are not applicable in most datapacks, it is worth knowing when they can be useful, as well as how to go about designing an API for them.
+
+Below is a simplified and focused dissection of the [DeathDef](https://github.com/sixslimemc/deathdef) datapack, which should provide a good example of an effective abstract interface.
+
+### Example by DeathDef
+
+[DeathDef](https://github.com/sixslimemc/deathdef) is a datapack that provides an API for custom player-death behavior. It does this by disabling default death behavior (dropping items/xp), detecting when a player dies, then passing the death information as input (location, items, xp, etc.) to an *unimplemented function*, `death`. It defines one abstract interface; it is documented by DeathDef that, a datapack should implement the interface (in their manifest) *if and only if* they provide an implementation for `death`--this is the "contract" of the interface.
+
+DeathDef does not care what happens when `death` is called; DeathDef just calls with the right inputs when the player dies. Conversely, the datapack that implements `death` only cares about making player-death behavior given the inputs; it does not need to worry about the details of death detection.
+
+Concretely, DeathDef stores death information in NBT storage location `deathdef:abstract/in` just before calling the function tag `#deathdef:abstract/death`. The datapack that implements `death` adds its own internal function to the `#deathdef:abstract/death` tag and uses the data stored in `deathdef:abstract/in` to provide a proper implementation.
+
+Tying it all together now: because DeathDef defines an abstract interface, SlimeCore requires that exactly one datapack is installed/enabled that implements it, and given that the documented contract of the interface is adhered to (implementing `death`), there will never be any cases where player-death is not implemented, nor any cases where player-death is implemented multiple times.
+
+Design wise, player-death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any* amount of external datapacks to provide implementation or response to an internal event, [hooks](#hooksevents) are better suited. 
+
+In most cases, when you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations, referencing them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).
 
 ## Library Discipline
 
 ## Hooks/Events
+
+## Configuration
