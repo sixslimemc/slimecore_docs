@@ -420,6 +420,6 @@ Datapacks should make it clear in their documentation--and in their structure, i
 
 For resources that are files, a simple and effective approach is to have a consistently-named directory in each registry that exclusively contains all private resources of that registry (e.g. `<registry>/private/...` or `<registry>/_/...`).
 
-For in-game artifacts, one scheme is to add the `_` prefix to identifiers, similar to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
+For in-game artifacts, one approach is to prefix identifiers with `_` if they are meant to be private, similar to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
 
 Regardless of if any structure/identifier scheme used, the distinction between public and private resources should be **documented**.
