@@ -34,6 +34,12 @@ Regardless of any scheme used, the distinction between public and private resour
 
 Datapacks should generally allow users to configure content to their preferences via in-game methods, opposed to hard-coding them within the datapack. As a rule of thumb, if an element of your datapack can *easily* be made configurable/dynamic and it would not be unreasonable for a user to want to change it, then it should be configurable.
 
+Some examples of likely easily configurable elements:
+- Stats of custom weapons/tools.
+- Stats of custom mobs.
+- Behavior that can be toggled on/off.
+- Intensity/amount of particles/sounds.
+
 Importantly, if your datapack does allow for configuration, it should always provide or fall back to *reasonable defaults* automatically. In other words, your datapack should work sensibly on fresh install and provide the *option* to configure it further.
 
 A simple approach is to set default configuration values in some NBT storage location (e.g. `<pack ID>:config`) on install, then have your implementation read the values in that location. Include in your documentation that users are allowed to modify the values in that storage location.
