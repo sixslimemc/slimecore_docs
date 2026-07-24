@@ -32,6 +32,14 @@ Regardless of any scheme used, the distinction between public and private resour
 
 ## Configuration
 
+It is generally beneficial to allow users to configure your datapack (via in-game methods, not by modifying the datapack itself) to their preference, opposed to hard-coding values and/or behavior.
+
+As a rule of thumb, if something can *easily* be made configurable/dynamic and there exists a sound reason that a user may want to change it, then it should be configurable. If this is not the case, then it should not be configurable.
+
+Importantly, if your datapack does allow for configuration, it should always provide or fall back to *reasonable defaults* automatically. In other words, your datapack should work sensibly on fresh install but provide the *option* to configure it further.
+
+A simple approach to configuration is to set default configuration values in some NBT storage location like `<pack ID>:config` on install, then have your implementation read the values in that location. Include in documentation that users are allowed to modify the values in that storage location
+
 ## Hooks/Events
 
 ## Entrypoint Separation
