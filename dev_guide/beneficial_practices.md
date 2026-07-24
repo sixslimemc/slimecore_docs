@@ -41,7 +41,7 @@ Some examples of likely easily configurable elements:
 
 It is a reasonable concern and technically true that allowing such configuration may allow the user to diminish the quality of content provided by the datapack. However, this is why your datapack should automatically provide its own *sensible defaults*; the configuration is there as an *option*.
 
-In terms of implementing configuration, a simple and effective approach is to set default configuration values in some NBT storage location (e.g. `<pack ID>:config`) on datapack installation, then have your feature implementations read the values in that location. Include in your documentation that users are allowed to modify the values in that storage location.
+In terms of implementing configuration, a simple and effective approach is to use an NBT storage location (e.g. `<pack ID>:config`) that users are allowed to directly modify. Store the default configuration values in that location on datapack install, and have your feature implementations read the values in that location.
 
 ## Hooks/Events
 
