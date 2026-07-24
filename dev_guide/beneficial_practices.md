@@ -37,7 +37,7 @@ Datapacks should generally allow users to configure content to their preferences
 Some examples of likely easily configurable elements:
 - Stats of custom items and mobs.
 - Behavior that can be toggled on/off.
-- Intensity/amount of vfx/sfx.
+- Intensity/amount of vfx and sfx.
 
 It may be true that allowing such configuration allows users to diminish their own experience with your datapack. However, this is why it is important for your datapack to automatically provide its own *sensible defaults*; the configuration is left there as an *option*.
 
