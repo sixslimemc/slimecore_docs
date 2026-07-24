@@ -43,6 +43,8 @@ Importantly, if your datapack is configurable, it should install with a sensible
 
 A simple and effective approach for implementing configuration is to use an NBT storage location (e.g. `<pack ID>:config`) that users are allowed to directly modify. Store the default configuration values in that location when your datapack is first loaded, and have your feature implementations read the values from that location.
 
+It may also be helpful to users to include a function in your datapack that resets it's configuration to default.
+
 ## Hooks/Events
 
 ## Entrypoint Separation
