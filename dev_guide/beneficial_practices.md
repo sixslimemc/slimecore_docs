@@ -39,7 +39,7 @@ Some examples of likely easily configurable elements:
 - Behavior that can be toggled on/off.
 - Intensity/amount of particles/sounds.
 
-It may be true that allowing such configuration allows users to diminish their own experience with your datapack. However, this is why it is important for your datapack to automatically provide its own *sensible defaults*; the configuration is there as an *option*.
+It may be true that allowing such configuration allows users to diminish their own experience with your datapack. However, this is why it is important for your datapack to automatically provide its own *sensible defaults*; the configuration is left there as an *option*.
 
 In terms of implementing configuration, a simple and effective approach is to use an NBT storage location (e.g. `<pack ID>:config`) that users are allowed to directly modify. Store the default configuration values in that location on datapack install, and have your feature implementations read the values in that location.
 
