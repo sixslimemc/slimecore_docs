@@ -35,9 +35,9 @@ Regardless of any scheme used, the distinction between public and private resour
 Datapacks should generally allow users to configure content to their preferences via in-game methods, opposed to hard-coding them within the datapack. As a rule of thumb, if an element of your datapack can *easily* be made configurable/dynamic and it would not be unreasonable for a user to want to change it, then it should be configurable.
 
 Some examples of likely easily configurable elements:
-- Stats of custom items and mobs.
+- Stats of custom items and/or mobs.
 - Behavior that can be toggled on/off.
-- Amount/intensity of vfx/sfx.
+- Amount/intensity of vfx and/or sfx.
 
 It may be true that allowing such configuration allows users to diminish their own experience with your datapack. However, this is why it is important for your datapack to automatically provide its own *sensible defaults*; the configuration is left there as an *option*.
 
