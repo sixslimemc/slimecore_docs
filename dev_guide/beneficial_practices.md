@@ -61,18 +61,6 @@ From [Entrypoints](./full_guide.md#entrypoints):
 
 To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob(s) (every tick), but also runs a tick loop on all instances of the custom mob(s) for its behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from eachother. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoint/behavior inbetween them--for whatever reason they may have.
 
-## Modularization
-
-Without SlimeCore, it is a common/sensible practice to try and make datapacks "all-in-one", reducing the responsibility that comes with dependencies for both the developer and the user. However, as you may have already figured, this is exactly the responsibility that SlimeCore attempts to alleviate.
-
-If your datapack includes multiple conceptually independent features (or sets of features), consider splitting it into **modules** that users can install and enable independently. Further, if said modules share some resources or implementation between them, consider making the shared elements into a **library** (or set of libraries) that your modules use as a dependency.
-
-That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
-
-For example, imagine a datapack with pack ID `foo` that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
-
-## Library Discipline
-
 ## Defining Interfaces
 
 From [Abstract Interfaces](./full_guide.md#abstract-interfaces):
@@ -95,4 +83,19 @@ Tying it all together now: because DeathDef defines an abstract interface, Slime
 
 Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any amount* of external datapacks to provide extension or recieve notification of an internal event, [hooks](#hooksevents) are better suited. 
 
-Additionally, In most cases where you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementations to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
+Additionally, In most cases where you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
+
+## Modularization
+
+Without SlimeCore, it is a common/sensible practice to try and make datapacks "all-in-one", reducing the responsibility that comes with dependencies for both the developer and the user. However, as you may have already figured, this is exactly the responsibility that SlimeCore attempts to alleviate.
+
+If your datapack includes multiple conceptually independent features (or sets of features), consider splitting it into **modules** that users can install and enable independently. Further, if said modules share some resources or implementation between them, consider making the shared elements into a **library** (or set of libraries) that your modules use as a dependency.
+
+That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
+
+For example, imagine a datapack with pack ID `foo` that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
+
+## Library Discipline
+
+Whilst creating datapacks, a developer will likely ask themselves at some point(s), "Should I use a library for this?" or potentially even "Should I *make* a library for this?". While this guide unfortunately cannot provide a definitive answer to these questions, and they are ultimately up to *you* to answer, it can provide a few general guidelines and things to consider.
+
