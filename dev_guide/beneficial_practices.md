@@ -43,9 +43,17 @@ Importantly, if your datapack is configurable, it should install with a sensible
 
 A simple and effective approach for implementing configuration is to use an NBT storage location (e.g. `<pack ID>:config`) that users are allowed to directly modify. Store the default configuration values in that location when your datapack is first loaded, and have your feature implementations read the values from that location.
 
-It may also benefit users to include a function in your datapack that resets its configuration to default.
+It may also benefit users to include a function in your datapack that sets configuration to default values.
 
-## Hooks/Events
+## Hooks
+
+One way to increase the extensibility/integratibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks, in the most general sense, are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe), but doesn't allow them to *call*--only your datapack can call its own hooks. 
+
+Both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, they key difference is that hooks provide the *option* for *any* amount of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
+
+A practical use of hooks (but certainly not the only one) is to notify other datapacks of actions/events that happen in yours, additionally passing input that can be read and/or modified by the other datapacks.
+
+For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. It would be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifyable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack (e.g. velocity, damage, effects, etc.); the post-attack hook could provide *read-only* input that specifies the final properties of the attack.
 
 ## Entrypoint Separation
 
@@ -63,7 +71,7 @@ If your datapack includes multiple conceptually independent features (or sets of
 
 That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
 
-For example, imagine a datapack with pack ID `foo`, that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
+For example, imagine a datapack with pack ID `foo` that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
 
 ## Library Discipline
 
