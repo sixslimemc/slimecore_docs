@@ -120,8 +120,8 @@ In any other case, considering the following:
 *For the developers that often ask themselves, "Should I make a library for this?"*
 
 Before deciding to make a (public) library, consider the following:
-- Existing similar libraries (if any) and what they already offer.
-- The difficulty/workload that your library would actually relieve (i.e. If developers can implement your library's features on their own without much effort, it is probably not worth making a library).
+- Existing similar libraries, if any, and what they already offer.
+- The workload that your library would actually relieve--If developers can implement your library's features on their own without much effort, it is probably not worth making a library.
 - The performance overhead of your library and how it would compare to an internal implementation.
 - The responsibility of making the library usable and reliable.
 - The responsibility of documentation.
