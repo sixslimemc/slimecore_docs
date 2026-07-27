@@ -117,8 +117,6 @@ In non-obvious cases, considering the following:
 
 ### Library Creation
 
-*For the developers that often ask themselves, "Should I make a library for this?"*
-
 Before deciding to make a (public) library, consider the following:
 - Existing similar libraries, if any, and what they already offer.
 - The workload that your library would actually relieve--If developers can implement your library's features on their own without much effort, it is probably not worth making a library.
