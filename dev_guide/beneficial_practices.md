@@ -47,11 +47,11 @@ It may also benefit users to include a function in your datapack that sets confi
 
 ## Hooks
 
-One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe), but doesn't allow them to *call*--only your datapack can call its own hooks. 
+One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks. 
+
+A practical use of hooks (but certainly not the only one) is to notify other datapacks of actions/events that happen in your datapack and/or allow them to modify them.
 
 Both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, they key difference is that hooks provide the *option* for *any* amount of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
-
-A practical use of hooks (but certainly not the only one) is to notify other datapacks of actions/events that happen in yours, additionally passing input that can be read and/or modified by the other datapacks.
 
 For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. It would be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifyable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack (e.g. velocity, damage, effects, etc.); the post-attack hook could provide *read-only* input that specifies the final properties of the attack.
 
