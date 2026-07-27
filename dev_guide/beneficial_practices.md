@@ -51,7 +51,7 @@ One way to increase the extensibility of your datapack (if desired) is to includ
 
 Conceptually, both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, they key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
 
-For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifyable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack (e.g. velocity, damage, effects, etc.); the post-attack hook could provide *read-only* input that specifies the final properties of the attack.
+For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifyable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that specifies the final properties of the attack.
 
 ## Entrypoint Separation
 
