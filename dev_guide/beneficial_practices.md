@@ -47,7 +47,7 @@ It may also benefit users to include a function in your datapack that sets confi
 
 ## Hooks
 
-One way to increase the extensibility/integratibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks, in the most general sense, are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe), but doesn't allow them to *call*--only your datapack can call its own hooks. 
+One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks, in the most general sense, are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe), but doesn't allow them to *call*--only your datapack can call its own hooks. 
 
 Both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, they key difference is that hooks provide the *option* for *any* amount of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
 
