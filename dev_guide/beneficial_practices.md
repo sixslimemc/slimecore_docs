@@ -97,5 +97,35 @@ For example, imagine a datapack with pack ID `foo` that drastically changes comb
 
 ## Library Discipline
 
-Whilst creating datapacks, a developer will likely ask themselves at some point(s), "Should I use a library for this?" or potentially even "Should I *make* a library for this?". While this guide unfortunately cannot provide a definitive answer to these questions, and they are ultimately up to *you* to answer, it can provide a few general guidelines and things to consider.
+It is an implicit goal of SlimeCore to make the usage and creation of datapack [libraries](./full_guide.md#is_library) more appealing and accessible to the datapack developer community. While libraries are generally encouraged, the decision to use or create any given library should be treated with equal importance as any other core development decision.
+
+### Library Usage
+
+You likely **should** use a given library if:
+- The library is used for core functionality and/or many features of your datapack.
+- You cannot or are not willing to implement the used library features yourself.
+
+You likely **should not** use a given library if:
+- The library provides much more than what you need and you are willing and able to implement the needed features yourself.
+- Using the library would incur a significant and unecessary performance/lag cost to the user's world.
+
+In any other case, considering the following:
+- The portion of the library's features that your datapack actually uses.
+- The difficulty/work of replacing the used library's features with internal implementation.
+- The performance overhead (or gain) of using the library vs internal implementation.
+- The library's dependency tree (its dependencies, its dependencies' dependencies, etc.).
+
+### Library Creation
+
+*For the developers that often ask themselves, "Should I make a library for this?"*
+
+Before deciding to make a (public) library, consider the following:
+- Existing similar libraries (if any) and what they already offer.
+- The difficulty/workload that your library would actually relieve (i.e. If developers can implement your library's features on their own without much effort, it is probably not worth making a library).
+- The performance overhead of your library and how it would compare to an internal implementation.
+- The responsibility of making the library usable and reliable.
+- The responsibility of documentation.
+
+Additionally, if you do choose to create a library, you should generally aim to make it **do one thing and do it well**. In most cases, monolithic libraries that "do it all" should be avoided, particularly if different parts of them incur passive performance overhead; see [Modularization](#modularization).
+
 
