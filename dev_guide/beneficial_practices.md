@@ -124,6 +124,6 @@ Before deciding to make a (public) library, consider the following:
 - The responsibility of making the library usable and reliable.
 - The responsibility of documentation.
 
-Additionally, if you do choose to create a library, you should generally aim to make it **do one thing and do it well**. In most cases, monolithic libraries that "do it all" should be avoided--particularly if different parts of them incur different passive performance costs--see [Modularization](#modularization).
+If you do choose to create a library, you should generally aim to make it **do one thing and do it well**. In most cases, monolithic libraries that "do it all" should be avoided--particularly if different parts of them incur different passive performance costs--see [Modularization](#modularization).
 
 
