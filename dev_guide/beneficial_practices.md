@@ -102,7 +102,7 @@ It is an implicit goal of SlimeCore to make the usage and creation of datapack [
 ### Library Usage
 
 You likely **should** use a given library if:
-- The library is used for core or many features of your datapack.
+- The library would be used for core or many features of your datapack.
 - You cannot or are not willing to implement the used library features yourself.
 
 You likely **should not** use a given library if:
