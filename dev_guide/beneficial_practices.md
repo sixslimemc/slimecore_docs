@@ -109,7 +109,7 @@ Your datapack **should not** use a given library if:
 - The library provides much more than what you need, and you are able to implement needed features on your own.
 - Using the library would incur a significant and unecessary performance/lag cost to the user's world.
 
-In any other case, considering the following:
+In non-obvious cases, considering the following:
 - The portion of the library's features that your datapack would actually use.
 - The workload of using the library vs making internal implementation.
 - The performance overhead (or gain) of using the library vs internal implementation.
