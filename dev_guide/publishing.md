@@ -1,6 +1,6 @@
 # Publishing
 
-Help and guidelines related to publishing your datapack to the public.
+Guidelines and helpful information related to publishing your datapack to the public.
 
 - [General Guidelines](#general-guidelines)
 - [The `url` Manifest Field](#the-url-manifest-field)
