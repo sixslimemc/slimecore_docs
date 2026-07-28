@@ -7,8 +7,9 @@ SlimeCore supports a **decentralized** datapack publishing/distribution model, m
 
 While not strictly required, it is expected that you include the following in your datapack's primary information/landing page:
 - The [SlimeCore badge](#the-slimecore-badge), or some indication that your datapack requires SlimeCore (and its required version).
-- 
-While not *strictly* required, it is expected that you include in your datapack's primary information/landing page that your datapack is loaded by SlimeCore (and which version of SlimeCore is required). Using the [SlimeCore badge](#the-slimecore-badge) makes this easy and is recommended for any page that supports it. It is also expected that you clearly present your datapack's pack ID and author ID--the recommended format being `<author ID>.<pack ID>`.
+- The datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
+- The datapack's ID in the format `<author ID>.<pack ID>`.
+- If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
 Aside from that, how you present, distribute, and publish your datapack is entirely up to you.
 
@@ -39,10 +40,10 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 - The name of the repository should be in the format `<author ID>.<pack ID>` or alternatively just `<pack ID>` if the owning GitHub profile/organization name matches the datapack's author ID.
 
 #### README.md
-- Your repository should have a `README.md` that includes the following:
+- The repository should have a `README.md` that includes the following:
     - The [SlimeCore badge](#the-slimecore-badge).
-    - Your datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
-    - Your datapack's ID in the format `<author ID>.<pack ID>`.
+    - The datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
+    - The datapack's ID in the format `<author ID>.<pack ID>`.
     - If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
 #### Docs/Info
