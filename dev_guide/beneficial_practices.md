@@ -97,7 +97,7 @@ For example, imagine a datapack with pack ID `foo` that drastically changes comb
 
 ## Library Discipline
 
-It is an implicit goal of SlimeCore to make [libraries](./full_guide.md#is_library) more appealing to use and create, however, the decision to use or create any given library should be treated with equal importance as any other core development decision. Below are some guidelines and considerations for using and creating libraries.
+It is an implicit goal of SlimeCore to make [libraries](./full_guide.md#is_library) more appealing to use and create, however, the decision to use or create any given library should be treated with equal importance as any other core development decision. Below are some general guidelines and considerations for using and creating libraries.
 
 ### Library Usage
 
