@@ -106,7 +106,7 @@ Your datapack **should** use a given library if:
 - You would use all or most of what the library provides.
 - You cannot or are not willing to implement what the library provides yourself.
 
-Your datapack **should not** use a given library if:
+Given you have the option, your datapack **should not** use a given library if:
 - The library provides much more than what you need and you can implement the needed functionality yourself (or find another library that does).
 - Using the library would incur a significant and unecessary performance/lag cost to the user's world.
 
