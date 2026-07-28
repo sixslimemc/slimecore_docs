@@ -112,7 +112,7 @@ Your datapack **should not** use a given library if:
 
 In non-obvious cases, consider:
 - The portion of the library's features that your datapack would actually use.
-- The workload saved by using the library vs making internal implementation.
+- The workload saved by using the library.
 - The performance overhead (or gain) of using the library vs internal implementation.
 - The library's dependency tree (its dependencies, its dependencies' dependencies, etc.).
 
