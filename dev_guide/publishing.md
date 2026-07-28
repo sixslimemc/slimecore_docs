@@ -15,24 +15,28 @@ The SlimeCore badge is a simple markdown badge that is used to indicate that you
 
 Like most other badges, the SlimeCore badge should be included at (or near) the top of your datapack's primary information/landing page.
 
+## The `url` Manifest Field
+
+
+
 ## Publishing With GitHub
 
-The following are some recommended guidelines if using GitHub as a publishing platform.
+The following are recommended guidelines if using GitHub as a publishing platform.
 
-#### The Repository
+#### Repositories
 - Each datapack should have its own repository.
 - The contents of the repository should be the datapack itself (`pack.mcmeta` should be at the top level in the repository). 
-- The name of the repository should be in the format `<author ID>.<pack ID>` or alternatively just `<pack ID>` if the owning GitHub profile/organization name matches the author ID.
+- The name of the repository should be in the format `<author ID>.<pack ID>` or alternatively just `<pack ID>` if the owning GitHub profile/organization name matches the datapack's author ID.
 
 #### README.md
 - Your repository should have a `README.md` that includes the following:
-    - The [SlimeCore badge](#the-slimecore-badge) at the very top.
+    - The [SlimeCore badge](#the-slimecore-badge).
     - Your datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
     - Your datapack's ID in the format `<author ID>.<pack ID>`.
     - If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
 #### Docs/Info
-- You may include a `docs/` folder in the datapack that contains user and/or developer documentation in markdown format.
+- For datapacks with simple documentation needs, a `docs/` folder may be created for user/developer documentation in markdown format.
 - For datapacks with larger documentation/wiki needs, you may alternatively link to an external page in the `README.md`.
 
 #### Releases
@@ -41,14 +45,15 @@ The following are some recommended guidelines if using GitHub as a publishing pl
 - The "binary" attached to the release should be the zipped datapack with the name matching `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`
     - This zip file should function correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted.
     - The zip file should include things like the `README.md`, `docs/`, and `LICENSE.md` if applicable.
-- It is a courtesy to indicate the supported [pack formats](https://minecraft.wiki/w/Pack_format) in the release description.
+- It is a courtesy to indicate the supported [pack formats](https://minecraft.wiki/w/Pack_format) in release descriptions.
 
 #### Manifest Data
 - If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`.
 - Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) field should point to the repository's main page (`https://github.com/<username/org>/<repo>`).
 - The [`display.links.versions`](./full_guide.md#display) field should point to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
 
-> TODO
+#### Alternative `url` Values
+
 
 ## Publishing With Modrinth
 
