@@ -315,7 +315,7 @@ Specifies your datapack's display information and URLs. This information is not 
 
 A direct download/source URL to the exact version of this datapack as a .zip file. The downloaded .zip file should *be* the datapack (it should work correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted). The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
 
-Opening this URL in a browser should immediately download the .zip file, there should be no required user input or timers. While discouraged, this URL may be a redirect to a direct download; however redirect chains (more than one redirect) are forbidden.
+Opening this URL in a browser should immediately download the .zip file, there should be no required user input or timers. While discouraged, this URL may contain one redirect; however redirect chains (more than one redirect) are forbidden.
 
 *It is acknowledged that providing a valid value for `url` requires some amount of foresight, as you must know the direct download URL to your datapack before you release it for download. See [Publishing](./publishing.md).*
 
