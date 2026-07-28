@@ -160,7 +160,7 @@ Your datapack must match one of these standard name formats in order for SlimeCo
 
 ## Checkpoint
 
-If you have followed the guide up to this point, your datapack, while still not able to properly labeled as "SlimeCore-loaded", should now be loadable by SlimeCore and function as it did pre-conversion. If your datapack is still in early development or you do not plan to release it to the public, it may suffice to stop here. However, even so, it may be worthwhile to continue reading to see what you may need to do in the future.
+If you have completed the steps up to this point, your datapack, while still not able to properly labeled as "SlimeCore-loaded", should now be loadable by SlimeCore and function as it did pre-conversion. If your datapack is still in early development or you do not plan to release it to the public, it may suffice to stop here. However, even so, it may be worthwhile to continue reading to see what you may need to do in the future.
 
 If continuing to follow the steps in this guide, consider making another backup at this point.
 
@@ -182,5 +182,13 @@ Create the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/
 
 Implement it according to [this section](./full_guide.md#safe-mode-tag).
 
-## 8. Cleanup
+## 8. Optionally Refactor
+
+It is optional but advised to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
+
+## 9. Verify
+
+Verify that your datapack functions correctly and can properly be disabled, re-enabled, uninstalled, and fresh-installed.
+
+If all the above steps have been completed correctly, your datapack should now be fully SlimeCore-loaded.
 
