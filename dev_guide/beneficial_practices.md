@@ -8,6 +8,15 @@ SlimeCore believes itself to be a significant step toward this goal, but intenti
 
 That said, this page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
 
+- [Namespacing](#namespacing)
+- [Public and Private Resources](#public-and-private-resources)
+- [Configuration](#configuration)
+- [Hooks](#hooks)
+- [Entrypoint Separation](#entrypoint-separation)
+- [Defining Interfaces](#defining-interfaces)
+- [Modularization](#modularization)
+- [Library Discipline](#library-discipline)
+
 ## Namespacing
 
 Because SlimeCore essentially garuntees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.), similar to how files/resources are inherently namespaced by your pack ID. This greatly reduces the chance of naming conflicts across datapacks.
