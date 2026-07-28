@@ -1,5 +1,10 @@
 # Publishing
 
+- [General Guidelines](#general-guidelines)
+- [The `url` Manifest Field](#the-url-manifest-field)
+- [The SlimeCore Badge](#the-slimecore-badge)
+- [Publishing With GitHub](#publishing-with-github)
+- [Publishing With Modrinth](#publishing-with-modrinth)
 
 ## General Guidelines
 
@@ -11,7 +16,7 @@ While not strictly required, it benefits the user to include the following in yo
 - The datapack's ID in the format `<author ID>.<pack ID>`.
 - If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
-Aside from that, how you present, distribute, and publish your datapack is entirely up to you.
+Aside from that, how you present, distribute, and publish your datapack is entirely up to you. If using GitHub or Modrinth as publishing platforms, see their respective sections on this page for platform-specific guidelines ([GitHub](#publishing-with-github), [Modrinth](#publishing-with-modrinth)).
 
 ## The `url` Manifest Field
 
