@@ -51,8 +51,8 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 - For datapacks with larger documentation/wiki needs, you may alternatively link to an external page in the `README.md`.
 
 #### Releases
-- Each public version of the datapack should have its own release.
-- Each release should have a tag; both the tag and release name should be in the format `v<major version>.<minor version>.<patch version>`.
+- Each public version of the datapack should have its own GitHub tagged release.
+- Both the tag and release name should be in the format `v<major version>.<minor version>.<patch version>`.
 - The "binary" attached to the release should be the zipped datapack with the name matching `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`
     - This zip file should function correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted.
     - The zip file should include things like the `README.md`, `docs/`, and `LICENSE.md` if applicable.
