@@ -166,21 +166,21 @@ If continuing to follow the steps in this guide, consider making another backup 
 
 ## 5. Implement Uninstallation
 
-Create the function tag `#<pack ID>:uninstall` ((`<datapack>/data/<pack ID>/tags/function/uninstall.json`)).
+Create the function tag `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`).
 
-Implement it based on [this section](./full_guide.md#uninstall-tag).
+Implement it according to [this section](./full_guide.md#uninstall-tag).
 
 ## 6. Implement Disable
 
-Create the function tag `#<pack ID>:disable` ((`<datapack>/data/<pack ID>/tags/function/disable.json`)).
+Create the function tag `#<pack ID>:disable` (`<datapack>/data/<pack ID>/tags/function/disable.json`).
 
-Implement it based on [this section](./full_guide.md#disable-tag).
+Implement it according to [this section](./full_guide.md#disable-tag).
 
 ## 7. Implement Safe Mode
 
-Create the function tag `#<pack ID>:safe_mode` ((`<datapack>/data/<pack ID>/tags/function/safe_mode.json`)).
+Create the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/function/safe_mode.json`).
 
-Implement it based on [this section](./full_guide.md#safe-mode-tag).
+Implement it according to [this section](./full_guide.md#safe-mode-tag).
 
 ## 8. Cleanup
 

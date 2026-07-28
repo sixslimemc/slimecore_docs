@@ -78,6 +78,8 @@ When safe mode is over, `#<pack ID>:load` will be called like normal and your da
 
 Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
+*It is understood that implementing support for safe mode may be a burden, especially for larger datapacks. While supporting safe mode as best as possible is highly advised, by safe mode's nature, this cannot be strictly enforced; you have the option to simply not support safe in your datapack. If your datapack does not meaningfully support safe mode, it should, at the very least, notify the user of the lack of safe mode support when the safe mode tag is called.*
+
 ## Dependencies
 
 Your datapack can declare that it requires, or optionally supports, other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack.
