@@ -188,7 +188,7 @@ It is advised but ultimately optional to read over [Beneficial Practices](./bene
 
 Verify that your datapack works correctly and can properly be disabled, re-enabled, uninstalled, and fresh-installed without breaking.
 
-## Complete
+## 10. Publish
 
-If all the above steps have been completed correctly, you can consider you datapack fully SlimeCore-loaded. Consider reading the [Full Guide](./full_guide.md) for continued development.
+If all the above steps have been completed correctly, you can consider you datapack SlimeCore-loaded. As implied, your datapack will now rely on SlimeCore  Consider reading the [Full Guide](./full_guide.md) for continued development.
 

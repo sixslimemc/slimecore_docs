@@ -13,7 +13,6 @@ If converting an existing datapack, make a backup before making any changes.
 - [The Manifest](#the-manifest)
 - [Standard Datapack Naming](#standard-datapack-naming)
 - [ID Naming](#id-naming)
-- [Beneficial Practices](#beneficial-practices)
 
 ## Setup
 
