@@ -60,8 +60,8 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 
 #### Manifest Data
 - If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`.
-- Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) manifest field should be the URL of the repository's main page (`https://github.com/<username/org>/<repo>`).
-- The [`display.links.versions`](./full_guide.md#display) manifest field should be the URL of the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
+- Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) manifest field should set to the repository's main page (`https://github.com/<username/org>/<repo>`).
+- The [`display.links.versions`](./full_guide.md#display) manifest field should be set to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
 
 #### Alternative `url` Values
 - If for whatever reason you do not use the release format specified [above](#releases), the general format of GitHub release direct download URLs are `https://github.com/<username/org>/<repo>/releases/download/<tag>/<file>`
