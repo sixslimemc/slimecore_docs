@@ -18,7 +18,7 @@ While not strictly required, it benefits the user to include the following in yo
 
 Aside from that, how you present, distribute, and publish your datapack is entirely up to you.
 
-*If using GitHub or Modrinth as publishing platforms, see their respective sections on this page ([GitHub](#publishing-with-github), [Modrinth](#publishing-with-modrinth)) for platform-specific guidelines .*
+*If using GitHub or Modrinth as publishing platforms, see their respective sections on this page ([GitHub](#publishing-with-github), [Modrinth](#publishing-with-modrinth)) for platform-specific guidelines.*
 
 ## The `url` Manifest Field
 
