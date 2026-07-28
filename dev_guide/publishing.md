@@ -1,6 +1,6 @@
 # Publishing
 
-Guidelines and helpful information related to publishing a SlimeCore-loaded datapack.
+Guidelines and helpful information related to publishing.
 
 - [General Guidelines](#general-guidelines)
 - [The `url` Manifest Field](#the-url-manifest-field)
