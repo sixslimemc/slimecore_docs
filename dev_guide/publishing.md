@@ -36,10 +36,9 @@ If your primary publishing platform gives you control over the direct download U
 
 The SlimeCore badge is a simple markdown badge that is used to indicate that your datapack is SlimeCore-loaded, as well as the SlimeCore version required to load it.
 
-The badge can be copied-and-pasted from [here](../BADGE.md).
+The version of SlimeCore badge used should match the version specified by your datapack's `loader_version` manifest field. 
 
-The version of SlimeCore badge used should match the version specified by your datapack's 
-Like most other badges, the SlimeCore badge should be included at (or near) the top of your datapack's primary information/landing page.
+The badge can be copied-and-pasted from [here](../BADGE.md). *The version of this badge will correspond to the SlimeCore version that these docs pertain to; see [releases](https://github.com/sixslimemc/slimecore_docs/releases) for all versions.*
 
 ## Publishing With GitHub
 
