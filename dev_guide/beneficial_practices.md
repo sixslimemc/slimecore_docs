@@ -136,4 +136,6 @@ Before deciding to make a (public) library, consider the following:
 
 If you do choose to create a library, you should generally aim to make it **do one thing and do it well**. In most cases, monolithic libraries that "do it all" should be avoided--particularly if different parts of them would incur different passive performance costs. If you'd like to release multiple libraries under a named group, consider [modularization](#modularization).
 
+---
 
+**Next:** [Publishing](./publishing.md)

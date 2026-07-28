@@ -1,4 +1,4 @@
-# Full Dev Guide
+# Full Guide
 
 If converting an existing datapack, make a backup before making any changes.
 
