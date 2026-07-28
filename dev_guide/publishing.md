@@ -52,14 +52,14 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 
 #### Releases
 - Each public version of the datapack should have its own GitHub tagged release.
-- Both the tag and release names should be in the format `v<major version>.<minor version>.<patch version>` (e.g. `v1.2.3`).
-- The "binary" attached to the release should be the zipped datapack with the name matching `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`).
+- Both the tag and release names should be in the format `v<major version>.<minor version>.<patch version>`.
+- The "binary" attached to the release should be the zipped datapack with the name matching `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`
     - This zip file should function correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted.
     - The zip file should include things like the `README.md`, `docs/`, and `LICENSE.md` if applicable.
 - It is a courtesy to indicate the supported [pack formats](https://minecraft.wiki/w/Pack_format) in release descriptions.
 
 #### Manifest Data
-- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `https://github.com/bar/foo/releases/download/v1.2.3/bar.foo.1.2.3.zip`).
+- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`.
 - Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) field should point to the repository's main page (`https://github.com/<username/org>/<repo>`).
 - The [`display.links.versions`](./full_guide.md#display) field should point to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
 
