@@ -38,7 +38,8 @@ The SlimeCore badge is a simple markdown badge that is used to indicate that you
 
 The version of SlimeCore badge used should match the version specified by your datapack's `loader_version` manifest field. 
 
-The badge can be copied-and-pasted from [here](../BADGE.md). *The version of this badge will correspond to the SlimeCore version that these docs pertain to; see [releases](https://github.com/sixslimemc/slimecore_docs/releases) for all versions.*
+The badge can be copied-and-pasted from [here](../BADGE.md). \
+*The version of this badge will correspond to the SlimeCore version that these docs pertain to; see [releases](https://github.com/sixslimemc/slimecore_docs/releases) for all versions.*
 
 ## Publishing With GitHub
 
