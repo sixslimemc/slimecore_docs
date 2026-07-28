@@ -102,7 +102,7 @@ It is an implicit goal of SlimeCore to make [libraries](./full_guide.md#is_libra
 ### Library Usage
 
 Your datapack **should** use a given library if:
-- The library would be used to implement core/many elements of your datapack.
+- You would use the library for core/many elements of your datapack.
 - You would use all or most of the library's features.
 - You cannot or are not willing to implement the library's features yourself.
 
