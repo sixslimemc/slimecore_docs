@@ -120,7 +120,7 @@ In non-obvious cases, consider:
 
 Before deciding to make a (public) library, consider the following:
 - Existing similar libraries, if any, and what they already offer.
-- The development workload that your library would actually relieve--If developers can implement your library's features on their own without much effort, it is probably not worth making a library.
+- The development workload that your library would actually relieve--If developers can implement your library's features on their own with little effort, it is probably not worth making a library.
 - The performance overhead of your library and how it would compare to an internal implementation.
 - The responsibility of making the library usable and reliable.
 - The responsibility of documentation.
