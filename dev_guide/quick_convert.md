@@ -194,5 +194,5 @@ If all the above steps have been completed correctly, you can now consider you d
 
 If you'd like to publish your datapack so others can use it, see the page on [Publishing](./publishing.md). Otherwise, you're done!
 
-If you plan on creating more SlimeCore-loaded datapacks, it advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully understand and leverage SlimeCore's features.
+If you plan on creating more SlimeCore-loaded datapacks, it advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully leverage and understand SlimeCore's features.
 
