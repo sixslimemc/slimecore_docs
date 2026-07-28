@@ -5,7 +5,7 @@
 
 SlimeCore supports a **decentralized** datapack publishing/distribution model, meaning you are free to use any service or method you'd like to publish and/or distribute your datapack, as long as you can provide a valid [`url`](#the-url-manifest-field) manifest field.
 
-While is generally expected that you include the following in your datapack's primary information/landing page:
+While not strictly required, it is expected that you include the following in your datapack's primary information/landing page:
 - The [SlimeCore badge](#the-slimecore-badge), or some indication that your datapack requires SlimeCore (and its required version).
 - 
 While not *strictly* required, it is expected that you include in your datapack's primary information/landing page that your datapack is loaded by SlimeCore (and which version of SlimeCore is required). Using the [SlimeCore badge](#the-slimecore-badge) makes this easy and is recommended for any page that supports it. It is also expected that you clearly present your datapack's pack ID and author ID--the recommended format being `<author ID>.<pack ID>`.
