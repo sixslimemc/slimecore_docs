@@ -180,7 +180,7 @@ Implement it according to [this section](./full_guide.md#safe-mode-tag).
 
 ## 8. Optionally Refactor
 
-It is advised but ultimately optional to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
+It is recommended to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
 
 ## 9. Verify
 
