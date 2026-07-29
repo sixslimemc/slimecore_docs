@@ -106,7 +106,7 @@ Must exactly match your datapack's pack ID.
 
 #### `author_id`
 
-Choose a 3-64 string containing only lowercase letters, numbers, and `_` that uniquely represents you as a datapack author. Generally, this should closely match your name on your primary authoring platform (github, modrinth, etc.) or your in-game username.
+Choose a 3-64 character-length string containing only lowercase letters, numbers, and `_` that uniquely represents you as a datapack author. Generally, this should closely match your name on your primary authoring platform (github, modrinth, etc.) or your in-game username.
 
 #### `version`
 
