@@ -8,7 +8,7 @@ Make a backup of your datapack before making any changes.
 
 Your datapack must only have one namespace where it defines **new** resources in. The name of this namespace is referred to as your datapack's **pack ID**.
 
-*If a resource (registry file) would not exist without your datapack (e.g. creating a block tag `#foo:my_blocks`), than it is considered new. If your datapack modifies/overwrites an existing resource (e.g. appending to block tag `#minecraft:infiniburn_overworld`), than it is not considered new and may stay as-is.*
+*If a resource (registry file) would not exist without your datapack (e.g. creating a block tag `#foo:my_blocks`), than it is considered new. If your datapack modifies/overwrites an existing resource (e.g. appending to block tag `#minecraft:infiniburn_overworld`), than it is **not** considered new.*
 
 If your existing datapack defines new resources in more than one namespace, you have the following options:
 - Move all newly defined resources into a single namespace--recommended if resources are tightly coupled.
