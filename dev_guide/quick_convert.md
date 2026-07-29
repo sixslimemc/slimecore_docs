@@ -58,7 +58,7 @@ If it exists, move the contents of your datapack's `#load:post_load` function ta
 
 ## 3. Create a Manifest
 
-Create a file that appends to the `#slimecore:manifest` function tag in your datapack (`<datapack>/data/slimecore/tags/function/manifest.json`).
+Create a file for the `#slimecore:manifest` function tag in your datapack (`<datapack>/data/slimecore/tags/function/manifest.json`).
 
 Create a new function and include it as the only function in your datapack's `#slimecore:manifest`--this is referred to as your **manifest function**. `#slimecore:manifest` in your datapack should only contain your manifest function and should not have `replace` specified.
 
