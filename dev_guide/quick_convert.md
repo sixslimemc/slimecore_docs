@@ -30,7 +30,7 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 ## 2. Migrate Function Tags
 
-> If your existing datapack uses the [Lantern Load](https://github.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.
+> If your existing datapack uses the [Lantern Load](https://GitHub.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.
 
 Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
 
@@ -44,7 +44,7 @@ If your datapack would start any `/schedule` loops (or any non-initailization wo
 
 ### Migrate From Lantern Load
 
-> Skip this section if your existing datapack does not use the [Lantern Load](https://github.com/LanternMC/load) paradigm.
+> Skip this section if your existing datapack does not use the [Lantern Load](https://GitHub.com/LanternMC/load) paradigm.
 
 If it exists, move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/pre_load`.
 
@@ -110,15 +110,15 @@ Choose a 3-64 character-length string containing only lowercase letters, numbers
 
 #### `version`
 
-Your datapack's version ([SemVer](https://semver.org) adhering). Can be left as-is (`1.0.0`), in most cases when converting a datapack.
+Your datapack's version ([SemVer](https://semver.org) adhering). Can be left as-is (`1.0.0`) in most cases of converting a datapack.
 
 #### `entrypoints`
 
-Uncomment the entrypoints that your datapack has (`#<pack ID>:entrypoint/<id>` function tags).
+Uncomment the entrypoints that your datapack defines (`#<pack ID>:entrypoint/<id>` function tags).
 
 #### `preload_entrypoints`
 
-Uncomment the preload entrypoints that your datapack has (`#<pack ID>:preload_entrypoint/<id>` function tags). *You should only have these if you read [Migrate From Lantern Load](#migrate-from-lantern-load).*
+Uncomment the preload entrypoints that your datapack defines (`#<pack ID>:preload_entrypoint/<id>` function tags). *You should only have these if you followed [Migrate From Lantern Load](#migrate-from-lantern-load).*
 
 #### `display.name`
 
@@ -134,15 +134,15 @@ Choose a display name for you as a datapack author. Can be any string.
 
 #### `display.links.author`
 
-A browser URL to your website as a datapack author (personal website, github, modrinth, etc.). May be omitted, but is recommended.
+A browser URL to your website as a datapack author (personal website, GitHub, Modrinth, etc.). May be omitted, but is recommended.
 
 #### `display.links.info`
 
-A browser URL to a central information page about your datapack (wiki, github repo, modrinth page, etc.). May be omitted, but is recommended.
+A browser URL to a central information page about your datapack (wiki, GitHub repo, Modrinth page, etc.). May be omitted, but is recommended.
 
 #### `display.links.versions`
 
-A browser URL to a page with your datapacks versions/releases (github releases, modrinth versions, etc.). May be omitted, but is recommended.
+A browser URL to a page with your datapacks versions/releases (GitHub releases, Modrinth versions, etc.). May be omitted, but is recommended.
 
 #### `url`
 
