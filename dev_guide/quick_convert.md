@@ -4,6 +4,18 @@ A walkthrough of quickly converting your existing datapack to a SlimeCore-loaded
 
 Make a backup of your datapack before making any changes.
 
+- [1. Make a Pack ID](#1-make-a-pack-id)
+- [2. Migrate Function Tags](#2-migrate-function-tags)
+- [3. Create a Manifest](#3-create-a-manifest)
+- [4. Rename Datapack File](#4-rename-datapack-file)
+- [5. Implement Uninstallation](#5-implement-uninstallation)
+- [6. Implement Disable](#6-implement-disable)
+- [7. Implement Safe Mode](#7-implement-safe-mode)
+- [8. Recommended Refactoring](#8-recommended-refactoring)
+- [9. Verify](#9-verify)
+- [10. Publish](#10-publish)
+- [Going Forward](#going-forward)
+
 ## 1. Make a Pack ID
 
 Your datapack must only have one namespace where it defines **new** resources in. The name of this namespace is referred to as your datapack's **pack ID**.
@@ -178,9 +190,9 @@ Create the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/
 
 Implement it according to [this section](./full_guide.md#safe-mode-tag).
 
-## 8. Optionally Refactor
+## 8. Recommended Refactoring
 
-It is recommended to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
+It is recommended (but optional) to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
 
 ## 9. Verify
 
