@@ -152,9 +152,9 @@ May be omitted, but is recommended.
 
 #### `url`
 
-A direct download URL to your datapack.
+A direct download URL to your datapack. *Must contain a valid URL.*
 
-Generally should be left alone during development but should be [properly set](./full_guide.md#url) before releasing your datapack to the public. *Must contain a valid URL.*
+Generally should be left alone during development and only [properly set](./full_guide.md#url) just before releasing your datapack to the public.
 
 #### All Other Values
 
