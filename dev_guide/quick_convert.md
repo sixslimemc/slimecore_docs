@@ -176,15 +176,11 @@ If all of the above steps have been completed correctly, your datapack should te
 
 It is recommended to look over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack. [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) are strongly advised.
 
-## 6. Implement Uninstall, Disable, and Safe Mode
+## 6. Implement Uninstallation
 
-Create the function tags:
-- `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`)
-- `#<pack ID>:disable` (`<datapack>/data/<pack ID>/tags/function/disable.json`)
-- `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/function/safe_mode.json`)
+Create the function tag `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`).
 
-Implement them according to their respective sections in the Full Guide ([uninstall](./full_guide.md#uninstall-tag), [disable](./full_guide.md#disable-tag), [safe mode](./full_guide.md#safe-mode-tag)).
-
+Implement it according to [this section](./full_guide.md#uninstall-tag).
 
 ## 7. Implement Disable
 
