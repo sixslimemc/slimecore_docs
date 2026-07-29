@@ -174,7 +174,7 @@ If all of the above steps have been completed correctly, your datapack should te
 
 ## 5. Recommended Refactoring
 
-It is recommended to look over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
+It is recommended to look over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) are strongly advised.
 
 ## 6. Implement Uninstallation
 
