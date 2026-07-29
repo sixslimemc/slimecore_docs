@@ -156,9 +156,9 @@ Your datapack must match one of these standard name formats in order for SlimeCo
 
 ## Checkpoint
 
-If all of the above steps have been completed correctly, your datapack should technically load via SlimeCore and function as it did pre-conversion, however, it still has some work to be done to be considered "SlimeCore-loaded". If your datapack is still in early development or you do not plan to release it to the public, it may suffice to stop here. However, even so, it may be worthwhile to continue reading to see what you may need to do in the future.
+If all of the above steps have been completed correctly, your datapack should technically load via SlimeCore and function as it did pre-conversion, however, it still has some work to be done to be considered "SlimeCore-loaded". It would be reasonable to create another backup of your datapack at this point.
 
-If continuing to follow the steps in this guide, consider making another backup at this point.
+*If your datapack is still in early development or you do not plan to release it to the public, it may suffice to stop here. However, even so, it may be worthwhile to continue reading to see what you may need to do in the future.*
 
 ## 5. Implement Uninstallation
 
