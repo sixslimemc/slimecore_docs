@@ -98,7 +98,7 @@ data modify storage slimecore:in manifest.loader_version set value {major:0, min
 function slimecore:api/manifest
 ```
 
-Change the `slimecore:in manifest.pack` values according to the following:
+Change the values according to the following:
 
 #### `pack_id`
 
