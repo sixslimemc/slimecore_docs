@@ -8,10 +8,10 @@ Make a backup of your datapack before making any changes.
 - [2. Migrate Function Tags](#2-migrate-function-tags)
 - [3. Create a Manifest](#3-create-a-manifest)
 - [4. Rename Datapack File](#4-rename-datapack-file)
-- [5. Implement Uninstallation](#5-implement-uninstallation)
-- [6. Implement Disable](#6-implement-disable)
-- [7. Implement Safe Mode](#7-implement-safe-mode)
-- [8. Recommended Refactoring](#8-recommended-refactoring)
+- [5. Recommended Refactoring](#5-recommended-refactoring)
+- [6. Implement Uninstallation](#6-implement-uninstallation)
+- [7. Implement Disable](#7-implement-disable)
+- [8. Implement Safe Mode](#8-implement-safe-mode)
 - [9. Verify](#9-verify)
 - [10. Publish](#10-publish)
 - [Going Forward](#going-forward)
@@ -172,27 +172,27 @@ If all of the above steps have been completed correctly, your datapack should te
 
 *If your datapack is still in early development or you do not plan to release it to the public, it may suffice to stop here. However, even so, it may be worthwhile to continue reading to see what you may need to do in the future.*
 
-## 5. Implement Uninstallation
+## 5. Recommended Refactoring
+
+It is recommended (but optional) to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
+
+## 6. Implement Uninstallation
 
 Create the function tag `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`).
 
 Implement it according to [this section](./full_guide.md#uninstall-tag).
 
-## 6. Implement Disable
+## 7. Implement Disable
 
 Create the function tag `#<pack ID>:disable` (`<datapack>/data/<pack ID>/tags/function/disable.json`).
 
 Implement it according to [this section](./full_guide.md#disable-tag).
 
-## 7. Implement Safe Mode
+## 8. Implement Safe Mode
 
 Create the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/function/safe_mode.json`).
 
 Implement it according to [this section](./full_guide.md#safe-mode-tag).
-
-## 8. Recommended Refactoring
-
-It is recommended (but optional) to read over [Beneficial Practices](./beneficial_practices.md) and implement what you think is reasonable for your datapack; [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) in particular are strongly advised.
 
 ## 9. Verify
 
