@@ -154,7 +154,7 @@ May be omitted, but is recommended.
 
 A direct download URL to your datapack. *Must contain a valid URL.*
 
-Generally can be left alone during development and only [properly set](./full_guide.md#url) just before releasing your datapack to the public.
+Generally can be left alone during development and only [properly set](./full_guide.md#url) just before publishing your datapack to the public.
 
 #### All Other Values
 
