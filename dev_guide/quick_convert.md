@@ -110,7 +110,7 @@ Choose a 3-64 character-length string containing only lowercase letters, numbers
 
 #### `version`
 
-Your datapack's version ([SemVer](https://semver.org) adhering). Can be left as-is in most cases (`1.0.0`).
+Your datapack's version ([SemVer](https://semver.org) adhering). Can be left as-is (`1.0.0`), in most cases when converting a datapack.
 
 #### `entrypoints`
 
