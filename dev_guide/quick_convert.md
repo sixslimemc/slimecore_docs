@@ -134,19 +134,25 @@ Choose a display name for you as a datapack author. Can be any string.
 
 #### `display.links.author`
 
-A browser URL to your website as a datapack author (personal website, GitHub, Modrinth, etc.). May be omitted, but is recommended.
+A browser URL to your website as a datapack author (personal website, GitHub, Modrinth, etc.).
+
+May be omitted, but is recommended.
 
 #### `display.links.info`
 
-A browser URL to a central information page about your datapack (wiki, GitHub repo, Modrinth page, etc.). May be omitted, but is recommended.
+A browser URL to a central information page about your datapack (wiki, GitHub repo, Modrinth page, etc.). 
+
+May be omitted, but is recommended.
 
 #### `display.links.versions`
 
-A browser URL to a page with your datapacks versions/releases (GitHub releases, Modrinth versions, etc.). May be omitted, but is recommended.
+A browser URL to a page with your datapacks versions/releases (GitHub releases, Modrinth versions, etc.). 
+
+May be omitted, but is recommended.
 
 #### `url`
 
-Can be left with placeholder value during development, but shoud be [properly set](./full_guide.md#url) when you release your datapack to the public.
+Can be left with placeholder value during development. See [its section in the Full Guide](./full_guide.md#url) before releasing your datapack to the public.
 
 #### All Other Values
 
