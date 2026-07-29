@@ -152,7 +152,7 @@ May be omitted, but is recommended.
 
 #### `url`
 
-Can be left with placeholder value during development. See [its section in the Full Guide](./full_guide.md#url) before releasing your datapack to the public.
+Can be left with placeholder value during development, but should be [properly set](./full_guide.md#url) before releasing your datapack to the public.
 
 #### All Other Values
 
