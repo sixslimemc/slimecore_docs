@@ -196,7 +196,7 @@ Implement it according to [this section](./full_guide.md#safe-mode-tag).
 
 ## 9. Verify
 
-Verify that your datapack works correctly and can properly be disabled, re-enabled, uninstalled, and fresh-installed without breaking.
+Verify that your datapack works correctly and can properly be disabled, re-enabled, uninstalled, and fresh-installed.
 
 ## 10. Publish
 
