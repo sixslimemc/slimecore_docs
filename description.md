@@ -1,5 +1,10 @@
 # Description
 
+- [Mission Statement](#mission-statement)
+- [Summary](#summary)
+- [Functional Overview](#functional-overview)
+- [Get Started](#get-started)
+
 ## Mission Statement
 
 > Provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible for users and developers of all workflows and preferences.
