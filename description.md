@@ -96,6 +96,11 @@ data modify storage slimecore:in manifest.pack.abstract_declarations append valu
 # Abstract interface implementations:
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
+# Library flag:
+# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
+# This indication is for display and/or external handling (not directly used by SlimeCore).
+data modify storage slimecore:in manifest.pack.is_library set value false
+
 # Display information:
 # Not directly used by SlimeCore, but may be read/displayed by other datapacks.
 data modify storage slimecore:in manifest.pack.display.name set value "My Demonstration Pack"
@@ -104,11 +109,6 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "My
 data modify storage slimecore:in manifest.pack.display.links.author set value "https://example.com/authorwebsite"
 data modify storage slimecore:in manifest.pack.display.links.info set value "https://example.com/mypack/wiki"
 data modify storage slimecore:in manifest.pack.display.links.versions set value "https://example.com/mypack/releases"
-
-# Library flag:
-# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
-# This indication is for display and/or external handling (not directly used by SlimeCore).
-data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Loader version:
 # Specifies the compatible version range of SlimeCore that can load this pack.
