@@ -30,11 +30,10 @@ SlimeCore is designed for **atomicity**:
 - Instead of managing datapacks one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore, and then upon world reload, either performed all-at-once or not-at-all, depending on if they are valid.
 - With proper use, SlimeCore does not allow any datapacks within a world to be in an invalid loading state.
 
-If used properly, SlimeCore makes datapack loading and management **deterministic** and **atomic**. The same set of datapacks will always load in the same order across worlds and reloads
-
-SlimeCore is designed to be **minimal and unobtrusive**. 
-
-SlimeCore only implements datapack loading and has no performance overhead outside of the world reload tick. It intentionally does not implement any direct UI features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks, frontends, can implement these UI features easily.
+SlimeCore is designed to be **unobtrusive**:
+- SlimeCore should not require third party tools from users or developers (however should not significantly impede workflows that may include them).
+- SlimeCore only implements datapack loading, it does not enforce or implement anything more than what is deemed necessary for proper function. *(SlimeCore provides a public API such that other datapacks (frontends) can implement UI features easily.)*
+- SlimeCore has no performance overhead outside of the world reload tick.
 
 ### Mission Statement
 
