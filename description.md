@@ -7,7 +7,7 @@
 
 ## Mission Statement
 
-SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load`/`#minecraft:tick`. It is similar in purpose to [Lantern Load](https://github.com/LanternMC/load), but provides concrete implementations for dependency resolution, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore aims to be a foundation for a decentralized datapack ecosystem, accessible regardless of a developer's or user's existing toolchain.
+SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load`/`#minecraft:tick`--It is a datapack that loads other datapacks. Its purpose is similar to [Lantern Load](https://github.com/LanternMC/load), but provides functional support for features such as dependencies, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore aims to be a foundation for a decentralized datapack ecosystem that is accessible regardless of a developer's or user's existing toolchain.
 
 ## Summary
 
