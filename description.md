@@ -21,18 +21,18 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 
 In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, Datapacks can define a **safe mode** tag, which is called automatically in such cases.
 
-SlimeCore is designed for **determinism**:
+SlimeCore is designed to be **deterministic**:
 - The same set of given datapacks will *always* load in the same order across reloads and worlds.
 - Entrypoints (tick loops) are decoupled from loading order, allowing for explicit definition and ordering.
 - Management operations are garunteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
 
-SlimeCore is designed for **atomicity**:
+SlimeCore is designed to be **atomic**:
 - Instead of managing datapacks one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore, and then upon world reload, either performed all-at-once or not-at-all, depending on if they are valid.
 - With proper use, SlimeCore does not allow any datapacks within a world to be in an invalid loading state.
 
 SlimeCore is designed to be **unobtrusive**:
 - No third party tools are necessary to use or develop with SlimeCore.
-- SlimeCore does not enforce or implement anything more than what is deemed necessary for its goal. *(SlimeCore provides a public API such that other datapacks (frontends) can implement UI features easily.)*
+- SlimeCore does not enforce or implement anything more than what is deemed necessary for its goal.
 - SlimeCore has no performance overhead outside of the world reload tick.
 
 ### Mission Statement
