@@ -7,11 +7,9 @@
 
 ## Mission Statement
 
-SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load` and `#minecraft:tick`--it is a datapack that loads other datapacks. Its purpose is similar to [Lantern Load](https://github.com/LanternMC/load), but provides implementation for dependency resolution, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore aims to be a greater foundation for a decentralized datapack ecosystem that is accessible regardless of existing toolchain(s).
+SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load` and `#minecraft:tick`--it is a datapack that loads other datapacks. Its purpose is similar to [Lantern Load](https://github.com/LanternMC/load), but provides implementation for dependency resolution, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore aims to be a greater foundation for a decentralized datapack ecosystem that is usable regardless of existing toolchain(s).
 
 ## Summary
-
-SlimeCore is a datapack that provides the implementation for the framework described by these docs. Datapacks that use the SlimeCore framework inherently depend on the SlimeCore datapack.
 
 SlimeCore allows datapacks to specify:
 - Version
@@ -70,7 +68,7 @@ data modify storage slimecore:in manifest.pack.version set value {major:1, minor
 data modify storage slimecore:in manifest.pack.url set value "https://example.com/myauthorid.mypack.1.0.0"
 
 # Dependencies:
-# Dependencies must include a direct download URL of any valid version of the dependency.
+# Dependencies have a required version (`version`), and must include a direct download URL to a version of the dependency that satisfies said requirement (`download.version`).
 data modify storage slimecore:in manifest.pack.dependencies set value []
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"foopack", author_id:"fooauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://example.com/fooauthor.foopack.1.2.3", version:{major:1, minor:2, patch:3}}}
 # Dependencies can be optional.
