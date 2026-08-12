@@ -2,7 +2,7 @@
 
 ## Mission Statement
 
-The goal of SlimeCore is to provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible for users and developers of all workflows and preferences.
+> Provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible for users and developers of all workflows and preferences.
 
 ## Summary
 
