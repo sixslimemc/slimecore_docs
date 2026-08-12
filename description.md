@@ -27,7 +27,7 @@ SlimeCore is designed for **determinism**:
 - Management operations are garunteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
 
 SlimeCore is designed for **atomicity**:
-- Instead of managing datapacks one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore, then, either performed all-at-once upon world reload or not-at-all, depending on if they are valid.
+- Instead of managing datapacks one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore, then, upon world reload, either performed all-at-once or not-at-all, depending on if they are valid.
 - With proper use, SlimeCore does not allow any operations that would leave the world or any datapack in an invalid state.
 
 If used properly, SlimeCore makes datapack loading and management **deterministic** and **atomic**. The same set of datapacks will always load in the same order across worlds and reloads
