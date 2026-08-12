@@ -6,7 +6,7 @@ If converting an existing datapack, make a backup before making any changes.
 - [Load Tag](#load-tag)
 - [Disable Tag](#disable-tag)
 - [Uninstall Tag](#uninstall-tag)
-- [Safe Mode Tag](#safe-mode)
+- [Safe Mode Tag](#safe-mode-tag)
 - [Dependencies](#dependencies)
 - [Entrypoints](#entrypoints)
 - [Abstract Interfaces](#abstract-interfaces)
@@ -55,7 +55,7 @@ The `#<pack ID>:disable` function tag is called just before your datapack is dis
 
 When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
 
-*There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, it's `#<pack ID>:load` function is called like normal.*
+*There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, its `#<pack ID>:load` function is called like normal.*
 
 ## Uninstall Tag
 
@@ -69,11 +69,11 @@ If a datapack is uninstalled while disabled, it will be temporarily re-enabled t
 
 ## Safe Mode Tag
 
-The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if SlimeCore detects that your datapack (or any of it's dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
+The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
 
-When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is over. This may includes stopping `/schedule` loops, safeguarding advancement reward functions, etc. Informally, you should assume that, while safe mode is enabled, every file in your datapack (and its dependencies) has a chance to cause undefined behavior when referenced.
+When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is over. This may include stopping `/schedule` loops, safeguarding advancement reward functions, etc. Informally, you should assume that, while safe mode is enabled, every file in your datapack (and its dependencies) has a chance to cause undefined behavior when referenced.
 
-When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to it's fully functional state. While safe mode should be accounted for, it is more important that your datapack continues to function as expected after safe mode ends.
+When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to its fully functional state. While safe mode should be accounted for, it is more important that your datapack continues to function as expected after safe mode ends.
 
 Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
@@ -100,7 +100,7 @@ An installed dependency fulfills the version requirement if all of these conditi
 - *if `<major>` > 0:*
     - `<minor>` >= `<req_minor>`
 
-If an installed dependency datapack does not fulfill the version requirement, the dependency considered unfulfilled and the dependent datapack will not load.
+If an installed dependency datapack does not fulfill the version requirement, the dependency is considered unfulfilled and the dependent datapack will not load.
 
 ## Entrypoints
 
@@ -108,7 +108,7 @@ Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entryp
 
 Entrypoint(s) that contain `/schedule` loop(s) (functions that schedule themselves) conceptually replace `#minecraft:tick`. Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
-A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, If datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
+A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, if datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
 
 Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
@@ -318,7 +318,7 @@ A direct download/source URL to the exact version of this datapack as a .zip fil
 
 Opening this URL in a browser should immediately download the .zip file, there should be no required user input or timers. While discouraged, this URL may contain one redirect; however redirect chains (more than one redirect) are forbidden.
 
-*It is acknowledged that providing a valid value for `url` requires the forsight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-field).*
+*It is acknowledged that providing a valid value for `url` requires the foresight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-field).*
 
 ### `loader_version`
 
@@ -332,7 +332,7 @@ The version(s) of SlimeCore that can load this datapack, as a [version requireme
 
 SlimeCore expects datapack names/paths to match a specific format; see [this section](../admin_guide/key_concepts.md#datapack-paths) for more information.
 
-When releasing your datapack for download to the public, it's name should match one of the fully qualified standard formats:
+When releasing your datapack for download to the public, its name should match one of the fully qualified standard formats:
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 

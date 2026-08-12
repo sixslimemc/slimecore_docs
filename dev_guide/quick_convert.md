@@ -20,7 +20,7 @@ Make a backup of your datapack before making any changes.
 
 Your datapack must only have one namespace where it defines **new** resources in. The name of this namespace is referred to as your datapack's **pack ID**.
 
-*If a resource (registry file) would not exist without your datapack (e.g. block tag `#foo:my_blocks`), than it is considered new. If your datapack modifies/overwrites an existing resource (e.g. appending to block tag `#minecraft:infiniburn_overworld`), than it is **not** considered new.*
+*If a resource (registry file) would not exist without your datapack (e.g. block tag `#foo:my_blocks`), then it is considered new. If your datapack modifies/overwrites an existing resource (e.g. appending to block tag `#minecraft:infiniburn_overworld`), then it is **not** considered new.*
 
 If your existing datapack defines new resources in more than one namespace, you have the following options:
 - Move all newly defined resources into a single namespace--recommended if resources are tightly coupled.
@@ -40,7 +40,7 @@ For each function specified in your pack's new `#<pack ID>:entrypoint/main`, mak
 
 *Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
 
-If your datapack would start any `/schedule` loops (or any non-initailization work) within the scope of `#<pack ID>:load`, this behavior should be moved to execute in the scope of `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should be used exclusively for initialization work; it will be called before `#<pack ID>/entrypoint/main`.
+If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack ID>:load`, this behavior should be moved to execute in the scope of `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should be used exclusively for initialization work; it will be called before `#<pack ID>/entrypoint/main`.
 
 ### Migrate From Lantern Load
 
@@ -162,13 +162,12 @@ All other values can be left as-is. For more information on them, see the [manif
 
 ## 4. Rename Datapack File
 
-SlimeCore requires datapack 
 Rename your datapack file/folder (file/folder in `<world>/datapacks/` folder) to one of the following formats (values must match those specified in your datapack's manifest function):
 - `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
 - `<author ID>.<pack ID>` (e.g. `bar.foo`)
 - `<pack ID>` (e.g. `foo`)
 
-These datapack names are intended for active development, however, if/when your datapack is realeased for public download, it's name when downloaded should match one of:
+These datapack names are intended for active development, however, if/when your datapack is released for public download, its name when downloaded should match one of:
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
@@ -208,12 +207,12 @@ Verify that your datapack works correctly and can properly be disabled, re-enabl
 
 ## 10. Publish
 
-If all the above steps have been completed correctly, you can now consider you datapack SlimeCore-loaded.
+If all the above steps have been completed correctly, you can now consider your datapack SlimeCore-loaded.
 
 If you'd like to publish your datapack so others can use it, see the page on [Publishing](./publishing.md). Otherwise, you're done!
 
 ## Going Forward
 
-If you plan on creating more SlimeCore-loaded datapacks, it advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully leverage and understand SlimeCore's features.
+If you plan on creating more SlimeCore-loaded datapacks, it is advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully leverage and understand SlimeCore's features.
 
 ---

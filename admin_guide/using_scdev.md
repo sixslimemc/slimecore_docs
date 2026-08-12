@@ -1,4 +1,4 @@
-# Using Scdev
+# Using SCDev
 
 This section exclusively covers interacting with SlimeCore through [SCDev](https://github.com/sixslimemc/scdev).
 
@@ -8,7 +8,7 @@ This section exclusively covers interacting with SlimeCore through [SCDev](https
 - [Explicit Rebuilding](#explicit-rebuilding)
 - [Info Functions](#info-functions)
 
-## Install and Setup
+## Getting Setup
 
 Versions of SCDev can be found [here](https://github.com/sixslimemc/scdev/releases). It is installed like any other datapack and does not require any dependencies.
 
@@ -18,11 +18,11 @@ Once SCDev is installed, add the tag `scdev.listener` to yourself.
 tag add @s scdev.listener
 ```
 
-To confirm successful setup, run `/reload`--you should recieve a [load summary](#load-summaries) in chat. 
+To confirm successful setup, run `/reload`--you should receive a [load summary](#load-summaries) in chat. 
 
-If you have the `scdev.listener` tag but do not recieve a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
+If you have the `scdev.listener` tag but do not receive a load summary on `/reload`, see [this section](./index.md#frontend-not-loading).
 
-SCDev will only send chat notifications to players with the `scdev.listener` tag. Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privilages.
+SCDev will only send chat notifications to players with the `scdev.listener` tag. Many chat messages sent by SCDev contain clickable/hoverable elements, though click actions will only work if the player has operator privileges.
 
 ## Load Summaries
 
@@ -35,15 +35,15 @@ Load summaries include:
 
 For most administrative purposes, only the "Packs" section is relevant.
 
-If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be supressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
+If a [rebuild](./key_concepts.md#rebuilding) fails, the subsequent load summary will be suppressed in order to bring attention to the [rebuild error message(s)](#rebuild-messages).
 
 *Example of load summary:*
 
 ![Screenshot of load summary](../_assets/images/load_summary.png)
 
-*Example of supressed load summary:*
+*Example of suppressed load summary:*
 
-![Screenshot of supressed load summary](../_assets/images/load_supressed.png)
+![Screenshot of suppressed load summary](../_assets/images/load_supressed.png)
 
 
 ## Rebuild Messages
@@ -93,13 +93,13 @@ SCDev provides functions for displaying useful information about SlimeCore-loade
 
 ### List Functions
 
-The following functions can be used to send a of list their respective elements in chat:
+The following functions can be used to send a list of their respective elements in chat:
 - `scdev:-/info/list/packs`
 - `scdev:-/info/list/entrypoints`
 - `scdev:-/info/list/preload_entrypoints`
 - `scdev:-/info/list/abstracts`
 
-All of these functions take `args` as macro argument for input, which is a struct with the following optional keys:
+All of these functions take `args` as a macro argument for input, which is a struct with the following optional keys:
 
 | Key | Type | Description | Default | Example Value |
 | :-- | :-- | :-- | :-- | :-- |
@@ -123,7 +123,7 @@ function scdev:-/info/list/entrypoints {args:{count:5, page:2, pack_filter:{only
 
 *Example of message from `/function scdev:-/info/list/packs {args:{}}`:*
 
-![Screenshot of chat masseg](../_assets/images/list_packs.png)
+![Screenshot of chat message](../_assets/images/list_packs.png)
 
 ### Individual Pack Info
 

@@ -6,7 +6,7 @@ From the [Mission Statement](../description.md#mission-statement):
 
 SlimeCore believes itself to be a significant step toward this goal, but intentional design in datapacks' content towards compatibility and usability can contribute just as much, if not more. Even so, SlimeCore does not try and control such elements, as they are things that *you*, the datapack developer(s), should be in control over.
 
-That said, this page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
+That said, this page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aid in increasing a datapack's compatibility and/or usability.
 
 - [Namespacing](#namespacing)
 - [Public and Private Resources](#public-and-private-resources)
@@ -19,7 +19,7 @@ That said, this page contains a handful of development tips, guidelines, and pra
 
 ## Namespacing
 
-Because SlimeCore essentially garuntees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.), similar to how files/resources are inherently namespaced by your pack ID. This greatly reduces the chance of naming conflicts across datapacks.
+Because SlimeCore essentially guarantees that a datapack's pack ID is unique within the world it is installed in (at least respective to other SlimeCore-loaded datapacks), pack IDs can be used to **namespace** (prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.), similar to how files/resources are inherently namespaced by your pack ID. This greatly reduces the chance of naming conflicts across datapacks.
 
 Examples of effective namespacing within a datapack:
 - Only using NBT storage locations that start with `<pack ID>:`.
@@ -58,9 +58,9 @@ It may also benefit users to include a function in your datapack that sets confi
 
 One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks. Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow the other datapacks to modify them.
 
-Conceptually, both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, they key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
+Conceptually, both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, the key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
 
-For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifyable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that contains the final properties of the attack.
+For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifiable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that contains the final properties of the attack.
 
 ## Entrypoint Separation
 
@@ -68,7 +68,7 @@ From [Entrypoints](./full_guide.md#entrypoints):
 
 > Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint.
 
-To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob(s) (every tick), but also runs a tick loop on all instances of the custom mob(s) for its behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from eachother. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoint/behavior inbetween them--for whatever reason they may have.
+To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob(s) (every tick), but also runs a tick loop on all instances of the custom mob(s) for its behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from each other. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoint/behavior in between them--for whatever reason they may have.
 
 ## Defining Interfaces
 
@@ -90,9 +90,9 @@ Concretely, DeathDef stores death information in NBT storage location `deathdef:
 
 Tying it all together now: because DeathDef defines an abstract interface, SlimeCore requires that exactly one datapack is installed/enabled that implements it, and given that the documented contract of the interface is adhered to (implementing `death`), there will never be any cases where player death is not implemented, nor any cases where player death is implemented multiple times.
 
-Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any amount* of external datapacks to provide extension or recieve notification of an internal event, [hooks](#hooksevents) are better suited. 
+Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any amount* of external datapacks to provide extension or receive notification of an internal event, [hooks](#hooks) are better suited. 
 
-Additionally, In most cases where you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
+Additionally, in most cases where you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
 
 ## Modularization
 
@@ -100,9 +100,9 @@ Without SlimeCore, it is a common/sensible practice to try and make datapacks "a
 
 If your datapack includes multiple conceptually independent features (or sets of features), consider splitting it into **modules** that users can install and enable independently. Further, if said modules share some resources or implementation between them, consider making the shared elements into a **library** (or set of libraries) that your modules use as a dependency.
 
-That said, splitting you datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
+That said, splitting your datapack into modules implies that it makes sense for a user to install some modules and not others; if doing so would lead to a diminished or nonsensical experience for the user, then it is best to keep your datapack unsplit (or split into larger modules). 
 
-For example, imagine a datapack with pack ID `foo` that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on eachother, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
+For example, imagine a datapack with pack ID `foo` that drastically changes combat and PvE mechanics. It changes the behavior of all weapons and armor in the game, as well as the behavior of all hostile mobs. Given that these features are not heavily interdependent on each other, it would be reasonable to split them into modules with pack IDs (following [naming guidelines](./full_guide.md#pack-ids)): `foo-weapons`, `foo-armor`, and `foo-mobs` respectively, as well as `foo-lib` for shared resources.
 
 ## Library Discipline
 

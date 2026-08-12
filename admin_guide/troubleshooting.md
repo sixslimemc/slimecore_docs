@@ -3,7 +3,7 @@
 - [Frontend Not Loading](#frontend-not-loading)
 - [Getting Manifest Data](#getting-manifest-data)
 - [Clean Rebuilding](#clean-rebuilding)
-- [Frontend Not Loadaing](#frontend-not-loading)
+- [Frontend Not Loading](#frontend-not-loading)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
 - [Rebuild Errors](#rebuild-errors)
@@ -42,7 +42,7 @@ Your frontend should provide instructions on how to initiate a clean rebuild, li
 
 ## Frontend Not Loading
 
-If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and it's dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
+If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and its dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Unfinished Loading/Rebuilding
 
@@ -89,7 +89,7 @@ A rebuild can fail for the following reasons:
 **Cause:** \
 Datapack(s) require dependency(s)--other datapack(s)--that are not present.
 
-This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatable version. This error also occurs in the rare case that a datapack has the same pack ID of a required dependency, but not the same author ID (thus, is a different datapack).
+This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatible version. This error also occurs in the rare case that a datapack has the same pack ID as a required dependency, but not the same author ID (thus, is a different datapack).
 
 **Fix:** \
 Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
@@ -107,7 +107,7 @@ Find and install/enable datapack(s) that implement the abstract interface(s). Fi
 **Cause:** \
 Multiple datapacks implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks).
 
-This indicates that these datapacks are conceptually incompatible with eachother.
+This indicates that these datapacks are conceptually incompatible with each other.
 
 **Fix:** \
 Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
@@ -160,7 +160,7 @@ This will trigger [safe mode](#safe-mode).
 Multiple installed datapacks share the same pack ID.
 
 **Fix:** \
-Unfortunately, datapacks that share pack IDs are incompatible with eachother. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly and then reload/rebuild without further process.
+Unfortunately, datapacks that share pack IDs are incompatible with each other. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly and then reload/rebuild without further process.
 
 ## Safe Mode
 
@@ -181,7 +181,7 @@ While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will 
 
 If the [Missing Datapack Path(s)](#missing-datapack-paths) rebuild error occurs, there is a possibility that some datapacks are in the wrong loading order.
 
-*Internally, for datapapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
+*Internally, for datapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
 
 If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
 
@@ -191,7 +191,7 @@ If this is the reason safe mode is triggered, storage NBT `slimecore:data` `worl
 
 #### Duplicate Installed Pack IDs
 
-If the [Duplicate Installed Pack IDs](#duplicate-installed-pack-ids) rebuild error occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erronious behavior.
+If the [Duplicate Installed Pack IDs](#duplicate-installed-pack-ids) rebuild error occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erroneous behavior.
 
 If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
 

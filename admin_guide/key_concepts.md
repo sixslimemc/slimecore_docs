@@ -11,7 +11,7 @@
 
 ## Frontend Datapacks
 
-In all practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore alone does not provide. Frontend are developed and documented independently, like any other datapack.
+In all practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore alone does not provide. Frontends are developed and documented independently, like any other datapack.
 
 *It is advised to install and make sure your frontend datapack and its dependencies (if any) are loaded before adding any other SlimeCore-loaded datapack to your world. This is to prevent cases where other SlimeCore-loaded datapacks cause rebuild errors and your frontend is not loaded to notify you of them.*
 
@@ -26,11 +26,11 @@ In all practical cases, you should install a **frontend** datapack (of your choi
 Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it.
 
 Key components of a pack manifest:
-- **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world. You should generally be able to recognize a datapack by it's pack ID.
+- **Pack ID:** A lowercase alphanumeric name that uniquely identifies a datapack within your world. You should generally be able to recognize a datapack by its pack ID.
 - **Author ID:** A lowercase alphanumeric name that represents the author of a datapack.
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
 - **Dependencies:** The other (SlimeCore-loaded) datapacks that a datapack requires in order to load.
-- **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack that *implements* it.
+- **Abstract Interfaces:** If a datapack *declares* an abstract interface, it can only load if exactly one other datapack *implements* it.
 - **Display Information:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
 
 *For information on obtaining manifest data of datapacks, see [this section](./troubleshooting.md#getting-manifest-data).*
@@ -39,9 +39,9 @@ Key components of a pack manifest:
 
 SlimeCore will **rebuild** when any new datapacks are installed/enabled/disabled upon world reload. A world reload that triggers a rebuild will often take longer (sometimes significantly, depending on the amount of datapacks installed) than world reloads that do not trigger a rebuild.
 
-Rebuilding can *fail*, indicating that there exist incompatibilies, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend notify you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
+Rebuilding can *fail*, indicating that there exist incompatibilities, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend notifies you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
 
-The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are garunteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-data) is updated.
+The most important aspect of rebuilding is that SlimeCore will not apply any changes to datapack loading until a rebuild *succeeds*. This means that, in most practical circumstances, datapacks will not be loaded unless they are guaranteed to be loaded correctly. When a rebuild succeeds, the world's [build data](#build-data) is updated.
 
 ## Managing Datapacks (Explicit Rebuilding)
 
@@ -72,7 +72,7 @@ To re-enable an uninstalled datapack, you must use `/datapack enable`. This is f
 ## Build Data
 
 **Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. \
-It is  updated upon *successful rebuild* and has the following keys:
+It is updated upon *successful rebuild* and has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
@@ -85,7 +85,7 @@ It is  updated upon *successful rebuild* and has the following keys:
 **Build data should be treated as read-only.**
 
 ## World Data
-**World data**  is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. \
+**World data** is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. \
 It is updated *every reload* and has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
@@ -106,13 +106,13 @@ These formats are also supported, but are intended for datapacks in active devel
 - `<author ID>.<pack ID>` (e.g. `bar.foo`)
 - `<pack ID>` (e.g. `foo`)
 
-When you download a SlimeCore-loaded datapack, it will likely already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relavent information (`author ID`, `pack ID`, etc.).
+When you download a SlimeCore-loaded datapack, it will likely already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relevant information (`author ID`, `pack ID`, etc.).
 
 If any installed SlimeCore-loaded datapack does not have a standard path (and is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
 
 ### Path Overriding
 
-If a datapack does not have a standard path and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to it's path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
+If a datapack does not have a standard path and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to its path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
 
 ```mcfunction
 # add an override:
@@ -127,7 +127,7 @@ data remove storage slimecore:config datapack_path_overrides.<pack ID>
 
 To uninstall SlimeCore itself, run `/function slimecore:-/uninstall_slimecore {args:{}}`.
 
-By default, this will send a you confirmation message before uninstallation starts. You can skip the confirmation message with `/function slimecore:-/uninstall_slimecore {args:{force:true}}`.
+By default, this will send you a confirmation message before uninstallation starts. You can skip the confirmation message with `/function slimecore:-/uninstall_slimecore {args:{force:true}}`.
 
 Uninstalling SlimeCore will disable all SlimeCore-loaded packs and render them non-functional until SlimeCore is installed again. If SlimeCore is re-installed, those disabled packs must be re-enabled manually with `/datapack enable`.
 

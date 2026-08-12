@@ -97,7 +97,7 @@ data modify storage slimecore:in manifest.pack.abstract_declarations append valu
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
 # Library flag:
-# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
+# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on its own.
 # This flag is intended for external utility (not directly used by SlimeCore).
 data modify storage slimecore:in manifest.pack.is_library set value false
 
@@ -122,7 +122,7 @@ Upon world reload, SlimeCore executes the following process:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and create a **build** that stores information on how to load enabled datapacks.
-        - *Safe mode may be triggered at this point; if it is: involved datapack's safe mode tags are called, and the process stops here.*
+        - *Safe mode may be triggered at this point; if it is: involved datapacks' safe mode tags are called, and the process stops here.*
     2. If the entire build is **valid**:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
@@ -132,7 +132,7 @@ Upon world reload, SlimeCore executes the following process:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
-To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take affect if they would result in a valid build, otherwise doing nothing. `slimecore:rebuild` is the proper way of managing SlimeCore-loaded datapacks.
+To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. `slimecore:rebuild` is the proper way of managing SlimeCore-loaded datapacks.
 
 ### Datapack Paths
 
@@ -145,5 +145,5 @@ SlimeCore may create a significant single-tick delay during rebuilding that scal
 ## Get Started
 
 - **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
-- **[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
+- **[Datapack Development Guide](./dev_guide/index.md)** - Create SlimeCore-loaded datapacks.
 - **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with SlimeCore (e.g. frontends).
