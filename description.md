@@ -98,7 +98,7 @@ data modify storage slimecore:in manifest.pack.abstract_implementations append v
 
 # Library flag:
 # Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
-# This indication is intended for external handling (not directly used by SlimeCore).
+# This indication is intended for external utility (not directly used by SlimeCore).
 data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Display information:
