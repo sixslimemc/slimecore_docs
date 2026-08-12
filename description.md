@@ -31,8 +31,8 @@ SlimeCore is designed for **atomicity**:
 - With proper use, SlimeCore does not allow any datapacks within a world to be in an invalid loading state.
 
 SlimeCore is designed to be **unobtrusive**:
-- SlimeCore should not require third party tools from users or developers (however should not significantly impede workflows that may include them).
-- SlimeCore only implements datapack loading, it does not enforce or implement anything more than what is deemed necessary for proper function. *(SlimeCore provides a public API such that other datapacks (frontends) can implement UI features easily.)*
+- No third party tools are necessary to use or develop with SlimeCore.
+- SlimeCore does not enforce or implement anything more than what is deemed necessary for its goal. *(SlimeCore provides a public API such that other datapacks (frontends) can implement UI features easily.)*
 - SlimeCore has no performance overhead outside of the world reload tick.
 
 ### Mission Statement
