@@ -21,11 +21,20 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 
 In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, Datapacks can define a **safe mode** tag, which is called automatically in such cases.
 
-SlimeCore is designed to be **atomic**. If used properly, no changes to datapack loading will be made unless they are verified to work. This includes enabling/disabling/uninstalling datapacks, which SlimeCore also manages. For example, SlimeCore will not allow a datapack to be disabled if another enabled datapack has it specified as a dependency; it will ensure that the dependent is disabled before the dependency.
+SlimeCore increases **determinism**:
+- The same set of datapacks will *always* load in the same order across reloads and worlds.
+- Entrypoints (tick loops) are decoupled from loading order, allowing explicit definition and ordering of such.
+- Management operations are garunteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
 
-SlimeCore is designed to be **deterministic**. If used properly, the same set of datapacks will always load in exactly the same way across reloads and worlds.
+SlimeCore makes datapack management **atomic**:
+- Instead of managing datapacks ad-hoc and one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore and then performed *all at once* upon world reload (if they are valid).
+- staged changes are verified before performed, and if they would leave the world in an invalid state (e.g. dependency of an enabled datapack is disabled), *no changes are made at all*.
 
-SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implements datapack loading and has no performance overhead outside of the world reload tick. It intentionally does not implement any direct UI features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks, frontends, can implement these UI features easily.
+If used properly, SlimeCore makes datapack loading and management **deterministic** and **atomic**. The same set of datapacks will always load in the same order across worlds and reloads
+
+SlimeCore is designed to be **minimal and unobtrusive**. 
+
+SlimeCore only implements datapack loading and has no performance overhead outside of the world reload tick. It intentionally does not implement any direct UI features (chat messages, dialogs, user-facing functions etc.); instead, it provides a public API such that other datapacks, frontends, can implement these UI features easily.
 
 ### Mission Statement
 
