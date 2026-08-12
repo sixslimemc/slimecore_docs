@@ -29,7 +29,7 @@ SlimeCore is designed to be **minimal and unobtrusive**. SlimeCore only implemen
 
 ### Mission Statement
 
-Provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible to users and developers of all workflows and preferences.
+The goal of SlimeCore is to provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible to users and developers of all workflows and preferences.
 
 ## Functional Overview
 
