@@ -30,12 +30,12 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 - **Uninstall:** Called just before the datapack is uninstalled.
 - **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
 
-In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, Datapacks can define a **safe mode** tag, which is called automatically in such cases.
+In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, datapacks can define a **safe mode** tag, which is called automatically in such cases.
 
 SlimeCore is designed for **determinism**:
 - The same set of given datapacks will *always* load in the same order across reloads and worlds.
 - Entrypoints (tick loops) are decoupled from loading order, allowing for explicit definition and ordering.
-- Management operations are garunteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
+- Management operations are guaranteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
 
 SlimeCore is designed for **atomicity**:
 - Instead of managing datapacks one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore, and then upon world reload, either performed all-at-once or not-at-all, depending on if they are valid.
@@ -91,7 +91,7 @@ data modify storage slimecore:in manifest.pack.preload_entrypoints append value 
 
 # Abstract interface declarations:
 # Each declared abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
-# A build will be invalid if there are any unimplemented or overimplemented interfaces.
+# A build will be invalid if there are any unimplemented or over-implemented interfaces.
 # Abstract interfaces are practically uncommon, but included here for demonstration.
 data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
 
@@ -128,7 +128,7 @@ Upon world reload, SlimeCore executes the following process:
         1. Set the world's **current build** to match it.
         2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
         3. Put datapacks in their build loading order, disabling all datapacks not in the build.
-3. Initiate a **load**, based off of the world's current build:
+3. Initiate a **load**, based on the world's current build:
     1. Call **preload entrypoints**.
     2. Call **load tags**.
     3. Call **entrypoints**.
@@ -137,11 +137,11 @@ To disable, re-enable, and/or uninstall SlimeCore-loaded datapacks, inputs can b
 
 ### Datapack Paths
 
-In order to work, SlimeCore expects datapack paths (the name of files/folders in a world's `datapacks/` folder) to follow a specific format--the most qualified being `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`, but some other variations are allowed. If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to it's path via ad hoc in-game commands.
+In order to work, SlimeCore expects datapack paths (the name of files/folders in a world's `datapacks/` folder) to follow a specific format--the most qualified being `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`, but some other variations are allowed. If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to its path via ad hoc in-game commands.
 
 ### Performance
 
-SlimeCore may create a significant single-tick delay during rebuilding, scaling linearly with the amount of SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading.
+SlimeCore may create a significant single-tick delay during rebuilding, scaling linearly with the number of SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading.
 
 SlimeCore does not run any commands outside of rebuilding and loading and has negligible/zero performance impact outside of those processes.
 
@@ -149,4 +149,4 @@ SlimeCore does not run any commands outside of rebuilding and loading and has ne
 
 - **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
 - **[Datapack Development Guide](./development_guide/index.md)** - Create SlimeCore-loaded datapacks.
-- **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with Slimecore (e.g. frontends).
+- **[Direct Interface Guide](./interface_guide/index.md)** - Create datapacks that directly interface with SlimeCore (e.g. frontends).
