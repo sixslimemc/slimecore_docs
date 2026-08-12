@@ -107,7 +107,7 @@ data modify storage slimecore:in manifest.pack.display.links.versions set value 
 
 # Library flag:
 # Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
-# Not directly used by SlimeCore.
+# This indication is for display and/or external handling (not directly used by SlimeCore).
 data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Loader version:
