@@ -4,7 +4,7 @@
 
 The goal of SlimeCore is to provide a foundation for datapack compatibility, management, and authoring, such to support a datapack ecosystem that is accessible for users and developers of all workflows and preferences.
 
-### Description
+### Summary
 
 SlimeCore is a datapack loading framework that is more robust and controllable than the default paradigm--it is a datapack that loads other datapacks. It is similar in purpose to [Lantern Load](https://github.com/LanternMC/load), but is taken many steps further.
 
