@@ -214,9 +214,10 @@ The numerical [SemVer](https://semver.org) version of your datapack.
 
 **Type:** `boolean`
 
-Whether or not your datapack is a library.
+Whether or not your datapack is a library. Similar to [`display`](#display), this value is not used by SlimeCore itself but may be used externally.
 
 A library is a datapack that is intended to be used *exclusively* as a dependency of other datapacks and does not provide any meaningful behavior on its own.
+
 
 ### `dependencies`
 
