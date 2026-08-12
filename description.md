@@ -23,12 +23,12 @@ In the exceptional cases where SlimeCore cannot ensure a datapack loaded correct
 
 SlimeCore is designed for **determinism**:
 - The same set of datapacks will *always* load in the same order across reloads and worlds.
-- Entrypoints (tick loops) are decoupled from loading order, allowing explicit definition and ordering of such.
+- Entrypoints (tick loops) are decoupled from loading order, allowing for explicit definition and ordering.
 - Management operations are garunteed to happen in a defined and reasonable order. *(e.g. datapacks are always disabled/uninstalled in reverse loading order.)*
 
 SlimeCore is designed for **atomicity**:
-- Instead of managing datapacks ad-hoc and one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore and then performed *all at once* upon world reload (if they are valid).
-- staged changes are verified before performed, and if they would leave the world in an invalid state (e.g. dependency of an enabled datapack is disabled), *no changes are made at all*.
+- Instead of managing datapacks ad-hoc and one-at-a-time via `/datapack` (potentially creating invalid world state(s)), management operations are *staged* via SlimeCore and then performed *all at once* upon world reload if they are valid.
+- Under normal circumstances, SlimeCore will not allow any changes that would leave the world in an invalid state.
 
 If used properly, SlimeCore makes datapack loading and management **deterministic** and **atomic**. The same set of datapacks will always load in the same order across worlds and reloads
 
