@@ -142,8 +142,6 @@ In order to work, SlimeCore expects datapack paths (the name of files/folders in
 
 SlimeCore may create a significant single-tick delay during rebuilding that scales linearly with the number of SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading. Outside of rebuilding and loading, SlimeCore does not run any commands and has negligible/zero performance impact.
 
-
-
 ## Get Started
 
 - **[Admin Guide](./admin_guide/index.md)** - Manage SlimeCore-loaded datapacks in your world.
