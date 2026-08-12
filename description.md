@@ -26,7 +26,7 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 - **Entrypoint(s):** Called on reload after all load tags. Any number of entrypoints can be defined per-datapack and can be explicitly ordered against entrypoints from other datapacks. Primarily used to start `/schedule` loops.
 - **Disable:** Called just before the datapack is about to be disabled.
 - **Uninstall:** Called just before the datapack is uninstalled.
-- **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta work.
+- **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta and/or advanced work.
 
 In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, datapacks can define a **safe mode** tag, which is called automatically in such cases.
 
@@ -68,7 +68,7 @@ data modify storage slimecore:in manifest.pack.version set value {major:1, minor
 data modify storage slimecore:in manifest.pack.url set value "https://example.com/myauthorid.mypack.1.0.0"
 
 # Dependencies:
-# Dependencies have a required version (`version`), and must include a direct download URL to a version of the dependency that satisfies said requirement (`download.version`).
+# Dependencies must include a direct download URL of any valid version of the dependency.
 data modify storage slimecore:in manifest.pack.dependencies set value []
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"foopack", author_id:"fooauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://example.com/fooauthor.foopack.1.2.3", version:{major:1, minor:2, patch:3}}}
 # Dependencies can be optional.
@@ -96,10 +96,6 @@ data modify storage slimecore:in manifest.pack.abstract_declarations append valu
 # Abstract interface implementations:
 data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
 
-# Library flag:
-# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
-data modify storage slimecore:in manifest.pack.is_library set value false
-
 # Display information:
 # Not directly used by SlimeCore, but may be read/displayed by other datapacks.
 data modify storage slimecore:in manifest.pack.display.name set value "My Demonstration Pack"
@@ -108,6 +104,11 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "My
 data modify storage slimecore:in manifest.pack.display.links.author set value "https://example.com/authorwebsite"
 data modify storage slimecore:in manifest.pack.display.links.info set value "https://example.com/mypack/wiki"
 data modify storage slimecore:in manifest.pack.display.links.versions set value "https://example.com/mypack/releases"
+
+# Library flag:
+# Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on it's own.
+# Similar to `display`, is not directly used by SlimeCore.
+data modify storage slimecore:in manifest.pack.is_library set value false
 
 # Loader version:
 # Specifies the compatible version range of SlimeCore that can load this pack.
