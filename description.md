@@ -27,7 +27,7 @@ Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *thei
 - **Disable:** Called just before the datapack is disabled.
 - **Uninstall:** Called just before the datapack is uninstalled.
 - **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for advanced work.
-- **Safe Mode** Called in the exceptional case where SlimeCore cannot ensure the datapack loaded corectly.
+- **Safe Mode:** Called in the exceptional case where SlimeCore cannot ensure the datapack loaded corectly.
 
 SlimeCore is designed for **determinism**:
 - The same set of given datapacks will *always* load in the same order across reloads and worlds.
