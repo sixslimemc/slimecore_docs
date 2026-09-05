@@ -141,7 +141,7 @@ By default, SlimeCore expects datapack paths (name of file/folder a world's `dat
 
 ### Performance
 
-SlimeCore creates noticable single-tick delay during rebuilding that scales linearly with the number of installed SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading; aside from this, SlimeCore has zero/negligible performance impact.
+SlimeCore creates noticable single-tick delay during rebuilding that scales linearly with the number of installed SlimeCore-loaded datapacks, as well as a much lesser single-tick delay during loading. Aside from this, SlimeCore has zero/negligible performance impact.
 
 ## Get Started
 
