@@ -1,6 +1,5 @@
 # Troubleshooting
 
-- [Frontend Not Loading](#frontend-not-loading)
 - [Getting Manifest Data](#getting-manifest-data)
 - [Clean Rebuilding](#clean-rebuilding)
 - [Frontend Not Loading](#frontend-not-loading)
