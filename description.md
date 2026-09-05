@@ -135,7 +135,7 @@ To manage (disable, re-enable, uninstall) SlimeCore-loaded datapacks, inputs can
 
 ### Datapack Paths
 
-In order to work, SlimeCore expects datapack paths (the filenames inside a world's `datapacks/` folder) to match a standard format (e.g. `<author id>.<pack id>`). If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to its path via ad hoc in-game commands.
+In order to work, SlimeCore expects datapack paths (the filenames inside a world's `datapacks/` folder) to follow a standard format (e.g. `<author id>.<pack id>`). If for whatever reason the path of a SlimeCore-loaded datapack doesn't/can't follow this format, SlimeCore provides a method to manually link a datapack to its path via ad hoc in-game commands.
 
 ### Performance
 
