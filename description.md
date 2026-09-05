@@ -7,7 +7,7 @@
 
 ## Mission Statement
 
-SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load` and `#minecraft:tick`--it is a datapack that loads other datapacks. Its purpose is similar to [Lantern Load](https://github.com/LanternMC/load), but provides implementation for dependency resolution, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore is designed as a greater foundation for a decentralized datapack ecosystem that is accessible regardless of existing toolchain(s).
+SlimeCore is a datapack loading framework that uses a package-manifest paradigm as a replacement for `#minecraft:load` and `#minecraft:tick`--it is a datapack that loads other datapacks. Its purpose is similar to [Lantern Load](https://github.com/LanternMC/load), but provides implementation for dependency resolution, versioning, explicit entrypoint ordering, metadata, and more. SlimeCore is designed as a greater foundation for a decentralized datapack ecosystem that is accessible regardless of toolchain.
 
 ## Summary
 
@@ -15,20 +15,19 @@ SlimeCore allows datapacks to specify:
 - Version
 - Dependencies
 - Entrypoints (see below)
-- Abstract interfaces (i.e. contracts defined by one datapack and fulfilled by another)
+- Contracts (i.e. specification defined by one datapack to be fulfilled/implemented by another)
 - Pack and author metadata
 - Download URL(s)
 
-Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore executes all manifest functions, validates and evaluates relationships between each datapack's manifest data, and then executes a load based on the evaluation.
+Datapacks specify this information via a *manifest function*. Upon world reload, SlimeCore executes all datapacks' manifest functions, validates and evaluates relationships between each datapack's manifest data, and then executes a load based on the evaluation.
 
 Instead of using `#minecraft:load` and `#minecraft:tick`, datapacks define *their own* function tags for:
 - **Load:** Called on reload. Dependencies' load tags are always called before their dependents'.
 - **Entrypoint(s):** Called on reload after all load tags. Any number of entrypoints can be defined per-datapack and can be explicitly ordered against entrypoints from other datapacks. Primarily used to start `/schedule` loops.
 - **Disable:** Called just before the datapack is disabled.
 - **Uninstall:** Called just before the datapack is uninstalled.
-- **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for meta and/or advanced work.
-
-In the exceptional cases where SlimeCore cannot ensure a datapack loaded correctly, datapacks can define a **safe mode** tag, which is called automatically in such cases.
+- **Preload Entrypoint(s):** Like entrypoints, but called *before* any load tags are called--useful for advanced work.
+- **Safe Mode** Called in the exceptional case where SlimeCore cannot ensure the datapack loaded corectly.
 
 SlimeCore is designed for **determinism**:
 - The same set of given datapacks will *always* load in the same order across reloads and worlds.
