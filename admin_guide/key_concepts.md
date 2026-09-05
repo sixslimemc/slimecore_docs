@@ -101,7 +101,7 @@ SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (na
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
-These formats are also supported, but are intended for datapacks in active development:
+The following formats are also supported, but are intended for datapacks in active development:
 - `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
 - `<author ID>.<pack ID>` (e.g. `bar.foo`)
 - `<pack ID>` (e.g. `foo`)
