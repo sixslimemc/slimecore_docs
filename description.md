@@ -87,9 +87,9 @@ data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
 # Contract declarations:
-# Each declared contract must be implemented (included in `contracts_satisfied`) by exactly 1 other datapack in the world.
-# A build will be invalid if there are any unimplemented or over-implemented interfaces.
-# Abstract interfaces are practically uncommon, but included here for demonstration.
+# Each declared contract must be satisfied by exactly 1 other datapack in the world (included in other datapack's `contracts_satisfied`).
+# A build will be invalid if there are any unsatisfied or oversatisfied interfaces.
+# Contracts are relatively specific in use-case and are practically uncommon.
 data modify storage slimecore:in manifest.pack.contract_declarations append value {id:"my_interface"}
 
 # Contracts satisfied:
@@ -117,14 +117,14 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:0
 function slimecore:api/manifest
 ```
 
-Upon world reload, SlimeCore executes the following process:
+Upon world reload, SlimeCore executes the following in-order:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and create a **build** that stores information on how to load enabled datapacks.
-        - *Safe mode may be triggered at this point; if it is: involved datapacks' safe mode tags are called, and the process stops here.*
+        - *Safe mode may be triggered at this point; if it is: involved datapacks' safe mode tags are called, and SlimeCore stops here.*
     2. If the entire build is **valid**:
         1. Set the world's **current build** to match it.
-        2. Call any appropriate `disable` and `uninstall` function tags (in reverse load order).
+        2. Call appropriate `disable` and `uninstall` function tags.
         3. Put datapacks in their build loading order, disabling all datapacks not in the build.
 3. Initiate a **load**, based on the world's current build:
     1. Call **preload entrypoints**.
