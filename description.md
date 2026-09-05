@@ -15,7 +15,7 @@ SlimeCore allows datapacks to specify:
 - Version
 - Dependencies
 - Entrypoints (see below)
-- Contracts (i.e. specification defined by one datapack to be fulfilled/implemented by another)
+- Contracts (i.e. specification defined by one datapack to be satisfied/implemented by another)
 - Pack and author metadata
 - Download URL(s)
 
@@ -39,7 +39,7 @@ SlimeCore is designed for **atomicity**:
 - With proper use, SlimeCore does not allow any datapacks within a world to be in an invalid loading state.
 
 SlimeCore is designed to be **unobtrusive**:
-- No third party tools are necessary to use or develop with SlimeCore.
+- No third party tools are necessary in order to use or develop with SlimeCore.
 - SlimeCore does not enforce or implement anything more than what is deemed necessary for its goal.
 - SlimeCore has no performance overhead outside of the world reload tick.
 
@@ -86,14 +86,14 @@ data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_
 # Each preload entrypoint represents function tag `#mypack:preload_entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
-# Abstract interface declarations:
-# Each declared abstract interface must be implemented (included in `abstract_implementations`) by exactly 1 other datapack in the world.
+# Contract declarations:
+# Each declared contract must be implemented (included in `contracts_satisfied`) by exactly 1 other datapack in the world.
 # A build will be invalid if there are any unimplemented or over-implemented interfaces.
 # Abstract interfaces are practically uncommon, but included here for demonstration.
-data modify storage slimecore:in manifest.pack.abstract_declarations append value {id:"my_interface"}
+data modify storage slimecore:in manifest.pack.contract_declarations append value {id:"my_interface"}
 
-# Abstract interface implementations:
-data modify storage slimecore:in manifest.pack.abstract_implementations append value {pack_ref:"barpack", id:"other_interface"}
+# Contracts satisfied:
+data modify storage slimecore:in manifest.pack.contracts_satisfied append value {pack_ref:"barpack", id:"other_interface"}
 
 # Library flag:
 # Setting this to true indicates that your pack is only meant to be used as a dependency and does not provide any meaningful functionality on its own.
@@ -103,15 +103,15 @@ data modify storage slimecore:in manifest.pack.is_library set value false
 # Display information:
 # Not directly used by SlimeCore, but may be read/displayed by other datapacks.
 data modify storage slimecore:in manifest.pack.display.name set value "My Demonstration Pack"
-data modify storage slimecore:in manifest.pack.display.summary set value "A pack used for demonstration!"
-data modify storage slimecore:in manifest.pack.display.author_name set value "My Username"
+data modify storage slimecore:in manifest.pack.display.summary set value "A pack used for demonstration."
+data modify storage slimecore:in manifest.pack.display.author_name set value "My_Username"
 data modify storage slimecore:in manifest.pack.display.links.author set value "https://example.com/authorwebsite"
 data modify storage slimecore:in manifest.pack.display.links.info set value "https://example.com/mypack/wiki"
 data modify storage slimecore:in manifest.pack.display.links.versions set value "https://example.com/mypack/releases"
 
 # Loader version:
 # Specifies the compatible version range of SlimeCore that can load this pack.
-data modify storage slimecore:in manifest.pack.loader_version set value {major:1, minor:0}
+data modify storage slimecore:in manifest.pack.loader_version set value {major:0, minor:3}
 
 # All manifests end with calling `slimecore:api/manifest`.
 function slimecore:api/manifest
