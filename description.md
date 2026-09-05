@@ -131,7 +131,7 @@ Upon world reload, SlimeCore executes the following in-order:
     2. Call **load tags**.
     3. Call **entrypoints**.
 
-To manage (disable, re-enable, uninstall) SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. Managing SlimeCore-loaded datapacks directly via `/datapack` is improper.
+To manage (disable, re-enable, uninstall) SlimeCore-loaded datapacks, inputs can be provided to the `slimecore:rebuild` function, which explicitly rebuilds with the input changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. Managing SlimeCore-loaded datapacks with `/datapack` is improper.
 
 ### Datapack Paths
 
