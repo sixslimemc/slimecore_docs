@@ -141,9 +141,12 @@ By default, SlimeCore expects datapack paths (name of file/folder a world's `dat
 
 ### Performance
 
-SlimeCore causes significant single-tick delay during world reload if a **rebuild** is triggered, scaling linearly with the number of installed SlimeCore-loaded datapacks; nearly all of this delay comes from execution of `/datapack` internally. SlimeCore causes a much lesser and likely unnoticeable single-tick delay if no rebuild is triggered.
+SlimeCore only (automatically) does work during the world reload tick:
 
-SlimeCore has zero performance impact outside of the world reload tick.
+- **Rebuilding:** Causes significant delay that scales linearly with the number of installed SlimeCore-loaded datapacks; nearly all of this delay comes from execution of `/datapack` internally.
+- **Loading:** Causes minor delay--insignificant compared to base reload delay.
+
+Outside of the world reload tick, SlimeCore does zero work.
 
 ## Get Started
 
