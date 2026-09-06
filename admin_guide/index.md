@@ -14,7 +14,7 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 ## Less Read More Datapacks
 
-If you don't wish to read any further and just want to play with your SlimeCore-loaded datapacks *as soon as possible*:
+If you just want to play with your SlimeCore-loaded datapacks *as soon as possible* and figure out the rest later:
 
 1. Remove all SlimeCore-loaded datapacks from your world (temporarily).
 2. Download and add the [SlimeCore](https://github.com/sixslimemc/slimecore/releases) and [SCDev](https://github.com/sixslimemc/scdev/releases) datapacks to your world.
