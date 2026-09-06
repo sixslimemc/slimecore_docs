@@ -12,7 +12,7 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 *See [Description](../description.md) for a more in-depth description.*
 
-## Packs Immediately Now
+## I Want it Working Immediately Now
 
 It is recommended to read onto the next page, but if must have your SlimeCore-loaded datapacks working *as soon as possible*:
 1. Remove all SlimeCore-loaded datapacks from your world (temporarily).
