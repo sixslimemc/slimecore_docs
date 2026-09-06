@@ -1,8 +1,8 @@
-# Overview
+# Description
 
 - [Mission Statement](#mission-statement)
 - [Summary](#summary)
-- [Functional Summary](#functional-overview)
+- [Functional Overview](#functional-overview)
 - [Get Started](#get-started)
 
 ## Mission Statement
