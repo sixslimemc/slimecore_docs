@@ -134,7 +134,7 @@ data remove storage slimecore:config path_overrides.<pack_id>
 
 To uninstall SlimeCore itself, run `/function slimecore:-/uninstall_slimecore`.
 
-This will send you a message to confirm before uninstallation. You can skip the confirmation message by running `/function slimecore:-/uninstall_slimecore/skip_confirm` instead.
+This will send you a message to confirm before uninstallation. To skip the confirmation message, run `/function slimecore:-/uninstall_slimecore/skip_confirm` instead.
 
 Uninstalling SlimeCore will disable all SlimeCore-loaded packs and render them non-functional until SlimeCore is installed again. If SlimeCore is re-installed, those disabled packs must be re-enabled manually with `/datapack enable`.
 
