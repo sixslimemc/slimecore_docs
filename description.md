@@ -118,7 +118,7 @@ function slimecore:api/manifest
 ```
 
 ### Rebuilds and Loads
-Upon world reload, SlimeCore executes the following in-order:
+Upon world reload, SlimeCore does the following in-order:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
     1. Evaluate manifests and create a **build** that stores information on how to load enabled datapacks.
