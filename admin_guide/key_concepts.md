@@ -71,9 +71,8 @@ If you want to re-enable a previously uninstalled datapack, you must use `/datap
 
 ## Build Data
 
-**Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. It has the following keys:
+**Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load; it has the following keys:
 
-Build data has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
@@ -88,7 +87,8 @@ Build data is updated upon *successful rebuild*.
 **Build data should be treated as read-only.**
 
 ## World Data
-**World data** is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process. It has the following keys:
+
+**World data** is a struct at NBT storage location `slimecore:data` `world` containing other information that is not validated by the rebuild process; it has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
