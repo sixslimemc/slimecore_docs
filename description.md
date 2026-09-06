@@ -144,7 +144,7 @@ By default, SlimeCore expects datapack paths (name of file/folder a world's `dat
 - **On rebuild:** Causes significant single-tick delay that scales linearly with the number of installed SlimeCore-loaded datapacks; nearly all of this delay comes from execution of `/datapack` internally.
 - **On load:** Minor single-tick overhead--insignificant compared to base reload delay.
 
-SlimeCore does zero (non-user-initiated) work outside of these processes.
+SlimeCore does zero work outside of these processes.
 
 ## Get Started
 
