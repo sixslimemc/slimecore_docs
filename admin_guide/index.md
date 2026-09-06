@@ -4,7 +4,7 @@ This guide covers everything a world admin needs to know about SlimeCore and how
 It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
-- [I Need it Now](#i-need-it-now)
+- [Datapacks ASAP](#datapacks-asap)
 
 ## SlimeCore Briefly
 
@@ -12,11 +12,10 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 *See [Description](../description.md) for a more in-depth description.*
 
-## I Need it Now
+## Datapacks ASAP
 
-This section is for those that do not wish to read any further.
+If you do not wish to read any further and just want your SlimeCore-loaded datapacks working ASAP:
 
-To have your SlimeCore-loaded datapacks working *as soon as possible*:
 1. Remove all SlimeCore-loaded datapacks from your world (temporarily).
 2. Download and add the [SlimeCore](https://github.com/sixslimemc/slimecore/releases) and [SCDev](https://github.com/sixslimemc/scdev/releases) datapacks to your world.
 3. Add the tag `scdev.listener` to yourself in-game.
