@@ -2,7 +2,7 @@
 
 - [Mission Statement](#mission-statement)
 - [Summary](#summary)
-- [Functional Overview](#functional-overview)
+- [Functional Outline](#functional-outline)
 - [Get Started](#get-started)
 
 ## Mission Statement
