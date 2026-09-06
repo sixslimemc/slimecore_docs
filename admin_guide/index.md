@@ -4,7 +4,7 @@ This guide covers everything a world admin needs to know about SlimeCore and how
 It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
-- [ASAP](#asap)
+- [Less Read More Datapacks](#less-read-more-datapacks)
 
 ## SlimeCore Briefly
 
@@ -12,7 +12,7 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 *See [Description](../description.md) for a more in-depth description.*
 
-## ASAP
+## Less Read More Datapacks
 
 If you don't wish to read any further and just want to play with your SlimeCore-loaded datapacks *as soon as possible*:
 
@@ -25,7 +25,7 @@ If you don't wish to read any further and just want to play with your SlimeCore-
 7. Read [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
 
-Otherwise, continue to the next section.
+Otherwise, continue to the next page.
 
 ---
 
