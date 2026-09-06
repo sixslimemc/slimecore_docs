@@ -1,8 +1,8 @@
-# Overview
+# Description
 
 - [Mission Statement](#mission-statement)
 - [Summary](#summary)
-- [Functional Outline](#functional-outline)
+- [Functional Overview](#functional-overview)
 - [Get Started](#get-started)
 
 ## Mission Statement
@@ -43,7 +43,7 @@ SlimeCore is designed to be **unobtrusive**:
 - SlimeCore does not enforce or implement anything more than what is deemed necessary for its goal.
 - SlimeCore has no performance overhead outside of the world reload tick.
 
-## Functional Outline
+## Functional Overview
 
 ### Manifests
 
