@@ -4,7 +4,7 @@ This guide covers everything a world admin needs to know about SlimeCore and how
 It assumes basic knowledge of commands and datapack management.
 
 - [SlimeCore Briefly](#slimecore-briefly)
-- [Quick Start](#quick-start)
+- [I Need it Now](#i-need-it-now)
 
 ## SlimeCore Briefly
 
@@ -12,7 +12,7 @@ SlimeCore is a datapack that is a loading system for **other datapacks**. It ess
 
 *See [Description](../description.md) for a more in-depth description.*
 
-## Datapacks Now Please
+## I Need it Now
 
 This section is for those that do not wish to read any further.
 
