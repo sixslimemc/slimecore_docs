@@ -24,7 +24,6 @@ It is recommended to read onto the [next page](./key_concepts.md), but if want y
 7. Read [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
 
-## 
 ---
 
 **Next:** [Key Concepts](./key_concepts.md)
