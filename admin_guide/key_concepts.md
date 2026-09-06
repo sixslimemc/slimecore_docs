@@ -95,7 +95,7 @@ Build data is updated upon *successful rebuild*.
 | `safe_mode` | *(See [Safe Mode](./troubleshooting.md#safe-mode))* | Only present when safe mode is enabled. |
 | `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
-World data is updated upon *every rebuild*, regardless of success.
+World data is updated upon *every rebuild* (regardless of rebuild success).
 
 **World data should be treated as read-only.**
 
