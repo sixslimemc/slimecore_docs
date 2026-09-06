@@ -108,19 +108,19 @@ The following formats are also supported, but are intended for datapacks in acti
 
 When you download a SlimeCore-loaded datapack, it will likely already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relevant information (`author ID`, `pack ID`, etc.).
 
-If any installed SlimeCore-loaded datapack does not have a standard path (and is not overridden, see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
+If any installed SlimeCore-loaded datapack does not have a standard path (and is not overridden--see below), rebuilding will fail with a [Missing Datapack Path(s)](./troubleshooting.md#missing-datapack-paths) error.
 
 ### Path Overriding
 
-If a datapack does not have a standard path and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to its path in-game by modifying storage NBT `slimecore:config` `datapack_path_overrides`.
+If a datapack does not have a standard path and for whatever reason you cannot or do not want to rename it, you can manually link a datapack to its path in-game by modifying storage NBT `slimecore:config` `path_overrides`.
 
 ```mcfunction
 # add an override:
 # <path> should be identical to how you would specify the datapack with `/datapack`, i.e. "file/<datapack name>"
-data modify storage slimecore:config datapack_path_overrides.<pack ID> set value <path>
+data modify storage slimecore:config path_overrides.<pack ID> set value <path>
 
 # remove an override:
-data remove storage slimecore:config datapack_path_overrides.<pack ID>
+data remove storage slimecore:config path_overrides.<pack ID>
 ```
 
 ## Uninstalling SlimeCore
