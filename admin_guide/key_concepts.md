@@ -29,15 +29,15 @@ Key components of a pack manifest:
 - **Pack ID:** A lowercase alphanumeric name that uniquely identifies the datapack within your world. You should generally be able to recognize a datapack by its pack ID.
 - **Author ID:** A lowercase alphanumeric name that represents the author of the datapack.
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
-- **Dependencies:** The other (SlimeCore-loaded) datapacks that the datapack requires in order to load.
-- **Contracts:** If a datapack *declares* a contract, it can only load if exactly one other enabled *satisfies* it.
+- **Dependencies:** The other SlimeCore-loaded datapacks that the datapack requires in order to load.
+- **Contracts:** If a datapack *declares* a contract, it can only load if exactly one other enabled datapack *satisfies* it.
 - **Display Information:** Human-readable information about the datapack as well as URLs to the datapack's author/wiki/versions.
 
-*For information on obtaining manifest data of datapacks, see [this section](./troubleshooting.md#getting-manifest-data).*
+*For information on obtaining manifest data, see [this section](./troubleshooting.md#getting-manifest-data).*
 
 ## Rebuilding
 
-Upon world reload, SlimeCore will **rebuild** if it detects any new and/or changed datapacks since last reload. A world reload that triggers a rebuild will often take *significantly* longer (depending on the number of datapacks installed) than world reloads that do not trigger a rebuild.
+Upon world reload, SlimeCore will **rebuild** if it detects any new and/or changed datapacks since last reload. A world reload that triggers a rebuild will often take *significantly* longer than world reloads that do not trigger a rebuild (depending on the number of datapacks installed).
 
 Rebuilding can *fail*, indicating that there exist incompatibilities, errors, and/or unfulfilled requirements of the currently installed datapacks. Your frontend should notify you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors).
 
@@ -45,16 +45,16 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Managing Datapacks (Explicit Rebuilding)
 
-In nearly all cases, disabling, re-enabling, or uninstalling datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* changes to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your changes would result in an invalid datapack loading state (e.g. you disabled a datapack that is a dependency of an enabled datapack), the rebuild will fail and no changes to datapack loading will be made.
+In nearly all cases, disabling, re-enabling, or uninstalling datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* such operations to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your operations would result in an invalid datapack loading state (e.g. you disabled a datapack that is a dependency of an enabled datapack), the rebuild will fail and no changes to datapack loading will be made.
 
 Unless you are:
-- Recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)
+- Recovering from a [wipe rebuild](./troubleshooting.md#wipe-rebuilding)
 - Re-enabling a previously uninstalled datapack (effectively "reinstalling" it)
 - Performing advanced troubleshooting
 
 Using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.
 
-Your frontend should provide a documented method on initiating an explicit rebuild.
+Your frontend should provide a method of initiating an explicit rebuild.
 
 ## Datapack Uninstallation
 
@@ -71,8 +71,9 @@ If you want to re-enable a previously uninstalled datapack, you must use `/datap
 
 ## Build Data
 
-**Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load. \
-It is updated upon *successful rebuild* and has the following keys:
+**Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load.
+
+It has the following keys:
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |

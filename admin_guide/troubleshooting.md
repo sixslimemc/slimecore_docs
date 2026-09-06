@@ -1,7 +1,7 @@
 # Troubleshooting
 
 - [Getting Manifest Data](#getting-manifest-data)
-- [Clean Rebuilding](#clean-rebuilding)
+- [Wipe Rebuilding](#wipe-rebuilding)
 - [Frontend Not Loading](#frontend-not-loading)
 - [Unfinished Loading/Rebuilding](#unfinished-loadingrebuilding)
 - [Very Long Rebuilding](#very-long-rebuilding)
@@ -27,17 +27,16 @@ If you do not know a datapack's pack ID, your frontend should provide a reasonab
 
 If all else fails, the function tag file `<datapack>/data/slimecore/tags/function/manifest.json` within a datapack contains the path to the function that the datapack's manifest data is directly defined in.
 
-## Clean Rebuilding
+## Wipe Rebuilding
 
-If it seems like SlimeCore has "lost track" of datapacks, or you suspect incorrect datapack loading behavior, a **clean rebuild** may fix the issue.
+If it seems like SlimeCore has "lost track" of datapacks, or you suspect unusual incorrect datapack loading behavior, a **wipe rebuild** may fix the issue.
 
-A clean rebuild clears SlimeCore's memory of datapack/world state. As a side effect of this, if a clean rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid clean rebuild failures.
+A wipe rebuild wipes SlimeCore's memory of datapack/world state. As a side effect of this, if a wipe rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid wipe rebuild failures.
 
 **IMPORTANT:** \
-Any datapacks that are disabled before a clean rebuild must be re-enabled via `/datapack enable` for SlimeCore to track them again. \
-*This is one of the only cases where you should use `/datapack` to manage datapacks.*
+Any datapacks that are disabled just before a wipe rebuild must be re-enabled via `/datapack enable` in order for SlimeCore to track them again. \
 
-Your frontend should provide instructions on how to initiate a clean rebuild, likely as part of explicit rebuilding.
+Your frontend should provide instructions on how to initiate a wipe rebuild, likely as part of [explicit rebuilding](./key_concepts.md#managing-datapacks-explicit-rebuilding).
 
 ## Frontend Not Loading
 
