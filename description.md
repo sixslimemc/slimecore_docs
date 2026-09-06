@@ -45,7 +45,7 @@ SlimeCore is designed to be **unobtrusive**:
 
 ## Functional Overview
 
-### Datapack Manifests
+### Manifests
 
 SlimeCore-loaded datapacks define exactly one **manifest** function that they append to the function tag `#slimecore:manifest`. This replaces the standard paradigm of appending to `#minecraft:load`/`#minecraft:tick`.
 
@@ -117,6 +117,7 @@ data modify storage slimecore:in manifest.pack.loader_version set value {major:0
 function slimecore:api/manifest
 ```
 
+### Rebuilds and Loads
 Upon world reload, SlimeCore executes the following in-order:
 1. Collect all manifests via `#slimecore:manifest` from both enabled and disabled datapacks.
 2. If any changes to the list of manifests have been made, initiate a **rebuild** (by default):
@@ -130,6 +131,8 @@ Upon world reload, SlimeCore executes the following in-order:
     1. Call **preload entrypoints**.
     2. Call **load tags**.
     3. Call **entrypoints**.
+
+### Datapack Management
 
 SlimeCore datapacks are managed (disabled, re-enabled, uninstalled) via input to the `slimecore:rebuild` function, which explicitly triggers a rebuild with the input staged changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. Managing SlimeCore-loaded datapacks with `/datapack` is improper.
 
