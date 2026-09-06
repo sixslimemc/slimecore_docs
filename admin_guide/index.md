@@ -22,7 +22,7 @@ If you just want to play with your SlimeCore-loaded datapacks *as soon as possib
 4. Run `/reload` in-game.
 5. Re-add the SlimeCore-loaded datapacks to your world.
 6. Run `/reload` in-game again.
-7. Read [Key Concepts](./key_concepts.md) for important information on managing datapacks.
+7. Reference [Key Concepts](./key_concepts.md) for important information on managing datapacks.
 8. Use [the SCDev docs](https://github.com/sixslimemc/scdev) and [Troubleshooting](./troubleshooting.md) for further reference.
 
 Otherwise, continue to the next page.
