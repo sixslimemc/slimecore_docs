@@ -1,6 +1,6 @@
 # Key Concepts
 
-- [SlimeCore Frontend](#slimecore-frontend)
+- [Frontend Datapacks](#frontend-datapacks)
 - [Manifests](#manifests)
 - [Rebuilding](#rebuilding)
 - [Managing Datapacks (Explicit Rebuilding)](#managing-datapacks-explicit-rebuilding)
@@ -9,7 +9,7 @@
 - [Uninstalling SlimeCore](#uninstalling-slimecore)
 - [In-Game Help](#in-game-help)
 
-## SlimeCore Frontend
+## Frontend Datapacks
 
 In all practical cases, you should install a **frontend** datapack (of your choice) alongside SlimeCore. A frontend datapack is responsible for providing an in-game interface to SlimeCore that SlimeCore alone does not provide. Frontends are developed and documented independently, like any other datapack.
 
