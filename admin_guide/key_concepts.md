@@ -45,7 +45,7 @@ The most important aspect of rebuilding is that SlimeCore will not apply any cha
 
 ## Managing Datapacks (Explicit Rebuilding)
 
-In nearly all cases, disabling, re-enabling, or uninstalling datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* changes to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your changes would result in an invalid datapack loading state (e.g. disabling a datapack that is a dependency of an enabled datapack), no changes will be made.
+In nearly all cases, disabling, re-enabling, or uninstalling datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* changes to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your changes would result in an invalid datapack loading state (e.g. you disabled a datapack that is a dependency of an enabled datapack), no changes will be made.
 
 Unless you are:
 - Recovering from a [clean rebuild](./troubleshooting.md#clean-rebuilding)
