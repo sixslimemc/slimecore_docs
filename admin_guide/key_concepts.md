@@ -76,11 +76,11 @@ If you want to re-enable a previously uninstalled datapack, you must use `/datap
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
-| `order.load` | List of `{pack_ref: <pack ID>, index: int}` | All enabled packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
-| `order.entrypoint` | List of `{pack_ref: <pack ID>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
-| `order.preload_entrypoints` | List of `{pack_ref: <pack ID>, id: <preload entrypoint ID> index: int}` | Same as `order.entrypoint`, but for preload entrypoints. |
+| `order.load` | List of `{pack_ref: <pack id>, index: int}` | All enabled packs (references) in the order that they are loaded, with each `index` key matching the list index of the respective element. |
+| `order.entrypoint` | List of `{pack_ref: <pack id>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
+| `order.preload_entrypoints` | List of `{pack_ref: <pack id>, id: <preload entrypoint ID> index: int}` | Same as `order.entrypoint`, but for preload entrypoints. |
 | `aux.pack_map` | `{<pack ID...>: PackManifest}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
-| `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack ID>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
+| `aux.impl_map` | `{<pack ID...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack id>.<abstract ID>` contains the pack manifest of the pack that implements the respective abstract interface. |
 
 Build data is updated upon *successful rebuild*.
 
@@ -93,7 +93,7 @@ Build data is updated upon *successful rebuild*.
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
 | `safe_mode` | *(See [Safe Mode](./troubleshooting.md#safe-mode))* | Only present when safe mode is enabled. |
-| `aux.installed_map` | `{<pack ID...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
+| `aux.installed_map` | `{<pack id...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 World data is updated *every rebuild, regardless of success*.
 
@@ -102,13 +102,13 @@ World data is updated *every rebuild, regardless of success*.
 ## Datapack Paths
 
 SlimeCore expects all SlimeCore-loaded datapacks to have their datapack path (name of file/folder in world's `datapacks/` folder) match one the following standard formats:
-- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
-- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
+- `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author id>.<pack id>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
 The following formats are also supported, but are intended for datapacks in active development:
-- `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
-- `<author ID>.<pack ID>` (e.g. `bar.foo`)
-- `<pack ID>` (e.g. `foo`)
+- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`)
+- `<author id>.<pack id>` (e.g. `bar.foo`)
+- `<pack id>` (e.g. `foo`)
 
 When you download a SlimeCore-loaded datapack, it will likely already match one of these formats. If not, you should rename it so it does before installation. See [Getting Manifest Data](./troubleshooting.md#getting-manifest-data) for getting the relevant information (`author ID`, `pack ID`, etc.).
 
@@ -121,10 +121,10 @@ If a datapack does not have a standard path and for whatever reason you cannot o
 ```mcfunction
 # add an override:
 # <path> should be identical to how you would specify the datapack with `/datapack`, i.e. "file/<datapack name>"
-data modify storage slimecore:config path_overrides.<pack ID> set value <path>
+data modify storage slimecore:config path_overrides.<pack id> set value <path>
 
 # remove an override:
-data remove storage slimecore:config path_overrides.<pack ID>
+data remove storage slimecore:config path_overrides.<pack id>
 ```
 
 ## Uninstalling SlimeCore
