@@ -47,7 +47,7 @@ Your frontend should notify you of when and why a rebuild fails. A full list of 
 
 ## Managing Datapacks (Explicit Rebuilding)
 
-In nearly all cases, disabling, re-enabling, or uninstalling SlimeCore-datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* such operations to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your operations would result in an invalid datapack loading state (e.g. you disabled a datapack that is a dependency of an enabled datapack), the rebuild will fail and no changes to datapack loading will be made.
+In nearly all cases, disabling, re-enabling, or uninstalling SlimeCore-loaded datapacks **MUST** be done via **explicit rebuilding**. With explicit rebuilding, you *stage* such operations to be validated and performed all-at-once (opposed to directly and one-by-one with `/datapack`). If your operations would result in an invalid datapack loading state (e.g. you disabled a datapack that is a dependency of an enabled datapack), the rebuild will fail and no changes to datapack loading will be made.
 
 Unless you are:
 - recovering from a [wipe rebuild](./troubleshooting.md#wipe-rebuilding)
