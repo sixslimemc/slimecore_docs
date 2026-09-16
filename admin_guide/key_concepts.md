@@ -39,7 +39,7 @@ Key components of a pack manifest:
 
 Upon world reload, SlimeCore will **rebuild** if it detects any new and/or changed datapacks since last reload. During a rebuild, SlimeCore essentialy re-evaluates and verifies how it should load the installed datapacks in your world. A world reload that triggers a rebuild will often take [significantly longer](./troubleshooting.md#very-long-rebuilding) than world reloads that do not trigger a rebuild.
 
-If SlimeCore verifies that it can safely load the world's datapacks, the rebuild will *succeed*, and appropriate changes to the world's datapack loading and [build data](#build-data) are made. Otherwise, the rebuild will *fail*, indicating that there exist incompatibilities, errors, and/or unfulfilled requirements of the world's datapacks, and no changes to datapack loading or build data will be made.
+If SlimeCore verifies that it can safely load the world's datapacks, the rebuild will *succeed* and appropriate changes to the world's datapack loading and [build data](#build-data) are made. Otherwise, the rebuild will *fail*, indicating that there exist incompatibilities, errors, and/or unfulfilled requirements of the world's datapacks, and no changes to datapack loading or build data will be made.
 
 Your frontend should notify you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors). To clarify, failed rebuilds are an *intended feature* that keep your world's loading state safe--they do not indicate any malfunction.
 
