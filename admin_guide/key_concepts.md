@@ -69,7 +69,7 @@ Your frontend should provide a method of initiating an explicit rebuild.
 
 Step 1 and 2 ensure that the datapack can indeed be safely removed and allow it to gracefully "clean itself up" without leaving unwanted artifacts in your world.
 
-If you want to re-enable a previously uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
+To re-enable a previously uninstalled datapack, you must use `/datapack enable`. This is functionally equivalent to installing it for the first time.
 
 ## Build Data
 
