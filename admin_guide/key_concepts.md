@@ -25,7 +25,7 @@ In all practical cases, you should install a **frontend** datapack (of your choi
 
 Every SlimeCore-loaded datapack has a **manifest**, which is NBT data specifying information about itself and how SlimeCore should recognize and load it.
 
-Key components of a pack manifest:
+Key components of a pack manifest include:
 - **Pack ID:** A lowercase alphanumeric name that uniquely identifies the datapack within your world. You should generally be able to recognize a datapack by its pack ID.
 - **Author ID:** A lowercase alphanumeric name that represents the author of the datapack.
 - **Version:** A [SemVer](https://semver.org/) adhering version (`<major>.<minor>.<patch>`).
