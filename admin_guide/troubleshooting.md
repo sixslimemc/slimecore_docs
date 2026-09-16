@@ -29,18 +29,17 @@ If all else fails, the function tag file `<datapack>/data/slimecore/tags/functio
 
 ## Wipe Rebuilding
 
-If it seems like SlimeCore has "lost track" of datapacks, or you suspect unusual incorrect datapack loading behavior, a **wipe rebuild** may fix the issue.
+If it seems like SlimeCore has "lost track" of datapacks, or you suspect unusual erronious behavior, a **wipe rebuild** may fix the issue.
 
 A wipe rebuild wipes SlimeCore's memory of datapack/world state. As a side effect of this, if a wipe rebuild fails, no datapacks will properly load until a rebuild succeeds. While this will most likely not cause critical errors, it is advised to try and avoid wipe rebuild failures.
 
-**IMPORTANT:** \
-Any datapacks that are disabled just before a wipe rebuild must be re-enabled via `/datapack enable` in order for SlimeCore to track them again. \
+Any datapacks that are disabled just before a wipe rebuild must be re-enabled via `/datapack enable` in order for SlimeCore to track them again.
 
 Your frontend should provide instructions on how to initiate a wipe rebuild, likely as part of [explicit rebuilding](./key_concepts.md#managing-datapacks-explicit-rebuilding).
 
 ## Frontend Not Loading
 
-If your frontend datapack doesn't seem to work/load, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and its dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
+If your frontend datapack doesn't seem be working, other datapacks may be silently causing rebuild errors, not allowing it to load. Try temporarily removing all SlimeCore-loaded datapacks except your frontend (and its dependencies, if any) from your world's `datapacks/` folder and run `/reload` in-game--this should load your frontend. You can then re-add the other datapacks back into your world's `datapacks/` folder and run `/reload` once again. 
 
 ## Unfinished Loading/Rebuilding
 
