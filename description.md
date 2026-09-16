@@ -54,11 +54,11 @@ The following demonstrates a full manifest function:
 ```mcfunction
 
 # Identity:
-# 'pack_id' must match the datapack's namespace (function tag `#<pack_id>:load` is called during loading).
-# 'author_id' should uniquely identify you.
-# Together 'author_id' and 'pack_id' uniquely identify a datapack.
-data modify storage slimecore:in manifest.pack.pack_id set value "mypack"
-data modify storage slimecore:in manifest.pack.author_id set value "myauthorid"
+# - 'pack_id' must match the datapack's namespace ( `#<pack_id>:<tag>`).
+# - 'author_id' should uniquely identify you as a datapack author.
+# - Together 'author_id' and 'pack_id' uniquely identify a datapack.
+data modify storage slimecore:in manifest.pack.pack_id set value "foo"
+data modify storage slimecore:in manifest.pack.author_id set value "bar"
 
 # Version:
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
@@ -67,23 +67,23 @@ data modify storage slimecore:in manifest.pack.version set value {major:1, minor
 data modify storage slimecore:in manifest.pack.url set value "https://example.com/myauthorid.mypack.1.0.0"
 
 # Dependencies:
-# Dependencies must include a direct download URL of any valid version of the dependency.
+# - Dependencies must include a direct download URL of any valid version of the dependency.
+# - Dependencies can be optional.
 data modify storage slimecore:in manifest.pack.dependencies set value []
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"foopack", author_id:"fooauthor", optional:false, version:{major:1, minor:2}, download:{url:"https://example.com/fooauthor.foopack.1.2.3", version:{major:1, minor:2, patch:3}}}
-# Dependencies can be optional.
 data modify storage slimecore:in manifest.pack.dependencies append value {pack_id:"barpack", author_id:"barauthor", optional:true, version:{major:4, minor:5}, download:{url:"https://example.com/barauthor.barpack.4.5.6", version:{major:4, minor:5, patch:6}}}
 
 # Entrypoints:
-# Entrypoints are called after all datapacks are loaded and can be used to start tick/schedule loops.
-# Each entrypoint represents the function tag `#mypack:entrypoint/<id>`.
+# - Entrypoints are called after all datapacks are loaded and can be used to start tick/schedule loops.
+# - Entrypoints can reference other entrypoints in `before` and `after` to garuntee that they are called before or after (respectively) those entrypoints.
+# - Each entrypoint represents the function tag `#<pack_id>:entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.entrypoints append value {id:"main"}
-# This entrypoint will always be called after `#foopack:entrypoint/main`:
-data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"foopack", id:"main"}]}
+data modify storage slimecore:in manifest.pack.entrypoints append value {id:"my_interaction", after:[{pack_ref:"qux", id:"main"}]}
 
 # Preload entrypoints:
 # Preload entrypoints are called before *any* datapacks are loaded, including their own.
 # They should really only be used for technical or meta use cases.
-# Each preload entrypoint represents function tag `#mypack:preload_entrypoint/<id>`.
+# Each preload entrypoint represents function tag `#<pack_id>:preload_entrypoint/<id>`.
 data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"my_preload"}
 
 # Contract declarations:
@@ -133,7 +133,7 @@ Upon world reload, SlimeCore does the following in-order:
 
 ### Datapack Management
 
-SlimeCore datapacks are managed (disabled, re-enabled, uninstalled) via input to the `slimecore:rebuild` function, which explicitly triggers a rebuild with the input staged changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. Managing SlimeCore-loaded datapacks with `/datapack` is improper.
+SlimeCore-loaded datapacks are managed (disabled, re-enabled, uninstalled) via input to the `slimecore:rebuild` function, which explicitly triggers a rebuild with the input staged changes. As described, these changes will only take effect if they would result in a valid build, otherwise doing nothing. Managing SlimeCore-loaded datapacks with `/datapack` is improper.
 
 ### Datapack Paths
 
