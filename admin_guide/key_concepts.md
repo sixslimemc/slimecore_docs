@@ -97,7 +97,7 @@ Build data is updated upon *successful rebuild*.
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
 | `safe_mode` | *(See [Safe Mode](./troubleshooting.md#safe-mode))* | Only present when safe mode is enabled. |
-| `raw_manifests` | List of `PackManifest` | Unprocessed list of all collected pack manifests. |
+| `raw_manifests` | List of `PackManifest` | Unprocessed list of all pack manifests. |
 | `aux.installed_map` | `{<pack_id...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 World data is updated *every rebuild, regardless of success*.
