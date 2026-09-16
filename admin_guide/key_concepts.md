@@ -51,7 +51,7 @@ SlimeCore-loaded datapacks must be managed (disabled, re-enabled, uninstalled) v
 
 The only cases it is acceptable to use `/datapack` directly on SlimeCore-loaded datapacks are when:
 - recovering from a [wipe rebuild](./troubleshooting.md#wipe-rebuilding)
-- re-enabling a previously uninstalled datapack (effectively "reinstalling")
+- re-enabling a previously uninstalled datapack
 - performing advanced troubleshooting
 
 otherwise, using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.
