@@ -147,20 +147,21 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 
 ### Missing Path for Enabled (Misloaded) Datapack(s)
 
+**This error will trigger [safe mode](#safe-mode).**
+
 **Cause:** \
 There are datapack(s) with non-standard paths (without path overrides), or datapack(s) with path overrides that do not match their actual paths.
 
-This will trigger [safe mode](#safe-mode).
 
 **Fix:** \
 *See [Datapack Paths](./key_concepts.md#datapack-paths).*
 
 ### Duplicate Installed Pack IDs
 
+**This error will trigger [safe mode](#safe-mode).**
+
 **Cause:** \
 Multiple installed datapacks share the same pack ID.
-
-This will trigger [safe mode](#safe-mode).
 
 **Fix:** \
 Unfortunately, datapacks that share pack IDs are incompatible with each other. The primary remedy is to remove/uninstall datapacks such that no pack ID conflicts exist. If a newly installed datapack triggers this error (i.e. the datapack is never loaded), you can likely safely remove it from your world's `datapacks/` folder directly and then reload/rebuild without further process.
