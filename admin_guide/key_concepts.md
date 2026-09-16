@@ -75,8 +75,6 @@ To re-enable a previously uninstalled datapack, you must use `/datapack enable`.
 
 **Build data** is a struct at NBT storage location `slimecore:data` `build` containing information about the *currently enabled* datapacks and how they load; it has the following keys:
 
-> TODO: update to correct build data keys
-
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of pack manifests | All enabled pack manifests in the order that they are loaded. |
@@ -87,7 +85,6 @@ To re-enable a previously uninstalled datapack, you must use `/datapack enable`.
 | `aux.contract_map` | `{<pack_id...>: {<contract id...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack_id>.<contract id>` contains the pack manifest of the pack that satisfies the respective contract. |
 | `aux.contracts` | List of `{contract: {pack_ref: <pack_id>, id: <contract id>}, satisfier: PackManifest}` | (Auxilary) List of declared contracts associated with the pack that satisfies them. |
 | `aux.dependent_map` | `{<pack_id...>: [PackManifest]}` | (Auxilary) Struct that maps each pack (via its pack ID) to the list of its dependents (packs that specify the pack as a dependency). |
-
 
 Build data is updated upon *successful rebuild*.
 
@@ -100,6 +97,7 @@ Build data is updated upon *successful rebuild*.
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, disabled: boolean}` | All installed packs that SlimeCore is tracking, in arbitrary order, with `disabled` indicating disabled status. |
 | `safe_mode` | *(See [Safe Mode](./troubleshooting.md#safe-mode))* | Only present when safe mode is enabled. |
+| `raw_manifests` | List of `PackManifest` | Unprocessed list of all collected pack manifests. |
 | `aux.installed_map` | `{<pack_id...>: {pack: PackManifest, disabled: boolean}}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack's entry in `installed`. |
 
 World data is updated *every rebuild, regardless of success*.
