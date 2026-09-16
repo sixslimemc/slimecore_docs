@@ -54,7 +54,7 @@ Unless you are:
 - re-enabling a previously uninstalled datapack (effectively "reinstalling")
 - performing advanced troubleshooting
 
-Using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.
+using `/datapack` to manage SlimeCore-loaded datapacks is a user error and may cause unexpected behavior.
 
 Your frontend should provide a method of initiating an explicit rebuild.
 
