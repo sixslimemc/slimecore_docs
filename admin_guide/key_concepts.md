@@ -84,7 +84,9 @@ To re-enable a previously uninstalled datapack, you must use `/datapack enable`.
 | `order.entrypoint` | List of `{pack_ref: <pack_id>, id: <entrypoint ID> index: int}` | Similar to `order.load`, but lists all entrypoints in their calling order. |
 | `order.preload_entrypoints` | List of `{pack_ref: <pack_id>, id: <preload entrypoint ID> index: int}` | Same as `order.entrypoint`, but for preload entrypoints. |
 | `aux.pack_map` | `{<pack_id...>: PackManifest}` | (Auxilary) Struct where each key is a pack ID and the value is the respective pack manifest for that pack ID. |
-| `aux.impl_map` | `{<pack_id...>: {<abstract ID...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack_id>.<abstract id>` contains the pack manifest of the pack that implements the respective abstract interface. |
+| `aux.contract_map` | `{<pack_id...>: {<contract id...>: PackManifest}}` | (Auxilary) Struct where the key-path `<pack_id>.<contract id>` contains the pack manifest of the pack that satisfies the respective contract. |
+| `aux.contracts` | List of `{contract: {pack_ref: <pack_id>, id: <contract id>}, satisfier: PackManifest}` | (Auxilary) List of declared contracts associated with the packs that satisfy them. |
+| `aux.dependent_map` | `{<pack_id...>: [PackManifest]}` | (Auxilary) Struct that maps each pack (via its pack ID) to the list of its dependents (packs that specify the pack as a dependency). |
 
 
 Build data is updated upon *successful rebuild*.
