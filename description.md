@@ -54,7 +54,7 @@ The following demonstrates a full manifest function:
 ```mcfunction
 
 # Identity:
-# - 'pack_id' must match the datapack's namespace (i.e. tags match `#<pack_id>:<tag>`).
+# - 'pack_id' must match the datapack's namespace (tags match `#<pack_id>:<tag>`).
 # - 'author_id' should uniquely identify you as a datapack author.
 # - Together 'author_id' and 'pack_id' uniquely identify a datapack.
 data modify storage slimecore:in manifest.pack.pack_id set value "foo"
