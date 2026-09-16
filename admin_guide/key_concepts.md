@@ -41,7 +41,9 @@ Upon world reload, SlimeCore will **rebuild** if it detects any new and/or chang
 
 If a rebuild succeeds, appropriate changes to datapack loading are made to the world and [build data](#build-data) is updated.
 
-If a rebuild fails, it indicates that there exist incompatibilities, errors, and/or unfulfilled requirements of the world's installed datapacks. Importantly, no changes to datapack loading or build data are made when a rebuild fails. Your frontend should notify you of when and why a rebuild fails--a full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors). To clarify, failed rebuilds are an *intended feature* that keep your world's loading state safe--they do not indicate any malfunction.
+If a rebuild fails, it indicates that there exist incompatibilities, errors, and/or unfulfilled requirements of the world's installed datapacks. Importantly, no changes to datapack loading or build data are made when a rebuild fails.
+
+Your frontend should notify you of when and why a rebuild fails. A full list of rebuild errors and how to fix them can be found [here](./troubleshooting.md#rebuild-errors). To clarify, failed rebuilds are an *intended feature* that keep your world's loading state safe--they do not indicate any malfunction.
 
 ## Managing Datapacks (Explicit Rebuilding)
 
