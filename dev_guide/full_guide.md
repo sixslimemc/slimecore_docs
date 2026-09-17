@@ -65,7 +65,7 @@ When this tag is called, your datapack should attempt to cleanly remove itself f
 
 It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
 
-If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack id>:uninstall`, but `#<pack id>:load` will not be called beforehand. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
+If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack id>:uninstall`, but `#<pack id>:load` will not be called beforehand. In practice, this means that uninstallation (execution of the uninstall tag) will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
 ## Safe Mode Tag
 
