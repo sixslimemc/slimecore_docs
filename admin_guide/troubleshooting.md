@@ -71,13 +71,15 @@ If rebuilding is hanging but these logs are not being sent, it may indicate an i
 ## Rebuild Errors
 
 A rebuild can fail for the following reasons:
-- [Unfulfilled Dependency(s)](#unfulfilled-dependencys)
-- [Unimplemented Abstract Interface(s)](#unimplemented-abstract-interfaces)
-- [Multiple Abstract Implementations](#multiple-abstract-implementations)
+- [Unfulfilled Dependencies](#unfulfilled-dependencies)
+- [Unsatisfied Contracts](#unsatisfied-contracts)
+- [Oversatisfied Contracts](#oversatisfied-contracts)
 - [Entrypoint (or Preload Entrypoint) Order Conflicts](#entrypoint-or-preload-entrypoint-order-conflicts)
-- [Dependency Cycle(s)](#dependency-cycles)
-- [Invalid Datapack Manifest(s)](#invalid-datapack-manifests)
-- [Missing Datapack Path(s)](#missing-datapack-paths)
+- [Dependency Cycles](#dependency-cycles)
+- [Invalid References in Manifests](#invalid-references-in-manifests)
+- [Invalid Datapack Manifests](#invalid-datapack-manifests)
+- [Missing Path for Disabled Datapacks](#missing-path-for-disabled-datapacks)
+- [Missing Path for Enabled Datapacks (Misloaded Datapacks)](#missing-path-for-enabled-datapacks-misloaded-datapacks)
 - [Duplicate Pack IDs](#duplicate-pack-ids)
 
 ### Unfulfilled Dependencies
@@ -193,7 +195,7 @@ While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will 
 
 #### Misloaded Datapacks Missing Path
 
-If the [Missing Path for Enabled Datapacks (Misloaded Datapacks) rebuild error](#missing-path-for-enabled-datapacks-misloaded-datapacks) occurs, there is a possibility that some datapacks are in the wrong loading order and cannot be automatically re-ordered by SlimeCore.
+If the [Missing Path for Enabled Datapacks (Misloaded Datapacks)](#missing-path-for-enabled-datapacks-misloaded-datapacks) rebuild error occurs, there is a possibility that some datapacks are in the wrong loading order and cannot be automatically re-ordered by SlimeCore.
 
 *Internally, for datapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
 
@@ -205,7 +207,7 @@ If this is the reason safe mode is triggered, storage NBT `slimecore:data` `worl
 
 #### Duplicate Installed Pack IDs
 
-If the [Duplicate Installed Pack IDs rebuild error](#duplicate-installed-pack-ids) occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erroneous behavior.
+If the [Duplicate Installed Pack IDs](#duplicate-installed-pack-ids) rebuild error occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erroneous behavior.
 
 If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
 
