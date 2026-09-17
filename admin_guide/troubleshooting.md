@@ -90,23 +90,23 @@ This can either be because the dependency(s) are not installed/enabled (most com
 **Fix:** \
 Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
 
-### Unimplemented Abstract Interface(s)
+### Unsatisfied contract(s)
 
 **Cause:** \
-Datapack(s) define abstract interface(s) that are not implemented by any other datapacks (i.e. they require some functionality to be provided externally, but none is provided).
+Datapack(s) declare contract(s) that are not satisfied by any other datapacks (i.e. datapack(s) require some functionality to be provided externally, but none is provided).
 
 **Fix:** \
-Find and install/enable datapack(s) that implement the abstract interface(s). Finding a datapack that implements a particular abstract interface is not a strictly defined process, but it is likely that some list or "default" implementation can be found at the info URL of the datapack that defines the abstract interface(s).
+Find and install/enable datapack(s) that satisfy the contract(s). Finding a datapack that satisfies a particular contract is not a strictly defined process, but it is likely that some list or "default" satisfier can be found at the info URL of the datapack that declares the contract(s).
 
-### Multiple Abstract Implementations
+### Oversatisfied contract(s)
 
 **Cause:** \
-Multiple datapacks implement the same abstract interface(s) (i.e. the same functionality is provided by multiple datapacks).
+Multiple datapacks satisfy the same contract(s) (i.e. the same functionality is provided by multiple datapacks).
 
 This indicates that these datapacks are conceptually incompatible with each other.
 
 **Fix:** \
-Remove datapacks from the build, such that the abstract interface(s) are implemented exactly once.
+Remove datapacks from the build, such that the contract(s) are satisfied exactly once (each).
 
 ### Entrypoint (or Preload Entrypoint) Order Conflicts
 
@@ -145,7 +145,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 ### Missing Path for Disabled Datapack(s)
 
 
-### Missing Path for Enabled (Misloaded) Datapack(s)
+### Misloaded Datapack(s) with Missing Path
 
 **This error will trigger [safe mode](#safe-mode).**
 
