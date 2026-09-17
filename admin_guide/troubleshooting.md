@@ -80,33 +80,33 @@ A rebuild can fail for the following reasons:
 - [Missing Datapack Path(s)](#missing-datapack-paths)
 - [Duplicate Pack IDs](#duplicate-pack-ids)
 
-### Unfulfilled Dependency(s)
+### Unfulfilled Dependencies
 
 **Cause:** \
-Datapack(s) require dependency(s)--other datapack(s)--that are not present.
+Datapack(s) require dependencies (other datapacks) that are not present.
 
-This can either be because the dependency(s) are not installed/enabled (most common), or that the dependency(s) are present but have an incompatible version. This error also occurs in the rare case that a datapack has the same pack ID as a required dependency, but not the same author ID (thus, is a different datapack).
+This can either be because the dependencies are not installed/enabled (most common), the dependencies are present but have an incompatible version, or installed datapack(s) has the same pack ID but a different author ID from required dependencies (thus, are different datapacks and do not fulfill the dependency).
 
 **Fix:** \
-Install/enable the required dependency(s) to the build. Your frontend should display download URLs for compatible versions of missing dependencies.
+Install and/or enable the required dependencies. Your frontend should display download URLs for compatible versions of missing dependencies.
 
-### Unsatisfied contract(s)
+### Unsatisfied Contracts
 
 **Cause:** \
-Datapack(s) declare contract(s) that are not satisfied by any other datapacks (i.e. datapack(s) require some functionality to be provided externally, but none is provided).
+There exist declared contracts that are not satisfied by any datapacks (i.e. datapack(s) require some functionality to be provided externally, but none is provided).
 
 **Fix:** \
-Find and install/enable datapack(s) that satisfy the contract(s). Finding a datapack that satisfies a particular contract is not a strictly defined process, but it is likely that some list or "default" satisfier can be found at the info URL of the datapack that declares the contract(s).
+Find and install/enable datapack(s) that satisfy the contracts. Finding a datapack that satisfies a particular contract is not a strictly defined process, but it is likely that some list or "default" satisfier can be found at the info URL of the datapack that declares the given contract.
 
-### Oversatisfied contract(s)
+### Oversatisfied Contracts
 
 **Cause:** \
-Multiple datapacks satisfy the same contract(s) (i.e. the same functionality is provided by multiple datapacks).
+There exist declared contracts that are satisfied by more than one datapack (i.e. the same functionality is provided by multiple datapacks).
 
-This indicates that these datapacks are conceptually incompatible with each other.
+Datapacks that satisfy the same contract are functionally--and likely conceptually--incompatible with eachother.
 
 **Fix:** \
-Remove datapacks from the build, such that the contract(s) are satisfied exactly once (each).
+Remove datapacks from the build, such that each contract has exactly one satisfier.
 
 ### Entrypoint (or Preload Entrypoint) Order Conflicts
 
@@ -118,7 +118,7 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the entrypoint ordering in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
 
-### Dependency Cycle(s)
+### Dependency Cycles
 
 **Cause:** \
 Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depends on C, C depends on A).
@@ -126,13 +126,19 @@ Some set(s) of datapacks create a dependency cycle (e.g. A depends on B, B depen
 This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
 **Fix:** \
-Fix the dependency cycle(s) in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
+Fix the dependency cycles in the datapacks' manifest function (See [Datapack Development Guide](../dev_guide/index.md)).
 
-### Invalid Reference(s) in Manifest(s)
+### Invalid References in Manifests
 
+**Cause:** \
+One or more datapacks have a manifest that references artifacts (entrypoints, contracts, etc.) that do not exist.
 
+This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
-### Invalid Manifest(s)
+**Fix:** \
+Fix the issues in the manifest function(s) (See [Datapack Development Guide](../dev_guide/index.md)).
+
+### Invalid Manifests
 
 **Cause:** \
 One or more datapacks have an invalid manifest function.
@@ -142,23 +148,27 @@ This error should only be encountered if you are developing your own datapack(s)
 **Fix:** \
 Fix the issues in the manifest function(s) (See [Datapack Development Guide](../dev_guide/index.md)).
 
-### Missing Path for Disabled Datapack(s)
-
-
-### Misloaded Datapack(s) with Missing Path
-
-**This error will trigger [safe mode](#safe-mode).**
+### Missing Path for Disabled Datapacks
 
 **Cause:** \
-There are datapack(s) with non-standard paths (without path overrides), or datapack(s) with path overrides that do not match their actual paths.
-
+There are disabled datapack(s) that do not have a standard path and/or their path override does not match their actual path.
 
 **Fix:** \
-*See [Datapack Paths](./key_concepts.md#datapack-paths).*
+Rename datapack files to match standard datapack path format or set correct path overrides (See [Datapack Paths](./key_concepts.md#datapack-paths)).
+
+### Missing Path for Enabled Datapacks (Misloaded Datapacks)
+
+**This error will trigger [safe mode (Misloaded Datapacks Missing Path)](#misloaded-datapacks-missing-path).**
+
+**Cause:** \
+There are enabled datapack(s) that do not have a standard path and/or their path override does not match their actual path.
+
+**Fix:** \
+Rename datapack files to match standard datapack path format or set correct path overrides (See [Datapack Paths](./key_concepts.md#datapack-paths)).
 
 ### Duplicate Installed Pack IDs
 
-**This error will trigger [safe mode](#safe-mode).**
+**This error will trigger [safe mode (Duplicate Installed Pack IDs)](#duplicate-installed-pack-ids-1).**
 
 **Cause:** \
 Multiple installed datapacks share the same pack ID.
@@ -181,7 +191,7 @@ While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will 
 
 ### Safe Mode Reasons
 
-#### Missing Datapack Path(s)
+#### Misloaded Datapacks Missing Path
 
 If the [Missing Datapack Path(s)](#missing-datapack-paths) rebuild error occurs, there is a possibility that some datapacks are in the wrong loading order.
 
