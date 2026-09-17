@@ -55,7 +55,7 @@ The `#<pack id>:disable` function tag is called just before your datapack is dis
 
 When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
 
-*There is no `#<pack id>:enable` tag; when a datapack is re-enabled, its `#<pack id>:load` function is called like normal.*
+*There is no "enable" tag; when a datapack is re-enabled, its [load tag](#load-tag) is called like normal.*
 
 ## Uninstall Tag
 
@@ -65,11 +65,11 @@ When this tag is called, your datapack should attempt to cleanly remove itself f
 
 It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
 
-If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack id>:uninstall`, but `#<pack id>:load` will not be called beforehand. In practice, this means that uninstallation (execution of the uninstall tag) will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
+If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If the datapack is uninstalled while disabled, it will ephemerally be re-enabled, without execution of the [load tag](#load-tag), to call the uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
 ## Safe Mode Tag
 
-The `#<pack ID>:safe_mode` function tag is called instead of `#<pack ID>:load` on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
+The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
 
 When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is over. This may include stopping `/schedule` loops, safeguarding advancement reward functions, etc. Informally, you should assume that, while safe mode is enabled, every file in your datapack (and its dependencies) has a chance to cause undefined behavior when referenced.
 
