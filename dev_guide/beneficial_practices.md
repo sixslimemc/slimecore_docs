@@ -52,9 +52,9 @@ You may also want to consider including a function in your datapack that resets 
 
 One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks (enforced via documentation). Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow the other datapacks to modify them.
 
-Conceptually, both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, the key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
+Conceptually, both hooks and [contracts](./full_guide.md#contracts) allow for arbitrary datapack integration, however, the key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while contracts *require exactly one* datapack to implement a behavior.
 
-For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/the_mob/pre_attack` and `#foo:hook/the_mob/post_attack`). The pre-attack hook could provide *modifiable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that contains the final properties of the attack.
+For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/my_mob/pre_attack` and `#foo:hook/my_mob/post_attack`). The pre-attack hook could provide *modifiable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that contains the final properties of the attack.
 
 ## Entrypoint Separation
 
@@ -64,11 +64,11 @@ From [Entrypoints](./full_guide.md#entrypoints):
 
 To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob(s) (every tick), but also runs a tick loop on all instances of the custom mob(s) for its behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from each other. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoint/behavior in between them--for whatever reason they may have.
 
-## Defining Interfaces
+## Defining Contracts
 
-From [Abstract Interfaces](./full_guide.md#abstract-interfaces):
+From [Contracts](./full_guide.md#abstract-interfaces):
 
-> Abstract interfaces represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
+> Contracts represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
 
 While it is likely that abstract interfaces are not applicable in most datapacks, it is worth knowing when they can be useful, as well as how to go about designing an API for them.
 
