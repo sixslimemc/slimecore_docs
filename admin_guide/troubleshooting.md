@@ -131,7 +131,7 @@ Fix the dependency cycles in the datapacks' manifest function (See [Datapack Dev
 ### Invalid References in Manifests
 
 **Cause:** \
-One or more datapacks have a manifest that references artifacts (entrypoints, contracts, etc.) that do not exist.
+Datapack(s) have a manifest that references artifacts (entrypoints, contracts, etc.) that do not exist.
 
 This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
@@ -141,7 +141,7 @@ Fix the issues in the manifest function(s) (See [Datapack Development Guide](../
 ### Invalid Manifests
 
 **Cause:** \
-One or more datapacks have an invalid manifest function.
+Datapack(s) have an invalid manifest function.
 
 This error should only be encountered if you are developing your own datapack(s). If this error is encountered outside of datapack development, something is wrong with one or more installed datapacks.
 
@@ -178,7 +178,7 @@ Unfortunately, datapacks that share pack IDs are incompatible with each other. T
 
 ## Safe Mode
 
-Upon rebuild, if SlimeCore detects that the current datapack/world state could be invalid and cannot be automatically recovered, **Safe mode** is enabled. In safe mode, no datapacks are normally loaded (e.g. load/entrypoint tags not called, though schedule/tick loops may continue through last load), and potentially affected datapacks, as well as their dependents, have their [safe mode tag](../dev_guide/full_guide.md#safe-mode-tag) called. This will likely result in reduced datapack functionality for the duration of safe mode.
+During a rebuild, if SlimeCore detects that the current datapack/world state could be invalid and cannot be automatically recovered, **safe mode** is enabled. In safe mode, no datapacks are normally loaded (e.g. load/entrypoint tags not called, though schedule/tick loops may continue through last load), and potentially affected datapacks, as well as their dependents, have their [safe mode tag](../dev_guide/full_guide.md#safe-mode-tag) called. This will likely result in reduced datapack functionality for the duration of safe mode.
 
 Safe mode will be disabled upon rebuild when SlimeCore no longer detects an invalid datapack/world state.
 
@@ -193,7 +193,7 @@ While safe mode is enabled, storage NBT `slimecore:data` `world.safe_mode` will 
 
 #### Misloaded Datapacks Missing Path
 
-If the [Missing Datapack Path(s)](#missing-datapack-paths) rebuild error occurs, there is a possibility that some datapacks are in the wrong loading order.
+If the [Missing Path for Enabled Datapacks (Misloaded Datapacks) rebuild error](#missing-path-for-enabled-datapacks-misloaded-datapacks) occurs, there is a possibility that some datapacks are in the wrong loading order and cannot be automatically re-ordered by SlimeCore.
 
 *Internally, for datapacks with missing paths, SlimeCore cannot provide a path to `/datapack enable`/`/datapack disable`, thus cannot put said datapacks in their correct loading order.*
 
@@ -201,16 +201,16 @@ If this is the reason safe mode is triggered, storage NBT `slimecore:data` `worl
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `misloaded_datapacks_missing_path` | List of `{pack: <pack manifest>, path_override: <datapack_path>?}` | Pack manifests with missing datapack paths; `path_override` is only present if the pack has a [path override](./key_concepts.md#path-overriding). |
+| `misloaded_datapacks_missing_path` | List of `{pack: PackManifest, path_override: <datapack path>?}` | Pack manifests with missing datapack paths; `path_override` is only present if the pack has a [path override](./key_concepts.md#path-overriding). |
 
 #### Duplicate Installed Pack IDs
 
-If the [Duplicate Installed Pack IDs](#duplicate-installed-pack-ids) rebuild error occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erroneous behavior.
+If the [Duplicate Installed Pack IDs rebuild error](#duplicate-installed-pack-ids) occurs, multiple packs share the same pack ID and may have conflicting/overlapping resources, possibly leading to erroneous behavior.
 
 If this is the reason safe mode is triggered, storage NBT `slimecore:data` `world.safe_mode.reason` will contain the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `duplicate_installed_pack_ids` | List of `{pack_id: <pack ID>, packs: <pack manifest>[]}` | Pack IDs that are shared between multiple packs (specified by `packs`). |
+| `duplicate_installed_pack_ids` | List of `{pack_id: <pack id>, packs: [PackManifest]}` | Pack IDs that are shared between multiple packs (`packs` share the pack ID `pack_id`). |
 
 ---
