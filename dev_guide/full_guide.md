@@ -55,7 +55,7 @@ The `#<pack ID>:disable` function tag is called just before your datapack is dis
 
 When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
 
-This tag is garunteed to be called at some point before the your datapack's [uninstall tag](#uninstall-tag).
+This tag is garunteed to be called before the your datapack's [uninstall tag](#uninstall-tag).
 
 *There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, its `#<pack ID>:load` function is called like normal.*
 
