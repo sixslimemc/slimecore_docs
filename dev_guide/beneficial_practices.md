@@ -1,12 +1,6 @@
 # Beneficial Practices
 
-From the [Mission Statement](../description.md#mission-statement):
-
-> The primary goal of SlimeCore is to support a community-driven, decentralized datapack ecosystem that is accessible to all datapack users and developers.
-
-SlimeCore believes itself to be a significant step toward this goal, but intentional design in datapacks' content towards compatibility and usability can contribute just as much, if not more. Even so, SlimeCore does not try and control such elements, as they are things that *you*, the datapack developer(s), should be in control over.
-
-That said, this page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aid in increasing a datapack's compatibility and/or usability.
+This page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
 
 - [Namespacing](#namespacing)
 - [Public and Private Resources](#public-and-private-resources)
