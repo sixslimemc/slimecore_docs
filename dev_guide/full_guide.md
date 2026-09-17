@@ -20,9 +20,9 @@ If converting an existing datapack, make a backup before making any changes.
 
 Designate a namespace (`<datapack>/data/<namespace>`) as your datapack's **pack ID**. This namespace **MUST** be the only namespace that your datapack defines ***new*** files in.
 
-All other namespaces included in your datapack are considered *secondary namespaces* (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may intentionally *overwrite/modify* files in them (e.g. appending to a tag).
+All other namespaces included in your datapack are considered *secondary* namespaces (e.g. `minecraft`, `slimecore`, pack IDs of your datapack's dependencies). Your datapack must not define any new files within secondary namespaces, but may intentionally *overwrite/modify* files in them (e.g. appending to a tag).
 
-For full pack ID naming requirements, see [this section](#pack-ids).
+For pack ID naming requirements, see [this section](#pack-ids).
 
 ### Function Tags
 
@@ -47,13 +47,15 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 The `#<pack ID>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
 
-When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--this type of work is what [entrypoints](#entrypoints) are for.
+When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--that type of work is what [entrypoints](#entrypoints) are for.
 
 ## Disable Tag
 
-The `#<pack ID>:disable` function tag is called just before your datapack is disabled, but not uninstalled.
+The `#<pack ID>:disable` function tag is called just before your datapack is disabled.
 
 When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
+
+This tag is garunteed to be called at some point before the your datapack's [uninstall tag](#uninstall-tag).
 
 *There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, its `#<pack ID>:load` function is called like normal.*
 
