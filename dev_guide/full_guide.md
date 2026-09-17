@@ -45,29 +45,29 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 ## Load Tag
 
-The `#<pack ID>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
+The `#<pack id>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
 
 When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--that type of work is what [entrypoints](#entrypoints) are for.
 
 ## Disable Tag
 
-The `#<pack ID>:disable` function tag is called just before your datapack is disabled.
+The `#<pack id>:disable` function tag is called just before your datapack is disabled.
 
 When this tag is called, your datapack should attempt to cleanly stop operation with the consideration that it may be re-enabled again in the future, ideally "continuing" where it left off.
 
-This tag is garunteed to be called before the your datapack's [uninstall tag](#uninstall-tag).
-
-*There is no `#<pack ID>:enable` tag; when a datapack is re-enabled, its `#<pack ID>:load` function is called like normal.*
+*There is no `#<pack id>:enable` tag; when a datapack is re-enabled, its `#<pack id>:load` function is called like normal.*
 
 ## Uninstall Tag
 
-The `#<pack ID>:uninstall` function tag defines your datapack's uninstallation process.
+The `#<pack id>:uninstall` function tag defines your datapack's uninstallation process.
 
 When this tag is called, your datapack should attempt to cleanly remove itself from the world with the assumption that it will never be enabled again, ideally leaving no trace that it was ever installed.
 
 It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
 
-If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack ID>:uninstall`, but `#<pack ID>:load` will not be called beforehand.
+If a datapack is uninstalled while disabled, it will be temporarily re-enabled to call `#<pack id>:uninstall`, but `#<pack id>:load` will not be called beforehand.
+
+If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
 ## Safe Mode Tag
 
