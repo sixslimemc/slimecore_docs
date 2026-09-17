@@ -16,7 +16,7 @@ This guide assumes:
 
 ## Quick Convert
 
-If you just want to quickly convert an existing datapack to being SlimeCore-loaded with as little friction as possible, see [Quick Convert](./quick_convert.md).
+To convert an existing datapack to being SlimeCore-loaded as quickly as possible, see [Quick Convert](./quick_convert.md).
 
 Otherwise, continue to the next page.
 
