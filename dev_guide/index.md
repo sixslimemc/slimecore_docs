@@ -8,8 +8,8 @@ This guide covers everything you need to know about developing and working with 
 ## Before You Read
 
 This guide assumes:
-- General knowledge of SlimeCore's mechanisms *(See [Description](../description.md))*.
-- General knowledge of SlimeCore-loaded datapack management *(See [Admin Guide](../admin_guide/index.md))*.
+- Knowledge of SlimeCore's mechanisms *(See [Description](../description.md))*.
+- Knowledge of datapack management/administration with SlimeCore *(See [Admin Guide](../admin_guide/index.md))*.
 - You have access to a [frontend](../admin_guide/key_concepts.md#frontend-datapacks) datapack in your development world(s).
 - Intermediate general knowledge of commands and datapack development.
 
