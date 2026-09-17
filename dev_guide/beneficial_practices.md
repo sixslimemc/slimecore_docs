@@ -31,18 +31,18 @@ For resources that are files, a simple and effective approach is to have a consi
 
 For in-game artifacts, one approach is to prefix identifiers with `_` if they are meant to be private, in a similar fashion to [namespacing](#namespacing), (`_` in particular works well alongside namespacing because pack IDs cannot start with `_`).
 
-Regardless of any scheme used, the distinction between public and private resources should be **documented**.
+Regardless of any scheme used, the distinction between public and private resources should be documented.
 
 ## Configuration
 
-Datapacks should generally allow users to configure content to their preferences via in-game methods, opposed to hard-coding them within the datapack. As a rule of thumb, if an element of your datapack can *easily* be made configurable/dynamic and it would not be unreasonable for a user to want to change it, then it should be configurable.
+Content-focused datapacks (non-libraries) should generally allow users to configure content to their preferences via in-game methods, opposed to hard-coding them within the datapack. As a rule of thumb, if an element of your datapack can *easily* be made configurable/dynamic and it would not be unreasonable for a user to want to change it, then it should be configurable.
 
 Some examples of likely easily configurable elements:
 - Stats of custom items, mobs, effects, etc.
 - Behavior that can be toggled on/off.
 - Intensity of vfx/sfx.
 
-Importantly, if your datapack is configurable, it should install with a sensible default/standard configuration already set--configuration should be an *option* to the user, not a *responsibility*.
+Importantly, if your datapack is configurable, it should install with a sensible default/standard configuration already set; configuration should be an *option* to the user, not a *responsibility*.
 
 A simple and effective approach for implementing configuration is to use an NBT storage location (e.g. `<pack ID>:config`) that users are allowed to directly modify. Store the default configuration values in that location when your datapack is first loaded, and have your feature implementations read the values from that location.
 
