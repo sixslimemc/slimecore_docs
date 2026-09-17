@@ -50,7 +50,7 @@ You may also want to consider including a function in your datapack that resets 
 
 ## Hooks
 
-One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks. Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow the other datapacks to modify them.
+One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks (enforced via documentation). Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow the other datapacks to modify them.
 
 Conceptually, both hooks and [abstract interfaces](./full_guide.md#abstract-interfaces) allow for arbitrary datapack integration, however, the key difference is that hooks provide the *option* for *any amount* of datapacks to extend behavior, while abstract interfaces *require exactly one* datapack to implement a behavior.
 
