@@ -1,6 +1,6 @@
 # Beneficial Practices
 
-This page contains a handful of development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may aide in increasing a datapack's compatibility and/or usability.
+This page contains development tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may be generally beneficial to know and/or implement.
 
 - [Namespacing](#namespacing)
 - [Public and Private Resources](#public-and-private-resources)
