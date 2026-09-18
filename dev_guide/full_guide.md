@@ -24,7 +24,7 @@ All other namespaces included in your datapack are considered *secondary* namesp
 
 For pack ID naming requirements, see [this section](#pack-ids).
 
-### Function Tags
+### Function Tag Structure
 
 Create the following function tags:
 ```
@@ -43,13 +43,21 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/main` (create a new tag, see [Entrypoints](#entrypoints) for info).*
 
-## Load Tag
+## Special Function Tags
+
+The following function tags (created in [Setup](#function-tag-structure)) are expected to be present in your datapack and are called automatically by SlimeCore:
+- [Load Tag (`#<pack id>:load`)](#load-tag)
+- [Disable Tag (`#<pack id>:disable`)](#disable-tag)
+- [Uninstall Tag (`#<pack id>:uninstall`)](#uninstall-tag)
+- [Safe Mode Tag (`#<pack id>:safe_mode`)](#safe-mode-tag)
+
+### Load Tag
 
 The `#<pack id>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`. The order that each datapack's load tag is called matches the actual in-game datapack loading order.
 
 When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--that type of work is what [entrypoints](#entrypoints) are for.
 
-## Disable Tag
+### Disable Tag
 
 The `#<pack id>:disable` function tag is called just before your datapack is disabled.
 
@@ -57,7 +65,7 @@ When this tag is called, your datapack should attempt to cleanly stop operation 
 
 *There is no "enable" tag; when a datapack is re-enabled, its [load tag](#load-tag) is called like normal.*
 
-## Uninstall Tag
+### Uninstall Tag
 
 The `#<pack id>:uninstall` function tag defines your datapack's uninstallation process.
 
@@ -67,7 +75,7 @@ It is a baseline expectation that "pure data" elements of your datapack (scorebo
 
 If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If the datapack is uninstalled while disabled, it will be ephemerally re-enabled, without execution of its [load tag](#load-tag), to call its uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
-## Safe Mode Tag
+### Safe Mode Tag
 
 The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode))*.
 
@@ -113,7 +121,7 @@ execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"ba
 
 ## Entrypoints
 
-Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after all datapacks' `#<pack ID>:load` tags are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
+Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
 
 Entrypoint(s) that contain `/schedule` loop(s) (functions that schedule themselves) conceptually replace `#minecraft:tick`. Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
