@@ -99,6 +99,19 @@ Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 *Preload entrypoints are likely only applicable to a small minority of datapacks.*
 
+## Contracts
+
+
+Contracts are purely [rebuild](../admin_guide/key_concepts.md#rebuilding)-time constructs and do not represent anything concrete. Contracts are *declared* by one datapack, and must be *satisfied* by exactly one other. In other words, for each contract that is declared within a build, there must be exactly one other datapack in the same build that satisfies it--or else the build will be [invalid](../admin_guide/troubleshooting.md#unsatisfied-contracts). A datapack can declare and/or satisfy any number of contracts.
+
+Practically speaking, contracts are useful tools when you want to *delegate* some behavior/implementation externally (similar to the concept of abstract classes/methods in programming). You declare a contract in your datapack's manifest, describe the "terms" of the contract in your datapack's documentation, then any other datapack author can read and implement said "terms" in their datapack, specifying your contract as satisfied in their datapack's manifest. Contracts themselves do not actually ensure the "terms" are actually properly described/satisfied, that is the responsibility of developers.
+
+*For more information on contracts, see [this section](./beneficial_practices.md#defining-contracts).*
+
+Contract declarations/satisfactions are declared in a datapack's [manifest](#the-manifest).
+
+*contracts are likely only applicable to a small minority of datapacks.*
+
 ## Dependencies
 
 Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
@@ -131,17 +144,7 @@ execute if data storage slimecore:data build.packs[{pack_id:"foo", author_id:"ba
 execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"bar"}
 ```
 
-## Abstract Interfaces
 
-*Abstract interfaces are only applicable to a small minority of datapacks.*
-
-Abstract interfaces represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
-
-Practically, an abstract interface should be declared when a datapack defines an API over some behavior, but does not actually implement that behavior--*delegating* the implementation to an external datapack (that the user chooses). It is the responsibility of the author to document/explain proper implementation of the behavior.
-
-Likewise, a datapack should specify that it implements a given abstract interface if it properly implements the behavior/contract documented by the declaring datapack. It is the responsibility of the author of the implementing datapack to ensure proper implementation.
-
-Abstract interface declarations/implementations are declared in a datapack's [manifest](#the-manifest).
 
 ## The Manifest
 
