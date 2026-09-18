@@ -81,7 +81,7 @@ Note that the safe mode tag may be called before the load tag is ever called; th
 
 ## Dependencies
 
-Your datapack can declare that it requires, or optionally supports, other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack.
+Your datapack can declare that it requires or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack.
 
 SlimeCore will ensure that all dependencies will be loaded **before** your datapack, and that all required dependencies are installed before your datapack loads at all.
 
