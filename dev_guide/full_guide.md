@@ -85,7 +85,7 @@ Your datapack can declare that it requires and/or optionally supports other Slim
 
 SlimeCore ensures that all dependencies are loaded **before** your datapack, and that all required dependencies are installed before your datapack loads at all.
 
-If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it should be declared as a dependency.
+If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
 
 Dependencies are declared in a datapack's [manifest](#the-manifest).
 
