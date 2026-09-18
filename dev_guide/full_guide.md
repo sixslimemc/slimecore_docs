@@ -73,9 +73,9 @@ The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#loa
 
 When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is disabled. This most commonly includes stopping `/schedule` loops and safeguarding trigger functions from advancements/enchantments/APIs. Informally, you should assume that every reference to a resource has a chance to cause unexpected behavior during safe mode.
 
-When safe mode is over, the [load tag](#load-tag) will be called like normal and your datapack should return to its fully functional state.
+When safe mode is over, the load tag will be called like normal and your datapack should return to its fully functional state.
 
-Note that the safe mode tag may be called before the [load tag](#load-tag) is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
+Note that the safe mode tag may be called before the load tag is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
 *It is understood that implementing support for safe mode may be a significant development burden, especially for larger datapacks. While supporting safe mode as best as possible is advised, it is not strictly required; you have the option to simply not support safe mode in your datapack. If your datapack does not meaningfully support safe mode, it should indicate such in its documentation as well as when its safe mode tag is called.*
 
