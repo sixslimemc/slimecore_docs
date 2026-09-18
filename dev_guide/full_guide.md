@@ -81,6 +81,26 @@ Note that the safe mode tag may be called before the load tag is ever called; th
 
 *It is understood that implementing support for safe mode may be a significant development burden, especially for larger datapacks. While supporting safe mode as best as possible is advised, it is not strictly required; you have the option to simply not support safe mode in your datapack. If your datapack does not meaningfully support safe mode, it should indicate such in its documentation as well as when its safe mode tag is called.*
 
+## Entrypoints
+
+Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
+
+Entrypoint(s) that contain `/schedule` loop(s) (functions that schedule themselves) conceptually replace `#minecraft:tick`. Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
+
+A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, if datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
+
+Entrypoints are declared in a datapack's [manifest](#the-manifest).
+
+### Preload Entrypoints
+
+*Preload entrypoints are only applicable to a small minority of datapacks.*
+
+Preload entrypoints are function tags matching the format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>` and are similar to entrypoints, but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/pre-initialization work and should generally not be used to start `/schedule` loops.
+
+Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
+
+Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
+
 ## Dependencies
 
 Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
@@ -112,26 +132,6 @@ execute if data storage slimecore:data build.packs[{pack_id:"foo", author_id:"ba
 # alternatively:
 execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"bar"}
 ```
-
-## Entrypoints
-
-Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
-
-Entrypoint(s) that contain `/schedule` loop(s) (functions that schedule themselves) conceptually replace `#minecraft:tick`. Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
-
-A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, if datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
-
-Entrypoints are declared in a datapack's [manifest](#the-manifest).
-
-### Preload Entrypoints
-
-*Preload entrypoints are only applicable to a small minority of datapacks.*
-
-Preload entrypoints are function tags matching the format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>` and are similar to entrypoints, but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/pre-initialization work and should generally not be used to start `/schedule` loops.
-
-Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
-
-Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ## Abstract Interfaces
 
