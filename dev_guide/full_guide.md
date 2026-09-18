@@ -45,7 +45,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 ## Load Tag
 
-The `#<pack id>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`.
+The `#<pack id>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`. The order that each datapack's load tag is called matches the actual in-game datapack loading order.
 
 When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--that type of work is what [entrypoints](#entrypoints) are for.
 
@@ -81,11 +81,9 @@ Note that the safe mode tag may be called before the load tag is ever called; th
 
 ## Dependencies
 
-Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack.
+Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
 
-SlimeCore ensures that all dependencies are loaded **before** your datapack, and that all required dependencies are installed before your datapack loads at all.
-
-If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
+SlimeCore ensures that all dependencies are loaded **before** your datapack, and that all required dependencies are installed and of compatible version (see below) before your datapack loads at all.
 
 Dependencies are declared in a datapack's [manifest](#the-manifest).
 
@@ -100,7 +98,18 @@ An installed dependency fulfills the version requirement if all of these conditi
 - *if `<major>` > 0:*
     - `<minor>` >= `<req_minor>`
 
-If an installed dependency datapack does not fulfill the version requirement, the dependency is considered unfulfilled and the dependent datapack will not load.
+If an installed dependency datapack does not fulfill the version requirement, the dependency is considered unfulfilled.
+
+### Checking for Optional Dependencies
+
+Within your datapack, you can check if optional dependencies are enabled via [build data](../admin_guide/key_concepts.md#build-data).
+
+```mcfunction
+# checks if pack foo.bar is enabled:
+execute if data storage slimecore:data build.packs[{pack_id:"foo", author_id:"bar"}]
+# alternatively:
+execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"bar"}
+```
 
 ## Entrypoints
 
