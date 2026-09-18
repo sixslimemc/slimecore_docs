@@ -85,7 +85,8 @@ Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entryp
 
 `#minecraft:tick` should be functionally replaced by entrypoint(s) that `/schedule` themselves (schedule loops). Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
-A key advantage of entrypoints is that they can be explicitly ordered against dependencies' entrypoints. For instance, if datapack A defines entrypoint `foo`, and datapack B depends on datapack A, any of datapack B's entrypoints can be specified to explicitly run before OR after entrypoint `foo`.
+A key advantage of entrypoints is that they can be explicitly ordered against [dependencies'](#dependencies) entrypoints. \
+For instance: datapack A defines entrypoint `foo`, datapack B defines entrypoint `bar`. Datapack A specifies datapack B as a dependency and specifies `foo` to explicitly run before `bar`. Given `foo` and `bar` start schedule loops, `foo`'s body will then always execute before `bar`'s body on any given tick.
 
 Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
