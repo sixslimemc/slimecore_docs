@@ -97,7 +97,7 @@ Similarly to entrypoints, preload entrypoints can be explicitly ordered against 
 
 Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
-*Preload entrypoints are only applicable to a small minority of datapacks.*
+*Preload entrypoints are likely only applicable to a small minority of datapacks.*
 
 ## Dependencies
 
