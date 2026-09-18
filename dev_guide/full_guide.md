@@ -43,15 +43,13 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack id>:load`, and `#minecraft:tick` to `#<pack id>:entrypoint/main` (create a new tag, see [Entrypoints](#entrypoints) for info).*
 
-## Top-Level Tags
-
-### Load Tag
+## Load Tag
 
 The `#<pack id>:load` function tag is called upon every world reload and conceptually replaces `#minecraft:load`. The order that each datapack's load tag is called matches the actual in-game datapack loading order.
 
 When this tag is called, your datapack should initialize itself. Importantly, it should *only* do work related to initialization (declaring scoreboards, initializing data, etc.); it should not do anything else such as start `/schedule` loops or other independent work--that type of work is what [entrypoints](#entrypoints) are for.
 
-### Disable Tag
+## Disable Tag
 
 The `#<pack id>:disable` function tag is called just before your datapack is disabled.
 
@@ -59,7 +57,7 @@ When this tag is called, your datapack should attempt to cleanly stop operation 
 
 *There is no "enable" tag; when a datapack is re-enabled, its [load tag](#load-tag) is called like normal.*
 
-### Uninstall Tag
+## Uninstall Tag
 
 The `#<pack id>:uninstall` function tag defines your datapack's uninstallation process.
 
@@ -69,7 +67,7 @@ It is a baseline expectation that "pure data" elements of your datapack (scorebo
 
 If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If the datapack is uninstalled while disabled, it will be ephemerally re-enabled, without execution of its [load tag](#load-tag), to call its uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
-### Safe Mode Tag
+## Safe Mode Tag
 
 The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode))*.
 
