@@ -81,9 +81,9 @@ Note that the safe mode tag may be called before the load tag is ever called; th
 
 ## Entrypoints
 
-Entrypoints are function tags matching the format `#<pack ID>/entrypoint/<entrypoint ID>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
+Entrypoints are function tags matching the format `#<pack id>/entrypoint/<entrypoint id>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
 
-`#minecraft:tick` should be functionally replaced by entrypoint(s) that `/schedule` themselves (schedule loops). Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
+The primary purpose of entrypoints is to replace `#minecraft:tick`; this can be done via schedule loops (functions that `/schedule` themselves). Defining a single entrypoint may be sufficient for most datapacks, but if your datapack does multiple conceptually independent blocks of work in its tick loop, consider defining multiple entrypoints and giving each block of work its own entrypoint; this gives datapacks that may depend on yours more fine-grained control over their interaction with yours (explained below).
 
 A key advantage of entrypoints is that they can be explicitly ordered against [dependencies'](#dependencies) entrypoints. For instance, if datapack X defines entrypoint `foo`, and depends on datapack Y, which defines entrypoint `bar`: datapack X can specify `foo` to run explicitly before/after `bar`. If both `foo` and `bar` start schedule loops, `foo`'s body will always run before/after `bar`'s body on any given tick.
 
