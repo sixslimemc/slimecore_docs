@@ -69,15 +69,15 @@ If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) w
 
 ## Safe Mode Tag
 
-The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode) for more information)*.
+The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode))*.
 
-When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is over. This may include stopping `/schedule` loops, safeguarding advancement reward functions, etc. Informally, you should assume that, while safe mode is enabled, every file in your datapack (and its dependencies) has a chance to cause undefined behavior when referenced.
+When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is disabled. This most commonly includes stopping `/schedule` loops and safeguarding reward/trigger functions from advancements/triggers/APIs. Informally, you should assume that, while safe mode is enabled, every reference to a resource has a chance to cause unexpected behavior.
 
 When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to its fully functional state. While safe mode should be accounted for, it is more important that your datapack continues to function as expected after safe mode ends.
 
 Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
-*It is understood that implementing support for safe mode may be a significant development burden, especially for larger datapacks. While supporting safe mode as best as possible is highly advised, by safe mode's nature, this cannot be strictly enforced; you have the option to simply not support safe mode in your datapack. If your datapack does not meaningfully support safe mode, it should, at the very least, notify the user that that is the case when the safe mode tag is called.*
+*It is understood that implementing support for safe mode may be a significant development burden, especially for larger datapacks. While supporting safe mode as best as possible is highly advised, it is not strictly enforced; you have the option to simply not support safe mode in your datapack. If your datapack does not meaningfully support safe mode, it should, at the very least, notify the user that that is the case when the safe mode tag is called.*
 
 ## Dependencies
 
