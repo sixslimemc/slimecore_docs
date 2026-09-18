@@ -65,17 +65,17 @@ When this tag is called, your datapack should attempt to cleanly remove itself f
 
 It is a baseline expectation that "pure data" elements of your datapack (scoreboards, NBT storage, entity tags, etc.) are removed entirely. The handling of in-world elements (entities, blocks, items, etc.) is to your discretion.
 
-If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If the datapack is uninstalled while disabled, it will ephemerally be re-enabled, without execution of the [load tag](#load-tag), to call the uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
+If your datapack is uninstalled while enabled, the [disable tag](#disable-tag) will be called just before the uninstall tag. If the datapack is uninstalled while disabled, it will be ephemerally re-enabled, without execution of its [load tag](#load-tag), to call its uninstall tag. In practice, this means that execution of the uninstall tag will always follow execution of the disable tag without execution of the [load tag](#load-tag) in-between.
 
 ## Safe Mode Tag
 
 The `#<pack ID>:safe_mode` function tag is called instead of the [load tag](#load-tag) on world reload if SlimeCore detects that your datapack (or any of its dependencies) may be loaded incorrectly *(See [Safe Mode](../admin_guide/troubleshooting.md#safe-mode))*.
 
-When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is disabled. This most commonly includes stopping `/schedule` loops and safeguarding reward/trigger functions from advancements/triggers/APIs. Informally, you should assume that, while safe mode is enabled, every reference to a resource has a chance to cause unexpected behavior.
+When this tag is called, your datapack should attempt to minimize all calls/references to *any* resource until safe mode is disabled. This most commonly includes stopping `/schedule` loops and safeguarding trigger functions from advancements/enchantments/APIs. Informally, you should assume that every reference to a resource has a chance to cause unexpected behavior during safe mode.
 
-When safe mode is over, `#<pack ID>:load` will be called like normal and your datapack should return to its fully functional state. While safe mode should be accounted for, it is more important that your datapack continues to function as expected after safe mode ends.
+When safe mode is over, the [load tag](#load-tag) will be called like normal and your datapack should return to its fully functional state.
 
-Note that `#<pack ID>:safe_mode` may be called before `#<pack ID>:load` is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
+Note that the safe mode tag may be called before the [load tag](#load-tag) is ever called; this indicates that the user just installed your datapack and safe mode triggered immediately.
 
 *It is understood that implementing support for safe mode may be a significant development burden, especially for larger datapacks. While supporting safe mode as best as possible is advised, it is not strictly required; you have the option to simply not support safe mode in your datapack. If your datapack does not meaningfully support safe mode, it should indicate such in its documentation as well as when its safe mode tag is called.*
 
