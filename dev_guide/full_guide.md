@@ -43,13 +43,7 @@ Your datapack must not include `#minecraft:load` or `#minecraft:tick`.
 
 *If you are converting a datapack, move the contents of `#minecraft:load` to `#<pack ID>:load`, and `#minecraft:tick` to `#<pack ID>:entrypoint/main` (create a new tag, see [Entrypoints](#entrypoints) for info).*
 
-## Required Function Tags
-
-The following function tags (created in [Setup](#function-tag-structure)) are expected to be present in your datapack and are called automatically by SlimeCore:
-- [Load Tag (`#<pack id>:load`)](#load-tag)
-- [Disable Tag (`#<pack id>:disable`)](#disable-tag)
-- [Uninstall Tag (`#<pack id>:uninstall`)](#uninstall-tag)
-- [Safe Mode Tag (`#<pack id>:safe_mode`)](#safe-mode-tag)
+## Function Tags
 
 ### Load Tag
 
