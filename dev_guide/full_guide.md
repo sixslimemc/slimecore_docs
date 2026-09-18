@@ -81,7 +81,7 @@ Note that the safe mode tag may be called before the load tag is ever called; th
 
 ## Entrypoints
 
-Entrypoints are function tags matching the format `#<pack id>/entrypoint/<entrypoint id>` and are called on world reload after *all* datapacks' [load tags](#load-tag) are called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
+Entrypoints are function tags matching the format `#<pack id>/entrypoint/<entrypoint id>` and are called on world reload after *all* datapacks' [load tag](#load-tag) is called. They should be used to run/start independent, non-initialization work. A datapack can define any number of entrypoints. 
 
 While any arbitrary work can be done with entrypoints, their primary purpose is to replace `#minecraft:tick`; this can be done via schedule loops (functions that `/schedule` themselves). Defining a single entrypoint is likely sufficient for most datapacks and is recommended when just starting, but do note the benefits of defining multiple entrypoints, highlighted in [this section](./beneficial_practices.md#entrypoint-separation).
 
@@ -91,13 +91,13 @@ Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ### Preload Entrypoints
 
-*Preload entrypoints are only applicable to a small minority of datapacks.*
-
-Preload entrypoints are function tags matching the format `#<pack ID>/preload_entrypoint/<preload entrypoint ID>` and are similar to entrypoints, but are called **before any** datapacks' `#<pack ID>:load` tags are called (including their own). They should generally be reserved for meta/pre-initialization work and should generally not be used to start `/schedule` loops.
+Preload entrypoints are function tags matching the format `#<pack id>/preload_entrypoint/<preload entrypoint id>` and are similar to entrypoints, but are called before *any* datapacks' [load tag](#load-tag) is called (including their parent datapack's). They should generally be reserved for advanced/technical work that cannot be achieved via regular entrypoints.
 
 Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
 
 Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
+
+*Preload entrypoints are only applicable to a small minority of datapacks.*
 
 ## Dependencies
 
