@@ -101,8 +101,7 @@ Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ## Contracts
 
-
-Contracts are purely [rebuild](../admin_guide/key_concepts.md#rebuilding)-time constructs and do not represent anything concrete. Contracts are *declared* by one datapack, and must be *satisfied* by exactly one other during rebuild. In other words, for each contract that is declared within a build, there must be exactly one other datapack in the same build that satisfies it--or else the build will be [invalid](../admin_guide/troubleshooting.md#unsatisfied-contracts). A datapack can declare and/or satisfy any number of contracts.
+Contracts are *declared* by one datapack, and must be *satisfied* by exactly one other during [rebuild](../admin_guide/key_concepts.md#rebuilding)-time; they exist purely in [manifest](#the-manifest) data. In other words, for each contract that is declared within a build, there must be exactly one other datapack in the same build that satisfies it--or else the build will be [invalid](../admin_guide/troubleshooting.md#unsatisfied-contracts). A datapack can declare and/or satisfy any number of contracts.
 
 Practically speaking, contracts are useful tools when you want to *delegate* some behavior/implementation externally (similar to the concept of abstract classes/methods in programming). You declare a contract in your datapack's manifest, describe the "terms" of the contract in your datapack's documentation, then any other datapack author can read and implement said "terms" in their datapack, specifying your contract as satisfied in their datapack's manifest. Contracts themselves do not actually ensure the "terms" are actually properly described/satisfied, that is the responsibility of developers.
 
