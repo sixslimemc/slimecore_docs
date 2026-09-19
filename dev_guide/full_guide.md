@@ -252,7 +252,7 @@ Each element must have the following keys:
 | `pack_id` | `string` | [Pack ID](#pack_id) of the dependency. |
 | `author_id` | `string` | [Author ID](#author_id) of the dependency. |
 | `version` | `{major: int, minor: int}` | [Version requirement](#versioning) of the dependency. |
-| `optional` | `boolean` | If `true`, SlimeCore will not require the dependency to be installed; your datapack should function regardless of the dependency's presence. |
+| `optional` | `boolean` | If `true`, SlimeCore will not require the dependency to be installed. Your datapack should function regardless of the dependency's presence if `true`. |
 | `download.url` | `URL string` | [Direct download URL](#url) of any compatible version of the dependency. |
 | `download.version` | `{major: int, minor: int, patch: int}` | Exact [version](#version) of the dependency that `download.url` downloads. |
 
