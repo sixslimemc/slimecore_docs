@@ -240,7 +240,7 @@ A library is a datapack that is intended to be used *exclusively* as a dependenc
 
 Declares your datapack's [dependencies](#dependencies)--each element represents one dependency.
 
-Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other manifest components.
+Specifying a pack as a dependency allows it to be referenced via `pack_ref` in other components of your manifest.
 
 Each element must have the following keys:
 
