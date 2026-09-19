@@ -309,7 +309,7 @@ Each element must have the following keys:
 
 **Type:** `struct`
 
-Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used by frontends and such to present your datapack nicely.
+Specifies your datapack's display information and URLs. This information is not used by SlimeCore itself but may be used externally (i.e. by frontends and such to present your datapack nicely).
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
