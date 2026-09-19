@@ -207,15 +207,11 @@ function slimecore:api/manifest
 
 Must exactly match your datapack's [pack ID](#pack-id).
 
-**Example:** `foo`
-
 ### `author_id`
 
 **Type:** `string`
 
 An arbitrary identifier that represents you as a datapack author. *See [ID Naming](#author-ids).*
-
-**Example:** `bar`
 
 ### `version`
 
@@ -228,6 +224,8 @@ The numerical [SemVer](https://semver.org) version of your datapack.
 | `major` | int | Major version. |
 | `minor` | int | Minor version. |
 | `patch` | int | Patch version. |
+
+**Example:** `{major:1, minor:2, patch:3}`
 
 ### `is_library`
 
