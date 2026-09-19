@@ -142,7 +142,7 @@ If an installed dependency datapack does not fulfill the version requirement, th
 Within your datapack, you can check if optional dependencies are enabled via [build data](../admin_guide/key_concepts.md#build-data).
 
 ```mcfunction
-# checks if pack foo.bar is enabled:
+# checks if pack bar.foo is enabled:
 execute if data storage slimecore:data build.packs[{pack_id:"foo", author_id:"bar"}]
 # alternatively:
 execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"bar"}
