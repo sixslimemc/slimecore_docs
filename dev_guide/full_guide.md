@@ -311,7 +311,7 @@ Each element must have the following keys:
 
 Specifies your datapack's display information and URLs.
 
-This value is not used by SlimeCore itself but may be used externally (i.e. by frontends and such to present your datapack nicely).
+This value is not used by SlimeCore itself but may be used externally (e.g. by frontends and such to present your datapack nicely).
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
