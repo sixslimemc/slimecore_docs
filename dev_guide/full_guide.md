@@ -277,30 +277,30 @@ Declares your datapack's [preload entrypoints](#preload-entrypoints).
 
 *Format is identical to [`entrypoints`](#entrypoints-1).*
 
-### `abstract_declarations`
+### `contract_declarations`
 
 **Type:** `list<struct>`
 
-Declares your datapack's [abstract interfaces](#abstract-interfaces)--each element represents one abstract interface.
+Declares your datapack's [contracts](#contracts)--each element represents one contract.
 
 Each element must have the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `id` | `string` | The ID of the abstract interface. *See [ID Naming](#manifest-ids).* |
+| `id` | `string` | The ID of the contract. *See [ID Naming](#manifest-ids).* |
 
-### `abstract_implementations`
+### `contracts_satisfied`
 
 **Type:** `list<struct>`
 
-Specifies the [abstract interfaces](#abstract-interfaces) that your datapack implements--each element represents one abstract interface implementation.
+Specifies the [contracts](#contracts) that your datapack satisfies--each element represents one satisfied contract.
 
 Each element must have the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `pack_ref` | `string` | The pack ID that the implemented abstract interface is from. |
-| `id` | `string` | The ID of the implemented abstract interface.  |
+| `pack_ref` | `string` | The pack ID that the satisfied contract is from. |
+| `id` | `string` | The ID of the satisfied contract.  |
 
 ### `display`
 
