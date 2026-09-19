@@ -231,10 +231,11 @@ The version of your datapack--should adhere to [semantic versioning](https://sem
 
 **Type:** `boolean`
 
-Whether or not your datapack is a library. Similar to [`display`](#display), this value is not used by SlimeCore itself but may be used externally.
+Whether or not your datapack is a library.
 
 A library is a datapack that is intended to be used *exclusively* as a dependency of other datapacks and does not provide any meaningful behavior on its own.
 
+Like [`display`](#display), this value is not used by SlimeCore itself but may be used externally.
 
 ### `dependencies`
 
