@@ -217,7 +217,7 @@ An arbitrary identifier that represents you as a datapack author. *See [ID Namin
 
 **Type:** `struct`
 
-The numerical [SemVer](https://semver.org) version of your datapack.
+The version of your datapack. Should adhere to numerical [semantic versioning](https://semver.org).
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
