@@ -118,13 +118,13 @@ Contract declarations/satisfactions are declared in a datapack's [manifest](#the
 
 Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack uses **any** resources/functionality of another SlimeCore-loaded datapack, it must be declared as a dependency.
 
-SlimeCore ensures that all required dependencies are installed/enabled and that all installed dependencies (both required and optional) are of a compatible version (see below) before your datapack loads at all. Your datapack will always [load](#load-tag) **after** all of it's dependencies.
+SlimeCore ensures that all required dependencies are installed/enabled and that all installed dependencies (both required and optional) are of a compatible version (see below) before your datapack loads at all. Your datapack will always [load](#load-tag) **after** all of its dependencies.
 
 Dependencies are declared in a datapack's [manifest](#the-manifest).
 
 ### Versioning
 
-All SlimeCore-loaded datapacks have a [SemVer](https://semver.org) adhering version (`<major>.<minor>.<patch>`). When declaring a dependency, a *version requirement* (`<req_major>.<req_minor>`) must be specified with it.
+All SlimeCore-loaded datapacks have a version (See [`version`](#version)). When declaring a dependency, a *version requirement* (`<req_major>.<req_minor>`) must be specified with it.
 
 An installed dependency fulfills the version requirement if all of these conditions are met:
 - `<major>` == `<req_major>`
@@ -132,6 +132,8 @@ An installed dependency fulfills the version requirement if all of these conditi
     - `<minor>` == `<req_minor>`
 - *if `<major>` > 0:*
     - `<minor>` >= `<req_minor>`
+
+*This is the standard version requirement definition under [semantic versioning](https://semver.org).*
 
 If an installed dependency datapack does not fulfill the version requirement, the dependency is considered unfulfilled.
 
