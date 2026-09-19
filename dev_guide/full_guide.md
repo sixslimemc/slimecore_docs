@@ -133,7 +133,7 @@ An installed dependency fulfills the version requirement if all of these conditi
 - *if `<major>` == 0:*
     - `<minor>` == `<req_minor>`
 
-*This is the standard version requirement definition under [semantic versioning](https://semver.org).*
+*This is a standard version requirement definition under [semantic versioning](https://semver.org).*
 
 If an installed dependency datapack does not fulfill the version requirement, the dependency is considered unfulfilled.
 
