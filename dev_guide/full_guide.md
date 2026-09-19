@@ -235,7 +235,7 @@ Whether or not your datapack is a library.
 
 A library is a datapack that is intended to be used as a dependency and does not provide any meaningful behavior on its own.
 
-Like [`display`](#display), this value is not used by SlimeCore itself but may be used externally.
+Like [`display`](#display), this value is not used by SlimeCore itself but may be used and/or interpreted externally.
 
 ### `dependencies`
 
