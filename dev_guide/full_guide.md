@@ -221,9 +221,9 @@ The numerical [SemVer](https://semver.org) version of your datapack.
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `major` | int | Major version. |
-| `minor` | int | Minor version. |
-| `patch` | int | Patch version. |
+| `major` | int 0.. | Major version. |
+| `minor` | int 0.. | Minor version. |
+| `patch` | int 0.. | Patch version. |
 
 **Example:** `{major:1, minor:2, patch:3}`
 
