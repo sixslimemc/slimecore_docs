@@ -170,16 +170,30 @@ Manifests have the following components:
 - [`url`](#url)
 - [`loader_version`](#loader_version)
 
-Here is a minimal manifest function template:
+Here is a manifest function template:
 
 ```mcfunction
+
+# identity:
 data modify storage slimecore:in manifest.pack.pack_id set value "PACK_ID"
 data modify storage slimecore:in manifest.pack.author_id set value "AUTHOR_ID"
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
 data modify storage slimecore:in manifest.pack.is_library set value false
 
+# dependencies:
 data modify storage slimecore:in manifest.pack.dependencies set value []
+# data modify storage slimecore:in manifest.pack.dependencies append value { \
+    pack_id: "DEPENDENCY_PACK_ID", \
+    author_id: "DEPENDENCY_AUTHOR_ID", \
+    optional: false, \
+    version: {major:1, minor:0}, \
+    download: { \
+        version: {major:1, minor:0, patch:0}, \
+        url:"DEPENDENCY_DOWNLOAD_URL" \
+    } \
+}
 
+# entrypoints:
 data modify storage slimecore:in manifest.pack.entrypoints set value []
 data modify storage slimecore:in manifest.pack.preload_entrypoints set value []
 
@@ -224,8 +238,6 @@ The version of your datapack--should adhere to [semantic versioning](https://sem
 | `major` | int | Major version. |
 | `minor` | int | Minor version. |
 | `patch` | int | Patch version. |
-
-**Example:** `{major:1, minor:2, patch:3}`
 
 ### `is_library`
 
