@@ -205,9 +205,9 @@ function slimecore:api/manifest
 
 **Type:** `string`
 
-Must exactly match your datapack's [pack ID](#pack-id).
+**Example:** `foo`
 
-**Example Value:** `foo`
+Must exactly match your datapack's [pack ID](#pack-id).
 
 ### `author_id`
 
