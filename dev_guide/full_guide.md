@@ -231,7 +231,9 @@ The version of your datapack--should adhere to [semantic versioning](https://sem
 
 **Type:** `boolean`
 
-Whether or not your datapack is a library. This value is not used by SlimeCore itself but may be used externally (similar to [`display`](#display)).
+Whether or not your datapack is a library.
+
+This value is not used by SlimeCore itself but may be used externally (similar to [`display`](#display)).
 
 A library is a datapack that is intended to be used as a dependency and does not provide any meaningful behavior on its own.
 
@@ -307,7 +309,9 @@ Each element must have the following keys:
 
 **Type:** `struct`
 
-Specifies your datapack's display information and URLs. This value is not used by SlimeCore itself but may be used externally (i.e. by frontends and such to present your datapack nicely).
+Specifies your datapack's display information and URLs.
+
+This value is not used by SlimeCore itself but may be used externally (i.e. by frontends and such to present your datapack nicely).
 
 | Key | Type | Description | Default Value |
 | :-- | :-- | :-- | :-- |
