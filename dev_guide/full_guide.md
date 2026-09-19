@@ -122,7 +122,7 @@ SlimeCore ensures that all required dependencies are installed/enabled and that 
 
 Dependencies are declared in a datapack's [manifest](#the-manifest).
 
-### Versioning
+### Version Requirements
 
 All SlimeCore-loaded datapacks have a [version](#version), `<major>.<minor>.<patch>`. When declaring a dependency, a version requirement (`<req_major>.<req_minor>`) must be specified with it.
 
