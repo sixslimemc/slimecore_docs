@@ -262,7 +262,7 @@ Each element must have the following keys:
 
 Declares your datapack's [entrypoints](#entrypoints)--each element represents one entrypoint.
 
-In addition to respecting explicit `before`/`after` ordering, entrypoints will always be called in the order that they are specified in this list.
+Entrypoints will always be called in the order that they are specified in this list, as well as respect explicit `before`/`after` ordering (see below).
 
 Each element must have the following keys:
 
