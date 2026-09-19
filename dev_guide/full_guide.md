@@ -205,15 +205,17 @@ function slimecore:api/manifest
 
 **Type:** `string`
 
-**Example:** `foo`
-
 Must exactly match your datapack's [pack ID](#pack-id).
+
+**Example:** `foo`
 
 ### `author_id`
 
 **Type:** `string`
 
 An arbitrary identifier that represents you as a datapack author. *See [ID Naming](#author-ids).*
+
+**Example:** `bar`
 
 ### `version`
 
