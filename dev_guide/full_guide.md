@@ -233,7 +233,7 @@ The version of your datapack--should adhere to [semantic versioning](https://sem
 
 Whether or not your datapack is a library.
 
-A library is a datapack that is intended to be used *exclusively* as a dependency of other datapacks and does not provide any meaningful behavior on its own.
+A library is a datapack that is intended to be used *exclusively* as a dependency and does not provide any meaningful behavior on its own.
 
 Like [`display`](#display), this value is not used by SlimeCore itself but may be used externally.
 
