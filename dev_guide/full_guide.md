@@ -207,6 +207,8 @@ function slimecore:api/manifest
 
 Must exactly match your datapack's [pack ID](#pack-id).
 
+**Example Value:** `foo`
+
 ### `author_id`
 
 **Type:** `string`
