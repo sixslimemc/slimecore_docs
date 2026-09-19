@@ -116,7 +116,7 @@ Contract declarations/satisfactions are declared in a datapack's [manifest](#the
 
 ## Dependencies
 
-Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack references or uses **any** resource/feature of another SlimeCore-loaded datapack, it must be declared as a dependency.
+Your datapack can declare that it requires and/or optionally supports other SlimeCore-loaded datapacks. These required/supported datapacks are **dependencies** of your datapack. If your datapack uses **any** resources/functionality of another SlimeCore-loaded datapack, it must be declared as a dependency.
 
 SlimeCore ensures that all dependencies are loaded **before** your datapack, and that all required dependencies are installed and of compatible version (see below) before your datapack loads at all.
 
