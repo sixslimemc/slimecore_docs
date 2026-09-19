@@ -182,16 +182,6 @@ data modify storage slimecore:in manifest.pack.is_library set value false
 
 # dependencies:
 data modify storage slimecore:in manifest.pack.dependencies set value []
-# data modify storage slimecore:in manifest.pack.dependencies append value { \
-    pack_id: "DEPENDENCY_PACK_ID", \
-    author_id: "DEPENDENCY_AUTHOR_ID", \
-    optional: false, \
-    version: {major:1, minor:0}, \
-    download: { \
-        version: {major:1, minor:0, patch:0}, \
-        url:"DEPENDENCY_DOWNLOAD_URL" \
-    } \
-}
 
 # entrypoints:
 data modify storage slimecore:in manifest.pack.entrypoints set value []
