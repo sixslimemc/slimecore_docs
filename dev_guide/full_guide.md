@@ -124,7 +124,7 @@ Dependencies are declared in a datapack's [manifest](#the-manifest).
 
 ### Versioning
 
-All SlimeCore-loaded datapacks have a [version](#version), `<major>.<minor>.<patch>`. When declaring a dependency, a **version requirement** (`<req_major>.<req_minor>`) must be specified with it.
+All SlimeCore-loaded datapacks have a [version](#version), `<major>.<minor>.<patch>`. When declaring a dependency, a version requirement (`<req_major>.<req_minor>`) must be specified with it.
 
 An installed dependency fulfills the version requirement if all of these conditions are met:
 - `<major>` == `<req_major>`
