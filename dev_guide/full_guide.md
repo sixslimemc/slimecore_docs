@@ -170,7 +170,7 @@ Manifests have the following components:
 - [`url`](#url)
 - [`loader_version`](#loader_version)
 
-Here is a manifest function template:
+Here is a minimal manifest function template:
 
 ```mcfunction
 
@@ -180,10 +180,8 @@ data modify storage slimecore:in manifest.pack.author_id set value "AUTHOR_ID"
 data modify storage slimecore:in manifest.pack.version set value {major:1, minor:0, patch:0}
 data modify storage slimecore:in manifest.pack.is_library set value false
 
-# dependencies:
 data modify storage slimecore:in manifest.pack.dependencies set value []
 
-# entrypoints:
 data modify storage slimecore:in manifest.pack.entrypoints set value []
 data modify storage slimecore:in manifest.pack.preload_entrypoints set value []
 
