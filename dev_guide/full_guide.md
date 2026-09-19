@@ -130,7 +130,7 @@ An installed dependency fulfills the version requirement if all of these conditi
 - `<major>` == `<req_major>`
 - *if `<major>` == 0:*
     - `<minor>` == `<req_minor>`
-- *otherwise:*
+- *if `<major>` > 0:*
     - `<minor>` >= `<req_minor>`
 
 *This is the standard version requirement definition under [semantic versioning](https://semver.org).*
