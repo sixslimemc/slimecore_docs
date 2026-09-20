@@ -102,11 +102,11 @@ Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ## Contracts
 
-Contracts exist purely as manifest data; when a datapack in a given build *declares* a contract, exactly one other datapack in the same build must *satisfy* it in order for the build to be valid. A datapack can declare and/or satisfy any number of contracts.
+Contracts exist purely as manifest data; if a datapack in a given [build](../admin_guide/key_concepts.md#rebuilding) *declares* a contract, exactly one other datapack in the same build must *satisfy* the contract order for the build to be valid. A datapack can declare and/or satisfy any number of contracts.
 
-Practically speaking, contracts represent some documented "terms" that are not satisfied by default, that other datapacks can "agree" to satisfy. You declare a contract in your datapack's manifest, describe the terms of the contract in your datapack's documentation, then any other datapack author can read and implement said terms in their datapack, specifying that they satisfy your contract in their datapack's manifest. It is the responsibility of the developer(s) to actually make sure the terms of the contract are properly described/implemented, the contract itself is just a tool to represent such. 
+Practically speaking, contracts represent some documented "terms"--that are not satisfied by default--that any other datapack can "agree" to satisfy. You declare a contract in your datapack's manifest, describe the terms of the contract in your datapack's documentation, then any other datapack author can read and implement said terms in their datapack, specifying that they satisfy your contract in their datapack's manifest. It is the responsibility of the author(s) to actually make sure the terms of the contract are properly described/implemented, the contract itself is just a tool to represent such terms. 
 
-The primary purpose of contracts is to allow datapacks to enforce external *delegation* of behavior/implementation--similar in concept to an abstract method in programming. A contract does not "care" which datapack satisfies it; only that there exists exactly one datapack in the same build that does.
+The primary purpose of contracts is to support *delegation* of behavior/implementation--similar in concept to an abstract method in programming. A datapack is able to provide some API over an unimplemented behavior that must be implemented by another datapack; contracts provide a way to enforce that the unimplemented behavior is implemented by exactly one other datapack. A contract does not "care" which datapack satisfies it; only that there exists exactly one datapack in the same build that does.
 
 Contract declarations/satisfactions are declared in a datapack's [manifest](#the-manifest).
 
