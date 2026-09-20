@@ -25,7 +25,7 @@ In general, if you can choose the name of an in-game identifier, it should be na
 
 ## Public and Private Resources
 
-Datapacks should make it clear in their structure and/or documentation which resources are meant to be accessible by other datapacks and which ones are not.
+Datapacks should make it clear in their structure and documentation which resources are meant to be accessible by other datapacks and which ones are not.
 
 For resources that are files, a simple and effective approach is to have a consistently-named directory in each registry that exclusively contains all private resources of that registry (e.g. `<registry>/private/...` or `<registry>/_/...`).
 
