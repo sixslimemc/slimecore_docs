@@ -332,9 +332,9 @@ This value is not used by SlimeCore itself but may be used externally (e.g. by f
 
 **Type:** `URL string`
 
-A direct download/source URL to the exact version of this datapack as a .zip file. The downloaded .zip file should *be* the datapack (it should work correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted). The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
+A direct download/source URL to the exact version of this datapack as a .zip file. The downloaded .zip file should *be* the datapack (it should work correctly if put in a world's `datapacks/` folder directly; it should not have to be extracted). The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
 
-Opening this URL in a browser should immediately download the .zip file, there should be no required user input or timers. While discouraged, this URL may contain one redirect; however redirect chains (more than one redirect) are forbidden.
+Opening this URL in a browser should immediately download the .zip file, there should be no required user input or timers, and redirects are discouraged.
 
 *It is acknowledged that providing a valid value for `url` requires the foresight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-field).*
 
