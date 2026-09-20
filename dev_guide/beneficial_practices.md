@@ -21,7 +21,7 @@ Examples of effective namespacing within a datapack:
 - Only using entity tags that start with `<pack id>.` (e.g. `foo.my_tag`).
 - Only adding data to the `minecraft:custom_data` component at paths that start with `<pack id>.` (e.g. `{'minecraft:custom_data':{foo:{my_key:"value"}}}`).
 
-In general, if you can choose the name of a technical identifier, it should be namespaced.
+In general, if you can choose the name of an in-game identifier, it should be namespaced.
 
 ## Public and Private Resources
 
