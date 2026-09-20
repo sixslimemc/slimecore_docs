@@ -396,11 +396,11 @@ Generally, author IDs **SHOULD**:
 
 ### Manifest IDs
 
-Entrypoint, preload entrypoint, and abstract interface IDs **MUST**:
+Manifest IDs (entrypoint, preload entrypoint, and contract IDs) **MUST**:
 - be 1-32 characters long.
 - only contain lowercase letters, numbers, and `_`.
 
-Generally, these IDs **SHOULD**:
+Generally, manifest IDs **SHOULD**:
 - be at least 3 characters long.
 - use `_` to represent spaces.
 - be reasonably descriptive.
