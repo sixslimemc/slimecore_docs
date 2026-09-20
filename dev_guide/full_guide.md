@@ -101,7 +101,7 @@ Preload entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ## Contracts
 
-Contracts exist purely in manifest data and are *declared* by one datapack, and must be *satisfied* by exactly one other datapack in the same build. A datapack can declare and/or satisfy any number of contracts.
+Contracts exist purely in manifest data, and when *declared* by one datapack, must be *satisfied* by exactly one other datapack in the same build. A datapack can declare and/or satisfy any number of contracts.
 
 Practically speaking, contracts represent some documented "terms" that are not satisfied by default, that other datapacks can "agree" to satisfy. You declare a contract in your datapack's manifest, describe the terms of the contract in your datapack's documentation, then any other datapack author can read and implement said terms in their datapack, specifying that they satisfy your contract in their datapack's manifest. It is the responsibility of the developer(s) to actually make sure the terms of the contract are properly described/implemented, the contract itself is just a tool to represent such. 
 
@@ -262,7 +262,7 @@ Each element must have the following keys:
 
 Declares your datapack's [entrypoints](#entrypoints)--each element represents one entrypoint.
 
-Entrypoints will always be called in the order that they are specified in this list, as well as respect explicit `before`/`after` ordering (see below).
+Entrypoints will always be called in the order that they are specified in this list in addition to respecting explicit `before`/`after` ordering (see below).
 
 Each element must have the following keys:
 
