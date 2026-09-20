@@ -367,11 +367,11 @@ Pack IDs **MUST**:
 - be a valid datapack [namespace](https://minecraft.wiki/w/Identifier#Namespaces).
 - be 1-64 characters long.
 - only contain lowercase letters, numbers, `_`, and `-`.
-- not start or end with `_` or `-`.
 - not be `minecraft` or `slimecore`.
 
 Pack IDs **SHOULD**:
 - be 3-32 characters long.
+- not start or end with `_` or `-`.
 - use `-` as a module separator. \
 (e.g. `foo-bar` and `foo-baz` are modules of group `foo`.)
 - *if for a non-[library](#is_library) datapack:*
