@@ -370,7 +370,7 @@ Pack IDs **MUST**:
 - not start with `_` or `-`.
 - not be `minecraft` or `slimecore`.
 
-Generally, pack IDs **SHOULD**:
+Pack IDs **SHOULD**:
 - be 3-32 characters long.
 - use `-` as a module separator. \
 (e.g. `foo-bar` and `foo-baz` are modules of group `foo`.)
@@ -390,7 +390,7 @@ Author IDs **MUST**:
 - be 1-64 characters long.
 - only contain lowercase letters, numbers, and `_`.
 
-Generally, author IDs **SHOULD**:
+Author IDs **SHOULD**:
 - match your (lowercased) name on your primary authoring platform (GitHub, Modrinth, etc.) or in-game name.
 - stay consistent between your authored datapacks.
 
@@ -400,12 +400,12 @@ Manifest IDs (entrypoints, preload entrypoints, contracts) **MUST**:
 - be 1-32 characters long.
 - only contain lowercase letters, numbers, and `_`.
 
-Generally, manifest IDs **SHOULD**:
+Manifest IDs **SHOULD**:
 - be at least 3 characters long.
 - use `_` to represent spaces.
 - be reasonably descriptive.
 - not be shared between components. \
-(e.g. a pack should not declare a preload entrypoint and entrypoint with the same ID)
+(e.g. a pack should not declare a preload entrypoint and entrypoint with the same ID.)
 
 ---
 
