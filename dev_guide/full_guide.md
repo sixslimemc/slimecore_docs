@@ -334,7 +334,7 @@ This value is not used by SlimeCore itself but may be used externally (e.g. by f
 
 A direct download/source URL to the exact version of this datapack as a .zip file. The downloaded .zip file should *be* the datapack (it should work correctly if put in a world's `datapacks/` folder directly; it should not have to be extracted). The name of the downloaded .zip should follow [standard datapack naming](#standard-datapack-naming).
 
-Opening this URL in a browser should immediately download the .zip file; the URL must not require user input or timers, and redirects are highly discouraged.
+Opening this URL in a browser should immediately download the .zip file, it must not require user input or timers. While not strictly forbidden, redirects are discouraged.
 
 *It is acknowledged that providing a valid value for `url` requires the foresight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-field).*
 
@@ -378,7 +378,7 @@ Generally, pack IDs **SHOULD**:
     - use `_` conservatively.
     - be easy-to-type and unique. \
     (e.g. `herobrinesmathlibrary` is not easy to type, `math` is too generic, `brinemath` is easy to type and reasonably unique.)
-- *if for a non-[library](#is_library)/content datapack:*
+- *if for a non-[library](#is_library) datapack:*
     - be at least 6 characters long.
     - use `_` to represent spaces.
     - be reasonably descriptive. \
@@ -390,7 +390,7 @@ Author IDs **MUST**:
 - be 1-64 characters long.
 - only contain lowercase letters, numbers, and `_`.
 
-Generally, author IDs **SHOULD**
+Generally, author IDs **SHOULD**:
 - match your (lowercased) name on your primary authoring platform (GitHub, Modrinth, etc.) or in-game name.
 - stay consistent between your authored datapacks.
 
