@@ -405,7 +405,7 @@ Generally, manifest IDs **SHOULD**:
 - use `_` to represent spaces.
 - be reasonably descriptive.
 - not be shared between elements of different types. \
-(e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
+(e.g. a pack should not declare a preload entrypoint and entrypoint with the same ID)
 
 ---
 
