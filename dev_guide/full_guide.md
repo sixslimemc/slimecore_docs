@@ -404,7 +404,7 @@ Generally, manifest IDs **SHOULD**:
 - be at least 3 characters long.
 - use `_` to represent spaces.
 - be reasonably descriptive.
-- not be shared between elements of different types. \
+- not be shared between components. \
 (e.g. a pack should not declare a preload entrypoint and entrypoint with the same ID)
 
 ---
