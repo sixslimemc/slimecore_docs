@@ -13,7 +13,7 @@ This page contains tips, guidelines, and practices that are not strictly defined
 
 ## Namespacing
 
-Because SlimeCore essentially guarantees that a datapack's pack ID is unique within the world it is installed in, pack IDs can be used to **namespace** (i.e. prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.) in a similar fashion to how a datapack's files/resources are inherently namespaced by its pack ID. This greatly reduces the chance of naming conflicts across datapacks.
+Because SlimeCore essentially guarantees that a datapack's pack ID is unique within the world it is installed in, pack IDs can be used to **namespace** (i.e. prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.) in a similar fashion to how a datapack's files/resources are already inherently namespaced by its pack ID. This greatly reduces the chance of naming conflicts across datapacks.
 
 Examples of effective namespacing within a datapack:
 - Only using NBT storage locations that start with `<pack id>:` (e.g. `foo:my_data`).
