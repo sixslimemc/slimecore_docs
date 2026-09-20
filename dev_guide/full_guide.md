@@ -90,7 +90,7 @@ A key advantage of entrypoints is that they can be explicitly ordered against [d
 Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 *From [ID Naming](#id-naming):*
-> If your pack has exactly one entrypoint, acting as a general substitute for `#minecraft:tick`, it is advised to make that entrypoint's ID `main`.
+> If your pack has exactly one entrypoint, a general substitute for `#minecraft:tick`, it is advised to make that entrypoint's ID `main`.
 
 ### Preload Entrypoints
 
