@@ -85,12 +85,12 @@ Entrypoints are function tags matching the format `#<pack id>/entrypoint/<entryp
 
 While any arbitrary work can be done with entrypoints, their primary purpose is to replace `#minecraft:tick`; this can be done via schedule loops (functions that `/schedule` themselves). Defining a single entrypoint is likely sufficient for most datapacks and is recommended when just starting, but do note the benefits of defining multiple entrypoints, highlighted in [this section](./beneficial_practices.md#entrypoint-separation).
 
-From [ID Naming](#id-naming):
-> If your pack has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
-
 A key advantage of entrypoints is that they can be explicitly ordered against [dependencies'](#dependencies) entrypoints. For instance, if datapack X defines entrypoint `foo`, and depends on datapack Y, which defines entrypoint `bar`: datapack X can specify `foo` to run explicitly before/after `bar`. If both `foo` and `bar` start schedule loops, `foo`'s body will always run before/after `bar`'s body on any given tick.
 
 Entrypoints are declared in a datapack's [manifest](#the-manifest).
+
+*From [ID Naming](#id-naming):*
+> If your pack has exactly one [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
 
 ### Preload Entrypoints
 
@@ -150,8 +150,6 @@ execute if data storage slimecore:data build.packs[{pack_id:"foo", author_id:"ba
 # alternatively:
 execute if data storage slimecore:data build.aux.installed_map.foo{author_id:"bar"}
 ```
-
-
 
 ## The Manifest
 
@@ -412,7 +410,7 @@ Generally, these IDs **SHOULD**:
 - not be shared between elements of different types. \
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
 
-If your pack has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
+If your pack has exactly one [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
 
 ---
 
