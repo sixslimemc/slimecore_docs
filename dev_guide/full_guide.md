@@ -85,13 +85,16 @@ Entrypoints are function tags matching the format `#<pack id>/entrypoint/<entryp
 
 While any arbitrary work can be done with entrypoints, their primary purpose is to replace `#minecraft:tick`; this can be done via schedule loops (functions that `/schedule` themselves). Defining a single entrypoint is likely sufficient for most datapacks and is recommended when just starting, but do note the benefits of defining multiple entrypoints, highlighted in [this section](./beneficial_practices.md#entrypoint-separation).
 
+From [ID Naming](#id-naming):
+> If your pack has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
+
 A key advantage of entrypoints is that they can be explicitly ordered against [dependencies'](#dependencies) entrypoints. For instance, if datapack X defines entrypoint `foo`, and depends on datapack Y, which defines entrypoint `bar`: datapack X can specify `foo` to run explicitly before/after `bar`. If both `foo` and `bar` start schedule loops, `foo`'s body will always run before/after `bar`'s body on any given tick.
 
 Entrypoints are declared in a datapack's [manifest](#the-manifest).
 
 ### Preload Entrypoints
 
-Preload entrypoints are function tags matching the format `#<pack id>/preload_entrypoint/<preload entrypoint id>` and are similar to entrypoints, but are called before *any* datapacks' [load tag](#load-tag) is called (including their parent datapack's). They should generally be reserved for advanced/technical work that cannot be achieved via regular entrypoints.
+Preload entrypoints are function tags matching the format `#<pack id>/preload_entrypoint/<preload entrypoint id>` and are similar to entrypoints, but are called before *any* datapacks' [load tag](#load-tag) is called (including their parent datapack's). They should generally be reserved for advanced/technical work that cannot be done via regular entrypoints.
 
 Similarly to entrypoints, preload entrypoints can be explicitly ordered against dependencies' preload entrypoints.
 
@@ -320,7 +323,7 @@ This value is not used by SlimeCore itself but may be used externally (e.g. by f
 | `summary` | `string` | 1-2 sentence-length summary/description of your datapack. Ideally, should match `pack.description` of your datapack's `pack.mcmeta` file. | *(required)* |
 | `links` | `struct` | *(See below)* | *(none)* |
 
-`name`, `author_name`, and `summary` should not contain any escape sequences such as `/n` or `/t`.
+`name`, `author_name`, and `summary` should not contain any escape sequences such as `\n` or `\t`.
 
 `links` is optional and can contain the following optional keys:
 
@@ -409,7 +412,7 @@ Generally, these IDs **SHOULD**:
 - not be shared between elements of different types. \
 (e.g. you should not declare a preload entrypoint and entrypoint with the same IDs)
 
-If your pack only has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, its ID **SHOULD** be `main`.
+If your pack has a single [entrypoint](#entrypoints) that acts as a general substitute for `#minecraft:tick`, it is advised to make its ID `main`.
 
 ---
 
