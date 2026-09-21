@@ -56,7 +56,7 @@ For example, imagine a datapack with pack ID `foo` that adds a new mob with a cu
 
 ## Entrypoint Separation
 
-As stated in [Entrypoints](./full_guide.md#entrypoints), definining a single entrypoint is likely sufficient for your datapack to function on its own. However, it may be beneficial to other datapacks that seek to integrate with or extend your datapack to define multiple entrypoints.
+As stated in [Entrypoints](./full_guide.md#entrypoints), definining a single entrypoint is likely sufficient for your datapack to function on its own, however, it may be beneficial to other datapacks that seek to integrate with or extend your datapack to define multiple entrypoints.
 
 Specifically, defining multiple entrypoints can allow datapacks that may depend on yours to have more fine-grained control over when their entrypoint work is executed relative to yours. This is particularly applicable if your datapack does multiple conceptually independent chunks of work in its tick loop.
 
