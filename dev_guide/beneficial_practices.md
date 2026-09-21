@@ -58,7 +58,7 @@ For example, imagine a datapack with pack ID `foo` that adds a new mob with a cu
 
 As mentioned in [Entrypoints](./full_guide.md#entrypoints), definining a single entrypoint is likely sufficient for your datapack to function on its own, however, it may benefit other datapacks that depend on yours to split work into multiple entrypoints. Specifically, it can allow dependent datapacks to have more fine-grained control over when their entrypoint work is executed relative to your datapack's. This is particularly applicable if your datapack performs multiple conceptually independent chunks of work in its tick loop.
 
-To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob every tick, and also runs a tick loop on all instances of the custom mob for behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from each other. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoints in-between `convert` and `behavior`--for whatever reason they may have--instead only having the option to order their entrypoints before or after the single entrypoint that does the work of both.
+To provide a practical example, imagine a datapack that converts all zombies and skeletons into some custom mob every tick, and also runs a tick loop on all instances of the custom mob for behavior. While both of these things *can* be implemented in a single looping entrypoint, they are conceptually and functionally independent from each other. In this case, it would be a good idea to create 2 entrypoints, one for the conversion (e.g. ID `convert`), and the other for the behavior loop (e.g. ID `behavior`). Along with adding general clarity, having 2 entrypoints allows other datapacks to order their own entrypoints in-between `convert` and `behavior`--for whatever reason they may have--instead only having the option to order their entrypoints before or after a single entrypoint that does the work of both.
 
 ## Defining Contracts
 
@@ -100,13 +100,13 @@ It is an implicit goal of SlimeCore to make [libraries](./full_guide.md#is_libra
 
 ### Library Usage
 
-Your datapack **should** use a given library if:
+Your datapack **should** use a given library if all of the following are true:
 - You would use all or most of the library's features.
 - You would use the library to implement important elements of your datapack.
 - You cannot or are not willing to implement the library's features yourself.
 
-Your datapack **should not** use a given library if:
-- The library provides much more than what you need and you can implement or find the needed functionality some other way.
+Your datapack **should not** use a given library if any of the following are true:
+- The library provides significantly more than what you need, and you can implement the needed functionality via other means.
 - Using the library would incur a significant and unnecessary performance/lag cost to the user's world.
 
 In non-obvious cases, consider:
