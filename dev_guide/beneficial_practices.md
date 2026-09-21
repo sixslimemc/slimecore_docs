@@ -48,9 +48,9 @@ A simple and effective approach for implementing configuration is to use an NBT 
 
 ## Hooks
 
-One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are *empty* function tags that your datapack defines and allows other datapacks to *append to* (subscribe to), but doesn't allow them to *call*--only your datapack can call its own hooks (enforced via documentation). Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow the other datapacks to modify them.
+One way to increase the extensibility of your datapack (if desired) is to include what this guide refers to as **hooks**. Hooks are empty function tags that your datapack defines and allows other datapacks to append to (subscribe to), but doesn't allow them to call--only your datapack can call its own hooks (enforced via documentation). Practically, the primary use of hooks is to notify other datapacks of actions/events that happen in your datapack and/or allow other datapack to modify them.
 
-Conceptually, both hooks and [contracts](./full_guide.md#contracts) allow for arbitrary datapack integration, however, the key difference is that hooks provide the *option for any amount* of datapacks to extend behavior, while contracts *require exactly one* datapack to implement a behavior.
+Both hooks and [contracts](./full_guide.md#contracts) allow for arbitrary datapack integration, however, the key difference is that hooks provide the option for *any amount* of datapacks to extend behavior, while contracts require *exactly one* datapack to implement a behavior.
 
 For example, imagine a datapack with pack ID `foo` that adds a new mob with a custom projectile attack. For increased extensibility, it may be reasonable to define two hooks that are called when the mob attacks--one just before and one just after the attack (e.g. `#foo:hook/my_mob/pre_attack` and `#foo:hook/my_mob/post_attack`). The pre-attack hook could provide *modifiable* input (e.g. via NBT storage location `foo:hook`) that specifies and modifies (if changed) the properties of the attack, while the post-attack hook could provide *read-only* input that contains the final properties of the attack.
 
