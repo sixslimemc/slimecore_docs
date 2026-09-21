@@ -78,7 +78,7 @@ Tying it all together now: because DeathDef defines a contract, SlimeCore requir
 
 Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for a contract. For cases where you want to allow *any amount* of external datapacks to provide extension or receive notification of an internal event, [hooks](#hooks) are better suited. 
 
-Additionally, in most cases where you create a datapack that declares contract(s), you should also create datapack(s) that are "default" or "standard" satisfiers and reference them in the declaring datapack's documentation. This is so that, if the user installs a datapack that depends on the declaring datapack (for its other features) but the dependent datapack does not satisfy the contract(s), users have default satisfier(s) easily accessible. *For DeathDef, this default satisfier is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
+Additionally, in most cases where you create a datapack that declares contract(s), you should also create datapack(s) that are "default" or "standard" satisfiers and reference them in the declaring datapack's documentation. This is so that, if the user installs a datapack that depends on the declaring datapack but the does not satisfy its contract(s), users can install default satisfier(s) without needing to search. *For DeathDef, this default satisfier is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
 
 ## Modularization
 
