@@ -2,7 +2,7 @@
 
 This page contains tips, guidelines, and practices that are not strictly defined or required by SlimeCore, but may be generally beneficial to know and/or implement when developing SlimeCore-loaded datapacks.
 
-- [Namespacing](#namespacing)
+- [Pack ID Prefixing (Namespacing)](#pack-id-prefixing-namespacing)
 - [Public and Private Resources](#public-and-private-resources)
 - [Configuration](#configuration)
 - [Hooks](#hooks)
@@ -11,17 +11,17 @@ This page contains tips, guidelines, and practices that are not strictly defined
 - [Modularization](#modularization)
 - [Library Discipline](#library-discipline)
 
-## Namespacing
+## Pack ID Prefixing (Namespacing)
 
-Because SlimeCore essentially guarantees that a datapack's pack ID is unique within the world it is installed in, pack IDs can be used to **namespace** (i.e. prefix) the names/identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.) similarly to how a datapack's files/resources are already inherently namespaced by its pack ID. This greatly reduces the chance of artifact naming conflicts across datapacks.
+Because SlimeCore essentially guarantees that a datapack's pack ID is unique within the world it is installed in, pack IDs can be used to prefix the identifiers of in-game artifacts defined by datapacks (NBT storage data, scoreboard objectives, entity tags, etc.) similarly to how a datapack's file resources are already inherently prefixed/namespaced by its pack ID. This greatly reduces the chance of artifact naming conflicts across datapacks.
 
-Examples of effective namespacing within a datapack:
+Examples of effective pack ID prefixing within a datapack:
 - Only using NBT storage locations that start with `<pack id>:` (e.g. `foo:my_data`).
 - Only creating scoreboard objectives that start with `<pack id>.` (e.g. `foo.my_var`).
 - Only using entity tags that start with `<pack id>.` (e.g. `foo.my_tag`).
 - Only adding data to the `minecraft:custom_data` component at paths that start with `<pack id>.` (e.g. `{'minecraft:custom_data':{foo:{my_key:"value"}}}`).
 
-In general, if you can choose the name of an in-game identifier, it should be namespaced.
+In general, if you can choose the name of an in-game identifier, it should be prefixed.
 
 ## Public and Private Resources
 
