@@ -62,27 +62,23 @@ To provide a practical example, imagine a datapack that converts all zombies and
 
 ## Defining Contracts
 
-From [Contracts](./full_guide.md#abstract-interfaces):
+While it is likely that [Contracts](./full_guide.md#abstract-interfaces) are not applicable to most datapacks, is it worth knowing when they can be useful, as well as how to go about designing an API around them when used. 
 
-> Contracts represent "contracts" that are declared by one datapack, and must be fulfilled/implemented by another. The terms of said "contracts" are to be documented/explained by the author of the declaring datapack, abstract interfaces only *represent* them. Concretely, for every abstract interface that a datapack *declares*, **exactly one** other datapack must specify that it *implements* it.
-
-While it is likely that abstract interfaces are not applicable in most datapacks, it is worth knowing when they can be useful, as well as how to go about designing an API for them.
-
-Below is a simplified and focused dissection of the [DeathDef](https://github.com/sixslimemc/deathdef) datapack, which should provide a good example of an effective abstract interface.
+Below is a simplified and focused dissection of the [DeathDef](https://github.com/sixslimemc/deathdef) datapack, which should provide a good example of an effective contract.
 
 ### DeathDef Example
 
-[DeathDef](https://github.com/sixslimemc/deathdef) is a datapack that provides an API for custom player-death behavior. It does this by disabling default death behavior (dropping items/xp), detecting when a player dies, then passing the death information as input (location, items, xp, etc.) to an *unimplemented function*, `death`. It defines one abstract interface; it is documented by DeathDef that, a datapack should implement the interface (in their manifest) *if and only if* they provide an implementation for `death`--this is the "contract" of the interface.
+[DeathDef](https://github.com/sixslimemc/deathdef) is a datapack that provides an API for custom player-death behavior. It does this by disabling default death behavior (dropping items/xp), detecting when a player dies, then passing the death information as input (location, items, xp, etc.) to an *unimplemented function*, `death`, represented by a contract. It is documented by DeathDef that, a datapack should satisfy this contract (in their manifest) *if and only if* they provide an implementation for `death`--these are the "terms" of the contract.
 
-DeathDef does not care what happens when `death` is called; DeathDef just calls with the right inputs when the player dies. Conversely, the datapack that implements `death` only cares about making player-death behavior given the inputs; it does not need to worry about the details of death detection.
+DeathDef does not care what happens when `death` is called; DeathDef just calls it with the right inputs when the player dies. Conversely, the datapack that implements `death` only cares about making player-death behavior given the inputs; it does not need to worry about the details of death detection.
 
-Concretely, DeathDef stores death information in NBT storage location `deathdef:abstract/in` just before calling the function tag `#deathdef:abstract/death`. The datapack that implements `death` adds its own internal function to `#deathdef:abstract/death` and uses the data stored in `deathdef:abstract/in` to provide a proper implementation.
+Concretely, DeathDef stores death information in NBT storage location `deathdef:abstract/in` just before calling the function tag `#deathdef:abstract/death` ("abstract" references the concept of abstract methods in programming). The datapack that implements `death` adds its own internal function to `#deathdef:abstract/death` and uses the data stored in `deathdef:abstract/in` to provide a proper implementation.
 
-Tying it all together now: because DeathDef defines an abstract interface, SlimeCore requires that exactly one datapack is installed/enabled that implements it, and given that the documented contract of the interface is adhered to (implementing `death`), there will never be any cases where player death is not implemented, nor any cases where player death is implemented multiple times.
+Tying it all together now: because DeathDef defines a contract, SlimeCore requires that exactly one other datapack exists in the same build (installed/enabled) that satisfies it, and given that the documented terms of the contract is adhered to (implementing `death`), there will never be any cases where player death is not implemented, nor any cases where player death is implemented multiple times.
 
-Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for an abstract interface. For cases where you want to allow *any amount* of external datapacks to provide extension or receive notification of an internal event, [hooks](#hooks) are better suited. 
+Design wise, player death is something that should reasonably have exactly one implementation, thus is a good candidate for a contract. For cases where you want to allow *any amount* of external datapacks to provide extension or receive notification of an internal event, [hooks](#hooks) are better suited. 
 
-Additionally, in most cases where you create a datapack that declares abstract interface(s), you should also create datapack(s) that provide "default" or "standard" implementations and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not implement the abstract interface(s), users have default implementation(s) to fall back on. *For DeathDef, this default implementation is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
+Additionally, in most cases where you create a datapack that declares contract(s), you should also create datapack(s) that are "default" or "standard" satisfiers and reference them in the declaring datapack's documentation. This is so that, in the case that a datapack uses the declaring datapack as a dependency (for its other features) but does not satisfy the contract(s), users have default satisfier(s) to fall back on. *For DeathDef, this default satisfier is [DeathDefault](https://github.com/sixslimemc/deathdefault).*
 
 ## Modularization
 
