@@ -42,7 +42,7 @@ Some examples of likely easily configurable elements:
 - Behavior that can be toggled on/off.
 - Intensity of vfx/sfx.
 
-Importantly, if your datapack is configurable, it should install with sensible default configuration already set; configuration should be an *option* to the user, not a *responsibility*. It is also advised to include a function in your datapack that resets configuration back to default.
+Importantly, if your datapack is configurable, it should install with sensible default configuration already set; configuration should be an *option* to the user, not a *responsibility*. It is also advised to provide a function that resets configuration back to default.
 
 A simple and effective approach for implementing configuration is to use an NBT storage location (e.g. `<pack id>:config`) that users are allowed to directly modify. Store the default configuration values in that location when your datapack is first loaded, and have your feature implementations read the values from that location.
 
