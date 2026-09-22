@@ -23,8 +23,8 @@ Your datapack must only have one namespace where it defines **new** resources in
 *If a resource (registry file) would not exist without your datapack (e.g. block tag `#foo:my_blocks`), then it is considered new. If your datapack modifies/overwrites an existing resource (e.g. appending to block tag `#minecraft:infiniburn_overworld`), then it is **not** considered new.*
 
 If your existing datapack defines new resources in more than one namespace, you have the following options:
-- Move all newly defined resources into a single namespace--recommended if resources are tightly coupled.
-- Split your existing datapack into multiple datapacks--recommended if your namespaces function independently or have a one-way dependence flow.
+- Move all newly defined resources into a single namespace--recommended if resources are highly interdependent.
+- Split your existing datapack into multiple datapacks--recommended if your namespaces are mostly independent or have a one-way dependence flow.
 
 *If your pack ID just so happens to be `slimecore`, you must change it to something else.*
 
