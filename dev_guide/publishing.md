@@ -17,7 +17,7 @@ While not strictly required, it benefits the user to include the following in yo
 - The datapack's display name ([`display.name`](./full_guide.md#display) manifest key).
 - The datapack's ID in the format `<author id>.<pack id>`.
 - *If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks):*
-    - Its dependencies, their versions, and download/version links should be explicitly provided.
+    - The datapack's dependencies, their versions, and download/version links should be explicitly provided.
 
 Aside from that, how you present, distribute, and publish your datapack is entirely up to you.
 
