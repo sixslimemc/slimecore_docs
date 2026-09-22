@@ -11,7 +11,7 @@ This guide assumes:
 - Knowledge of SlimeCore's mechanisms *(See [Description](../description.md))*.
 - Knowledge of datapack management/administration with SlimeCore *(See [Admin Guide](../admin_guide/index.md))*.
 - You have access to a [frontend](../admin_guide/key_concepts.md#frontend-datapacks) datapack in your development world(s).
-- Intermediate general knowledge of commands and datapack development.
+- General intermediate-level knowledge of commands and datapack development.
 
 
 ## Quick Convert
