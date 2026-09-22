@@ -32,27 +32,27 @@ If your existing datapack defines new resources in more than one namespace, you 
 
 > If your existing datapack uses the [Lantern Load](https://GitHub.com/LanternMC/load) paradigm, read [this section](#migrate-from-lantern-load) instead.
 
-Move the contents of your datapack's `#minecraft:load` function tag to `#<pack ID>:load`.
+Move the contents of your datapack's `#minecraft:load` function tag to `#<pack id>:load`.
 
-Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack ID>:entrypoint/main`.
+Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack id>:entrypoint/main`.
 
-For each function specified in your pack's new `#<pack ID>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
+For each function specified in your pack's new `#<pack id>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
 
 *Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
 
-If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack ID>:load`, this behavior should be moved to execute in the scope of `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should be used exclusively for initialization work; it will be called before `#<pack ID>/entrypoint/main`.
+If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack id>:load`, this behavior should be moved to execute in the scope of `#<pack id>:entrypoint/main`. `#<pack id>:load` should be used exclusively for initialization work; it will be called before `#<pack id>/entrypoint/main`.
 
 ### Migrate From Lantern Load
 
 > Skip this section if your existing datapack does not use the [Lantern Load](https://GitHub.com/LanternMC/load) paradigm.
 
-If it exists, move the contents of your datapack's `#load:pre_load` function tag to `#<pack ID>:preload_entrypoint/pre_load`.
+If it exists, move the contents of your datapack's `#load:pre_load` function tag to `#<pack id>:preload_entrypoint/pre_load`.
 
-Move the contents of your datapack's `#load:load` function tag to `#<pack ID>:load`.
+Move the contents of your datapack's `#load:load` function tag to `#<pack id>:load`.
 
-Move any ticking/non-initialization behavior initiated by `#<pack ID>:load` to `#<pack ID>:entrypoint/main`. `#<pack ID>:load` should exclusively do initialization work and should not start any `/schedule` loops; it will be called before `#<pack ID>:entrypoint/main`.
+Move any ticking/non-initialization behavior initiated by `#<pack id>:load` to `#<pack id>:entrypoint/main`. `#<pack id>:load` should exclusively do initialization work and should not start any `/schedule` loops; it will be called before `#<pack id>:entrypoint/main`.
 
-If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack ID>:entrypoint/post_load`
+If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack id>:entrypoint/post_load`
 
 *If your datapack has dependencies and you are using Lantern load to check/manage them, it may be worth reading the [Full Guide](./full_guide.md) to effectively leverage the SlimeCore loading system.*
 
