@@ -82,7 +82,7 @@ Additionally, in most cases where you create a datapack that declares contract(s
 
 ## Modularization
 
-Without SlimeCore, it is a common practice to try and make monolithic "all-in-one" datapacks, reducing the responsibility that comes with dependencies and/or managing multiple datapacks for both the developer and the user. However, with SlimeCore, these responsibilities are greatly reduced, allowing more freedom to modularize functionality via multiple datapacks and/or depend on other datapacks without significant burden.
+Without SlimeCore, it is a common and sensible practice to try and make "all in one" datapacks that provide many features, reducing the responsibility that comes with dependencies and/or managing multiple datapacks for both the developer and the user. However, with SlimeCore, these responsibilities are greatly reduced, allowing more freedom to modularize via multiple datapacks and/or depend on other datapacks without significant burden.
 
 If your datapack includes multiple conceptually independent features (or sets of features), consider splitting it into **modules** that users can install and enable independently. Further, if said modules share some resources or implementation between them, consider making the shared elements into a **library** (or set of libraries) that your modules use as a dependency.
 
