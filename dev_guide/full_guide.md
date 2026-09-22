@@ -336,7 +336,7 @@ A direct download/source URL to the exact version of this datapack as a .zip fil
 
 Opening this URL in a browser should immediately download the .zip file, it must not require user input or timers. While not strictly forbidden, redirects are discouraged.
 
-*It is acknowledged that providing a valid value for `url` requires the foresight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-field).*
+*It is acknowledged that providing a valid value for `url` requires the foresight of knowing the direct download URL of your datapack before you actually release it for download. See [Publishing](./publishing.md#the-url-manifest-key).*
 
 ### `loader_version`
 

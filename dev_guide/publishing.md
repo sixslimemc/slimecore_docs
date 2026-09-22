@@ -3,14 +3,14 @@
 Guidelines and helpful information related to publishing.
 
 - [General Guidelines](#general-guidelines)
-- [The `url` Manifest Field](#the-url-manifest-field)
+- [The `url` Manifest Key](#the-url-manifest-key)
 - [The SlimeCore Badge](#the-slimecore-badge)
 - [Publishing With GitHub](#publishing-with-github)
 - [Publishing With Modrinth](#publishing-with-modrinth)
 
 ## General Guidelines
 
-SlimeCore supports a **decentralized** datapack publishing and distribution model, meaning you are free to use any service or method you'd like to publish and/or distribute your datapack, as long as you can provide a valid [`url`](#the-url-manifest-field) manifest field.
+SlimeCore supports a **decentralized** datapack publishing and distribution model, meaning you are free to use any service or method you'd like to publish and/or distribute your datapack, as long as you can provide a valid [`url`](#the-url-manifest-key) manifest key.
 
 While not strictly required, it benefits the user to include the following in your datapack's primary information/landing page:
 - The [SlimeCore badge](#the-slimecore-badge) or some indication that your datapack requires SlimeCore (and its required version).
@@ -23,11 +23,11 @@ Aside from that, how you present, distribute, and publish your datapack is entir
 
 *If using GitHub or Modrinth as publishing platforms, see their respective sections on this page ([GitHub](#publishing-with-github), [Modrinth](#publishing-with-modrinth)) for platform-specific guidelines.*
 
-## The `url` Manifest Field
+## The `url` Manifest Key
 
-*See [this section](./full_guide.md#url) for a general description of the `url` manifest field.*
+*See [this section](./full_guide.md#url) for a general description of the `url` manifest key.*
 
-Due to the nature of the `url` manifest field, you must know in advance what your datapack's direct download URL will be before actually releasing it for download at said URL. This is a known pain point of SlimeCore, however, providing a direct download link in-game greatly benefits the user and any datapack developer intending to use your datapack as a dependency.
+Due to the nature of the `url` manifest key, you must know in advance what your datapack's direct download URL will be before actually releasing it for download at said URL. This is a known pain point of SlimeCore, however, providing a direct download link in-game greatly benefits the user and any datapack developer intending to use your datapack as a dependency.
 
 If your primary publishing platform gives you control over the direct download URL (e.g. [GitHub](#publishing-with-github)), then setting `url` is mostly straightforward. If not, the following options are recommended:
 - Use a service other than your primary publishing platform to provide/mirror downloads. (e.g. Release primarily on Modrinth but use GitHub releases to provide download URLs).
@@ -37,7 +37,7 @@ If your primary publishing platform gives you control over the direct download U
 
 The SlimeCore badge is a simple markdown badge that is used to indicate that your datapack is SlimeCore-loaded, as well as the SlimeCore version required to load it.
 
-The version of the SlimeCore badge used should match the version specified by your datapack's `loader_version` manifest field. 
+The version of the SlimeCore badge used should match the version specified by your datapack's `loader_version` manifest key. 
 
 The badge can be copied-and-pasted from [here](../BADGE.md). \
 *The version of this badge will correspond to the SlimeCore version that these docs pertain to; see [releases](https://github.com/sixslimemc/slimecore_docs/releases) for all versions.*
@@ -71,9 +71,9 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 - The supported [pack format](https://minecraft.wiki/w/Pack_format) range should be indicated in release descriptions.
 
 #### Manifest Data
-- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`.
-- Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) manifest field should point to the repository's main page (`https://github.com/<username/org>/<repo>`).
-- The [`display.links.versions`](./full_guide.md#display) manifest field should point to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
+- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) key should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`.
+- Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) manifest key should point to the repository's main page (`https://github.com/<username/org>/<repo>`).
+- The [`display.links.versions`](./full_guide.md#display) manifest key should point to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
 
 #### Alternative `url` Values
 - If for whatever reason you do not use the release format specified [above](#releases), the general format of GitHub release direct download URLs are `https://github.com/<username/org>/<repo>/releases/download/<tag>/<file>`
