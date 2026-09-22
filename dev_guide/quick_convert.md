@@ -209,6 +209,6 @@ If you'd like to publish your datapack so others can use it, see the page on [Pu
 
 ## Going Forward
 
-If you plan on creating more SlimeCore-loaded datapacks, it is advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully leverage and understand SlimeCore's features.
+If you plan on creating more SlimeCore-loaded datapacks, it is advised that you read the [Full Guide](./full_guide.md) *before* starting development to fully leverage SlimeCore's features.
 
 ---
