@@ -122,15 +122,15 @@ Uncomment the preload entrypoints that your datapack defines (`#<pack ID>:preloa
 
 #### `display.name`
 
-Choose a display name for your datapack. Can be any string.
+Choose a display name for your datapack. Can be any string that does not include `\n` or `\t`.
 
 #### `display.summary`
 
-Choose a 1-2 sentence summary/description of your datapack. It is standard to make it match `pack.description` from your datapack's `pack.mcmeta` file.
+Choose a 1-2 sentence summary/description of your datapack. It is standard to make it match `pack.description` from your datapack's `pack.mcmeta` file. Can be any string that does not include `\n` or `\t`.
 
 #### `display.author_name`
 
-Choose a display name for you as a datapack author. Can be any string.
+Choose a display name for you as a datapack author. Can be any string that does not include `\n` or `\t`.
 
 #### `display.links.author`
 
@@ -158,7 +158,7 @@ Generally can be left alone during development and only [properly set](./full_gu
 
 #### All Other Values
 
-All other values can be left as-is. For more information on them, see the [manifest section](./full_guide.md#the-manifest) of the full guide.
+All other values can be left as-is. For more information on them, see the [manifest section of the full guide](./full_guide.md#the-manifest).
 
 ## 4. Rename Datapack File
 
