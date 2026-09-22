@@ -205,7 +205,7 @@ Verify that your datapack works correctly and can properly be disabled, re-enabl
 
 If all the above steps have been completed correctly, you can now consider your datapack SlimeCore-loaded.
 
-If you'd like to publish your datapack so others can use it, see the page on [Publishing](./publishing.md). Otherwise, you're done!
+If you'd like to publish your datapack so others can use it, see the page on [publishing](./publishing.md). Otherwise, you're done!
 
 ## Going Forward
 
