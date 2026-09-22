@@ -167,7 +167,7 @@ Rename your datapack file/folder (file/folder in `<world>/datapacks/` folder) to
 - `<author id>.<pack id>` (e.g. `bar.foo`)
 - `<pack id>` (e.g. `foo`)
 
-The above datapack names are intended for active development. If/when your datapack is released for public download, the downloaded filename should match one of the following formats:
+The above datapack names are intended for active development. If/when your datapack is released for public download, the downloaded file name should match one of the following formats:
 - `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
 - `<author id>.<pack id>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
