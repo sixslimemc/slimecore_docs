@@ -196,7 +196,7 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "DI
 
 data modify storage slimecore:in manifest.pack.url set value "DOWNLOAD_URL"
 
-data modify storage slimecore:in manifest.loader_version set value {major:0, minor:3}
+data modify storage slimecore:in manifest.pack.loader_version set value {major:0, minor:3}
 
 function slimecore:api/manifest
 ```

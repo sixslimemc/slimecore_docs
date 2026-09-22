@@ -9,7 +9,7 @@ Make a backup of your datapack before making any changes.
 - [3. Create a Manifest](#3-create-a-manifest)
 - [4. Rename Datapack File](#4-rename-datapack-file)
 - [5. Recommended Refactoring](#5-recommended-refactoring)
-- [6. Implement Uninstallation](#6-implement-uninstallation)
+- [6. Implement Uninstall](#6-implement-uninstall)
 - [7. Implement Disable](#7-implement-disable)
 - [8. Implement Safe Mode](#8-implement-safe-mode)
 - [9. Verify](#9-verify)
@@ -93,7 +93,7 @@ data modify storage slimecore:in manifest.pack.display.author_name set value "DI
 
 data modify storage slimecore:in manifest.pack.url set value "https://example.com/TODO"
 
-data modify storage slimecore:in manifest.loader_version set value {major:0, minor:3}
+data modify storage slimecore:in manifest.pack.loader_version set value {major:0, minor:3}
 
 function slimecore:api/manifest
 ```
@@ -185,7 +185,7 @@ It is recommended to look over [Beneficial Practices](./beneficial_practices.md)
 
 [Namespacing](./beneficial_practices.md#namespacing) and [Public and Private Resources](./beneficial_practices.md#public-and-private-resources) are strongly advised.
 
-## 6. Implement Uninstallation
+## 6. Implement Uninstall
 
 Create and [implement](./full_guide.md#uninstall-tag) the function tag `#<pack id>:uninstall`.
 
