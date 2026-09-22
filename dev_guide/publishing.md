@@ -49,13 +49,13 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 #### Repositories
 - Each datapack should have its own repository.
 - The contents of the repository should be the datapack itself (`pack.mcmeta` should be at the top level in the repository). 
-- The name of the repository should be in the format `<author ID>.<pack ID>` or alternatively just `<pack ID>` if the owning GitHub profile/organization name matches the datapack's author ID.
+- The name of the repository should be in the format `<author id>.<pack id>` or alternatively just `<pack id>` if the owning GitHub profile/organization name matches the datapack's author ID.
 
 #### README.md
 - The repository should have a `README.md` that includes the following:
     - The [SlimeCore badge](#the-slimecore-badge).
     - The datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
-    - The datapack's ID in the format `<author ID>.<pack ID>`.
+    - The datapack's ID in the format `<author id>.<pack id>`.
     - If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
 #### Docs/Info
@@ -65,13 +65,13 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 #### Releases
 - Each public version of the datapack should have its own GitHub tagged release.
 - Both the tag and release names should be in the format `v<major version>.<minor version>.<patch version>`.
-- The "binary" attached to the release should be the zipped datapack with the name matching `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`
+- The "binary" attached to the release should be the zipped datapack with the name matching `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`
     - This zip file should function correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted.
     - The zip file should include things like the `README.md`, `docs/`, and `LICENSE.md` if applicable.
 - It is a courtesy to indicate the supported [pack formats](https://minecraft.wiki/w/Pack_format) in release descriptions.
 
 #### Manifest Data
-- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip`.
+- If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`.
 - Unless you have a dedicated alternative, the [`display.links.info`](./full_guide.md#display) manifest field should point to the repository's main page (`https://github.com/<username/org>/<repo>`).
 - The [`display.links.versions`](./full_guide.md#display) manifest field should point to the repository's "releases" page (`https://github.com/<username/org>/<repo>/releases`).
 
