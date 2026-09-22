@@ -80,8 +80,8 @@ data modify storage slimecore:in manifest.pack.entrypoints set value []
 data modify storage slimecore:in manifest.pack.preload_entrypoints set value []
 # data modify storage slimecore:in manifest.pack.preload_entrypoints append value {id:"pre_load"}
 
-data modify storage slimecore:in manifest.pack.abstract_declarations set value []
-data modify storage slimecore:in manifest.pack.abstract_implementations set value []
+data modify storage slimecore:in manifest.pack.contract_declarations set value []
+data modify storage slimecore:in manifest.pack.contracts_satisfied set value []
 
 data modify storage slimecore:in manifest.pack.display.name set value "DISPLAY_NAME"
 data modify storage slimecore:in manifest.pack.display.summary set value "DISPLAY_SUMMARY"
