@@ -1,4 +1,4 @@
-# Dev Guide
+# Development Guide
 
 This guide covers everything you need to know about developing and working with SlimeCore-loaded datapacks.
 
