@@ -14,9 +14,10 @@ SlimeCore supports a **decentralized** datapack publishing and distribution mode
 
 While not strictly required, it benefits the user to include the following in your datapack's primary information/landing page:
 - The [SlimeCore badge](#the-slimecore-badge) or some indication that your datapack requires SlimeCore (and its required version).
-- The datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
-- The datapack's ID in the format `<author ID>.<pack ID>`.
-- If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
+- The datapack's display name ([`display.name`](./full_guide.md#display) manifest key).
+- The datapack's ID in the format `<author id>.<pack id>`.
+- *If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks):*
+    - Its dependencies, their versions, and download/version links should be explicitly provided.
 
 Aside from that, how you present, distribute, and publish your datapack is entirely up to you.
 
