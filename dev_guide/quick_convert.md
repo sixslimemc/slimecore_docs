@@ -187,21 +187,15 @@ It is recommended to look over [Beneficial Practices](./beneficial_practices.md)
 
 ## 6. Implement Uninstallation
 
-Create the function tag `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`).
-
-Implement it according to [this section](./full_guide.md#uninstall-tag).
+Create and [implement](./full_guide.md#uninstall-tag) the function tag `#<pack ID>:uninstall` (`<datapack>/data/<pack ID>/tags/function/uninstall.json`).
 
 ## 7. Implement Disable
 
-Create the function tag `#<pack ID>:disable` (`<datapack>/data/<pack ID>/tags/function/disable.json`).
-
-Implement it according to [this section](./full_guide.md#disable-tag).
+Create and [implement](./full_guide.md#disable-tag) the function tag `#<pack ID>:disable` (`<datapack>/data/<pack ID>/tags/function/disable.json`).
 
 ## 8. Implement Safe Mode
 
-Create the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/function/safe_mode.json`).
-
-Implement it according to [this section](./full_guide.md#safe-mode-tag).
+Create and [implement](./full_guide.md#safe-mode) the function tag `#<pack ID>:safe_mode` (`<datapack>/data/<pack ID>/tags/function/safe_mode.json`).
 
 ## 9. Verify
 
