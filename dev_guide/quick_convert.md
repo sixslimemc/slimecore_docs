@@ -163,13 +163,13 @@ All other values can be left as-is. For more information on them, see the [manif
 ## 4. Rename Datapack File
 
 Rename your datapack file/folder (file/folder in `<world>/datapacks/` folder) to one of the following formats (values must match those specified in your datapack's manifest function):
-- `<author ID>.<pack ID>.zip` (e.g. `bar.foo.zip`)
-- `<author ID>.<pack ID>` (e.g. `bar.foo`)
-- `<pack ID>` (e.g. `foo`)
+- `<author id>.<pack id>.zip` (e.g. `bar.foo.zip`)
+- `<author id>.<pack id>` (e.g. `bar.foo`)
+- `<pack id>` (e.g. `foo`)
 
-These datapack names are intended for active development, however, if/when your datapack is released for public download, its name when downloaded should match one of:
-- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
-- `<author ID>.<pack ID>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
+The above datapack names are intended for active development; if/when your datapack is released for public download, its name when downloaded should match one of the following formats:
+- `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip` (e.g. `bar.foo.1.2.3.zip`)
+- `<author id>.<pack id>.<major version>.<minor version>.<patch version>` (e.g. `bar.foo.1.2.3`)
 
 Your datapack must match one of these standard name formats in order for SlimeCore to recognize it. See [this section](../admin_guide/key_concepts.md#datapack-paths) for more information.
 
