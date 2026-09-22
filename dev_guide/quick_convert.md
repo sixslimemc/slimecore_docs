@@ -50,7 +50,7 @@ If it exists, move the contents of your datapack's `#load:pre_load` function tag
 
 Move the contents of your datapack's `#load:load` function tag to `#<pack id>:load`.
 
-Move any ticking/non-initialization behavior initiated by `#<pack id>:load` to `#<pack id>:entrypoint/main`. `#<pack id>:load` should exclusively do initialization work and should not start any `/schedule` loops; it will be called before `#<pack id>:entrypoint/main`.
+Move any ticking/non-initialization behavior initiated by `#<pack id>:load` to `#<pack id>:entrypoint/main`. `#<pack id>:load` should exclusively do initialization work (contain no `/schedule` loops) and will be called before `#<pack id>:entrypoint/main`.
 
 If it exists, move the contents of your datapack's `#load:post_load` function tag to `#<pack id>:entrypoint/post_load`
 
