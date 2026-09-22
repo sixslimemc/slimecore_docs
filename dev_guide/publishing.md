@@ -27,7 +27,7 @@ Aside from that, how you present, distribute, and publish your datapack is entir
 
 *See [this section](./full_guide.md#url) for a general description of the `url` manifest key.*
 
-Due to the nature of the `url` manifest key, you must know in advance what your datapack's direct download URL will be before actually releasing it for download at said URL. This is a known pain point of SlimeCore, but providing a direct download link in-game greatly benefits any user or developer intending to use your datapack as a dependency.
+Due to the nature of the `url` manifest key, you must know in advance what your datapack's direct download URL will be before actually releasing it for download at said URL. This is a known pain point of SlimeCore, but providing a direct download link in-game greatly benefits any user or developer intending to download your datapack as a dependency.
 
 If your primary publishing platform gives you control over the direct download URL (e.g. [GitHub](#publishing-with-github)), then setting `url` is mostly straightforward. If not, the following options are recommended:
 - Use a service other than your primary publishing platform to provide/mirror downloads. (e.g. Release primarily on Modrinth but use GitHub releases to provide download URLs).
