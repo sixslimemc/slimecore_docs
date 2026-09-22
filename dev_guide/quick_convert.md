@@ -26,7 +26,7 @@ If your existing datapack defines new resources in more than one namespace, you 
 - Move all newly defined resources into a single namespace--recommended if resources are highly interdependent.
 - Split your existing datapack into multiple datapacks--recommended if your namespaces are mostly independent or have a one-way dependence flow.
 
-*If your pack ID just so happens to be `slimecore`, you must change it to something else.*
+*Your pack ID cannot be `slimecore`.*
 
 ## 2. Migrate Function Tags
 
