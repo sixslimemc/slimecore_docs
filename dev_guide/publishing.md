@@ -68,7 +68,7 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 - The "binary" attached to the release should be the zipped datapack with the name matching `<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`
     - This zip file should function correctly if put directly in a world's `datapacks/` folder; it should not have to be extracted.
     - The zip file should include things like the `README.md`, `docs/`, and `LICENSE.md` if applicable.
-- It is a courtesy to indicate the supported [pack formats](https://minecraft.wiki/w/Pack_format) in release descriptions.
+- The supported [pack format](https://minecraft.wiki/w/Pack_format) range should be indicated in release descriptions.
 
 #### Manifest Data
 - If using the recommended release format specified [above](#releases), the manifest [`url`](./full_guide.md#url) field should match the format `https://github.com/<username/org>/<repo>/releases/download/v<major version>.<minor version>.<patch version>/<author id>.<pack id>.<major version>.<minor version>.<patch version>.zip`.
