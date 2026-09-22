@@ -1,6 +1,6 @@
 # Development Guide
 
-This guide covers everything you need to know about developing and working with SlimeCore-loaded datapacks.
+This guide covers everything you need to know about developing SlimeCore-loaded datapacks.
 
 - [Before You Read](#before-you-read)
 - [Quick Convert](#quick-convert)
