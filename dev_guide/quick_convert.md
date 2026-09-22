@@ -40,7 +40,7 @@ For each function specified in your pack's new `#<pack id>:entrypoint/main`, mak
 
 *Your datapack must no include `#minecraft:load` or `#minecraft:tick`.*
 
-If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack id>:load`, this behavior should be moved to execute in the scope of `#<pack id>:entrypoint/main`. `#<pack id>:load` should be used exclusively for initialization work; it will be called before `#<pack id>/entrypoint/main`.
+If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack id>:load`, this behavior should be moved to execute in the scope of `#<pack id>:entrypoint/main`. `#<pack id>:load` should be used exclusively for initialization work and it will be called before `#<pack id>/entrypoint/main`.
 
 ### Migrate From Lantern Load
 
