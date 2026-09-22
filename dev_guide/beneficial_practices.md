@@ -7,7 +7,7 @@ This page contains tips, guidelines, and practices that are not strictly defined
 - [Configuration](#configuration)
 - [Hooks](#hooks)
 - [Entrypoint Splitting](#entrypoint-splitting)
-- [Defining Interfaces](#defining-interfaces)
+- [Defining Contracts](#defining-contracts)
 - [Modularization](#modularization)
 - [Library Discipline](#library-discipline)
 
