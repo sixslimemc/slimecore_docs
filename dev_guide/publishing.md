@@ -54,7 +54,7 @@ The following are recommended guidelines if using GitHub as a publishing platfor
 #### README.md
 - The repository should have a `README.md` that includes the following:
     - The [SlimeCore badge](#the-slimecore-badge).
-    - The datapack's display name (matching the manifest field [`display.name`](./full_guide.md#display)).
+    - The datapack's display name ([`display.name`](./full_guide.md#display) manifest key).
     - The datapack's ID in the format `<author id>.<pack id>`.
     - If the datapack is intended as a [SlimeCore frontend](../admin_guide/key_concepts.md#frontend-datapacks), its dependencies, their versions, and download/version links should be explicitly provided.
 
