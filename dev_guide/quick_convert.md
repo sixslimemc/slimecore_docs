@@ -38,7 +38,7 @@ Move the contents of your datapack's `#minecraft:tick` function tag to `#<pack i
 
 For each function specified in your pack's new `#<pack id>:entrypoint/main`, make it schedule itself every tick (add the line `schedule function <this function> 1t`).
 
-*Your datapack must no longer write to `#minecraft:load` or `#minecraft:tick`.*
+*Your datapack must no include `#minecraft:load` or `#minecraft:tick`.*
 
 If your datapack would start any `/schedule` loops (or any non-initialization work) within the scope of `#<pack id>:load`, this behavior should be moved to execute in the scope of `#<pack id>:entrypoint/main`. `#<pack id>:load` should be used exclusively for initialization work; it will be called before `#<pack id>/entrypoint/main`.
 
