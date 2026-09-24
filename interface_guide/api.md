@@ -81,6 +81,60 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/load`
 
+Called just before/after a datapack's load tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the tag belongs to. | 
+
+#### `#slimecore:hook/call/<pre|post>/disable`
+
+Called just before/after a datapack's disable tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the tag belongs to. | 
+
+#### `#slimecore:hook/call/<pre|post>/uninstall`
+
+Called just before/after a datapack's uninstall tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the tag belongs to. | 
+
+#### `#slimecore:hook/call/<pre|post>/safe_mode`
+
+Called just before/after a datapack's safe mode tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the tag belongs to. | 
+
+#### `#slimecore:hook/call/<pre|post>/entrypoint`
+
+Called just before/after an entrypoint's tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the entrypoint belongs to. | 
+| `id` | String (entrypoint ID) | The ID of the entrypoint. | 
+
+#### `#slimecore:hook/call/<pre|post>/preload_entrypoint`
+
+Called just before/after a preload entrypoint's tag is called.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the preload entrypoint belongs to. | 
+| `id` | String (preload entrypoint ID) | The ID of the preload entrypoint. | 
+
 ### Safe Mode Hooks
 
 ### SlimeCore Uninstall Hook
