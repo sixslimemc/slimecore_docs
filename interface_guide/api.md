@@ -10,6 +10,12 @@
 
 ## Hooks
 
+- [Rebuild](#rebuild)
+- [Load Process](#load-process)
+- [Individual Tag Calls](#individual-tag-calls)
+- [Safe Mode (Reload)](#safe-mode-reload)
+- [Other](#other)
+
 SlimeCore includes function tags matching format `#slimecore:hook/.../<name>` called **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call SlimeCore's hook tags themselves. Some hooks have input data that includes further details about events; such input data will always be a struct at NBT storage `slimecore:hook` `<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
 
 Here is an example of how these inputs will be described:
