@@ -29,7 +29,7 @@ data get storage slimecore:hook bar.qux
 
 --- 
 
-### Rebuild Hooks
+### Rebuild
 
 Hooks called during the rebuild process.
 
@@ -53,7 +53,7 @@ Hooks called during the rebuild process.
 
 ---
 
-### Load Process Hooks
+### Load Process
 
 Hooks called during the load process.
 
@@ -89,7 +89,7 @@ Hooks called during the load process.
 
 ---
 
-### Tag Call Hooks
+### Individual Tag Calls
 
 Hooks called when individual pack tags are called.
 
@@ -153,11 +153,11 @@ Hooks called when individual pack tags are called.
 
 ---
 
-### Safe Mode Hooks
+### Safe Mode
 
 ---
 
-### SlimeCore Uninstall Hook
+### SlimeCore Uninstall
 
 ---
 
