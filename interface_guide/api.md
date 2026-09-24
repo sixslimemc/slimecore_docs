@@ -1,10 +1,12 @@
 # API Reference
 
-## Rebuilding
+## General Info
 
-## Loading
+### Rebuilding
 
-## Safe Mode
+### Loading
+
+### Safe Mode
 
 ## Hooks
 
