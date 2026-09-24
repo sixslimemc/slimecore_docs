@@ -61,21 +61,31 @@ Hooks called during the load process.
 
 **Call Time:** just before a load starts.
 
+*No input.*
+
 #### `#slimecore:hook/load/preload_entrypoints`
 
 **Call Time:** just before preload entrypoint tags start getting called.
+
+*No input.*
 
 #### `#slimecore:hook/load/loads`
 
 **Call Time:** just before load tags start getting called.
 
+*No input.*
+
 #### `#slimecore:hook/load/entrypoints`
 
 **Call Time:** just before entrypoint tags start getting called.
 
+*No input.*
+
 #### `#slimecore:hook/load/entrypoints`
 
 **Call Time:** just after a load ends.
+
+*No input.*
 
 ---
 
