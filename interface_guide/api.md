@@ -1,5 +1,11 @@
 # API Reference
 
+## Rebuilding
+
+## Loading
+
+## Safe Mode
+
 ## Hooks
 
 ### Rebuild Hooks
