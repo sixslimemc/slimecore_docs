@@ -31,12 +31,21 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/rebuild/start`
 
-Called just before SlimeCore performs a rebuild.
+Called just before a rebuild starts.
 
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `explicit` | *(matches [explicit rebuild inputs](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
+| `explicit` | *(matches [explicit rebuild input](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
+
+#### `#slimecore:hook/rebuild/end`
+
+Called just after a rebuild ends.
+
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `result` | *(matches [explicit rebuild `result` output](#explicit-rebuild-function))* | The result of the rebuild. | 
 
 ### Load Process Hooks
 
