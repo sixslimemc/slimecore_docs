@@ -37,6 +37,9 @@ data get storage slimecore:hook bar.qux
 
 ### Rebuild
 
+- [`#slimecore:hook/rebuild/start`](#slimecorehookrebuildstart)
+- [`#slimecore:hook/rebuild/end`](#slimecorehookrebuildend)
+
 #### `#slimecore:hook/rebuild/start`
 
 **Call Time:** just before a rebuild starts.
@@ -58,6 +61,12 @@ data get storage slimecore:hook bar.qux
 ---
 
 ### Load Process
+
+- [`#slimecore:hook/load/start`](#slimecorehookloadstart)
+- [`#slimecore:hook/load/preload_entrypoints`](#slimecorehookloadpreload_entrypoints)
+- [`#slimecore:hook/load/loads`](#slimecorehookloadloads)
+- [`#slimecore:hook/load/entrypoints`](#slimecorehookloadentrypoints)
+- [`#slimecore:hook/load/end`](#slimecorehookloadend)
 
 #### `#slimecore:hook/load/start`
 
@@ -83,7 +92,7 @@ data get storage slimecore:hook bar.qux
 
 *No input.*
 
-#### `#slimecore:hook/load/entrypoints`
+#### `#slimecore:hook/load/end`
 
 **Call Time:** just after a load ends.
 
