@@ -147,7 +147,7 @@ data get storage slimecore:hook bar.qux
 
 ---
 
-### Safe Mode (Safe Load)
+### Safe Mode (Reload)
 
 #### `#slimecore:hook/safe_mode/start`
 
