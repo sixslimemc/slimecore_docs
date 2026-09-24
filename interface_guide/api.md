@@ -55,7 +55,7 @@ Called just after a rebuild finishes.
 
 ### Load Process Hooks
 
-Hooks called the load process.
+Hooks called during the load process.
 
 #### `#slimecore:hook/load/start`
 
