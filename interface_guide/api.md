@@ -163,7 +163,13 @@ data get storage slimecore:hook bar.qux
 
 ---
 
-### SlimeCore Uninstall
+### Other
+
+#### `#slimecore:hook/uninstall_slimecore`
+
+**Call Time:** just before SlimeCore is uninstalled and all SlimeCore-loaded datapacks disabled.
+
+*No input.*
 
 ---
 
