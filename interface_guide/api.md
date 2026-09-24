@@ -45,15 +45,13 @@ Called just after a [rebuild](#rebuilding) finishes.
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `result` | *(matches [rebuild `result` output](#explicit-rebuild-function))* | The result of the rebuild. | 
+| `result` | *(matches [rebuild output `result` key](#explicit-rebuild-function))* | The result of the rebuild. | 
 
 ### Load Process Hooks
 
 #### `#slimecore:hook/load/start`
 
 Called just before a [load](#loading) starts.
-
-**Input:** *(none)*
 
 ### Tag Call Hooks
 
