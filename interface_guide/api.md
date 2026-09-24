@@ -29,9 +29,11 @@ data get storage slimecore:hook bar.qux
 
 ### Rebuild Hooks
 
+Hooks called during the rebuild process.
+
 #### `#slimecore:hook/rebuild/start`
 
-Called just before a [rebuild](#rebuilding) starts.
+Called just before a rebuild starts.
 
 **Input:**
 | Key | Type | Description |
@@ -40,7 +42,7 @@ Called just before a [rebuild](#rebuilding) starts.
 
 #### `#slimecore:hook/rebuild/end`
 
-Called just after a [rebuild](#rebuilding) finishes.
+Called just after a rebuild finishes.
 
 **Input:**
 | Key | Type | Description |
@@ -49,11 +51,35 @@ Called just after a [rebuild](#rebuilding) finishes.
 
 ### Load Process Hooks
 
+Hooks called the load process.
+
 #### `#slimecore:hook/load/start`
 
-Called just before a [load](#loading) starts.
+Called just before a load starts.
+
+#### `#slimecore:hook/load/preload_entrypoints`
+
+Called just before preload entrypoint tags start getting called.
+
+#### `#slimecore:hook/load/loads`
+
+Called just before load tags start getting called.
+
+#### `#slimecore:hook/load/entrypoints`
+
+Called just before entrypoint tags start getting called.
+
+#### `#slimecore:hook/load/entrypoints`
+
+Called just after a load ends.
 
 ### Tag Call Hooks
+
+Hooks that notify when pack tags are called.
+
+All of these hooks have a `pre` and `post` variant, called just before or after the relavent tag is called, respectively.
+
+#### `#slimecore:hook/call/(pre|post)/load`
 
 ### Safe Mode Hooks
 
