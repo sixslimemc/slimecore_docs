@@ -31,8 +31,6 @@ data get storage slimecore:hook bar.qux
 
 ### Rebuild
 
-Hooks called during the rebuild process.
-
 #### `#slimecore:hook/rebuild/start`
 
 **Call Time:** just before a rebuild starts.
@@ -54,8 +52,6 @@ Hooks called during the rebuild process.
 ---
 
 ### Load Process
-
-Hooks called during the load process.
 
 #### `#slimecore:hook/load/start`
 
@@ -90,8 +86,6 @@ Hooks called during the load process.
 ---
 
 ### Individual Tag Calls
-
-Hooks called when individual pack tags are called.
 
 *Each of these hooks have a `pre` and `post` variant that are called just before or after the relavent pack tag is called, respectively.*
 
