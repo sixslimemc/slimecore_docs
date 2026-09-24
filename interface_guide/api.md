@@ -151,13 +151,13 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/safe_mode/start`
 
-**Call Time:** just after a world reload if safe mode is enabled/triggered, just before safe mode tags are called.
+**Call Time:** just after a world reload if safe mode is enabled/triggered, before safe mode tags are called.
 
 *No input; see `safe_mode` key in [world data](#world-data).*
 
 #### `#slimecore:hook/safe_mode/end`
 
-**Call Time:** just after a world reload if safe mode is enabled/triggered, just after safe mode tags are called.
+**Call Time:** just after a world reload if safe mode is enabled/triggered, after safe mode tags are called.
 
 *No input; see `safe_mode` key in [world data](#world-data).*
 
