@@ -10,7 +10,7 @@
 
 ## Hooks
 
-SlimeCore includes function tags matching format `#slimecore:hook/...` called **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call SlimeCore's hook tags themselves. Some hooks have input data that includes further details about events. If a hook has input data, it will always be a struct at NBT storage `slimecore:hook` `<name>`, given the hook tag format `slimecore:hook/<path>/<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
+SlimeCore includes function tags matching format `#slimecore:hook/...` called **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call SlimeCore's hook tags themselves. Some hooks have input data that includes further details about events; such input data will always be a struct at NBT storage `slimecore:hook` `<name>`, given the hook tag format `slimecore:hook/<path>/<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
 
 For example, if input for hook `#slimecore:hook/foo/bar` is described like so:
 
