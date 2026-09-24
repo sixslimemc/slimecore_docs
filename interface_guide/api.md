@@ -35,7 +35,7 @@ Hooks called during the rebuild process.
 
 #### `#slimecore:hook/rebuild/start`
 
-Called just before a rebuild starts.
+**Called:** just before a rebuild starts.
 
 **Input:**
 | Key | Type | Description |
@@ -44,7 +44,7 @@ Called just before a rebuild starts.
 
 #### `#slimecore:hook/rebuild/end`
 
-Called just after a rebuild finishes.
+**Called:** just after a rebuild finishes.
 
 **Input:**
 | Key | Type | Description |
@@ -59,23 +59,23 @@ Hooks called during the load process.
 
 #### `#slimecore:hook/load/start`
 
-Called just before a load starts.
+**Called:** just before a load starts.
 
 #### `#slimecore:hook/load/preload_entrypoints`
 
-Called just before preload entrypoint tags start getting called.
+**Called:** just before preload entrypoint tags start getting called.
 
 #### `#slimecore:hook/load/loads`
 
-Called just before load tags start getting called.
+**Called:** just before load tags start getting called.
 
 #### `#slimecore:hook/load/entrypoints`
 
-Called just before entrypoint tags start getting called.
+**Called:** just before entrypoint tags start getting called.
 
 #### `#slimecore:hook/load/entrypoints`
 
-Called just after a load ends.
+**Called:** just after a load ends.
 
 ---
 
@@ -87,7 +87,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/load`
 
-Called just before/after a datapack's load tag is called.
+**Called:** just before/after a datapack's load tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -96,7 +96,7 @@ Called just before/after a datapack's load tag is called.
 
 #### `#slimecore:hook/call/<pre|post>/disable`
 
-Called just before/after a datapack's disable tag is called.
+**Called:** just before/after a datapack's disable tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -105,7 +105,7 @@ Called just before/after a datapack's disable tag is called.
 
 #### `#slimecore:hook/call/<pre|post>/uninstall`
 
-Called just before/after a datapack's uninstall tag is called.
+**Called:** just before/after a datapack's uninstall tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -114,7 +114,7 @@ Called just before/after a datapack's uninstall tag is called.
 
 #### `#slimecore:hook/call/<pre|post>/safe_mode`
 
-Called just before/after a datapack's safe mode tag is called.
+**Called:** just before/after a datapack's safe mode tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -123,7 +123,7 @@ Called just before/after a datapack's safe mode tag is called.
 
 #### `#slimecore:hook/call/<pre|post>/entrypoint`
 
-Called just before/after an entrypoint's tag is called.
+**Called:** just before/after an entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -133,7 +133,7 @@ Called just before/after an entrypoint's tag is called.
 
 #### `#slimecore:hook/call/<pre|post>/preload_entrypoint`
 
-Called just before/after a preload entrypoint's tag is called.
+**Called:** just before/after a preload entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
