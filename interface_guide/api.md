@@ -27,6 +27,8 @@ data get storage slimecore:hook bar.baz
 data get storage slimecore:hook bar.qux
 ```
 
+--- 
+
 ### Rebuild Hooks
 
 Hooks called during the rebuild process.
@@ -72,6 +74,8 @@ Called just before entrypoint tags start getting called.
 #### `#slimecore:hook/load/entrypoints`
 
 Called just after a load ends.
+
+---
 
 ### Tag Call Hooks
 
@@ -135,9 +139,15 @@ Called just before/after a preload entrypoint's tag is called.
 | `pack_id` | String (pack ID) | The pack ID of the datapack that the preload entrypoint belongs to. | 
 | `id` | String (preload entrypoint ID) | The ID of the preload entrypoint. | 
 
+---
+
 ### Safe Mode Hooks
 
+---
+
 ### SlimeCore Uninstall Hook
+
+---
 
 ## Data
 
