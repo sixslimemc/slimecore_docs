@@ -40,12 +40,12 @@ Called just before a rebuild starts.
 
 #### `#slimecore:hook/rebuild/end`
 
-Called just after a rebuild ends.
+Called just after a rebuild finishes.
 
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `result` | *(matches [explicit rebuild `result` output](#explicit-rebuild-function))* | The result of the rebuild. | 
+| `result` | *(matches [rebuild `result` output](#explicit-rebuild-function))* | The result of the rebuild. | 
 
 ### Load Process Hooks
 
