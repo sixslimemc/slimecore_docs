@@ -31,7 +31,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/rebuild/start`
 
-Called just before a rebuild starts.
+Called just before a [rebuild](#rebuilding) starts.
 
 **Input:**
 | Key | Type | Description |
@@ -40,7 +40,7 @@ Called just before a rebuild starts.
 
 #### `#slimecore:hook/rebuild/end`
 
-Called just after a rebuild finishes.
+Called just after a [rebuild](#rebuilding) finishes.
 
 **Input:**
 | Key | Type | Description |
@@ -48,6 +48,12 @@ Called just after a rebuild finishes.
 | `result` | *(matches [rebuild `result` output](#explicit-rebuild-function))* | The result of the rebuild. | 
 
 ### Load Process Hooks
+
+#### `#slimecore:hook/load/start`
+
+Called just before a [load](#loading) starts.
+
+**Input:** *(none)*
 
 ### Tag Call Hooks
 
