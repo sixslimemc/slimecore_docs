@@ -35,7 +35,7 @@ Hooks called during the rebuild process.
 
 #### `#slimecore:hook/rebuild/start`
 
-**Call Time:** Just before a rebuild starts.
+**Call Time:** just before a rebuild starts.
 
 **Input:**
 | Key | Type | Description |
@@ -44,7 +44,7 @@ Hooks called during the rebuild process.
 
 #### `#slimecore:hook/rebuild/end`
 
-**Call Time:** Just after a rebuild finishes.
+**Call Time:** just after a rebuild finishes.
 
 **Input:**
 | Key | Type | Description |
@@ -59,23 +59,23 @@ Hooks called during the load process.
 
 #### `#slimecore:hook/load/start`
 
-**Call Time:** Just before a load starts.
+**Call Time:** just before a load starts.
 
 #### `#slimecore:hook/load/preload_entrypoints`
 
-**Call Time:** Just before preload entrypoint tags start getting called.
+**Call Time:** just before preload entrypoint tags start getting called.
 
 #### `#slimecore:hook/load/loads`
 
-**Call Time:** Just before load tags start getting called.
+**Call Time:** just before load tags start getting called.
 
 #### `#slimecore:hook/load/entrypoints`
 
-**Call Time:** Just before entrypoint tags start getting called.
+**Call Time:** just before entrypoint tags start getting called.
 
 #### `#slimecore:hook/load/entrypoints`
 
-**Call Time:** Just after a load ends.
+**Call Time:** just after a load ends.
 
 ---
 
@@ -87,7 +87,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/load`
 
-**Call Time:** Just before/after a datapack's load tag is called.
+**Call Time:** just before/after a datapack's load tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -96,7 +96,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/disable`
 
-**Call Time:** Just before/after a datapack's disable tag is called.
+**Call Time:** just before/after a datapack's disable tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -105,7 +105,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/uninstall`
 
-**Call Time:** Just before/after a datapack's uninstall tag is called.
+**Call Time:** just before/after a datapack's uninstall tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -114,7 +114,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/safe_mode`
 
-**Call Time:** Just before/after a datapack's safe mode tag is called.
+**Call Time:** just before/after a datapack's safe mode tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -123,7 +123,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/entrypoint`
 
-**Call Time:** Just before/after an entrypoint's tag is called.
+**Call Time:** just before/after an entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -133,7 +133,7 @@ Hooks called when individual pack tags are called.
 
 #### `#slimecore:hook/call/<pre|post>/preload_entrypoint`
 
-**Call Time:** Just before/after a preload entrypoint's tag is called.
+**Call Time:** just before/after a preload entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
