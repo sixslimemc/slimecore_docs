@@ -36,7 +36,7 @@ Called just before a [rebuild](#rebuilding) starts.
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `explicit` | *(matches [explicit rebuild input](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
+| `explicit` | *(matches input of [explicit rebuild function](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
 
 #### `#slimecore:hook/rebuild/end`
 
@@ -45,7 +45,7 @@ Called just after a [rebuild](#rebuilding) finishes.
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `result` | *(matches [rebuild output `result` key](#explicit-rebuild-function))* | The result of the rebuild. | 
+| `result` | *(matches `result` key of [explicit rebuild](#explicit-rebuild-function) output)* | The result of the rebuild. | 
 
 ### Load Process Hooks
 
