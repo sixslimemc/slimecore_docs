@@ -79,7 +79,7 @@ Hooks that notify when pack tags are called.
 
 All of these hooks have a `pre` and `post` variant, called just before or after the relavent tag is called, respectively.
 
-#### `#slimecore:hook/call/(pre|post)/load`
+#### `#slimecore:hook/call/<pre|post>/load`
 
 ### Safe Mode Hooks
 
