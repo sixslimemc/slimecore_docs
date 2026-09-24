@@ -75,7 +75,7 @@ Called just after a load ends.
 
 ### Tag Call Hooks
 
-Hooks called when pack tags are called.
+Hooks called when individual pack tags are called.
 
 *Each of these hooks have a `pre` and `post` variant that are called just before or after the relavent pack tag is called, respectively.*
 
