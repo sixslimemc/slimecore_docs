@@ -51,6 +51,8 @@ Called just after a rebuild finishes.
 | :-- | :-- | :-- |
 | `result` | *(matches `result` key of [explicit rebuild](#explicit-rebuild-function) output)* | The result of the rebuild. | 
 
+---
+
 ### Load Process Hooks
 
 Hooks called the load process.
