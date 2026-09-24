@@ -33,6 +33,11 @@ data get storage slimecore:hook bar.qux
 
 Called just before SlimeCore performs a rebuild.
 
+**Input:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `explicit` | *(matches [explicit rebuild inputs](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
+
 ### Load Process Hooks
 
 ### Tag Call Hooks
@@ -46,6 +51,8 @@ Called just before SlimeCore performs a rebuild.
 ### Build Data
 
 ### World Data
+
+## Explicit Rebuild Function
 
 ## Eval Functions
 
