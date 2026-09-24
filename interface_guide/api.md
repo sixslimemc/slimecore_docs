@@ -38,7 +38,7 @@ data get storage slimecore:hook bar.qux
 **Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `explicit` | *(matches input of [explicit rebuild function](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function) if an explicit rebuild was initiated. Is not present if rebuild was triggered automatically via reload. | 
+| `explicit` | *(matches input of [explicit rebuild function](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function). Not present if rebuild was triggered automatically via reload. | 
 
 #### `#slimecore:hook/rebuild/end`
 
