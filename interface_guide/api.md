@@ -187,7 +187,7 @@ This data is only dependent on enabled SlimeCore-loaded datapacks; worlds with i
 
 **Path:** `build`
 
-**Update Time:** after successful rebuild.
+**Update Time:** on successful rebuild.
 
 **Keys:**
 | Key | Type | Description |
@@ -209,9 +209,18 @@ Data representing the world's status.
 
 This data is world-specific; it may differ between worlds regardless of if they have the same datapacks installed/enabled.
 
-**Path:** `build`
+**Path:** `world`
 
-**Update Time:** after successful rebuild.
+**Update Time:** on world reload.
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `installed` | List of `{pack: PackManifest, path: string, disabled: boolean}` | All tracked/installed SlimeCore-loaded datapacks, each element representing a datapack, where `pack` is its manifest, `path` is it's path, and `disabled` indicating if it is disabled. A datapack is only tracked once it has been part of a successful build. | 
+| `safe_mode` | *(matches [Safe Mode Data](#safe-mode-data))* (or none) | Contains information about the current safe mode. Is only present when safe mode is enabled.
+| `raw_manifests` | List of `PackManifest` | All datapack manifests collected (by function tag `#slimecore:manifest`) on reload, unverified and unprocessed. |
+| `installed_map` | `{<PackId...>: {pack: PackManifest, path: string, disabled: boolean}}` | (Auxilary) struct where path `<pack id>` is the respective element in `installed` for that pack ID. |
+ 
+#### Safe Mode Data
 
 ### SlimeCore Manifest
 
