@@ -6,6 +6,8 @@
 
 ### Loading
 
+### Datapack Paths
+
 ### Safe Mode
 
 ## Hooks
@@ -193,9 +195,9 @@ This data is only dependent on enabled SlimeCore-loaded datapacks; worlds with i
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of `PackManifest` | Manifests of the datapacks in the build, matching the datapack loading order. | 
-| `order.load` | List of `{index: int, pack_ref: PackId}` | Represents the datapack loading order. Each element represents a datapack, where `pack_ref` is it's pack ID. `index` is an auxilary key that matches the element's list index. | 
-| `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Represents the entrypoint calling order. Each element represents an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list index. |
-| `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | Represents the preload entrypoint calling order. Each element represents a preload entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list index. |
+| `order.load` | List of `{index: int, pack_ref: PackId}` | Represents the datapack loading order. Each element represents a datapack, where `pack_ref` is it's pack ID (`#<pack_ref>:load`). `index` is an auxilary key that matches the element's list index. | 
+| `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Represents the entrypoint calling order. Each element represents an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID (`#<pack_ref>:entrypoint/<id>`). `index` is an auxilary key that matches the element's list index. |
+| `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | Represents the preload entrypoint calling order. Each element represents a preload entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID (`#<pack_ref>:preload_entrypoint/<id>`). `index` is an auxilary key that matches the element's list index. |
 | `aux.pack_map` | `{<PackId...>: PackManifest}` | (Auxilary) struct where path `<pack id>` is the respective manifest for that pack ID. |
 | `aux.contract_map` | `{<PackId...>: {<ContractId...>: PackManifest}}` | (Auxilary) struct where path `<contract's pack id>.<contract id>` is the manifest of the datapack that satisfies that contract. |
 | `aux.dependent_map` | `{<PackId...>: [PackManifest]}` | (Auxilary) struct where path `<pack id>` is the list of manifests of datapacks that depend on that datapack (given it's pack ID). |
@@ -216,11 +218,46 @@ This data is world-specific; it may differ between worlds regardless of if they 
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `installed` | List of `{pack: PackManifest, path: string, disabled: boolean}` | All tracked/installed SlimeCore-loaded datapacks, each element representing a datapack, where `pack` is its manifest, `path` is it's path, and `disabled` indicating if it is disabled. A datapack is only tracked once it has been part of a successful build. | 
-| `safe_mode` | *(matches [Safe Mode Data](#safe-mode-data))* (or none) | Contains information about the current safe mode. Is only present when safe mode is enabled.
+| `safe_mode` | *(matches [Safe Mode Data](#safe-mode-data))* (or none) | Contains information about the current safe mode state--only present when safe mode is enabled.
 | `raw_manifests` | List of `PackManifest` | All datapack manifests collected (by function tag `#slimecore:manifest`) on reload, unverified and unprocessed. |
 | `installed_map` | `{<PackId...>: {pack: PackManifest, path: string, disabled: boolean}}` | (Auxilary) struct where path `<pack id>` is the respective element in `installed` for that pack ID. |
  
-#### Safe Mode Data
+### Safe Mode Data
+
+This data is only present when safe mode is enabled.
+
+**Path:** `world.safe_mode`
+
+**Update Time:** on world reload.
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `calls` | List of `{pack_ref: PackId}` | Represents the safe-mode tags that are called on reload, in the order that they are called. Each element represents `#<pack_ref>:safe_mode`. |
+| `reason` | *(see below)* | The reason why safe mode is currently enabled. |
+
+`reason` will have *one* of the following keys depending on the reason safe mode is enabled.
+
+#### `duplicate_installed_pack_ids`
+
+Will be present if safe mode is enabled because there are multiple datapacks installed with the same pack ID. SlimeCore-loaded datapacks must be unique by pack ID within the same world in order to load properly.
+
+The value of this key is a **list**, where each element represents a pack ID that is shared between multiple datapacks. Each element is a struct with the following keys:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID that is shared. |
+| `packs` | List of `PackManifest` | The manifests of the datapacks that share the pack ID. |
+
+#### `misloaded_datapacks_missing_path`
+
+Will be present if safe mode is enabled because SlimeCore cannot find the path for an enabled datapack, thus cannot load it correctly.
+
+The value of this key is a **list**, where each element represents a datapack that has a missing path. Each element is a struct with the following keys:
+
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack` | `PackManifest` | The manifest of the datapack. |
+| `path_override` | String (or none) | The path override for the datapack as specified in NBT storage location `slimecore:config` `path_overrides`. Not present if no path override is specified. |
 
 ### SlimeCore Manifest
 
@@ -236,3 +273,5 @@ This data is world-specific; it may differ between worlds regardless of if they 
 ### Eval Version Requirement
 
 ## Configuration
+
+###
