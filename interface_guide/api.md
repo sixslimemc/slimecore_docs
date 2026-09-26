@@ -263,7 +263,7 @@ The value of this key is a **list**, where each element represents a datapack th
 
 The manifest of SlimeCore itself.
 
-SlimeCore's manifest is for representation only and is not part of regular logic.
+SlimeCore's manifest is for representation only and is not considered in the rebuild process.
 
 **Path:** `slimecore`
 
