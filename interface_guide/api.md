@@ -179,7 +179,7 @@ The following sections describe the NBT storage location `slimecore:data`. Slime
 
 ### Build Data
 
-Data relating to the world's current build (all enabled SlimeCore-loaded datapacks).
+Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
 
 **Path:** `build`
 
