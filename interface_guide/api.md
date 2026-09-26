@@ -10,7 +10,7 @@
 
 ## Hooks
 
-SlimeCore includes function tags matching format `#slimecore:hook/.../<name>` called **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call SlimeCore's hook tags themselves. Some hooks have input data that includes further details about events; such input data will always be a struct at NBT storage `slimecore:hook` `<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
+The following sections describe function tags matching format `#slimecore:hook/.../<name>` referred to as **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call the hook tags themselves. Some hooks have input data that includes further details about events; such input data will always be a struct at NBT storage `slimecore:hook` `<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
 
 Here is an example of how these inputs will be described:
 
@@ -35,7 +35,7 @@ data get storage slimecore:hook bar.qux
 
 **Call Time:** just before a rebuild starts.
 
-**Input:**
+**Input:** (`slimecore:hook` `start`)
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `explicit` | *(matches input of [explicit rebuild function](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function). Not present if rebuild was triggered automatically via reload. | 
@@ -44,7 +44,7 @@ data get storage slimecore:hook bar.qux
 
 **Call Time:** just after a rebuild finishes.
 
-**Input:**
+**Input:** (`slimecore:hook` `end`)
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `result` | *(matches `result` key of [explicit rebuild](#explicit-rebuild-function) output)* | The result of the rebuild. | 
@@ -175,7 +175,7 @@ data get storage slimecore:hook bar.qux
 
 ## Data
 
-SlimeCore populates NBT storage location `slimecore:data` with useful data related to datapack loading. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
+The following sections describe `slimecore:data`. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
 
 ### Build Data
 
