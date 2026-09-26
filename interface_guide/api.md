@@ -192,7 +192,7 @@ This data is only dependent on enabled SlimeCore-loaded datapacks; worlds with i
 **Keys:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `packs` | List of `PackManifest` | Manifests of the datapacks in the build, matching datapack loading order. | 
+| `packs` | List of `PackManifest` | Manifests of the datapacks in the build, matching the datapack loading order. | 
 | `order.load` | List of `{index: int, pack_ref: PackId}` | Represents the datapack loading order. Each element references a pack ID via `pack_ref`. `index` is an auxilary key that matches the element's list/order index. | 
 | `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Represents the entrypoint calling order. Each element references an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
 | `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | Represents the preload entrypoint calling order. Each element references a preload entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
