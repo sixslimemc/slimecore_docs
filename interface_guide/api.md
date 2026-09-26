@@ -35,7 +35,7 @@ data get storage slimecore:hook bar.qux
 
 **Call Time:** just before a rebuild starts.
 
-**Input:** (`slimecore:hook` `start`)
+**Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `explicit` | *(matches input of [explicit rebuild function](#explicit-rebuild-function))* (or none) | Matches the input given to the [explicit rebuild function](#explicit-rebuild-function). Not present if rebuild was triggered automatically via reload. | 
@@ -44,7 +44,7 @@ data get storage slimecore:hook bar.qux
 
 **Call Time:** just after a rebuild finishes.
 
-**Input:** (`slimecore:hook` `end`)
+**Input:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `result` | *(matches `result` key of [explicit rebuild](#explicit-rebuild-function) output)* | The result of the rebuild. | 
@@ -175,7 +175,7 @@ data get storage slimecore:hook bar.qux
 
 ## Data
 
-The following sections describe `slimecore:data`. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
+The following sections describe the data that SlimeCore populates NBT storage location `slimecore:data` with. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
 
 ### Build Data
 
