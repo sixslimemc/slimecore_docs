@@ -188,7 +188,7 @@ Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
 **Keys:**
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `packs` | List of PackManifest | Manifests of datapacks in the current build--order matches datapack load order. | 
+| `packs` | List of `PackManifest` | Manifests of datapacks in the current build--order matches datapack load order. | 
 | `order.load` | List of `{index: int, pack_ref: PackId}` | Specifies the datapack loading order. Each element references a pack ID via `pack_ref`. `index` is an auxilary key that matches the element's list/order index. | 
 | `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Specifies the entrypoint calling order. Each element references an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
 | `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | *Same as `order.entrypoints`, but for preload entrypoints.* |
