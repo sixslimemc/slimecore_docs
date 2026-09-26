@@ -192,10 +192,10 @@ Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
 | `order.load` | List of `{index: int, pack_ref: PackId}` | Specifies the datapack loading order. Each element references a pack ID via `pack_ref`. `index` is an auxilary key that matches the element's list/order index. | 
 | `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Specifies the entrypoint calling order. Each element references an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
 | `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | *Same as `order.entrypoints`, but for preload entrypoints.* |
-| `aux.pack_map` | `{<PackId...>: PackManifest} | (Auxilary) struct where path `<pack id>` is the respective manifest for that pack ID. |
-| `aux.contract_map` | `{<PackId...>: {<ContractId...>: PackManifest}} | (Auxilary) struct where path `<contract's pack id>.<contract id>` is the manifest of the datapack that satisfies that contract. |
+| `aux.pack_map` | `{<PackId...>: PackManifest}` | (Auxilary) struct where path `<pack id>` is the respective manifest for that pack ID. |
+| `aux.contract_map` | `{<PackId...>: {<ContractId...>: PackManifest}}` | (Auxilary) struct where path `<contract's pack id>.<contract id>` is the manifest of the datapack that satisfies that contract. |
 | `aux.dependent_map` | `{<PackId...>: [PackManifest]}` | (Auxilary) struct where path `<pack id>` is the manifests of the datapacks that depend on that datapack, given it's pack ID. |
-| `aux.contracts` | `{contract: {pack_ref: PackId, id: ContractId}, satisfier: PackManifest}` | (Auxilary) list of all contracts in the build (`contract.pack_ref` is the contract's source pack ID, `contract.id` is the contract ID) as well as their satisfying datapack's manifest (`satisfier`). |
+| `aux.contracts` | List of `{contract: {pack_ref: PackId, id: ContractId}, satisfier: PackManifest}` | (Auxilary) list of all contracts in the build (`contract.pack_ref` is the contract's source pack ID, `contract.id` is the contract ID) as well as their satisfying datapack's manifest (`satisfier`). |
 
 ### World Data
 
