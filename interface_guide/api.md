@@ -261,7 +261,9 @@ The value of this key is a **list**, where each element represents a datapack th
 
 ### SlimeCore Manifest
 
-The manifest for SlimeCore itself (for representation purposes--not actually used in SlimeCore systems).
+The (pseudo-)manifest of SlimeCore itself.
+
+This manifest is not actually used in any SlimeCore systems, it is for data representation.
 
 **Path:** `slimecore`
 
