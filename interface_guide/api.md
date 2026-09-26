@@ -263,7 +263,7 @@ The value of this key is a **list**, where each element represents a datapack th
 
 The (pseudo-)manifest of SlimeCore itself.
 
-This manifest is not actually functional within builds, it is informational.
+This manifest is informational and does not actually function within builds.
 
 **Path:** `slimecore`
 
