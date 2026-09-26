@@ -193,9 +193,9 @@ This data is only dependent on enabled SlimeCore-loaded datapacks; worlds with i
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `packs` | List of `PackManifest` | Manifests of datapacks in the current build--order matches datapack load order. | 
-| `order.load` | List of `{index: int, pack_ref: PackId}` | Specifies the datapack loading order. Each element references a pack ID via `pack_ref`. `index` is an auxilary key that matches the element's list/order index. | 
-| `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Specifies the entrypoint calling order. Each element references an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
-| `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | Specifies the preload entrypoint calling order. Each element references a preload entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
+| `order.load` | List of `{index: int, pack_ref: PackId}` | Represents the datapack loading order. Each element references a pack ID via `pack_ref`. `index` is an auxilary key that matches the element's list/order index. | 
+| `order.entrypoints` | List of `{index: int, pack_ref: PackId, id: EntrypointId}` | Represents the entrypoint calling order. Each element references an entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
+| `order.preload_entrypoints` | List of `{index: int, pack_ref: PackId, id: PreloadEntrypointId}` | Represents the preload entrypoint calling order. Each element references a preload entrypoint, where `pack_ref` is the pack ID of it's source and `id` is it's ID. `index` is an auxilary key that matches the element's list/order index. |
 | `aux.pack_map` | `{<PackId...>: PackManifest}` | (Auxilary) struct where path `<pack id>` is the respective manifest for that pack ID. |
 | `aux.contract_map` | `{<PackId...>: {<ContractId...>: PackManifest}}` | (Auxilary) struct where path `<contract's pack id>.<contract id>` is the manifest of the datapack that satisfies that contract. |
 | `aux.dependent_map` | `{<PackId...>: [PackManifest]}` | (Auxilary) struct where path `<pack id>` is the list of manifests of datapacks that depend on that datapack (given it's pack ID). |
