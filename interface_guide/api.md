@@ -175,9 +175,19 @@ data get storage slimecore:hook bar.qux
 
 ## Data
 
-The following sections describe the NBT storage location `slimecore:data`. SlimeCore automatically populates/updates the data in this location. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
+The following sections describe the NBT storage location `slimecore:data`. SlimeCore automatically updates the data in this location. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
 
 ### Build Data
+
+**Path:** `build`
+
+**Update Time:** after successful rebuild.
+
+**Keys:**
+| Key | Type | Description |
+| :-- | :-- | :-- |
+| `pack_id` | String (pack ID) | The pack ID of the datapack that the preload entrypoint belongs to. | 
+| `id` | String (preload entrypoint ID) | The ID of the preload entrypoint. | 
 
 ### World Data
 
