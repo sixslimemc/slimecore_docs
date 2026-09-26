@@ -10,12 +10,6 @@
 
 ## Hooks
 
-- [Rebuild](#rebuild)
-- [Load Process](#load-process)
-- [Individual Tag Calls](#individual-tag-calls)
-- [Safe Mode (Reload)](#safe-mode-reload)
-- [Other](#other)
-
 SlimeCore includes function tags matching format `#slimecore:hook/.../<name>` called **hooks** that are called automatically during key events. Datapacks may freely add their own functions to hook tags, but **MUST NOT** call SlimeCore's hook tags themselves. Some hooks have input data that includes further details about events; such input data will always be a struct at NBT storage `slimecore:hook` `<name>`. Hook inputs are set by SlimeCore just before the hook is called and **MUST NOT** be modified.
 
 Here is an example of how these inputs will be described:
@@ -36,9 +30,6 @@ data get storage slimecore:hook bar.qux
 --- 
 
 ### Rebuild
-
-- [`#slimecore:hook/rebuild/start`](#slimecorehookrebuildstart)
-- [`#slimecore:hook/rebuild/end`](#slimecorehookrebuildend)
 
 #### `#slimecore:hook/rebuild/start`
 
@@ -61,12 +52,6 @@ data get storage slimecore:hook bar.qux
 ---
 
 ### Load Process
-
-- [`#slimecore:hook/load/start`](#slimecorehookloadstart)
-- [`#slimecore:hook/load/preload_entrypoints`](#slimecorehookloadpreload_entrypoints)
-- [`#slimecore:hook/load/loads`](#slimecorehookloadloads)
-- [`#slimecore:hook/load/entrypoints`](#slimecorehookloadentrypoints)
-- [`#slimecore:hook/load/end`](#slimecorehookloadend)
 
 #### `#slimecore:hook/load/start`
 
@@ -92,7 +77,7 @@ data get storage slimecore:hook bar.qux
 
 *No input.*
 
-#### `#slimecore:hook/load/end`
+#### `#slimecore:hook/load/entrypoints`
 
 **Call Time:** just after a load ends.
 
@@ -190,6 +175,8 @@ data get storage slimecore:hook bar.qux
 
 ## Data
 
+SlimeCore populates NBT storage location `slimecore:data` with useful data related to datapack loading. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
+
 ### Build Data
 
 ### World Data
@@ -203,3 +190,5 @@ data get storage slimecore:hook bar.qux
 ### Eval Pack
 
 ### Eval Version Requirement
+
+## Configuration
