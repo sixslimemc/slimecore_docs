@@ -177,9 +177,13 @@ data get storage slimecore:hook bar.qux
 
 The following sections describe the NBT storage location `slimecore:data`. SlimeCore automatically updates the data in this location. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
 
+---
+
 ### Build Data
 
-Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
+Data containing the world's current build (enabled SlimeCore-loaded datapacks)--directly represents how a [load](#loading) will execute. 
+
+This data is only dependent on enabled SlimeCore-loaded datapacks; worlds with identical enabled datapacks (by manifest) will have identical build data.
 
 **Path:** `build`
 
@@ -197,7 +201,17 @@ Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
 | `aux.dependent_map` | `{<PackId...>: [PackManifest]}` | (Auxilary) struct where path `<pack id>` is the list of manifests of datapacks that depend on that datapack (given it's pack ID). |
 | `aux.contracts` | List of `{contract: {pack_ref: PackId, id: ContractId}, satisfier: PackManifest}` | (Auxilary) list of all contracts in the build (`contract.pack_ref` is the contract's source pack ID, `contract.id` is the contract ID) as well as their satisfying datapack's manifest (`satisfier`). |
 
+---
+
 ### World Data
+
+Data representing the world's status.
+
+This data is world-specific; it may differ between worlds regardless of if they have the same datapacks installed/enabled.
+
+**Path:** `build`
+
+**Update Time:** after successful rebuild.
 
 ### SlimeCore Manifest
 
