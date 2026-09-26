@@ -175,7 +175,7 @@ data get storage slimecore:hook bar.qux
 
 ## Data
 
-The following sections describe the data that SlimeCore populates NBT storage location `slimecore:data` with. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
+The following sections describe the NBT storage location `slimecore:data`. SlimeCore automatically populates/updates this data. Datapacks are free to read data from this location but **MUST NOT** modify it--it is **read only**.
 
 ### Build Data
 
