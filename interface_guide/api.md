@@ -33,7 +33,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/rebuild/start`
 
-**Called:** just before a rebuild starts.
+**Call Time:** just before a rebuild starts.
 
 **Input:**
 | Key | Type | Description |
@@ -42,7 +42,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/rebuild/end`
 
-**Called:** just after a rebuild finishes.
+**Call Time:** just after a rebuild finishes.
 
 **Input:**
 | Key | Type | Description |
@@ -55,31 +55,31 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/load/start`
 
-**Called:** just before a load starts.
+**Call Time:** just before a load starts.
 
 *No input.*
 
 #### `#slimecore:hook/load/preload_entrypoints`
 
-**Called:** just before preload entrypoint tags start getting called.
+**Call Time:** just before preload entrypoint tags start getting called.
 
 *No input.*
 
 #### `#slimecore:hook/load/loads`
 
-**Called:** just before load tags start getting called.
+**Call Time:** just before load tags start getting called.
 
 *No input.*
 
 #### `#slimecore:hook/load/entrypoints`
 
-**Called:** just before entrypoint tags start getting called.
+**Call Time:** just before entrypoint tags start getting called.
 
 *No input.*
 
 #### `#slimecore:hook/load/entrypoints`
 
-**Called:** just after a load ends.
+**Call Time:** just after a load ends.
 
 *No input.*
 
@@ -91,7 +91,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/load`
 
-**Called:** just before/after a datapack's load tag is called.
+**Call Time:** just before/after a datapack's load tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -100,7 +100,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/disable`
 
-**Called:** just before/after a datapack's disable tag is called.
+**Call Time:** just before/after a datapack's disable tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -109,7 +109,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/uninstall`
 
-**Called:** just before/after a datapack's uninstall tag is called.
+**Call Time:** just before/after a datapack's uninstall tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -118,7 +118,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/safe_mode`
 
-**Called:** just before/after a datapack's safe mode tag is called.
+**Call Time:** just before/after a datapack's safe mode tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -127,7 +127,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/entrypoint`
 
-**Called:** just before/after an entrypoint's tag is called.
+**Call Time:** just before/after an entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -137,7 +137,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/call/<pre|post>/preload_entrypoint`
 
-**Called:** just before/after a preload entrypoint's tag is called.
+**Call Time:** just before/after a preload entrypoint's tag is called.
 
 **Input:**
 | Key | Type | Description |
@@ -151,13 +151,13 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/safe_mode/start`
 
-**Called:** just after a world reload if safe mode is enabled/triggered, before safe mode tags are called.
+**Call Time:** just after a world reload if safe mode is enabled/triggered, before safe mode tags are called.
 
 *No input; see `safe_mode` key in [world data](#world-data).*
 
 #### `#slimecore:hook/safe_mode/end`
 
-**Called:** just after a world reload if safe mode is enabled/triggered, after safe mode tags are called.
+**Call Time:** just after a world reload if safe mode is enabled/triggered, after safe mode tags are called.
 
 *No input; see `safe_mode` key in [world data](#world-data).*
 
@@ -167,7 +167,7 @@ data get storage slimecore:hook bar.qux
 
 #### `#slimecore:hook/uninstall_slimecore`
 
-**Called:** just before SlimeCore is uninstalled (and all SlimeCore-loaded datapacks disabled).
+**Call Time:** just before SlimeCore is uninstalled (and all SlimeCore-loaded datapacks disabled).
 
 *No input.*
 
@@ -183,7 +183,7 @@ Data relating to the world's current build (enabled SlimeCore-loaded datapacks).
 
 **Path:** `build`
 
-**Updated:** after successful rebuild.
+**Update Time:** after successful rebuild.
 
 **Keys:**
 | Key | Type | Description |
