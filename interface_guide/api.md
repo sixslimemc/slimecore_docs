@@ -232,32 +232,32 @@ This data is only present when safe mode is enabled.
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `calls` | List of `{pack_ref: PackId}` | Represents the safe-mode tags that are called on reload, in the order that they are called. Each element represents `#<pack_ref>:safe_mode`. |
+| `calls` | List of `{pack_ref: PackId}` | Represents the safe-mode tags that are called on reload in the order that they are called. Each element represents `#<pack_ref>:safe_mode`. |
 | `reason` | *(see below)* | The reason why safe mode is currently enabled. |
 
-`reason` will have *one* of the following keys depending on the reason safe mode is enabled.
+`reason` will have *one* of the following keys depending on the reason safe mode is enabled:
 
 #### `duplicate_installed_pack_ids`
 
-Will be present if safe mode is enabled because there are multiple datapacks installed with the same pack ID. SlimeCore-loaded datapacks must be unique by pack ID within the same world in order to load properly.
+Will be present if there are multiple datapacks installed with the same pack ID. SlimeCore-loaded datapacks must be unique by pack ID within the same world in order to load properly.
 
 The value of this key is a **list**, where each element represents a pack ID that is shared between multiple datapacks. Each element is a struct with the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
-| `pack_id` | String (pack ID) | The pack ID that is shared. |
+| `pack_id` | String (pack ID) | The pack ID that is shared between datapacks. |
 | `packs` | List of `PackManifest` | The manifests of the datapacks that share the pack ID. |
 
 #### `misloaded_datapacks_missing_path`
 
-Will be present if safe mode is enabled because SlimeCore cannot find the path for an enabled datapack, thus cannot load it correctly.
+Will be present if SlimeCore cannot find the path for some enabled datapacks, thus cannot load them correctly.
 
 The value of this key is a **list**, where each element represents a datapack that has a missing path. Each element is a struct with the following keys:
 
 | Key | Type | Description |
 | :-- | :-- | :-- |
 | `pack` | `PackManifest` | The manifest of the datapack. |
-| `path_override` | String (or none) | The path override for the datapack as specified in NBT storage location `slimecore:config` `path_overrides`. Not present if no path override is specified. |
+| `path_override` | String (or none) | The path override for the datapack as specified in NBT storage location `slimecore:config` `path_overrides`. Only present if a path override is specified. |
 
 ### SlimeCore Manifest
 
@@ -268,6 +268,22 @@ This manifest is informational and does not actually function within builds.
 **Path:** `slimecore`
 
 ## Explicit Rebuild Function
+
+The `slimecore:rebuild` function initiates an explicit rebuild.
+
+### Input
+
+Input is provided via NBT storage location `slimecore:in` `rebuild` as a struct with the following keys:
+
+| Key | Type | Description | Default Value |
+| :-- | :-- | :-- | :-- |
+| `disable` | List of `{pack_ref: PackId}` | Datapacks to disable. Each element represents a datapack, where `pack_ref` is its pack ID. | `[]` |
+| `uninstall` | List of `{pack_ref: PackId}` | Datapacks to uninstall. Each element represents a datapack, where `pack_ref` is its pack ID. | `[]` |
+| `wipe_memory` | Boolean | If true, SlimeCore's memory state will be wiped before attempting to rebuild (wipe rebuild). | `false` |
+
+### Output
+
+
 
 ## Eval Functions
 
